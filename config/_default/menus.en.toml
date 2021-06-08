@@ -1,0 +1,76 @@
+# main menu
+[[main]]
+name = "Home"
+url = "/"
+weight = 1
+
+#[[main]]
+#name = "Blog"
+#url = "blog"
+#weight = 2
+
+#[[main]]
+#name = "Pricing"
+#url = "pricing"
+#weight = 3
+
+[[main]]
+name = "Contact"
+url = "contact"
+weight = 4
+
+#[[main]]
+#name = "FAQ"
+#url = "faq"
+#weight = 5
+
+# footer menu left
+[[footer_left]]
+name = "About Us"
+url = "aboutus"
+
+[[footer_left]]
+name = "Quick Start"
+url = "https://grycap.github.io/oscar/deploy-im-dashboard/"
+
+#[[footer_left]]
+#name = "Pricing"
+#url = "pricing"
+
+
+# footer menu middle
+#name = "Pricing"
+#[[footer_middle]]
+#url = "pricing"
+
+[[footer_middle]]
+name = "Functions Definition Language"
+url = "https://grycap.github.io/oscar/fdl/"
+weight = 1
+
+[[footer_middle]]
+name = "CLI"
+url = "https://github.com/grycap/oscar-cli"
+
+[[footer_middle]]
+name = "OpenAPI Specification"
+url = "https://grycap.github.io/oscar/api/"
+
+
+
+# footer menu right
+#[[footer_right]]
+#name = "Privacy Policy"
+#url = "privacy-policy"
+
+[[footer_right]]
+name = "Terms & Conditions"
+url = "terms-conditions"
+
+[[footer_right]]
+name = "FAQ"
+url = "faq"
+
+[[footer_right]]
+name = "Contact & Acknowledgement"
+url = "contact"

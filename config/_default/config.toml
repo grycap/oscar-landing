@@ -1,0 +1,24 @@
+######################## default configuration ####################
+baseURL = "http://localhost:1313/"
+#absURL = "http://localhost:1313/"
+#baseURL = "http://alucloud00.s3-website-us-east-1.amazonaws.com/"
+title = "OSCAR"
+theme = "bigspring"
+# post pagination
+paginate = "3"
+# post excerpt
+summaryLength = "15"
+# disqus short name
+disqusShortname = "" # get your shortname form here : https://disqus.com
+# google analytics
+googleAnalytics = "" # example : UA-123-45
+# unsafe html
+[markup.goldmark.renderer]
+unsafe = true
+disableLanguages = ["De"]
+
+
+[params]
+   [params.favicon]
+       href = "/favicon.ico"       
+       type = "image/x-icon"

@@ -1,0 +1,18 @@
+<meta charset="utf-8">
+<title>{{with .Title}}{{.}}{{else}}{{site.Title}}{{end}}</title>
+
+<meta name="description" content="{{ with .Params.Description }}{{ . }}{{ else }}{{ with site.Params.description }}{{ . }}{{ end }}{{ end }}">
+
+<!-- multilingual SEO optimizations -->
+{{ if .IsTranslated }}
+{{ range .Page.AllTranslations }}
+<link rel="alternate" title="{{.Title}}" hreflang="{{.Lang}}" href="{{.RelPermalink}}">
+{{ end }}
+{{ end }}
+
+{{ with .Params.image }}
+<meta property="og:image" content="{{ . | absURL }}" />
+{{ end }}
+{{ template "_internal/opengraph.html" . }}
+{{ template "_internal/google_analytics_async.html" . }}
+{{ site.Params.custom_script | safeHTML }}
