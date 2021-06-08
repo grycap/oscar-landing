@@ -20,7 +20,7 @@ Also, we would love to hear what you are using OSCAR for. Drop us an e-mail with
 * **Mail: products@grycap.upv.es** 
 * **Address: Instituto de Instrumentación para Imagen Molecular, Universitat Politècnica de València, Camino de Vera S/N, 46022 Valencia, Spain**
 
-![GRyCAP-logo](/images/logo-grycap.png)
-![I3M-logo](/images/logo-i3m.jpg)
-![UPV-logo](/images/marca_UPV_principal_color.svg)
+![GRyCAP-logo](images/logo-grycap.png)
+![I3M-logo](images/logo-i3m.jpg)
+![UPV-logo](images/marca_UPV_principal_color.svg)
 
