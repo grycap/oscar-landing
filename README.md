@@ -1,4 +1,4 @@
-# Landing page for OSCAR
+# Landing page for [OSCAR](https://github.com/grycap/oscar)
 
 ## Development
 1. Install [Hugo](https://gohugo.io/)
