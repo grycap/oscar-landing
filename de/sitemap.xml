@@ -1,51 +1,43 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
-  
   <url>
-    <loc>http://localhost:1313/de/english/</loc>
-  </url>
-  
-  <url>
-    <loc>http://localhost:1313/de/categories/</loc>
+    <loc>https://grycap.github.io/oscar-landing/de/english/</loc>
+  </url><url>
+    <loc>https://grycap.github.io/oscar-landing/de/categories/</loc>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="http://localhost:1313/categories/"
+                href="https://grycap.github.io/oscar-landing/categories/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="de"
-                href="http://localhost:1313/de/categories/"
+                href="https://grycap.github.io/oscar-landing/de/categories/"
                 />
-  </url>
-  
-  <url>
-    <loc>http://localhost:1313/de/</loc>
+  </url><url>
+    <loc>https://grycap.github.io/oscar-landing/de/</loc>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="http://localhost:1313/"
+                href="https://grycap.github.io/oscar-landing/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="de"
-                href="http://localhost:1313/de/"
+                href="https://grycap.github.io/oscar-landing/de/"
                 />
-  </url>
-  
-  <url>
-    <loc>http://localhost:1313/de/tags/</loc>
+  </url><url>
+    <loc>https://grycap.github.io/oscar-landing/de/tags/</loc>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="http://localhost:1313/tags/"
+                href="https://grycap.github.io/oscar-landing/tags/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="de"
-                href="http://localhost:1313/de/tags/"
+                href="https://grycap.github.io/oscar-landing/de/tags/"
                 />
   </url>
-  
 </urlset>
