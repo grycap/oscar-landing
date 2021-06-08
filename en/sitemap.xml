@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+  xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  
+  <url>
+    <loc>http://localhost:1313/</loc>
+    <lastmod>2020-04-18T10:07:21+06:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="de"
+                href="http://localhost:1313/de/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="http://localhost:1313/"
+                />
+  </url>
+  
+  <url>
+    <loc>http://localhost:1313/blog/post-1/</loc>
+    <lastmod>2020-04-18T10:07:21+06:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://localhost:1313/blog/</loc>
+    <lastmod>2020-04-18T10:07:21+06:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://localhost:1313/aboutus/</loc>
+  </url>
+  
+  <url>
+    <loc>http://localhost:1313/categories/</loc>
+    <xhtml:link
+                rel="alternate"
+                hreflang="de"
+                href="http://localhost:1313/de/categories/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="http://localhost:1313/categories/"
+                />
+  </url>
+  
+  <url>
+    <loc>http://localhost:1313/contact/</loc>
+  </url>
+  
+  <url>
+    <loc>http://localhost:1313/faq/</loc>
+  </url>
+  
+  <url>
+    <loc>http://localhost:1313/pricing/</loc>
+  </url>
+  
+  <url>
+    <loc>http://localhost:1313/privacy-policy/</loc>
+  </url>
+  
+  <url>
+    <loc>http://localhost:1313/tags/</loc>
+    <xhtml:link
+                rel="alternate"
+                hreflang="de"
+                href="http://localhost:1313/de/tags/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="http://localhost:1313/tags/"
+                />
+  </url>
+  
+  <url>
+    <loc>http://localhost:1313/terms-conditions/</loc>
+  </url>
+  
+</urlset>
