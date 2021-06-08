@@ -1,7 +1,6 @@
 ######################## default configuration ####################
-baseURL = "http://localhost:1313/"
-#absURL = "http://localhost:1313/"
-#baseURL = "http://alucloud00.s3-website-us-east-1.amazonaws.com/"
+#baseURL = "http://localhost:1313/"
+baseURL = "https://grycap.github.io/oscar-landing/"
 title = "OSCAR"
 theme = "bigspring"
 # post pagination
