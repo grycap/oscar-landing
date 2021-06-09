@@ -1,8 +1,8 @@
 # main menu
-[[main]]
-name = "Home"
-url = "/"
-weight = 1
+#[[main]]
+#name = "Home"
+#url = "/"
+#weight = 1
 
 #[[main]]
 #name = "Blog"
@@ -14,10 +14,10 @@ weight = 1
 #url = "pricing"
 #weight = 3
 
-[[main]]
-name = "Contact"
-url = "contact"
-weight = 4
+#[[main]]
+#name = "Contact"
+#url = "contact"
+#weight = 4
 
 #[[main]]
 #name = "FAQ"
@@ -37,25 +37,24 @@ url = "https://grycap.github.io/oscar/deploy-im-dashboard/"
 #name = "Pricing"
 #url = "pricing"
 
+[[footer_left]]
+name = "Functions Definition Language"
+url = "https://grycap.github.io/oscar/fdl/"
+weight = 1
+
+[[footer_left]]
+name = "CLI"
+url = "https://github.com/grycap/oscar-cli"
+
+[[footer_left]]
+name = "OpenAPI Specification"
+url = "https://grycap.github.io/oscar/api/"
+
 
 # footer menu middle
 #name = "Pricing"
 #[[footer_middle]]
 #url = "pricing"
-
-[[footer_middle]]
-name = "Functions Definition Language"
-url = "https://grycap.github.io/oscar/fdl/"
-weight = 1
-
-[[footer_middle]]
-name = "CLI"
-url = "https://github.com/grycap/oscar-cli"
-
-[[footer_middle]]
-name = "OpenAPI Specification"
-url = "https://grycap.github.io/oscar/api/"
-
 
 
 # footer menu right
