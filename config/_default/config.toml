@@ -1,6 +1,6 @@
 ######################## default configuration ####################
 #baseURL = "http://localhost:1313/"
-baseURL = "https://grycap.github.io/oscar-landing/"
+baseURL = "https://oscar.grycap.net"
 title = "OSCAR"
 theme = "bigspring"
 # post pagination
@@ -10,7 +10,7 @@ summaryLength = "15"
 # disqus short name
 disqusShortname = "" # get your shortname form here : https://disqus.com
 # google analytics
-googleAnalytics = "" # example : UA-123-45
+googleAnalytics = "G-902S7WV6RK" # example : UA-123-45
 # unsafe html
 [markup.goldmark.renderer]
 unsafe = true
