@@ -1,6 +1,6 @@
 ######################## default configuration ####################
 #baseURL = "http://localhost:1313/"
-baseURL = "https://grycap.github.io/oscar-landing/"
+baseURL = "https://oscar.grycap.net"
 title = "OSCAR"
 theme = "bigspring"
 # post pagination
