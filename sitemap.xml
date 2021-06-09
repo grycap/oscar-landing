@@ -2,14 +2,14 @@
 <sitemapindex xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <sitemap>
-    <loc>https://grycap.github.io/oscar-landing/de/sitemap.xml</loc>
+    <loc>https://grycap.github.io/oscar-landing/en/sitemap.xml</loc>
+    
+      <lastmod>2020-04-18T10:07:21+06:00</lastmod>
     
   </sitemap>
   
   <sitemap>
-    <loc>https://grycap.github.io/oscar-landing/en/sitemap.xml</loc>
-    
-      <lastmod>2020-04-18T10:07:21+06:00</lastmod>
+    <loc>https://grycap.github.io/oscar-landing/de/sitemap.xml</loc>
     
   </sitemap>
   
