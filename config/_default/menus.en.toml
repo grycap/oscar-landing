@@ -32,6 +32,7 @@
 [[footer_left]]
 name = "Quick Start"
 url = "https://grycap.github.io/oscar/deploy-im-dashboard/"
+weight = 1
 
 #[[footer_left]]
 #name = "Pricing"
@@ -40,7 +41,6 @@ url = "https://grycap.github.io/oscar/deploy-im-dashboard/"
 [[footer_left]]
 name = "Functions Definition Language"
 url = "https://grycap.github.io/oscar/fdl/"
-weight = 1
 
 [[footer_left]]
 name = "CLI"
