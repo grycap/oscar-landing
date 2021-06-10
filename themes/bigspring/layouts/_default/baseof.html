@@ -13,7 +13,7 @@ AUTHOR WEBSITE: https://gethugothemes.com
 <head>
 	{{ if .Site.Params.GoogleAnalyticsID }}
     {{ partial "analytics-gtag.html" . }}
-    {{ end }}	
+    {{ end }}
 	{{ partial "head.html" . }}
 	{{ partialCached "style.html" . }}
 	<base href="{{ .Site.BaseURL }}">
