@@ -2,7 +2,7 @@
 logo = "images/oscar3-logo-trans.png"
 logo_width = "200px"
 # Meta data
-description = "This is meta description"
+description = "OSCAR: Open Source Serverless Computing for Data-Processing Applications"
 author = "Themefisher"
 # contact form action
 contact_form_action = "#" # contact form works with https://formspree.io
