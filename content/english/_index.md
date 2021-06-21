@@ -27,12 +27,12 @@ feature:
     # feature item loop
     - name : "Workflows"
       icon : "fas fa-bars"
-      content : "Compose data-driven serverless workflows with a [Functions Definition Language](https://grycap.github.io/oscar/fdl/)"
+      content : "Compose data-driven serverless workflows with a [Functions Definition Language](https://grycap.github.io/oscar/fdl.html)"
         
     # feature item loop
     - name : "Flexible Interfaces"
       icon : "fas fa-file-invoice"
-      content : "[REST API](https://grycap.github.io/oscar/api/), [Web-based GUI](https://grycap.github.io/oscar/usage/) and [CLI](https://github.com/grycap/oscar-cli) (Command-line Interface)"
+      content : "[REST API](https://grycap.github.io/oscar/api.html), [Web-based GUI](https://grycap.github.io/oscar/usage.html) and [CLI](https://github.com/grycap/oscar-cli) (Command-line Interface)"
       
     # feature item loop
     - name : "Built on Kubernetes"
