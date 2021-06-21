@@ -11,6 +11,9 @@ AUTHOR WEBSITE: https://gethugothemes.com
 <html lang="{{ site.LanguageCode | default `en-US` }}">
 
 <head>
+	{{ if .Site.Params.GoogleAnalyticsID }}
+    {{ partial "analytics-gtag.html" . }}
+    {{ end }}
 	{{ partial "head.html" . }}
 	{{ partialCached "style.html" . }}
 	<base href="{{ .Site.BaseURL }}">
