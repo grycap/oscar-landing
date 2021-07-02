@@ -4,10 +4,10 @@
 #url = "/"
 #weight = 1
 
-#[[main]]
-#name = "Blog"
-#url = "blog"
-#weight = 2
+[[main]]
+name = "Blog"
+url = "blog"
+weight = 2
 
 #[[main]]
 #name = "Pricing"
