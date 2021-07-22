@@ -4,10 +4,16 @@
 #url = "/"
 #weight = 1
 
-#[[main]]
-#name = "Blog"
-#url = "blog"
-#weight = 2
+[[main]]
+name = "Documentation"
+url = "https://grycap.github.io/oscar"
+weight = 1
+
+[[main]]
+name = "Blog"
+url = "blog"
+weight = 2
+
 
 #[[main]]
 #name = "Pricing"
