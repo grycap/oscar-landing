@@ -5,14 +5,14 @@
     <link>https://oscar.grycap.net/</link>
     <description>Recent content on OSCAR </description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Sat, 18 Apr 2020 10:07:21 +0600</lastBuildDate><atom:link href="https://oscar.grycap.net/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 22 Jul 2021 10:07:21 +0100</lastBuildDate><atom:link href="https://oscar.grycap.net/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Change here. Adversus is a web-based dialer and practical CRM solution</title>
+      <title>Event-driven inference of AI models for mask detection with the OSCAR serverless platform</title>
       <link>https://oscar.grycap.net/blog/post-1/</link>
-      <pubDate>Sat, 18 Apr 2020 10:07:21 +0600</pubDate>
+      <pubDate>Thu, 22 Jul 2021 10:07:21 +0100</pubDate>
       
       <guid>https://oscar.grycap.net/blog/post-1/</guid>
-      <description>Heading example This is another example. This is an example of change. You can use this heading by following markdownify rules.</description>
+      <description>What is OSCAR? OSCAR is an open-source platform to support the Functions as a Service (FaaS) computing model for file-processing applications.</description>
     </item>
     
   </channel>
