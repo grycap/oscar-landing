@@ -17,7 +17,7 @@
 
     
 	<meta charset="utf-8">
-<title>Latest News</title>
+<title>Deployment of an OSCAR cluster in the EGI Federated Cloud</title>
 
 <meta name="description" content="This is meta description">
 
@@ -25,10 +25,14 @@
 
 
 
-<meta property="og:title" content="Latest News" />
+<meta property="og:image" content="https://oscar.grycap.net/images/blog/post-20210726-1/portada_blog_oscar_synergy.png" />
+
+<meta property="og:title" content="Deployment of an OSCAR cluster in the EGI Federated Cloud" />
 <meta property="og:description" content="This is meta description" />
-<meta property="og:type" content="website" />
-<meta property="og:url" content="https://oscar.grycap.net/blog/" /><meta property="og:site_name" content="OSCAR " />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://oscar.grycap.net/blog/post-20210726-1/" /><meta property="article:section" content="blog" />
+<meta property="article:published_time" content="2021-07-25T13:00:00&#43;01:00" />
+<meta property="article:modified_time" content="2021-07-25T13:00:00&#43;01:00" /><meta property="og:site_name" content="OSCAR " />
 
 
 
@@ -141,65 +145,62 @@
 	<main>
 		
 
-<section class="section pb-0">
-  <div class="container text-center">
-    <h1 class="display-3">Latest News</h1>
-    
-  </div>
-</section>
-
 
 
 
 <section class="section">
   <div class="container">
     <div class="row">
-      
-      <div class="col-12 mb-5 pb-5">
-        <div class="row align-items-center">
-          <div class="col-md-6 mb-4 mb-md-0">
-            <img src="/images/blog/post-20210726-1/portada_blog_oscar_synergy.png" alt="Deployment of an OSCAR cluster in the EGI Federated Cloud" class="img-fluid rounded-lg w-100">
-          </div>
-          <div class="col-md-6">
-            <h2><a href="https://oscar.grycap.net/blog/post-20210726-1/" title="Deployment of an OSCAR cluster in the EGI Federated Cloud" class="post-title">Deployment of an OSCAR cluster in the EGI Federated Cloud</a></h2>
-            <p class="card-text">Here we present a step by step guide to help you deploy an OSCAR cluster in the EGI Federated Cloud, specifically in the EOSC-Synergy VO.</p>
-            <a href="https://oscar.grycap.net/blog/post-20210726-1/" title="Read more - Deployment of an OSCAR cluster in the EGI Federated Cloud" class="btn btn-primary">Read more</a>
-          </div>
-        </div>
-      </div>
-      
-      
-      
-      <div class="col-lg-4 col-sm-6 mb-5">
-        <div class="card border-0">
-          <img src="/images/blog/post-20210726-1/portada_blog_oscar_synergy.png" alt="Deployment of an OSCAR cluster in the EGI Federated Cloud" class="card-img rounded-lg mb-4">
-          <div class="card-body p-0">
-            <h3><a href="https://oscar.grycap.net/blog/post-20210726-1/" title="Deployment of an OSCAR cluster in the EGI Federated Cloud" class="post-title">Deployment of an OSCAR cluster in the EGI Federated Cloud</a></h3>
-            <p class="card-text">Here we present a step by step guide to help you deploy an OSCAR cluster in the EGI Federated Cloud, specifically in the EOSC-Synergy VO.</p>
-            <a href="https://oscar.grycap.net/blog/post-20210726-1/" title="Read more - Deployment of an OSCAR cluster in the EGI Federated Cloud" class="btn btn-primary btn-sm">Read more</a>
-          </div>
-        </div>
-      </div>
-      
-      <div class="col-lg-4 col-sm-6 mb-5">
-        <div class="card border-0">
-          <img src="/images/blog/mask-detection-result-image.jpg" alt="Event-driven inference of AI models for mask detection with the OSCAR serverless platform" class="card-img rounded-lg mb-4">
-          <div class="card-body p-0">
-            <h3><a href="https://oscar.grycap.net/blog/post-1/" title="Event-driven inference of AI models for mask detection with the OSCAR serverless platform" class="post-title">Event-driven inference of AI models for mask detection with the OSCAR serverless platform</a></h3>
-            <p class="card-text">What is OSCAR? OSCAR is an open-source platform to support the Functions as a Service (FaaS) computing model for file-processing applications.</p>
-            <a href="https://oscar.grycap.net/blog/post-1/" title="Read more - Event-driven inference of AI models for mask detection with the OSCAR serverless platform" class="btn btn-primary btn-sm">Read more</a>
-          </div>
-        </div>
-      </div>
-      
-      <div class="col-12">
+      <div class="col-lg-8 mx-auto">
+        <img src="/images/blog/post-20210726-1/portada_blog_oscar_synergy.png" alt="Deployment of an OSCAR cluster in the EGI Federated Cloud" class="img-fluid w-100 rounded mb-4">
+        <h2 class="mb-4">Deployment of an OSCAR cluster in the EGI Federated Cloud</h2>
+        <div class="content"><p>Here we present a step by step guide to help you deploy an OSCAR cluster in the <a href="https://www.egi.eu">EGI Federated Cloud</a>, specifically in the <a href="https://infra.eosc-synergy.eu/vos/#synergy">EOSC-Synergy VO</a>. We are using the <a href="https://appsgrycap.i3m.upv.es:31443/im-dashboard/login">IM Dashboard</a>, a tool developed by the <a href="https://www.grycap.upv.es/">GRyCAP</a> research group at the <a href="https://www.upv.es/">Universitat Politècnica de València</a> to facilitate the deployment of infrastructures in a lot of cloud providers. Alternatively, you can follow our YouTube video, at the end of the post.</p>
+<p><strong>Step 1:</strong> Go the the <a href="https://appsgrycap.i3m.upv.es:31443/im-dashboard/login">IM Dashboard</a> and click the button &ldquo;Login with EGI-Check-in&rdquo;.</p>
+<p><img src="../../images/blog/post-20210726-1/001.png" alt="Welcome to the IM Dashboard"></p>
+<p><strong>Step 2:</strong> EGI Check-in supports multiple identity providers, select one and access the IM Dashboard.</p>
+<p><img src="../../images/blog/post-20210726-1/002.png" alt="EGI Check-in"></p>
+<p><strong>Step 3:</strong> Go to the top right corner and click on your username to access &ldquo;Cloud Credentials&rdquo;.</p>
+<p><img src="../../images/blog/post-20210726-1/003.png" alt="Cloud Credentials"></p>
+<p><strong>Step 4:</strong> Click &ldquo;New Credential&rdquo; button and select EGI.</p>
+<p><img src="../../images/blog/post-20210726-1/005.png" alt="New EGI Credential"></p>
+<p><strong>Step 5:</strong> Write a new name for your new credential, select the EOSC-Synergy VO, and select the desired provider (the dropdown list can take a few seconds to load). Click &ldquo;Add&rdquo; to finish.</p>
+<p><img src="../../images/blog/post-20210726-1/006.png" alt="Synergy VO Credential"></p>
+<p><strong>Step 6:</strong> Return to the IM Dashboard by clicking on &ldquo;IM Dashboard&rdquo; at the top left corner. Go to &ldquo;Launch an OSCAR Virtual Cluster&rdquo; and click &ldquo;Configure&rdquo;.</p>
+<p><img src="../../images/blog/post-20210726-1/009.png" alt="Launch OSCAR Cluster"></p>
+<p><strong>Step 7:</strong> &ldquo;HW Data&rdquo; tab will open. Give your infrastructure a name of your choice, and fill out the hardware data.</p>
+<p><img src="../../images/blog/post-20210726-1/010.png" alt="HW Data"></p>
+<p><strong>Step 8:</strong> Click &ldquo;OSCAR Parameters&rdquo; tab and fill out the form.</p>
+<p><img src="../../images/blog/post-20210726-1/011.png" alt="OSCAR Parameters"></p>
+<p><strong>Step 9:</strong> Click &ldquo;Cloud Provider Selection&rdquo; tab and select the newly created cloud provider in step 5. Choose the desired images for your OSCAR cluster. Click &ldquo;Submit&rdquo;.</p>
+<p><img src="../../images/blog/post-20210726-1/013.png" alt="Cloud Provider Selection"></p>
+<p><strong>Step 10:</strong> The page &ldquo;My Infrastructures&rdquo; will open, and we can see the deployed or in deployment infrastructures.</p>
+<p><img src="../../images/blog/post-20210726-1/014.png" alt="My Infrastructures"></p>
+<p><strong>Step 11: (Optional)</strong> By clicking the button &ldquo;Logs&rdquo; we can check the current status of our deployment.</p>
+<p><img src="../../images/blog/post-20210726-1/015.png" alt="Logs"></p>
+<p><strong>Step 12:</strong> Once our OSCAR cluster is deployed, the &ldquo;Logs&rdquo; button changes to &ldquo;Outputs&rdquo;. Click the button: we get custom URLs to the Kubernetes dashboard, the MinIO portal, and the OSCAR UI.</p>
+<p><img src="../../images/blog/post-20210726-1/017.png" alt="Outputs"></p>
+<p><strong>Step 13:</strong> By clicking on the &ldquo;oscarui_endpoint&rdquo; URL we get the OSCAR UI that can be accessed with the username <em>oscar</em> and the specified password in step 8.</p>
+<p><img src="../../images/blog/post-20210726-1/018.png" alt="OSCAR UI"></p>
+<p><strong>Step 14:</strong> The OSCAR cluster is prepared to be used, click &ldquo;Deploy new service&rdquo; to start.</p>
+<p><img src="../../images/blog/post-20210726-1/019.png" alt="Deploy new service"></p>
+<p><strong>Step 15:</strong> To stop/delete the OSCAR cluster, return to the IM Dashboard -&gt; &ldquo;My Infrastructures&rdquo; and select the appropriate option.</p>
+<p><img src="../../images/blog/post-20210726-1/016.png" alt="Options on My Infrastructures"></p>
+<h3 id="youtube-video">Youtube video</h3>
+<p>Here you have a follow along video including all the steps, enjoy!</p>
+
+<div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
+  <iframe src="https://www.youtube.com/embed/2ES2V4bnjbQ" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" allowfullscreen title="YouTube Video"></iframe>
+</div>
+
+</div>
         
-
-
+        
+        
       </div>
     </div>
   </div>
 </section>
+
 
 
 
