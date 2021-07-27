@@ -8,19 +8,19 @@
     <lastBuildDate>Sun, 25 Jul 2021 13:00:00 +0100</lastBuildDate><atom:link href="https://oscar.grycap.net/blog/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Deployment of an OSCAR cluster in the EGI Federated Cloud</title>
-      <link>https://oscar.grycap.net/blog/post-20210726-1/</link>
+      <link>https://oscar.grycap.net/blog/post-oscar-serverless-egi-federated-cloud/</link>
       <pubDate>Sun, 25 Jul 2021 13:00:00 +0100</pubDate>
       
-      <guid>https://oscar.grycap.net/blog/post-20210726-1/</guid>
+      <guid>https://oscar.grycap.net/blog/post-oscar-serverless-egi-federated-cloud/</guid>
       <description>Here we present a step by step guide to help you deploy an OSCAR cluster in the EGI Federated Cloud, specifically in the EOSC-Synergy VO.</description>
     </item>
     
     <item>
       <title>Event-driven inference of AI models for mask detection with the OSCAR serverless platform</title>
-      <link>https://oscar.grycap.net/blog/post-1/</link>
+      <link>https://oscar.grycap.net/blog/post-oscar-serverless-ai-models/</link>
       <pubDate>Thu, 22 Jul 2021 10:07:21 +0100</pubDate>
       
-      <guid>https://oscar.grycap.net/blog/post-1/</guid>
+      <guid>https://oscar.grycap.net/blog/post-oscar-serverless-ai-models/</guid>
       <description>What is OSCAR? OSCAR is an open-source platform to support the Functions as a Service (FaaS) computing model for file-processing applications.</description>
     </item>
     
