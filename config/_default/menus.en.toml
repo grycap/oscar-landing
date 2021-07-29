@@ -37,7 +37,7 @@ weight = 2
 
 [[footer_left]]
 name = "Quick Start"
-url = "https://grycap.github.io/oscar/deploy-im-dashboard.html"
+url = "https://grycap.github.io/oscar/deploy-im-dashboard/"
 weight = 1
 
 #[[footer_left]]
@@ -46,7 +46,7 @@ weight = 1
 
 [[footer_left]]
 name = "Functions Definition Language"
-url = "https://grycap.github.io/oscar/fdl.html"
+url = "https://grycap.github.io/oscar/fdl/"
 
 [[footer_left]]
 name = "CLI"
@@ -54,7 +54,7 @@ url = "https://github.com/grycap/oscar-cli"
 
 [[footer_left]]
 name = "OpenAPI Specification"
-url = "https://grycap.github.io/oscar/api.html"
+url = "https://grycap.github.io/oscar/api/"
 
 
 # footer menu middle

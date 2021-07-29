@@ -38,7 +38,7 @@ In this use case, both functions run within the same OSCAR cluster, but they cou
 
 ##### Deploying your OSCAR cluster
 
-You can deploy your own OSCAR cluster using the [IM Dashboard](https://appsgrycap.i3m.upv.es:31443/im-dashboard/?filter=OSCAR) on your favourite cloud ([Guide](https://grycap.github.io/oscar/deploy-im-dashboard.html)).
+You can deploy your own OSCAR cluster using the [IM Dashboard](https://appsgrycap.i3m.upv.es:31443/im-dashboard/?filter=OSCAR) on your favourite cloud ([Guide](https://grycap.github.io/oscar/deploy-im-dashboard/)).
 
 ![image](../../images/blog/mask-detection-im-dashboard.png)
 
