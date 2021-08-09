@@ -1,6 +1,6 @@
 ---
 title: "Using OSCAR as a FaaS platform for scalable asynchronous inference of a machine learning model"
-date: 2021-08-05T09:00:00+01:00
+date: 2021-08-09T09:00:00+01:00
 # post image
 image: "images/blog/post-20210803-1/posenet.png"
 # post type (regular/featured)
@@ -15,7 +15,7 @@ OSCAR is a framework to efficiently support on-premises FaaS (Functions as a Ser
 
 To manage your elastic OSCAR cluster and define functions you have two options: either the [Oscar graphical user interface, i.e. OSCAR-GUI](https://grycap.github.io/oscar/usage/), or [a command line tool called OSCAR-CLI](https://github.com/grycap/oscar-cli). 
 
-In the following guide you are going to learn how to deploy a machine learning inference environment and to use it employing both tools. <!-- You  can also find a [YouTube]({{< relref "post-oscar-faas-scalable-ml-inference.md#youtube-video" >}}) video of the whole process below. -->
+In the following guide you are going to learn how to deploy a machine learning inference environment and to use it employing both tools. You  can also find a [YouTube]({{< relref "post-oscar-faas-scalable-ml-inference.md#youtube-video" >}}) video of the whole process below.
 
 Some useful information before beginning:
 
@@ -181,11 +181,10 @@ This is an example of the clues status while launching a batch of approximately 
 
 ![Clues status](../../images/blog/post-20210803-1/clues-status.png)
 
-<!--
 ### Youtube video
 
 Finally, here you have a follow along video including all the steps, enjoy!
 
-{{< youtube TBD >}}
--->
+{{< youtube bAkEA-kX9ps >}}
+
 [OSCAR](https://grycap.github.io/oscar/), [IM](http://www.grycap.upv.es/im), [EC3](https://github.com/grycap/ec3), and [CLUES](https://www.grycap.upv.es/clues/) tools shown on this post are developed by the [GRyCAP](https://www.grycap.upv.es/) research group at the [Universitat Politècnica de València](https://www.upv.es/).
