@@ -6,7 +6,7 @@ image: "images/blog/post-20210726-1/portada_blog_oscar_synergy.png"
 # post type (regular/featured)
 type: "featured"
 # meta description
-description: "This is meta description"
+description: "How to deploy an OSCAR cluster for serverless scientific computing in the EGI Cloud infrastructure"
 # post draft
 draft: false
 ---
