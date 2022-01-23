@@ -1,11 +1,20 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Latest News on OSCAR </title>
+    <title>Use Cases on OSCAR </title>
     <link>https://oscar.grycap.net/blog/</link>
-    <description>Recent content in Latest News on OSCAR </description>
+    <description>Recent content in Use Cases on OSCAR </description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Mon, 09 Aug 2021 09:00:00 +0100</lastBuildDate><atom:link href="https://oscar.grycap.net/blog/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 12 Jan 2022 18:00:00 +0100</lastBuildDate><atom:link href="https://oscar.grycap.net/blog/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>A Serverless Cloud-to-Edge Computing Continuum Approach for Edge AI inference</title>
+      <link>https://oscar.grycap.net/blog/post-oscar-cloud-to-edge-approach-for-edge-ai-inference/</link>
+      <pubDate>Wed, 12 Jan 2022 18:00:00 +0100</pubDate>
+      
+      <guid>https://oscar.grycap.net/blog/post-oscar-cloud-to-edge-approach-for-edge-ai-inference/</guid>
+      <description>OSCAR is an open-source framework for data-processing serverless computing. Users upload files to an object storage which invokes a function responsible for processing each file.</description>
+    </item>
+    
     <item>
       <title>Using OSCAR as a FaaS platform for scalable asynchronous inference of a machine learning model</title>
       <link>https://oscar.grycap.net/blog/post-oscar-faas-scalable-ml-inference/</link>
