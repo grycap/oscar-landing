@@ -18,7 +18,69 @@ enable = true
 label = "GitHub"
 link = "https://github.com/grycap/oscar"
 
-  
+
+
+#agradecimientos
+
+
+[[thanks]]
+label="Los agradecimientos"
+logo="images/logo-AEI.svg"
+width="120"
+height="120"
+[[thanks]]
+label="Los agradecimientos2"
+logo="images/logo-gob.svg"
+width="120"
+height="120"
+[[thanks]]
+label="Los agradecimientos2"
+logo="images/logo-ministerio-ciencia.svg"
+width="70"
+height="70"
+
+[[thanks]]
+label="Los agradecimientos2"
+logo="images/logo-nextgen.png"
+width="150"
+height="50"
+[[thanks]]
+label="Los agradecimientos2"
+logo="images/logo-PRTR2.png"
+width="120"
+height="50"
+
+#Elegir uno de los dos siguientes
+
+[[thankscommentary]]
+content="Esta/e publicación/resultado/equipamiento/video/actividad/contrato/otros es parte del/de la proyecto de I+D+i / ayuda Referencia del proyecto/ayuda, financiado/a por MCIN/AEI/10.13039/501100011033/ y según proceda: FEDER “Una manera de hacer Europa” o Financiado por la Unión Europea “NextGenerationEU”/PRTR."
+
+#[[thankscommentary]]
+#content="Proyecto o ayuda Referencia del/de la proyecto/ayuda financiado/a por MCIN/AEI/10.13039/501100011033 y según proceda: FEDER “Una manera de hacer Europa” o Financiado por la Unión Europea “NextGenerationEU”/PRTR."
+[[thankscommentary]]
+content="Ayuda 'Referencia de la ayuda' financiada por: Ministerio de Ciencia e Innovación, Agencia Estatal de Investigación, Financiado por la Unión Europea 'NextGenerationEU', y Plan de Recuperación,Transformación y Resiliencia(PRTR) "
+
+#[[thankscommentary]]
+#content="Ayuda Referencia de la ayuda financiada por: logotipo MCIN, logotipo AEI"
+
+#Confirmar
+#[[thankscommentary]]
+#content="Ayuda Referencia de la ayuda financiada por: logotipo MCIN, logotipo FEDER “Una manera de hacer Europa”, logotipo AEI."
+
+#[[thankscommentary]]
+#content="Ayuda Referencia de la ayuda financiada por: logotipo MCIN, logotipo FSE “El FSE invierte en tu futuro”, logotipo AEI."
+
+#[[thankscommentary]]
+#content="Ayuda Referencia de la ayuda financiada por: logotipo MCIN, logotipo “Financiado por la Unión Europea “NextGenerationEU”, logotipo PRTR, logotipo AEI."
+
+
+#[thanksgiven]
+#enable=true
+#label="Los agradecimientos3"
+#logo="images/logo-AEI.svg"
+#width="20%"
+#height="20%"
+
 ############################# social site ########################
 #[[social]]
 #title = "facebook"
