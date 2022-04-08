@@ -1,5 +1,6 @@
 {{ "<!-- navigation -->" | safeHTML }}
 <header class="navigation">
+
   <div class="container">
     <!-- navbar -->
     <nav class="navbar navbar-expand-lg navbar-light bg-transparent">
@@ -63,62 +64,14 @@
         <a href="{{ .link | relLangURL }}" title="{{ .label }}" class="btn btn-sm btn-primary ml-3">{{ .label }}</a>
         {{ end }}
         {{ end }}
-<!--
-        {{ if site.Params.thanksgiven.enable }}
-        {{ with site.Params.thanksgiven }}
-
-            <img src="{{.logo}}" width="{{.width}}" height="{{.height}}" alt="{{.label}}">
-        {{ end }}
-        {{ end }}
--->
-
-
-
-
 
         </div>
 
-
-
-
     </nav>
-
-    <nav class="navbar navbar-expand-lg navbar-light bg-transparent ">
-
-      <div class="collapse navbar-collapse text-center col-md-8  offset-md-2" id="navigation">
-            {{ with site.Params.thanks }}
-            <ul>
-              {{ range . }}
-              <li class="list-inline-item ">
-                <img src="{{.logo}}"
-                width="{{ .width }}"
-                height="{{ .height }}"
-                alt="{{.label}}"></li>
-              {{ end }}
-            </ul>
-            {{ end }}
-
-
-    </div>
-</nav>
-
-
-<nav class="navbar navbar-expand-lg navbar-light bg-transparent ">
-  <div class="collapse navbar-collapse text-center align-items-center" id="navigation">
-    {{ with site.Params.thankscommentary }}
-    <ul>
-      {{ range . }}
-      <li class="list-inline-item">
-      <p>{{.content}}</p></li>
-      {{ end }}
-      </ul>
-    {{ end }}
-
-  </div>
-</nav>
-
-
-
+    
+    {{if eq .RelPermalink "/"}}
+    {{ partial "thanks.html" . }}
+    {{end}}
 
 
 </header>
