@@ -52,13 +52,14 @@ height="50"
 
 #Elegir uno de los dos siguientes
 
-[[thankscommentary]]
-content="Esta/e publicación/resultado/equipamiento/video/actividad/contrato/otros es parte del/de la proyecto de I+D+i / ayuda Referencia del proyecto/ayuda, financiado/a por MCIN/AEI/10.13039/501100011033/ y según proceda: FEDER “Una manera de hacer Europa” o Financiado por la Unión Europea “NextGenerationEU”/PRTR."
-
 #[[thankscommentary]]
-#content="Proyecto o ayuda Referencia del/de la proyecto/ayuda financiado/a por MCIN/AEI/10.13039/501100011033 y según proceda: FEDER “Una manera de hacer Europa” o Financiado por la Unión Europea “NextGenerationEU”/PRTR."
+#content="Este resultado es parte del proyecto de I+D+i 'Referencia del proyecto', financiado por MCIN/AEI/10.13039/501100011033/ y Financiado por la Unión Europea “NextGenerationEU”/PRTR."
+
 [[thankscommentary]]
-content="Ayuda 'Referencia de la ayuda' financiada por: Ministerio de Ciencia e Innovación, Agencia Estatal de Investigación, Financiado por la Unión Europea 'NextGenerationEU', y Plan de Recuperación,Transformación y Resiliencia(PRTR) "
+#PDC2021-120844-I00
+content="Proyecto 'Referencia del/de la proyecto/ayuda'  financiado por Ministerio de Ciencia e Innovación, Agencia Estatal de Investigación/10.13039/501100011033 y por la Unión Europea “NextGenerationEU”/PRTR."
+#[[thankscommentary]]
+#content="Ayuda 'Referencia de la ayuda' financiada por: Ministerio de Ciencia e Innovación, Agencia Estatal de Investigación, Financiado por la Unión Europea 'NextGenerationEU', y Plan de Recuperación,Transformación y Resiliencia(PRTR) "
 
 #[[thankscommentary]]
 #content="Ayuda Referencia de la ayuda financiada por: logotipo MCIN, logotipo AEI"
