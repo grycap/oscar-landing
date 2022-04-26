@@ -20,7 +20,7 @@ link = "https://github.com/grycap/oscar"
 
 
 
-#agradecimientos
+#thanks
 
 
 [[thanks]]
@@ -40,7 +40,7 @@ width="70"
 height="70"
 
 [[thanks]]
-label="thanksto EU"
+label="thanks to EU"
 logo="images/logo-nextgen.png"
 width="150"
 height="50"
