@@ -1,5 +1,6 @@
 {{ "<!-- navigation -->" | safeHTML }}
 <header class="navigation">
+
   <div class="container">
     <!-- navbar -->
     <nav class="navbar navbar-expand-lg navbar-light bg-transparent">
@@ -33,7 +34,7 @@
           {{ end }}
           {{ end }}
 
-          <!-- Language List 
+          <!-- Language List
         {{ if .IsTranslated }}
         <select class="m-2 border-0" id="select-language" onchange="location = this.value;">
           {{ $siteLanguages := site.Languages}}
@@ -52,19 +53,21 @@
           {{ end }}
           {{ end }}
           {{ end }}
-        </select>        
+        </select>
         {{ end }}
         -->
         </ul>
-        
+
 
         {{ if site.Params.navigation_button.enable }}
         {{ with site.Params.navigation_button }}
         <a href="{{ .link | relLangURL }}" title="{{ .label }}" class="btn btn-sm btn-primary ml-3">{{ .label }}</a>
         {{ end }}
         {{ end }}
-      </div>
+
+        </div>
+
     </nav>
-  </div>
+
 </header>
 {{ "<!-- /navigation -->" | safeHTML }}
