@@ -13,37 +13,33 @@ draft: false
 
 
 
-This use case implements text to speech transform using the serverless platform OSCAR and [Google Speech](https://pypi.org/project/google-speech/) library, where introducing an input of text string or text file return an audio file.
+This use case implements text to speech transformation using the serverless platform OSCAR and [Google Speech](https://pypi.org/project/google-speech/) library, where an input of text string or text file returns an audio file.
 
-### Previews STEPs : Deploy the OSCAR cluster on an IaaS Cloud and install OSCAR-CLI
+### Previews STEPs: Deploy the OSCAR cluster on an IaaS Cloud and install OSCAR-CLI
 
 Follow the [deployment instructions](https://o-scar.readthedocs.io/en/latest/deploy.html). Or you can execute this script to install it locally.
 ```
 curl -L http://go.oscar.grycap.net | bash
 ```
 
-To create the function we are going to use the command line interface [OSCAR-CLI](https://docs.oscar.grycap.net/oscar-cli/).
+To create the function, we will use the command line interface [OSCAR-CLI](https://docs.oscar.grycap.net/oscar-cli/).
 
-
-
-Log in into the OSCAR UI using the [Default Service Endpoints](https://o-scar.readthedocs.io/en/latest/usage.html#default-service-endpoints) and access credentials. To verify the succesfull installation.
-
-![01-oscar-login.png](../../images/blog/post-text-to-speech/01-oscar-login.png)
+Tpng](../../images/blog/post-text-to-speech/01-oscar-login.png)
 
 
 
 
 ### STEP 1: Deploy the Service
 
-To deploy the service we are going to use OSCAR-CLI and the directory that we provide you [here](https://github.com/grycap/oscar/tree/master/examples/text-to-speech). You can open and see all the files:
-  * The Dockerfile creates a image from an ubuntu 20.04 container and installs all the dependencies, after that copies into the container the code we would like to execute
-  * Because it is a python program which is an interpreter language program we can open it and see the code inside. We are using the [Google Speech](https://pypi.org/project/google-speech/) library to convert text to speech
-  * The code that is going to execute inside the container when the services get invoked is the file script.sh and it will trigger the python program
-  * Last but not least the yaml file provide all the infrastructure to create the services
+We will use OSCAR-CLI and the directory we provide [you](https://github.com/grycap/oscar/tree/master/examples/text-to-speech) to deploy the service. You can open and see all the files:
+  * The Dockerfile creates an image from an ubuntu 20.04 container and installs all the dependencies.
+  * Because it is a python program, an interpreter language program, we can open it and see the code inside. We are using the [Google Speech](https://pypi.org/project/google-speech/) library to convert text to speech.
+  * The code that will execute inside the container when the services get invoked is the file "script.sh" and it will trigger the python program.
+  * Last but not least, the YAML file provides all the infrastructure to create the services.
 
-As an advise we can give you:
- * Dont change this two last files (script.sh and tss.yaml)
- * When you execute yaml file you should have both files in the same directory
+As an advice, we can give you:
+ * Don't change these two last files ("script.sh" and "tss.yaml")
+ * When you execute the YAML file, you should have both files in the same directory
 
 #### STEP 1.1: Get the file .yaml ready
 
@@ -75,7 +71,7 @@ functions:
 
 #### STEP 1.2: Use OSCAR-CLI to Deploy the Service
 
-To deploy the service use the command:
+To deploy the service, use the command:
 ```sh
 oscar-cli apply tts.yaml
 ```
@@ -85,7 +81,7 @@ oscar-cli apply tts.yaml
 
 ### STEP 2: Verify the Service
 
-After some minutes the service will be created. The input and output buckets will be automatically created as well. Verify that the service is up with the command:
+After some minutes, the service will be made. The input and output buckets will be automatically created as well. Verify that the service is up with the command:
 
 ```sh
 oscar-cli services list
@@ -96,13 +92,13 @@ oscar-cli services list
 
 ### STEP 3: Invoke the Service Synchronously And Access the Output Files
 
-To run the service synchronously use the command:
+To run the service synchronously, use the command:
 ```sh
 oscar-cli service run text-to-speech --text-input "Hello everyone"  --output "output.mp3"
 ```
-You also can pass a file text substituing the flag `--text-input {string}` to `--input {filepath}`
+You also can pass a file text substituting the flag `--text-input {string}` to `--input {filepath}`
 
-And if you have installed vlc and you want to play it use this one:
+And if you have installed vlc and you want to play it, use this one:
 ```sh
 oscar-cli service run text-to-speech --text-input "Hello everyone"  --output "output.mp3" && vlc output.mp3
 ```
@@ -111,12 +107,12 @@ oscar-cli service run text-to-speech --text-input "Hello everyone"  --output "ou
 
 #### STEP 3.1: Asynchronously
 
-You can trigger the service in an asynchronous way just uploading a file to a minio bucket in `text-to-speech/input` and the result can be found in `text-to-speech/output`. Input and output fields in yaml file could be remove if only we are going to use the services synchronously.
+You can asynchronously trigger the service by uploading a file to a minio bucket in `text-to-speech/input`, and the result can be found in `text-to-speech/output`. Input and output fields in the YAML file could be removed if only we are going to use the services synchronously.
 
 ### STEP 4: Remove the Function
 
 
-Once you have finished you could delete the service using the command:
+Once you have finished, you could delete the service using the command:
 
 ```sh
 oscar-cli services remove text-to-speech
