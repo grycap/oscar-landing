@@ -126,7 +126,7 @@ FILE_NAME=`basename $INPUT_FILE_PATH`
 OUTPUT_FILE="$TMP_OUTPUT_DIR/$FILE_NAME"
 ```
 
-If you just run a script like a program and don't need to add any files to the container, so this step and the first one are the same. In Dockerfile, you can comment on the line of COPY to make the image container lighter. But the dependencies will state the same.
+Suppose you can make your program run just with a script. You can change Dockerfile commenting the COPY line to make the image container lighter. The dependencies will be the same.
 
 
 
