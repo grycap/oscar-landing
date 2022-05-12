@@ -129,7 +129,6 @@ The following script is going to be executed inside the container when you trigg
 FILE_NAME=`basename $INPUT_FILE_PATH`
 OUTPUT_FILE="$TMP_OUTPUT_DIR/$FILE_NAME"
 ```
-
 If your use-case can run just with a script you can directly use a distribution base image, or if you only need to install some dependencies you can comment the COPY line in the Dockerfile to make the image lighter.
 
 
