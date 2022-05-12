@@ -130,7 +130,7 @@ FILE_NAME=`basename $INPUT_FILE_PATH`
 OUTPUT_FILE="$TMP_OUTPUT_DIR/$FILE_NAME"
 ```
 
-Suppose you can make your program run just with a script. You can change Dockerfile commenting the COPY line to make the image container lighter. The dependencies will be the same.
+If your use-case can run just with a script you can directly use a distribution base image, or if you only need to install some dependencies you can comment the COPY line in the Dockerfile to make the image lighter.
 
 
 ### STEP 6: Function Definition File

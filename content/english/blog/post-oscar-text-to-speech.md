@@ -6,44 +6,43 @@ image: "images/blog/post-text-to-speech/text-to-speech.jpg"
 # post type (regular/featured)
 type: "featured"
 # meta description
-description: "Using OSCAR invoke synchronously running both on edge and in an IaaS Cloud for Edge AI inference"
+description: "Using OSCAR's synchronous invocations to convert text to audio files"
 # post draft
 draft: false
 ---
 
 
+This use case implements text to speech transformation using the OSCAR serverless platform and the [Google Speech](https://pypi.org/project/google-speech/) library, where an input of plain text returns an audio file.
 
-This use case implements text to speech transformation using the serverless platform OSCAR and [Google Speech](https://pypi.org/project/google-speech/) library, where an input of text string or text file returns an audio file.
+### Previous step: Deploy the OSCAR cluster on an IaaS Cloud and install OSCAR-CLI
 
-### Previews STEPs: Deploy the OSCAR cluster on an IaaS Cloud and install OSCAR-CLI
+Follow the [deployment instructions with IM Dashboard](https://docs.oscar.grycap.net/deploy-im-dashboard/). Or you can execute this script to install it locally.
 
-Follow the [deployment instructions](https://o-scar.readthedocs.io/en/latest/deploy.html). Or you can execute this script to install it locally.
-```
+```bash
 curl -L http://go.oscar.grycap.net | bash
 ```
-
 To create the function, we will use the command line interface [OSCAR-CLI](https://docs.oscar.grycap.net/oscar-cli/).
 
-Tpng](../../images/blog/post-text-to-speech/01-oscar-login.png)
+![01-oscar-login.png](../../images/blog/post-text-to-speech/01-oscar-login.png)
 
 
 
 
 ### STEP 1: Deploy the Service
 
-We will use OSCAR-CLI and the directory we provide [you](https://github.com/grycap/oscar/tree/master/examples/text-to-speech) to deploy the service. You can open and see all the files:
-  * The Dockerfile creates an image from an ubuntu 20.04 container and installs all the dependencies.
-  * Because it is a python program, an interpreter language program, we can open it and see the code inside. We are using the [Google Speech](https://pypi.org/project/google-speech/) library to convert text to speech.
-  * The code that will execute inside the container when the services get invoked is the file "script.sh" and it will trigger the python program.
-  * Last but not least, the YAML file provides all the infrastructure to create the services.
+We will use OSCAR-CLI to deploy the use-case service, [this](https://github.com/grycap/oscar/tree/master/examples/text-to-speech) directory contains all the required files. You can open and see all the files:
+  * The Dockerfile to create our [text-to-speech container image](https://github.com/orgs/grycap/packages/container/package/text-to-speech), using ubuntu 20.04 as base image and installing all the required dependencies.
+  * Because it's implemented in Python, an interpreted programming language, we can open it and see the code inside. We are using the [Google Speech](https://pypi.org/project/google-speech/) library to convert text to speech.
+  * The user-script that will be executed inside the container when the service is triggered is in the file "script.sh" and it will start the Python program.
+  * Last but not least, the YAML-based Functions Definition File (FDL) provides the definition to create the service via oscar-cli.
 
 As an advice, we can give you:
  * Don't change these two last files ("script.sh" and "tss.yaml")
- * When you execute the YAML file, you should have both files in the same directory
+ * When you execute the YAML file, you should have the script in the same directory
 
-#### STEP 1.1: Get the file .yaml ready
+#### STEP 1.1: Get the .yaml file ready
 
-Check in the yaml file that the cluster name exist(as well OSCAR-CLI has to be configured with the same cluster name) and select in which language you want to hear the voice. If you do not know the code language, you will found it in this [page](https://www.andiamo.co.uk/resources/iso-language-codes/).
+Check in the yaml file that the cluster identifier is defined (as well as OSCAR-CLI has to be configured with the same cluster identifier) and set the "language" environment variable to the language you want to hear the output voice. If you do not know the language code, you will found it [here](https://www.andiamo.co.uk/resources/iso-language-codes/).
 
 ```
 functions:
@@ -81,10 +80,10 @@ oscar-cli apply tts.yaml
 
 ### STEP 2: Verify the Service
 
-After some minutes, the service will be made. The input and output buckets will be automatically created as well. Verify that the service is up with the command:
+After some seconds, the service will be created. The input and output buckets will be automatically created as well. Verify that the service is up with the command:
 
 ```sh
-oscar-cli services list
+oscar-cli service list
 ```
 
 ![04-oscar-checkServices.png](../../images/blog/post-text-to-speech/04-oscar-checkServices.png)
@@ -93,29 +92,33 @@ oscar-cli services list
 ### STEP 3: Invoke the Service Synchronously And Access the Output Files
 
 To run the service synchronously, use the command:
+
 ```sh
 oscar-cli service run text-to-speech --text-input "Hello everyone"  --output "output.mp3"
 ```
-You also can pass a file text substituting the flag `--text-input {string}` to `--input {filepath}`
 
-And if you have installed vlc and you want to play it, use this one:
+You also can pass a text file by substituting the flag `--text-input {string}` to `--input {filepath}`
+
+And if you have installed vlc and you want to directly play the result, use this one:
+
 ```sh
 oscar-cli service run text-to-speech --text-input "Hello everyone"  --output "output.mp3" && vlc output.mp3
 ```
+
 ![05-oscar-run.png](../../images/blog/post-text-to-speech/05-oscar-run.png)
 
 
 #### STEP 3.1: Asynchronously
 
-You can asynchronously trigger the service by uploading a file to a minio bucket in `text-to-speech/input`, and the result can be found in `text-to-speech/output`. Input and output fields in the YAML file could be removed if only we are going to use the services synchronously.
+You can also trigger the service asynchronously by uploading a text file to a minio bucket in `text-to-speech/input` and, when the execution finishes, the result file can be found in `text-to-speech/output`. Input and output fields in the YAML file could be removed if we are only going to use the service synchronously.
+
 
 ### STEP 4: Remove the Function
-
 
 Once you have finished, you could delete the service using the command:
 
 ```sh
-oscar-cli services remove text-to-speech
+oscar-cli service remove text-to-speech
 ```
 
 ![06-oscar-remove.png](../../images/blog/post-text-to-speech/06-oscar-remove.png)
