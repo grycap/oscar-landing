@@ -6,20 +6,20 @@ image: "/images/oscar3-logo-trans.png"
 # post type (regular/featured)
 type: "featured"
 # meta description
-description: "This is a guide to show developers how to create their first service in OSCAR."
+description: "This is a guide for developers to create their first service in OSCAR."
 # post draft
 draft: false
 ---
 
 
-This is a step by step guide to show developers how to create their first service in OSCAR. Once you see it, you will know to do it faster.
+This is a step by step guide to show developers how to create their first service in OSCAR. 
 
 
 ### Previous steps:
 
 #### Deploy the OSCAR cluster
 
-Follow the [deployment instructions with IM Dashboard](https://docs.oscar.grycap.net/deploy-im-dashboard/). Or you can execute this script to install it locally.
+Follow the [deployment instructions with the IM Dashboard](https://docs.oscar.grycap.net/deploy-im-dashboard/). Alternatively, you can execute this script to install it locally.
 
 ```bash
 curl -L http://go.oscar.grycap.net | bash
