@@ -91,7 +91,7 @@ oscar-cli service list
 To run the service synchronously, use the command:
 
 ```sh
-oscar-cli service run text-to-speech --text-input "Hello everyone"  --output "output.mp3"
+oscar-cli service run text-to-speech --text-input "Hello everyone"  --output output.mp3
 ```
 
 You also can pass a text file by substituting the flag `--text-input {string}` to `--input {filepath}`
@@ -99,7 +99,7 @@ You also can pass a text file by substituting the flag `--text-input {string}` t
 And if you have installed vlc and you want to directly play the result, use this one:
 
 ```sh
-oscar-cli service run text-to-speech --text-input "Hello everyone"  --output "output.mp3" && vlc output.mp3
+oscar-cli service run text-to-speech --text-input "Hello everyone"  --output output.mp3 && vlc output.mp3
 ```
 
 ![05-oscar-run.png](../../images/blog/post-text-to-speech/05-oscar-run.png)
