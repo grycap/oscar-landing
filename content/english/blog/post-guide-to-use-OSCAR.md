@@ -2,7 +2,7 @@
 title: "Guide to create a service in OSCAR"
 date: 2022-05-10T09:00:00+01:00
 # post image
-image: "/images/oscar3-logo-trans.png"
+image: "/images/blog/post-guide-to-use-OSCAR/main.jpeg"
 # post type (regular/featured)
 type: "featured"
 # meta description
