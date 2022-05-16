@@ -1,5 +1,5 @@
 ---
-title: "Convert Text to Speech with OSCAR"
+title: "Convert Text to Speech with Google Speech within OSCAR"
 date: 2022-05-09T18:00:00+01:00
 # post image
 image: "images/blog/post-text-to-speech/text-to-speech.jpg"
@@ -19,7 +19,7 @@ This use case implements text to speech transformation using the OSCAR serverles
 Follow the [deployment instructions with IM Dashboard](https://docs.oscar.grycap.net/deploy-im-dashboard/). Or you can execute this script to install it locally.
 
 ```bash
-curl -L http://go.oscar.grycap.net | bash
+curl -sSL http://go.oscar.grycap.net | bash
 ```
 To create the function, we will use the command line interface [OSCAR-CLI](https://docs.oscar.grycap.net/oscar-cli/).
 
@@ -109,6 +109,9 @@ oscar-cli service run text-to-speech --text-input "Hello everyone"  --output out
 
 You can also trigger the service asynchronously by uploading a text file to a MinIO bucket in `text-to-speech/input` and, when the execution finishes, the result file can be found in `text-to-speech/output`. Input and output fields in the YAML file can be removed if we are only going to use the service synchronously.
 
+```sh
+oscar-cli service put-file text-to-speech $STORAGE_PROVIDER $LOCAL_FILE $REMOTE_FILE /home
+```
 
 ### STEP 4: Remove the Function
 

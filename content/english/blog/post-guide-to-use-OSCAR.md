@@ -22,7 +22,7 @@ This is a step by step guide to show developers how to create their first servic
 Follow the [deployment instructions with the IM Dashboard](https://docs.oscar.grycap.net/deploy-im-dashboard/). Alternatively, you can execute this script to install it locally.
 
 ```bash
-curl -L http://go.oscar.grycap.net | bash
+curl -sSL http://go.oscar.grycap.net | bash
 ```
 
 Log in to the OSCAR UI using the previously provided credentials to verify that the cluster has been successfully deployed.
