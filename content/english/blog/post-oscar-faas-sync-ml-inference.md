@@ -23,6 +23,8 @@ The example is going to be focused on synchronous invocations. OSCAR supports tw
 
 * Synchronous: The user invokes the service by sending the content of the file to be processed and, instead of creating a Kubernetes job per invocation, the HTTP client, or oscar-cli, waits until the execution finishes. To manage this, a serverless backend is required, OSCAR currently supports [Knative](https://knative.dev) and [OpenFaaS](https://www.openfaas.com/). In this method, the result file is returned in the response and, optionally, it could be stored into an output bucket.
 
+![Synchronous invocations diagram](../../images/blog/post-20220516-1/oscar-sync.png)
+
 <!--- 3. Explicar si el cluster es local o se ha usado i3m (referenciar documentación de como usar) --->
 In order to deploy the OSCAR cluster to go ahead with this example, you can either use a local deployment for testing ([How to test OSCAR localy here](https://docs.oscar.grycap.net/local-testing/)) or the GRyCAP Infrastructure Manager's Dashboard (IM Dashboard) ([How to deploy OSCAR with the IM Dashboard here](https://docs.oscar.grycap.net/deploy-im-dashboard/)).
 
