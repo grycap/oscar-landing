@@ -11,11 +11,7 @@ description: "How to use oscar-cli to deploy and use an inference deep learning 
 draft: false
 ---
 
-<!--- TODO 1. Hablar sobre el modelo del ejemplo -> This example ... --->
-
-This guide aims to show the usage of the OSCAR platform for Machine Learning inference using a pre-trained Convolutional Neural network classification model by DEEP-Hybrid-DataCloud: the [Plants species classifier](https://marketplace.deep-hybrid-datacloud.eu/modules/deep-oc-plants-classification-tf.html), to classify plant pictures by specie. The PREDICT method works with an RGB image as input and returns a JSON with the top 5 predictions of the plant's specie.
-
-<!--- 2. Hablar sobre las invocaciones síncronas (referenciar post con invocaciones asíncronas) --->
+This guide aims to show the usage of the OSCAR platform for Machine Learning inference using a pre-trained Convolutional Neural network classification model by [DEEP-Hybrid-DataCloud](https://deep-hybrid-datacloud.eu/): the [Plants species classifier](https://marketplace.deep-hybrid-datacloud.eu/modules/deep-oc-plants-classification-tf.html), to classify plant pictures by specie. The PREDICT method works with an RGB image as input and returns a JSON with the top 5 predictions of the plant's specie.
 
 The example is going to be focused on synchronous invocations. OSCAR supports two types of invocations:
 
@@ -25,15 +21,14 @@ The example is going to be focused on synchronous invocations. OSCAR supports tw
 
 ![Synchronous invocations diagram](../../images/blog/post-20220516-1/oscar-sync.png)
 
-<!--- 3. Explicar si el cluster es local o se ha usado i3m (referenciar documentación de como usar) --->
 In order to deploy the OSCAR cluster to go ahead with this example, you can either use a local deployment for testing ([How to test OSCAR localy here](https://docs.oscar.grycap.net/local-testing/)) or the GRyCAP Infrastructure Manager's Dashboard (IM Dashboard) ([How to deploy OSCAR with the IM Dashboard here](https://docs.oscar.grycap.net/deploy-im-dashboard/)).
-
 
 OSCAR services can be invoked synchronously in two ways: using the `oscar-cli` or making a HTTP request to the [OSCAR API](https://docs.oscar.grycap.net/api/). 
 This example shows how to use `oscar-cli` to deploy and invoke your function. You can see how to install `oscar-cli` [here](https://github.com/grycap/oscar-cli).
 
-<!--- 4. Pasos con oscar-cli  --->
 ### Steps using oscar-cli
+
+*All the required files to deploy this example can be found on the [OSCAR github repository](https://github.com/grycap/oscar/tree/master/examples/plant-classification-sync).*
 
 **Step 1:** Add the cluster to the `oscar-cli` list of clusters. 
 ``` bash
@@ -42,7 +37,7 @@ $ oscar-cli cluster add [IDENTIFIER] [ENDPOINT] [USERNAME] {PASSWORD | --passwor
 Where:
 * `IDENTIFIER` is the name of your cluster.
 * `ENDPOINT` is the URL where OSCAR is exposed.
-* `USERNAME` and PASSWORD are the values you chose when deploying your cluster.
+* `USERNAME` and `PASSWORD` are the values you chose when deploying your cluster.
 
 **Step 2:** Create the service(s) defined in the [OSCAR's FDL (Functions Definition Language)](https://docs.oscar.grycap.net/fdl/) YAML with the following command, where `FDL_FILE` is the name of the FDL file.
 
@@ -53,7 +48,7 @@ $ oscar-cli apply [FDL_FILE]
 You can see below the definition of the service for this example alongside with the script to be executed on the service container. 
 
 Some important things to outline on this definition:
-* As you can see, there is no need to specify an input storage. This is because, as mentioned before, synchronous functions aren't triggered by uploading files to a bucket but with an explicit request.
+* As you can see, there is no need to specify an input storage. This is because, as mentioned before, synchronous functions aren't triggered by uploading files to a bucket but with an explicit request. Additionally, the storage of the output on synchronous invocations is optional, so it is not specified in this definition.
 * To get the correct output, synchronous services need to set the parameter `log_level: CRITICAL` in order to avoid logs mixed within the output. This can also be done on the OSCAR user interface either during the service creation or afterwards by editing such service.
 
 ``` yaml
@@ -66,9 +61,6 @@ functions:
       image: deephdc/deep-oc-plants-classification-tf
       log_level: CRITICAL
       script: plants-sync.sh
-      output:
-      - storage_provider: minio.default
-        path: plants-sync/output
 ```
 
 ``` bash
@@ -83,11 +75,9 @@ mv $INPUT_FILE_PATH "$INPUT_FILE_PATH.jpg"
 echo "SCRIPT: Invoked deepaas-predict command. File available in $INPUT_FILE_PATH." 
 deepaas-predict -i "$INPUT_FILE_PATH.jpg" -o $OUTPUT_FILE
 ```
-<!--- 5. Referenciar a documentación para ejemplo de uso de la interfaz oscar (?)  --->
 
 **_Note:_** *This process so far can be made with the OSCAR-UI as it is shown on the [asynchronous example](https://oscar.grycap.net/blog/post-oscar-faas-scalable-ml-inference/) mentioned before.*
 
-<!--- 6. Ejecución de la función --->
 **Step 3:** Invoke the function.
 
 Using OSCAR-CLI you can run the following command to invoke the function:
