@@ -110,7 +110,7 @@ oscar-cli service run text-to-speech --text-input "Hello everyone"  --output out
 You can also trigger the service asynchronously by uploading a text file to a MinIO bucket in `text-to-speech/input` and, when the execution finishes, the result file can be found in `text-to-speech/output`. Input and output fields in the YAML file can be removed if we are only going to use the service synchronously.
 
 ```sh
-oscar-cli service put-file text-to-speech $STORAGE_PROVIDER $LOCAL_FILE $REMOTE_FILE /home
+oscar-cli service put-file text-to-speech $STORAGE_PROVIDER $LOCAL_FILE $REMOTE_FILE
 ```
 
 ### STEP 4: Remove the Function
@@ -125,3 +125,4 @@ oscar-cli service remove text-to-speech
 
 
 [OSCAR](https://grycap.github.io/oscar/), [IM](http://www.grycap.upv.es/im), [EC3](https://github.com/grycap/ec3), and [CLUES](https://www.grycap.upv.es/clues/) are developed by the [GRyCAP](https://www.grycap.upv.es/) research group at the [Universitat Politècnica de València](https://www.upv.es/).
+oscar-cli service put-file text-to-speech $STORAGE_PROVIDER $LOCAL_FILE $REMOTE_FILE /home
