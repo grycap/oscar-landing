@@ -93,9 +93,22 @@ $ curl --location --request POST 'https://[CLUSTER_ENDPOINT]/run/[SERVICE_NAME]'
 --header 'Authorization: Bearer [TOKEN]' \
 --form '="[FILE]"'
 ```
-So, in this example, with a plant image as input, the result would be a JSON such as the one shown below.
 
-![Service invocation](../../images/blog/post-20220516-1/service-invocation-example.png)
+**_Note:_** *`FILE` parameter must be a base64 payload of the input file.*
+
+To summarize, and making use of the example from the OSCAR repository, the steps to perform a synchronous invocation would be as follows:
+
+1. Creating the service.
+
+![Service creation](../../images/blog/post-20220516-1/service-creation.png)
+
+2. Running the service.
+
+![Service invocation](../../images/blog/post-20220516-1/service-run.png)
+   
+So, with the plant picture `image3.jpg` as input, the result would be a JSON such as the one shown beautified below.
+
+![Result of the execution](../../images/blog/post-20220516-1/service-invocation-example.png)
 
 **_Note:_** 
 -  *For more information about the usage of `oscar-cli` visit [OSCAR Documentation - oscar-cli](https://docs.oscar.grycap.net/oscar-cli/)*
