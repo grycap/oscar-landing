@@ -54,10 +54,10 @@ $ oscar-cli apply FDL_FILE
 ```
 In order to use the function of this example, the command would be as it follows.
 ```bash
-$ oscar-cli apply function.yaml
+$ oscar-cli apply plant-classification-sync.yaml
 ```
 
-You can see below the definition of the service for this example, that is the content of the function.yaml file, alongside with the script to be executed on the service container. 
+You can see below the definition of the service for this example, that is the content of the `plant-classification-sync.yaml` file, alongside with the script to be executed on the service container. 
 
 Some important things to outline on this definition:
 * As you can see, there is no need to specify an input storage. This is because, as mentioned before, synchronous functions aren't triggered by uploading files to a bucket but with an explicit request. Additionally, the storage of the output on synchronous invocations is optional, so it is not specified in this definition.
