@@ -31,21 +31,33 @@ This example shows how to use `oscar-cli` to deploy and invoke your function. Yo
 *All the required files to deploy this example can be found on the [OSCAR github repository](https://github.com/grycap/oscar/tree/master/examples/plant-classification-sync).*
 
 **Step 1:** Add the cluster to the `oscar-cli` list of clusters. 
+
+You can add a cluster to the `oscar-cli` list of clusters with the command
 ``` bash
 $ oscar-cli cluster add [IDENTIFIER] [ENDPOINT] [USERNAME] {PASSWORD | --password-stdin} [flags]
 ```
-Where:
+where:
 * `IDENTIFIER` is the name of your cluster.
 * `ENDPOINT` is the URL where OSCAR is exposed.
 * `USERNAME` and `PASSWORD` are the values you chose when deploying your cluster.
 
-**Step 2:** Create the service(s) defined in the [OSCAR's FDL (Functions Definition Language)](https://docs.oscar.grycap.net/fdl/) YAML with the following command, where `FDL_FILE` is the name of the FDL file.
+For example, if we have a local cluster with the name `oscar-cluster` and `oscar` as username and password (which is not a recommendable password), the command to add the cluster would look something like this:
 
 ``` bash
-$ oscar-cli apply [FDL_FILE]
+$ oscar-cli cluster add oscar-cluster "https://localhost" oscar oscar
 ```
 
-You can see below the definition of the service for this example alongside with the script to be executed on the service container. 
+**Step 2:** Create the service(s) defined in the [OSCAR's FDL (Functions Definition Language)](https://docs.oscar.grycap.net/fdl/) YAML with the following command, where `FDL_FILE` is the name of the FDL file. 
+
+```bash
+$ oscar-cli apply FDL_FILE
+```
+In order to use the function of this example, the command would be as it follows.
+```bash
+$ oscar-cli apply function.yaml
+```
+
+You can see below the definition of the service for this example, that is the content of the function.yaml file, alongside with the script to be executed on the service container. 
 
 Some important things to outline on this definition:
 * As you can see, there is no need to specify an input storage. This is because, as mentioned before, synchronous functions aren't triggered by uploading files to a bucket but with an explicit request. Additionally, the storage of the output on synchronous invocations is optional, so it is not specified in this definition.
@@ -80,13 +92,27 @@ deepaas-predict -i "$INPUT_FILE_PATH.jpg" -o $OUTPUT_FILE
 
 **Step 3:** Invoke the function.
 
-Using OSCAR-CLI you can run the following command to invoke the function:
+The command to invoke a function through OSCAR-CLI is at it follows.
 
 ``` bash
 $ oscar-cli service run [SERVICE_NAME] {--input | --text-input}
 ```
 
-Besides that, if you want to make the invocation whithin the API, you need to get first the authorization token. It can be found on the OSCAR UI by accessing service or by command line running `oscar-cli service get [SERVICE_NAME]`.
+To invoke the example service using an image from the example repository you can run one of the following commands, depending on the way you want to get the output.  
+
+``` bash
+# Invocation of "plants-sync" service
+$ oscar-cli service run plants-sync --input images/image3.jpg
+
+# Invocation of "plants-sync" service storing the result
+$ oscar-cli service run plants-sync --input images/image3.jpg --output image3-output.json
+```
+
+So, with the plant picture `image3.jpg` as input, the result would be a JSON such as the one shown beautified below.
+
+![Result of the execution](../../images/blog/post-20220516-1/service-invocation-example.png)
+
+Besides that, if you want to make the invocation whithin the API, you need to get first the authorization token. It can be found on the OSCAR UI by accessing the service or by command line running `oscar-cli service get [SERVICE_NAME]`.
 
 ``` bash
 $ curl --location --request POST 'https://[CLUSTER_ENDPOINT]/run/[SERVICE_NAME]' \
@@ -96,19 +122,13 @@ $ curl --location --request POST 'https://[CLUSTER_ENDPOINT]/run/[SERVICE_NAME]'
 
 **_Note:_** *`FILE` parameter must be a base64 payload of the input file.*
 
-To summarize, and making use of the example from the OSCAR repository, the steps to perform a synchronous invocation would be as follows:
+Following the example of a local test cluster and a service called `plants-sync` the API call would look as follows:
 
-1. Creating the service.
-
-![Service creation](../../images/blog/post-20220516-1/service-creation.png)
-
-2. Running the service.
-
-![Service invocation](../../images/blog/post-20220516-1/service-run.png)
-   
-So, with the plant picture `image3.jpg` as input, the result would be a JSON such as the one shown beautified below.
-
-![Result of the execution](../../images/blog/post-20220516-1/service-invocation-example.png)
+``` bash
+$ curl --location --request POST 'https://localhost/run/plants-sync' \
+--header 'Authorization: Bearer [some token]' \
+--form '="[some base64 payload]"'
+```
 
 **_Note:_** 
 -  *For more information about the usage of `oscar-cli` visit [OSCAR Documentation - oscar-cli](https://docs.oscar.grycap.net/oscar-cli/)*
