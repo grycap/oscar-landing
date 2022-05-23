@@ -67,12 +67,12 @@ Some important things to outline on this definition:
 functions:
   oscar:
   - oscar-cluster:
-      name: plants-sync
+      name: plant-classification-sync
       memory: 2Gi
       cpu: '1.0'
       image: deephdc/deep-oc-plants-classification-tf
       log_level: CRITICAL
-      script: plants-sync.sh
+      script: script.sh
 ```
 
 ``` bash
@@ -101,11 +101,11 @@ $ oscar-cli service run [SERVICE_NAME] {--input | --text-input}
 To invoke the example service using an image from the example repository you can run one of the following commands, depending on the way you want to get the output.  
 
 ``` bash
-# Invocation of "plants-sync" service
-$ oscar-cli service run plants-sync --input images/image3.jpg
+# Invocation of "plant-classification-sync" service
+$ oscar-cli service run plant-classification-sync --input images/image3.jpg
 
-# Invocation of "plants-sync" service storing the result
-$ oscar-cli service run plants-sync --input images/image3.jpg --output image3-output.json
+# Invocation of "plant-classification-sync" service storing the result
+$ oscar-cli service run plant-classification-sync --input images/image3.jpg --output image3-output.json
 ```
 
 So, with the plant picture `image3.jpg` as input, the result would be a JSON such as the one shown beautified below.
@@ -122,10 +122,10 @@ $ curl --location --request POST 'https://[CLUSTER_ENDPOINT]/run/[SERVICE_NAME]'
 
 **_Note:_** *`FILE` parameter must be a base64 payload of the input file.*
 
-Following the example of a local test cluster and a service called `plants-sync` the API call would look as follows:
+Following the example of a local test cluster and a service called `plant-classification-sync` the API call would look as follows:
 
 ``` bash
-$ curl --location --request POST 'https://localhost/run/plants-sync' \
+$ curl --location --request POST 'https://localhost/run/plant-classification-sync' \
 --header 'Authorization: Bearer [some token]' \
 --form '="[some base64 payload]"'
 ```
