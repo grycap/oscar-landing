@@ -50,8 +50,7 @@ Coqui only uses the command line:
 
 Check in the YAML file that the cluster identifier is defined (OSCAR-CLI must be configured with the same cluster identifier).In the Google speech library, the example must be set the "language" environment variable to the language you want to hear the output voice. If you do not know the language code, it can be found [here](https://www.andiamo.co.uk/resources/iso-language-codes/).
 
-
-```
+``` yaml
 functions:
   oscar:
   - oscar-cluster:
@@ -72,7 +71,7 @@ functions:
           language: en
 ```
 
-```
+``` yaml
 functions:
   oscar:
   - oscar-cluster:
@@ -94,7 +93,7 @@ functions:
 
 To deploy the service, use the command:
 
-```
+``` sh
 oscar-cli apply $YAML_file
 
 ```
@@ -134,9 +133,12 @@ oscar-cli service run $service_name --text-input "Hello everyone"  --output outp
 The service can be triggered asynchronously by uploading a text file to a MinIO bucket in `text-to-speech-google/input` or `text-to-speech-coqui/input`. When the execution finishes, the result file can be found in `text-to-speech-google/output` or `text-to-speech-coqui/input`. Input and output fields in the YAML file can be removed if we are only going to use the service synchronously.
 
 ```sh
-oscar-cli service put-file text-to-speech $STORAGE_PROVIDER $LOCAL_FILE $REMOTE_FILE
+oscar-cli service put-file text-to-speech-google $STORAGE_PROVIDER $LOCAL_FILE $REMOTE_FILE
 ```
 
+```sh
+oscar-cli service put-file text-to-speech-coqui $STORAGE_PROVIDER $LOCAL_FILE $REMOTE_FILE
+```
 
 ### STEP 4: Remove the Function
 
@@ -147,6 +149,5 @@ oscar-cli service remove $service_name
 ```
 
 ![06-oscar-remove.png](../../images/blog/post-text-to-speech/06-oscar-remove.png)
-
 
 [OSCAR](https://grycap.github.io/oscar/), [IM](http://www.grycap.upv.es/im), [EC3](https://github.com/grycap/ec3), and [CLUES](https://www.grycap.upv.es/clues/) are developed by the [GRyCAP](https://www.grycap.upv.es/) research group at the [Universitat Politècnica de València](https://www.upv.es/).
