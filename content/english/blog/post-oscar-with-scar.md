@@ -2,7 +2,7 @@
 title: "Deploy functions in OSCAR and AWS Lambda through SCAR"
 date: 2022-05-09T18:00:00+01:00
 # post image
-image: "images/blog/post-text-to-speech/text-to-speech.jpg"
+image: "images/blog/post-oscar-with-scar/scar.png"
 # post type (regular/featured)
 type: "featured"
 # meta description
