@@ -115,19 +115,17 @@ So, with the plant picture `image3.jpg` as input, the result would be a JSON suc
 Besides that, if you want to make the invocation whithin the API, you need to get first the authorization token. It can be found on the OSCAR UI by accessing the service or by command line running `oscar-cli service get [SERVICE_NAME]`.
 
 ``` bash
-$ curl --location --request POST 'https://[CLUSTER_ENDPOINT]/run/[SERVICE_NAME]' \
+$ curl --insecure --request POST 'https://[CLUSTER_ENDPOINT]/run/[SERVICE_NAME]' \
 --header 'Authorization: Bearer [TOKEN]' \
---form '="[FILE]"'
+--data '="[FILE]"'
 ```
 
-**_Note:_** *`FILE` parameter must be a base64 payload of the input file.*
-
-Following the example of a local test cluster and a service called `plant-classification-sync` the API call would look as follows:
+The requests needs as parameter the file to process encoded in base64, so following the example of a local test cluster and a service called `plant-classification-sync`, using `image3.jpg` as input, the API call would look as follows:
 
 ``` bash
-$ curl --location --request POST 'https://localhost/run/plant-classification-sync' \
---header 'Authorization: Bearer [some token]' \
---form '="[some base64 payload]"'
+$ base64 images/image3.jpg | curl --insecure --request POST 'https://<YOUR CLUSTER ENDPOINT>/run/plant-classification-sync' \
+--header 'Authorization: Bearer <YOUR TOKEN>' \
+--data @- | base64 -d
 ```
 
 **_Note:_** 
