@@ -187,16 +187,21 @@ This example shows how to use <code>oscar-cli</code> to deploy and invoke your f
 <h3 id="steps-using-oscar-cli">Steps using oscar-cli</h3>
 <p><em>All the required files to deploy this example can be found on the <a href="https://github.com/grycap/oscar/tree/master/examples/plant-classification-sync">OSCAR github repository</a>.</em></p>
 <p><strong>Step 1:</strong> Add the cluster to the <code>oscar-cli</code> list of clusters.</p>
+<p>You can add a cluster to the <code>oscar-cli</code> list of clusters with the command</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ oscar-cli cluster add <span style="color:#f92672">[</span>IDENTIFIER<span style="color:#f92672">]</span> <span style="color:#f92672">[</span>ENDPOINT<span style="color:#f92672">]</span> <span style="color:#f92672">[</span>USERNAME<span style="color:#f92672">]</span> <span style="color:#f92672">{</span>PASSWORD | --password-stdin<span style="color:#f92672">}</span> <span style="color:#f92672">[</span>flags<span style="color:#f92672">]</span>
-</code></pre></div><p>Where:</p>
+</code></pre></div><p>where:</p>
 <ul>
 <li><code>IDENTIFIER</code> is the name of your cluster.</li>
 <li><code>ENDPOINT</code> is the URL where OSCAR is exposed.</li>
 <li><code>USERNAME</code> and <code>PASSWORD</code> are the values you chose when deploying your cluster.</li>
 </ul>
-<p><strong>Step 2:</strong> Create the service(s) defined in the <a href="https://docs.oscar.grycap.net/fdl/">OSCAR&rsquo;s FDL (Functions Definition Language)</a> YAML with the following command, where <code>FDL_FILE</code> is the name of the FDL file.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ oscar-cli apply <span style="color:#f92672">[</span>FDL_FILE<span style="color:#f92672">]</span>
-</code></pre></div><p>You can see below the definition of the service for this example alongside with the script to be executed on the service container.</p>
+<p>For example, if we have a local cluster with the name <code>oscar-cluster</code> and <code>oscar</code> as username and password (which is not a recommendable password), the command to add the cluster would look something like this:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ oscar-cli cluster add oscar-cluster <span style="color:#e6db74">&#34;https://localhost&#34;</span> oscar oscar
+</code></pre></div><p><strong>Step 2:</strong> Create the service(s) defined in the <a href="https://docs.oscar.grycap.net/fdl/">OSCAR&rsquo;s FDL (Functions Definition Language)</a> YAML with the following command, where <code>FDL_FILE</code> is the name of the FDL file.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ oscar-cli apply FDL_FILE
+</code></pre></div><p>In order to use the function of this example, the command would be as it follows.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ oscar-cli apply plant-classification-sync.yaml
+</code></pre></div><p>You can see below the definition of the service for this example, that is the content of the <code>plant-classification-sync.yaml</code> file, alongside with the script to be executed on the service container.</p>
 <p>Some important things to outline on this definition:</p>
 <ul>
 <li>As you can see, there is no need to specify an input storage. This is because, as mentioned before, synchronous functions aren&rsquo;t triggered by uploading files to a bucket but with an explicit request. Additionally, the storage of the output on synchronous invocations is optional, so it is not specified in this definition.</li>
@@ -205,12 +210,12 @@ This example shows how to use <code>oscar-cli</code> to deploy and invoke your f
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#f92672">functions</span>:
   <span style="color:#f92672">oscar</span>:
   - <span style="color:#f92672">oscar-cluster</span>:
-      <span style="color:#f92672">name</span>: <span style="color:#ae81ff">plants-sync</span>
+      <span style="color:#f92672">name</span>: <span style="color:#ae81ff">plant-classification-sync</span>
       <span style="color:#f92672">memory</span>: <span style="color:#ae81ff">2Gi</span>
       <span style="color:#f92672">cpu</span>: <span style="color:#e6db74">&#39;1.0&#39;</span>
       <span style="color:#f92672">image</span>: <span style="color:#ae81ff">deephdc/deep-oc-plants-classification-tf</span>
       <span style="color:#f92672">log_level</span>: <span style="color:#ae81ff">CRITICAL</span>
-      <span style="color:#f92672">script</span>: <span style="color:#ae81ff">plants-sync.sh</span>
+      <span style="color:#f92672">script</span>: <span style="color:#ae81ff">script.sh</span>
 </code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e">#!/bin/bash
 </span><span style="color:#75715e"></span>
 IMAGE_NAME<span style="color:#f92672">=</span><span style="color:#e6db74">`</span>basename $INPUT_FILE_PATH<span style="color:#e6db74">`</span>
@@ -223,15 +228,25 @@ echo <span style="color:#e6db74">&#34;SCRIPT: Invoked deepaas-predict command. F
 deepaas-predict -i <span style="color:#e6db74">&#34;</span>$INPUT_FILE_PATH<span style="color:#e6db74">.jpg&#34;</span> -o $OUTPUT_FILE
 </code></pre></div><p><strong><em>Note:</em></strong> <em>This process so far can be made with the OSCAR-UI as it is shown on the <a href="https://oscar.grycap.net/blog/post-oscar-faas-scalable-ml-inference/">asynchronous example</a> mentioned before.</em></p>
 <p><strong>Step 3:</strong> Invoke the function.</p>
-<p>Using OSCAR-CLI you can run the following command to invoke the function:</p>
+<p>The command to invoke a function through OSCAR-CLI is at it follows.</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ oscar-cli service run <span style="color:#f92672">[</span>SERVICE_NAME<span style="color:#f92672">]</span> <span style="color:#f92672">{</span>--input | --text-input<span style="color:#f92672">}</span>
-</code></pre></div><p>Besides that, if you want to make the invocation whithin the API, you need to get first the authorization token. It can be found on the OSCAR UI by accessing service or by command line running <code>oscar-cli service get [SERVICE_NAME]</code>.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ curl --location --request POST <span style="color:#e6db74">&#39;https://[CLUSTER_ENDPOINT]/run/[SERVICE_NAME]&#39;</span> <span style="color:#ae81ff">\
+</code></pre></div><p>To invoke the example service using an image from the example repository you can run one of the following commands, depending on the way you want to get the output.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># Invocation of &#34;plant-classification-sync&#34; service</span>
+$ oscar-cli service run plant-classification-sync --input images/image3.jpg
+
+<span style="color:#75715e"># Invocation of &#34;plant-classification-sync&#34; service storing the result</span>
+$ oscar-cli service run plant-classification-sync --input images/image3.jpg --output image3-output.json
+</code></pre></div><p>So, with the plant picture <code>image3.jpg</code> as input, the result would be a JSON such as the one shown beautified below.</p>
+<p><img src="../../images/blog/post-20220516-1/service-invocation-example.png" alt="Result of the execution"></p>
+<p>Besides that, if you want to make the invocation whithin the API, you need to get first the authorization token. It can be found on the OSCAR UI by accessing the service or by command line running <code>oscar-cli service get [SERVICE_NAME]</code>.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ curl --insecure --request POST <span style="color:#e6db74">&#39;https://[CLUSTER_ENDPOINT]/run/[SERVICE_NAME]&#39;</span> <span style="color:#ae81ff">\
 </span><span style="color:#ae81ff"></span>--header <span style="color:#e6db74">&#39;Authorization: Bearer [TOKEN]&#39;</span> <span style="color:#ae81ff">\
-</span><span style="color:#ae81ff"></span>--form <span style="color:#e6db74">&#39;=&#34;[FILE]&#34;&#39;</span>
-</code></pre></div><p>So, in this example, with a plant image as input, the result would be a JSON such as the one shown below.</p>
-<p><img src="../../images/blog/post-20220516-1/service-invocation-example.png" alt="Service invocation"></p>
-<p><strong><em>Note:</em></strong></p>
+</span><span style="color:#ae81ff"></span>--data <span style="color:#e6db74">&#39;=&#34;[FILE]&#34;&#39;</span>
+</code></pre></div><p>The requests needs as parameter the file to process encoded in base64, so following the example of a local test cluster and a service called <code>plant-classification-sync</code>, using <code>image3.jpg</code> as input, the API call would look as follows:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ base64 images/image3.jpg | curl --insecure --request POST <span style="color:#e6db74">&#39;https://&lt;YOUR CLUSTER ENDPOINT&gt;/run/plant-classification-sync&#39;</span> <span style="color:#ae81ff">\
+</span><span style="color:#ae81ff"></span>--header <span style="color:#e6db74">&#39;Authorization: Bearer &lt;YOUR TOKEN&gt;&#39;</span> <span style="color:#ae81ff">\
+</span><span style="color:#ae81ff"></span>--data @- | base64 -d
+</code></pre></div><p><strong><em>Note:</em></strong></p>
 <ul>
 <li><em>For more information about the usage of <code>oscar-cli</code> visit <a href="https://docs.oscar.grycap.net/oscar-cli/">OSCAR Documentation - oscar-cli</a></em></li>
 <li><em>For more information about the OSCAR API visit <a href="https://docs.oscar.grycap.net/api/">OSCAR Documentation - OSCAR API</a></em></li>
