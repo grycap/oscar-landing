@@ -19,32 +19,32 @@ This use case implements text-to-speech transformation using the OSCAR serverles
 
 ### Previous step: Deploy the OSCAR cluster on an IaaS Cloud and install OSCAR-CLI
 
-Follow the [deployment instructions with IM Dashboard](https://docs.oscar.grycap.net/deploy-im-dashboard/). Alternatively, can be executed this script to install locally.
+Follow the [deployment instructions with the IM Dashboard](https://docs.oscar.grycap.net/deploy-im-dashboard/). Alternatively, the folowing script can be executed locally.
 
 ```bash
 curl -sSL http://go.oscar.grycap.net | bash
 ```
 
-To create the function, we will use the command-line interface [OSCAR-CLI](https://docs.oscar.grycap.net/oscar-cli/).
+To create the service, we will use the command-line interface [OSCAR-CLI](https://docs.oscar.grycap.net/oscar-cli/).
 
 ![01-oscar-login.png](../../images/blog/post-text-to-speech/01-oscar-login.png)
 
 ### STEP 1: Deploy the Service
 
-We will use OSCAR-CLI to deploy the use-case service. You can see all files of [Google speech](https://github.com/orgs/grycap/packages/container/package/text-to-speech-google) and [Coqui](https://github.com/orgs/grycap/packages/container/package/text-to-speech-coqui) examples in Github.
+We will use OSCAR-CLI to deploy the use-case service. You can see all files of [Google Speech](https://github.com/orgs/grycap/packages/container/package/text-to-speech-google) and [Coqui](https://github.com/orgs/grycap/packages/container/package/text-to-speech-coqui) examples in GitHub.
 
-Google files execute a Python program:
+The Google Speech example includes the following files:
 
-- The Dockerfile to create our [text-to-speech container image](https://github.com/orgs/grycap/packages/container/package/text-to-speech-google), using Ubuntu 20.04 like base image and installing all the required dependencies.
+- The Dockerfile to create our [text-to-speech container image](https://github.com/orgs/grycap/packages/container/package/text-to-speech-google), using Ubuntu 20.04 as the base image and installing all the required dependencies.
 - The code, implemented in Python, uses the [Google Speech](https://pypi.org/project/google-speech/) library to convert text to speech.
 - The user script that will be executed inside the container when the service is triggered is in the file "script.sh" and will start the Python program.
 - Finally, the YAML-based Functions Definition File (FDL) defines the service via oscar-cli.
 
-Coqui only uses the command line:
+The Coqui example includes the following files:
 
-- The Dockerfile is a [base image](https://github.com/orgs/grycap/packages/container/package/text-to-speech-coqui) based on Ubuntu 20.04 that installs all the dependencies.
-- In this case, the bash script runs commands. It does not execute a program that has been created exclusive storage in the docker images.
-- YAML-file to deploy the services
+- The Dockerfile uses a [base image](https://github.com/orgs/grycap/packages/container/package/text-to-speech-coqui) based on Ubuntu 20.04 that installs all the dependencies.
+- In this case, the bash script runs commands. 
+- FDL-file to deploy the services
 
 #### STEP 1.1: Get the YAML file ready
 
@@ -102,7 +102,7 @@ oscar-cli apply $YAML_file
 
 ### STEP 2: Verify the Service
 
-After some seconds, the service will be made. If you specified, input and output buckets would be automatically created. Verify that the service is up and running with the command:
+After some seconds, the service(s) will be created. If you specified, input and output buckets, they will be automatically created. Verify that the service(s) is up and running with the command:
 
 ```sh
 oscar-cli service list
@@ -128,7 +128,7 @@ oscar-cli service run $service_name --text-input "Hello everyone"  --output outp
 
 ![05-oscar-run.png](../../images/blog/post-text-to-speech/05-oscar-run.png)
 
-#### STEP 3.1: Asynchronously
+### STEP 4: Invoke the Service Asynchronously
 
 The service can be triggered asynchronously by uploading a text file to a MinIO bucket in `text-to-speech-google/input` or `text-to-speech-coqui/input`. When the execution finishes, the result file can be found in `text-to-speech-google/output` or `text-to-speech-coqui/input`. Input and output fields in the YAML file can be removed if we are only going to use the service synchronously.
 
@@ -140,7 +140,7 @@ oscar-cli service put-file text-to-speech-google $STORAGE_PROVIDER $LOCAL_FILE $
 oscar-cli service put-file text-to-speech-coqui $STORAGE_PROVIDER $LOCAL_FILE $REMOTE_FILE
 ```
 
-### STEP 4: Remove the Function
+### STEP 4: Remove the Service
 
 Once you have finished, the service can be deleted using the command:
 
