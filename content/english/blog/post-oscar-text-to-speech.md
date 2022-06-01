@@ -48,7 +48,7 @@ Coqui only uses the command line:
 
 #### STEP 1.1: Get the YAML file ready
 
-Check in the YAML file that the cluster identifier is defined (OSCAR-CLI must be configured with the same cluster identifier).In the Google speech library, the example must be set the "language" environment variable to the language you want to hear the output voice. If you do not know the language code, it can be found [here](https://www.andiamo.co.uk/resources/iso-language-codes/).
+Check in the YAML file that the cluster identifier is defined (OSCAR-CLI must be configured with the same cluster identifier). The "language" environment variable must be set to the language you want to hear the output voice in the Google speech library example. If you do not know the language code, it can be found [here](https://www.andiamo.co.uk/resources/iso-language-codes/).
 
 ``` yaml
 functions:
@@ -102,7 +102,7 @@ oscar-cli apply $YAML_file
 
 ### STEP 2: Verify the Service
 
-After some seconds, the service will be created. If you specified, input and output buckets would be automatically created. Verify that the service is up and running with the command:
+After some seconds, the service will be made. If you specified, input and output buckets would be automatically created. Verify that the service is up and running with the command:
 
 ```sh
 oscar-cli service list
