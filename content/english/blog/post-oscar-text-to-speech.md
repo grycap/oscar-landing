@@ -27,11 +27,9 @@ curl -sSL http://go.oscar.grycap.net | bash
 
 To create the function, we will use the command-line interface [OSCAR-CLI](https://docs.oscar.grycap.net/oscar-cli/).
 
-![01-oscar-login.png](../../images/blog/post-text-to-speech/01-oscar-login.png)
-
 ### STEP 1: Deploy the Service
 
-We will use OSCAR-CLI to deploy the use-case service. You can see all files of [Google speech](https://github.com/orgs/grycap/packages/container/package/text-to-speech-google) and [Coqui](https://github.com/orgs/grycap/packages/container/package/text-to-speech-coqui) examples in Github.
+We will use OSCAR-CLI to deploy the use-case service. You can see all files of [Google speech](https://github.com/grycap/oscar/tree/master/examples/text-to-speech-google) and [Coqui](https://github.com/grycap/oscar/tree/master/examples/text-to-speech-coqui) examples in Github.
 
 Google files execute a Python program:
 
@@ -94,11 +92,9 @@ functions:
 To deploy the service, use the command:
 
 ``` sh
-oscar-cli apply $YAML_file
-
+oscar-cli apply text-to-speech-google.yaml
+oscar-cli apply text-to-speech-coqui.yaml
 ```
-
-![03-oscar-apply.png](../../images/blog/post-text-to-speech/03-oscar-apply.png)
 
 ### STEP 2: Verify the Service
 
@@ -147,7 +143,5 @@ Once you have finished, the service can be deleted using the command:
 ```sh
 oscar-cli service remove $service_name
 ```
-
-![06-oscar-remove.png](../../images/blog/post-text-to-speech/06-oscar-remove.png)
 
 [OSCAR](https://grycap.github.io/oscar/), [IM](http://www.grycap.upv.es/im), [EC3](https://github.com/grycap/ec3), and [CLUES](https://www.grycap.upv.es/clues/) are developed by the [GRyCAP](https://www.grycap.upv.es/) research group at the [Universitat Politècnica de València](https://www.upv.es/).
