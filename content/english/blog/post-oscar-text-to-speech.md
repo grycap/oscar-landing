@@ -29,7 +29,7 @@ To create the service, we will use the command-line interface [OSCAR-CLI](https:
 
 ### STEP 1: Deploy the Service
 
-We will use OSCAR-CLI to deploy the use-case service. You can see all files of [Google Speech](https://github.com/orgs/grycap/packages/container/package/text-to-speech-google) and [Coqui](https://github.com/orgs/grycap/packages/container/package/text-to-speech-coqui) examples in GitHub.
+We will use OSCAR-CLI to deploy the use-case service. You can see all files of [Google Speech](https://github.com/orgs/grycap/packages/container/package/text-to-speech-google) and [Coqui](https://github.com/orgs/grycap/packages/container/package/text-to-speech-coqui) examples in [GitHub](https://github.com/grycap/oscar/tree/master/examples).
 
 The Google Speech example includes the following files:
 
