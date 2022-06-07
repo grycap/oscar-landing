@@ -17,7 +17,7 @@
 
     
 	<meta charset="utf-8">
-<title>Convert Text to Speech with Google Speech within OSCAR</title>
+<title>Convert Text to Speech with OSCAR</title>
 
 <meta name="description" content="Using OSCAR&#39;s synchronous invocations to convert text to audio files">
 
@@ -27,7 +27,7 @@
 
 <meta property="og:image" content="https://oscar.grycap.net/images/blog/post-text-to-speech/text-to-speech.jpg" />
 
-<meta property="og:title" content="Convert Text to Speech with Google Speech within OSCAR" />
+<meta property="og:title" content="Convert Text to Speech with OSCAR" />
 <meta property="og:description" content="Using OSCAR&#39;s synchronous invocations to convert text to audio files" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://oscar.grycap.net/blog/post-oscar-text-to-speech/" /><meta property="article:section" content="blog" />
@@ -168,65 +168,90 @@
   <div class="container">
     <div class="row">
       <div class="col-lg-8 mx-auto">
-        <img src="/images/blog/post-text-to-speech/text-to-speech.jpg" alt="Convert Text to Speech with Google Speech within OSCAR" class="img-fluid w-100 rounded mb-4">
-        <h2 class="mb-4">Convert Text to Speech with Google Speech within OSCAR</h2>
-        <div class="content"><p>This use case implements text to speech transformation using the OSCAR serverless platform and the <a href="https://pypi.org/project/google-speech/">Google Speech</a> library, where an input of plain text returns an audio file.</p>
-<h3 id="previous-step-deploy-the-oscar-cluster-on-an-iaas-cloud-and-install-oscar-cli">Previous step: Deploy the OSCAR cluster on an IaaS Cloud and install OSCAR-CLI</h3>
-<p>Follow the <a href="https://docs.oscar.grycap.net/deploy-im-dashboard/">deployment instructions with IM Dashboard</a>. Or you can execute this script to install it locally.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">curl -sSL http://go.oscar.grycap.net | bash
-</code></pre></div><p>To create the function, we will use the command line interface <a href="https://docs.oscar.grycap.net/oscar-cli/">OSCAR-CLI</a>.</p>
-<p><img src="../../images/blog/post-text-to-speech/01-oscar-login.png" alt="01-oscar-login.png"></p>
-<h3 id="step-1-deploy-the-service">STEP 1: Deploy the Service</h3>
-<p>We will use OSCAR-CLI to deploy the use-case service, <a href="https://github.com/grycap/oscar/tree/master/examples/text-to-speech">this</a> directory contains all the required files. You can open and see all the files:</p>
+        <img src="/images/blog/post-text-to-speech/text-to-speech.jpg" alt="Convert Text to Speech with OSCAR" class="img-fluid w-100 rounded mb-4">
+        <h2 class="mb-4">Convert Text to Speech with OSCAR</h2>
+        <div class="content"><p>This use case implements text-to-speech transformation using the OSCAR serverless platform, where an input of plain text returns an audio file. There are two examples of implementing this use case:</p>
 <ul>
-<li>The Dockerfile to create our <a href="https://github.com/orgs/grycap/packages/container/package/text-to-speech">text-to-speech container image</a>, using Ubuntu 20.04 as base image and installing all the required dependencies.</li>
-<li>The code, implemented Python, uses the <a href="https://pypi.org/project/google-speech/">Google Speech</a> library to convert text to speech.</li>
-<li>The user-script that will be executed inside the container when the service is triggered is in the file &ldquo;script.sh&rdquo; and it will start the Python program.</li>
-<li>Last but not least, the YAML-based Functions Definition File (FDL) provides the definition to create the service via oscar-cli.</li>
+<li><a href="https://pypi.org/project/google-speech/">Google Speech</a> library</li>
+<li>Pretrained model of <a href="https://github.com/coqui-ai/TTS">Coqui</a></li>
+</ul>
+<h3 id="previous-step-deploy-the-oscar-cluster-on-an-iaas-cloud-and-install-oscar-cli">Previous step: Deploy the OSCAR cluster on an IaaS Cloud and install OSCAR-CLI</h3>
+<p>Follow the <a href="https://docs.oscar.grycap.net/deploy-im-dashboard/">deployment instructions with the IM Dashboard</a>. Alternatively, the folowing script can be executed locally.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">curl -sSL http://go.oscar.grycap.net | bash
+</code></pre></div><p>To create the service, we will use the command-line interface <a href="https://docs.oscar.grycap.net/oscar-cli/">OSCAR-CLI</a>.</p>
+<h3 id="step-1-deploy-the-service">STEP 1: Deploy the Service</h3>
+<p>We will use OSCAR-CLI to deploy the use-case service. You can see all files of <a href="https://github.com/grycap/oscar/tree/master/examples/text-to-speech-google">Google Speech</a> and <a href="https://github.com/grycap/oscar/tree/master/examples/text-to-speech-coqui">Coqui</a> examples in GitHub.</p>
+<p>The Google Speech example includes the following files:</p>
+<ul>
+<li>The Dockerfile to create our <a href="https://github.com/orgs/grycap/packages/container/package/text-to-speech-google">text-to-speech container image</a>, using Ubuntu 20.04 as the base image and installing all the required dependencies.</li>
+<li>The code, implemented in Python, uses the <a href="https://pypi.org/project/google-speech/">Google Speech</a> library to convert text to speech.</li>
+<li>The user script that will be executed inside the container when the service is triggered is in the file &ldquo;script.sh&rdquo; and will start the Python program.</li>
+<li>Finally, the YAML-based Functions Definition File (FDL) defines the service via oscar-cli.</li>
+</ul>
+<p>The Coqui example includes the following files:</p>
+<ul>
+<li>The Dockerfile uses a <a href="https://github.com/orgs/grycap/packages/container/package/text-to-speech-coqui">base image</a> based on Ubuntu 20.04 that installs all the dependencies.</li>
+<li>In this case, the bash script runs commands.</li>
+<li>FDL-file to deploy the services</li>
 </ul>
 <h4 id="step-11-get-the-yaml-file-ready">STEP 1.1: Get the YAML file ready</h4>
-<p>Check in the yaml file that the cluster identifier is defined (OSCAR-CLI has to be configured with the same cluster identifier) and set the &ldquo;language&rdquo; environment variable to the language you want to hear the output voice. If you do not know the language code, you can find it <a href="https://www.andiamo.co.uk/resources/iso-language-codes/">here</a>.</p>
-<pre><code>functions:
-  oscar:
-  - oscar-cluster:
-      name: text-to-speech
-      memory: 1Gi
-      cpu: '1.0'
-      image: ghcr.io/grycap/text-to-speech
-      script: script.sh
-      log_level: CRITICAL
-      input:
-      - storage_provider: minio
-        path: text-to-speech/input
-      output:
-      - storage_provider: minio
-        path: text-to-speech/output
-      environment: 
-        Variables:
-          language: en
-</code></pre><h4 id="step-12-use-oscar-cli-to-deploy-the-service">STEP 1.2: Use OSCAR-CLI to Deploy the Service</h4>
+<p>Check in the YAML file that the cluster identifier is defined (OSCAR-CLI must be configured with the same cluster identifier). The &ldquo;language&rdquo; environment variable must be set to the language you want to hear the output voice in the Google speech library example. If you do not know the language code, it can be found <a href="https://www.andiamo.co.uk/resources/iso-language-codes/">here</a>.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#f92672">functions</span>:
+  <span style="color:#f92672">oscar</span>:
+  - <span style="color:#f92672">oscar-cluster</span>:
+      <span style="color:#f92672">name</span>: <span style="color:#ae81ff">text-to-speech-google</span>
+      <span style="color:#f92672">memory</span>: <span style="color:#ae81ff">1Gi</span>
+      <span style="color:#f92672">cpu</span>: <span style="color:#e6db74">&#39;1.0&#39;</span>
+      <span style="color:#f92672">image</span>: <span style="color:#ae81ff">ghcr.io/grycap/text-to-speech-google</span>
+      <span style="color:#f92672">script</span>: <span style="color:#ae81ff">script.sh</span>
+      <span style="color:#f92672">log_level</span>: <span style="color:#ae81ff">CRITICAL</span>
+      <span style="color:#f92672">input</span>:
+      - <span style="color:#f92672">storage_provider</span>: <span style="color:#ae81ff">minio</span>
+        <span style="color:#f92672">path</span>: <span style="color:#ae81ff">text-to-speech-google/input</span>
+      <span style="color:#f92672">output</span>:
+      - <span style="color:#f92672">storage_provider</span>: <span style="color:#ae81ff">minio</span>
+        <span style="color:#f92672">path</span>: <span style="color:#ae81ff">text-to-speech-google/output</span>
+      <span style="color:#f92672">environment</span>: 
+        <span style="color:#f92672">Variables</span>:
+          <span style="color:#f92672">language</span>: <span style="color:#ae81ff">en</span>
+</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#f92672">functions</span>:
+  <span style="color:#f92672">oscar</span>:
+  - <span style="color:#f92672">oscar-cluster</span>:
+      <span style="color:#f92672">name</span>: <span style="color:#ae81ff">text-to-speech-coqui</span>
+      <span style="color:#f92672">memory</span>: <span style="color:#ae81ff">2Gi</span>
+      <span style="color:#f92672">cpu</span>: <span style="color:#e6db74">&#39;4.0&#39;</span>
+      <span style="color:#f92672">image</span>: <span style="color:#ae81ff">ghcr.io/grycap/text-to-speech-coqui</span>
+      <span style="color:#f92672">log_level</span>: <span style="color:#ae81ff">CRITICAL</span>
+      <span style="color:#f92672">script</span>: <span style="color:#ae81ff">script.sh</span>
+      <span style="color:#f92672">input</span>:
+      - <span style="color:#f92672">storage_provider</span>: <span style="color:#ae81ff">minio</span>
+        <span style="color:#f92672">path</span>: <span style="color:#ae81ff">text-to-speech-coqui/input</span>
+      <span style="color:#f92672">output</span>:
+      - <span style="color:#f92672">storage_provider</span>: <span style="color:#ae81ff">minio</span>
+        <span style="color:#f92672">path</span>: <span style="color:#ae81ff">text-to-speech-coqui/output</span>
+</code></pre></div><h4 id="step-12-use-oscar-cli-to-deploy-the-service">STEP 1.2: Use OSCAR-CLI to Deploy the Service</h4>
 <p>To deploy the service, use the command:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">oscar-cli apply tts.yaml
-</code></pre></div><p><img src="../../images/blog/post-text-to-speech/03-oscar-apply.png" alt="03-oscar-apply.png"></p>
-<h3 id="step-2-verify-the-service">STEP 2: Verify the Service</h3>
-<p>After some seconds, the service will be created. The input and output buckets will be automatically created as well. Verify that the service is up and running with the command:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">oscar-cli apply text-to-speech-google.yaml
+oscar-cli apply text-to-speech-coqui.yaml
+</code></pre></div><h3 id="step-2-verify-the-service">STEP 2: Verify the Service</h3>
+<p>After some seconds, the service(s) will be created. If you specified, input and output buckets, they will be automatically created. Verify that the service(s) is up and running with the command:</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">oscar-cli service list
 </code></pre></div><p><img src="../../images/blog/post-text-to-speech/04-oscar-checkServices.png" alt="04-oscar-checkServices.png"></p>
 <h3 id="step-3-invoke-the-service-synchronously-and-access-the-output-files">STEP 3: Invoke the Service Synchronously and Access the Output Files</h3>
 <p>To run the service synchronously, use the command:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">oscar-cli service run text-to-speech --text-input <span style="color:#e6db74">&#34;Hello everyone&#34;</span>  --output output.mp3
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">oscar-cli service run $service_name --text-input <span style="color:#e6db74">&#34;Hello everyone&#34;</span>  --output output.mp3
 </code></pre></div><p>You also can pass a text file by substituting the flag <code>--text-input {string}</code> to <code>--input {filepath}</code></p>
-<p>And if you have installed vlc and you want to directly play the result, use this one:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">oscar-cli service run text-to-speech --text-input <span style="color:#e6db74">&#34;Hello everyone&#34;</span>  --output output.mp3 <span style="color:#f92672">&amp;&amp;</span> vlc output.mp3
+<p>Moreover, if you have installed vlc, you can play the result. Use this one directly:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">oscar-cli service run $service_name --text-input <span style="color:#e6db74">&#34;Hello everyone&#34;</span>  --output output.mp3 <span style="color:#f92672">&amp;&amp;</span> vlc output.mp3
 </code></pre></div><p><img src="../../images/blog/post-text-to-speech/05-oscar-run.png" alt="05-oscar-run.png"></p>
-<h4 id="step-31-asynchronously">STEP 3.1: Asynchronously</h4>
-<p>You can also trigger the service asynchronously by uploading a text file to a MinIO bucket in <code>text-to-speech/input</code> and, when the execution finishes, the result file can be found in <code>text-to-speech/output</code>. Input and output fields in the YAML file can be removed if we are only going to use the service synchronously.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">oscar-cli service put-file text-to-speech $STORAGE_PROVIDER $LOCAL_FILE $REMOTE_FILE /home
-</code></pre></div><h3 id="step-4-remove-the-function">STEP 4: Remove the Function</h3>
-<p>Once you have finished, you can delete the service using the command:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">oscar-cli service remove text-to-speech
-</code></pre></div><p><img src="../../images/blog/post-text-to-speech/06-oscar-remove.png" alt="06-oscar-remove.png"></p>
-<p><a href="https://grycap.github.io/oscar/">OSCAR</a>, <a href="http://www.grycap.upv.es/im">IM</a>, <a href="https://github.com/grycap/ec3">EC3</a>, and <a href="https://www.grycap.upv.es/clues/">CLUES</a> are developed by the <a href="https://www.grycap.upv.es/">GRyCAP</a> research group at the <a href="https://www.upv.es/">Universitat Politècnica de València</a>.</p>
+<h3 id="step-4-invoke-the-service-asynchronously">STEP 4: Invoke the Service Asynchronously</h3>
+<p>The service can be triggered asynchronously by uploading a text file to a MinIO bucket in <code>text-to-speech-google/input</code> or <code>text-to-speech-coqui/input</code>. When the execution finishes, the result file can be found in <code>text-to-speech-google/output</code> or <code>text-to-speech-coqui/input</code>. Input and output fields in the YAML file can be removed if we are only going to use the service synchronously.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">oscar-cli service put-file text-to-speech-google $STORAGE_PROVIDER $LOCAL_FILE $REMOTE_FILE
+</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">oscar-cli service put-file text-to-speech-coqui $STORAGE_PROVIDER $LOCAL_FILE $REMOTE_FILE
+</code></pre></div><h3 id="step-4-remove-the-service">STEP 4: Remove the Service</h3>
+<p>Once you have finished, the service can be deleted using the command:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">oscar-cli service remove $service_name
+</code></pre></div><p><a href="https://grycap.github.io/oscar/">OSCAR</a>, <a href="http://www.grycap.upv.es/im">IM</a>, <a href="https://github.com/grycap/ec3">EC3</a>, and <a href="https://www.grycap.upv.es/clues/">CLUES</a> are developed by the <a href="https://www.grycap.upv.es/">GRyCAP</a> research group at the <a href="https://www.upv.es/">Universitat Politècnica de València</a>.</p>
 </div>
         
         

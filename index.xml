@@ -25,12 +25,12 @@
     </item>
     
     <item>
-      <title>Convert Text to Speech with Google Speech within OSCAR</title>
+      <title>Convert Text to Speech with OSCAR</title>
       <link>https://oscar.grycap.net/blog/post-oscar-text-to-speech/</link>
       <pubDate>Mon, 09 May 2022 18:00:00 +0100</pubDate>
       
       <guid>https://oscar.grycap.net/blog/post-oscar-text-to-speech/</guid>
-      <description>This use case implements text to speech transformation using the OSCAR serverless platform and the Google Speech library, where an input of plain text returns an audio file.</description>
+      <description>This use case implements text-to-speech transformation using the OSCAR serverless platform, where an input of plain text returns an audio file.</description>
     </item>
     
     <item>
