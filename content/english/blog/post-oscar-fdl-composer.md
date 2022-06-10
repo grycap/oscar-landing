@@ -11,7 +11,8 @@ description: "Using FDL-Composer tool to create a workflow in OSCAR"
 draft: false
 ---
 
-Let's create YAML with the FDL-Composer tool. We are going to simulate the example [video-process](https://github.com/grycap/oscar/tree/master/examples/video-process)
+
+FDL-Composer is a tool to implement workflows for OSCAR and SCAR. It creates a YAML file from a graphic designer. We are going to simulate the example [video-process](https://github.com/grycap/oscar/tree/master/examples/video-process)
 
 Drag the OSCAR functions we are going to use. In this case, two.
 
@@ -37,7 +38,7 @@ Connect all the components and make a workflow.
 
 ![8-fdl-composer.png](images/blog/post-oscar-fdl-composer/8-fdl-composer.png)
 
-Put the name in the different buckets
+Put the name in the different buckets.
 
 Input Bucket      |  Medium Bucket |  Output Bucket
 :-------------------------:|:-------------------------:|:-------------------------:
