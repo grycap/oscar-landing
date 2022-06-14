@@ -14,6 +14,8 @@ draft: false
 
 FDL-Composer is a tool to implement workflows for OSCAR and SCAR. It creates a YAML file from a graphic designer. We are going to simulate the example [video-process](https://github.com/grycap/oscar/tree/master/examples/video-process)
 
+This example supports highly-scalable event-driven video analysis using ffmpeg to extract keyframes of the video and darknet to analyze such keyframes. It requires two OSCAR services. One where the video is going to get cut into frames. The second one process those frames. It also requires three MinIo buckets. One for the input. One for the output. And the last one for the connection between both services. So when a video is uploaded to the input bucket, split video OSCAR services will be triggered and let the frames in an intermediary bucket. That will trigger the processing frame OSCAR service. Furthermore, the result will be stored in the last bucket.
+
 Drag the OSCAR functions we are going to use. In this case, two.
 
 ![2-fdl-composer.png](images/blog/post-oscar-fdl-composer/2-fdl-composer.png)
