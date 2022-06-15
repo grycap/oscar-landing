@@ -3,10 +3,13 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://oscar.grycap.net/</loc>
-    <lastmod>2022-05-16T09:00:00+01:00</lastmod>
+    <lastmod>2022-06-06T18:00:00+01:00</lastmod>
+  </url><url>
+    <loc>https://oscar.grycap.net/blog/post-oscar-fdl-composer/</loc>
+    <lastmod>2022-06-06T18:00:00+01:00</lastmod>
   </url><url>
     <loc>https://oscar.grycap.net/blog/</loc>
-    <lastmod>2022-05-16T09:00:00+01:00</lastmod>
+    <lastmod>2022-06-06T18:00:00+01:00</lastmod>
   </url><url>
     <loc>https://oscar.grycap.net/blog/post-oscar-faas-sync-ml-inference/</loc>
     <lastmod>2022-05-16T09:00:00+01:00</lastmod>
