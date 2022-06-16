@@ -12,9 +12,9 @@ draft: false
 ---
 
 
-FDL-Composer is a tool to implement workflows for OSCAR and SCAR. It creates a YAML file from a graphic designer. We are going to simulate the example [video-process](https://github.com/grycap/oscar/tree/master/examples/video-process)
+[FDL-Composer](http://composer.oscar.grycap.net) is a tool to visually design workflows for [OSCAR](https://oscar.grycap.net) and [SCAR](https://github.com/grycap/scar). We are going to simulate the example [video-process](https://github.com/grycap/oscar/tree/master/examples/video-process)
 
-This example supports highly-scalable event-driven video analysis using ffmpeg to extract keyframes of the video and darknet to analyze such keyframes. It requires two OSCAR services. One where the video is going to get cut into frames. The second one process those frames. It also requires three MinIo buckets. One for the input. One for the output. And the last one for the connection between both services. So when a video is uploaded to the input bucket, split video OSCAR services will be triggered and let the frames in an intermediary bucket. That will trigger the processing frame OSCAR service. Furthermore, the result will be stored in the last bucket.
+This example supports highly-scalable event-driven video analysis using [ffmpeg](https://ffmpeg.org) to extract keyframes of the video and [Darknet](https://pjreddie.com/darknet/) to perform object recognition on the keyframes. It requires two OSCAR services: one where the video is going to get split into frames, and  another to process those frames. It also requires three MinIO buckets. One for the input. One for the output. And the last one for the connection between both services. So when a video is uploaded to the input bucket, the "split video" OSCAR service will be triggered and let the frames in an intermediate bucket. That will trigger the "processing frame" OSCAR service. Furthermore, the result will be stored in the last bucket.
 
 Drag the OSCAR functions we are going to use. In this case, two.
 
@@ -26,7 +26,7 @@ Split Video             |  Object Detection
 :-------------------------:|:-------------------------:
 ![3-fdl-composer.png](images/blog/post-oscar-fdl-composer/3-fdl-composer.png)  |  ![4-fdl-composer.png](images/blog/post-oscar-fdl-composer/4-fdl-composer.png)
 
-Create a new MinIo storage.
+Create a new MinIO storage.
 
 ![5-fdl-composer.png](images/blog/post-oscar-fdl-composer/5-fdl-composer.png)
 
@@ -89,4 +89,6 @@ storage_providers:
       verify: false
 ```
 
-[OSCAR](https://grycap.github.io/oscar/), [IM](http://www.grycap.upv.es/im), [EC3](https://github.com/grycap/ec3), and [CLUES](https://www.grycap.upv.es/clues/) are developed by the [GRyCAP](https://www.grycap.upv.es/) research group at the [Universitat Politècnica de València](https://www.upv.es/).
+This FDL file can be used as input to OSCAR in order to deploy the services within a specific OSCAR cluster.
+
+[FDL Composer](https://composer.oscar.grycap.net), [OSCAR](https://grycap.github.io/oscar/) and [SCAR](https://github.com/grycap/scar) are developed by the [GRyCAP](https://www.grycap.upv.es/) research group at the [Universitat Politècnica de València](https://www.upv.es/).
