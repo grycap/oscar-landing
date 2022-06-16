@@ -4,7 +4,7 @@ baseURL = "https://oscar.grycap.net"
 title = "OSCAR"
 theme = "bigspring"
 # post pagination
-paginate = "3"
+paginate = "21"
 # post excerpt
 summaryLength = "15"
 # disqus short name

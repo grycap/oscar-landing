@@ -27,7 +27,7 @@ curl -sSL http://go.oscar.grycap.net | bash
 
 Log in to the OSCAR UI using the previously provided credentials to verify that the cluster has been successfully deployed.
 
-![01-oscar-login.png](../../images/blog/post-text-to-speech/01-oscar-login.png)
+![01-oscar-login.png](/images/blog/post-guide-to-use-OSCAR/01-oscar-login.png)
 
 #### Install OSCAR-CLI
 
