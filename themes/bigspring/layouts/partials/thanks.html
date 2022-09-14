@@ -1,5 +1,22 @@
 {{ "<!-- navigation -->" | safeHTML }}
 
+
+
+<nav class="  container navigation">
+  <div class="text-center align-items-center col-md-12 offset-md-0" id="navigation">
+    {{ with site.Params.thankscommentary }}
+    <ul>
+      {{ range . }}
+      <li class="list-inline-item">
+      <p class="thankscomment">
+        {{.content}}
+      </p></li><br>
+      {{ end }}
+      </ul>
+    {{ end }}
+  </div>
+</nav>
+
 <nav class=" container navigation  thanksphoto ">
   <div class=" text-center col-md-8 offset-md-2 thanksphoto" id="navigation">
         {{ with site.Params.thanks }}
@@ -15,20 +32,4 @@
         {{ end }}
 </div>
 </nav>
-
-<nav class="  container navigation">
-  <div class="text-center align-items-center col-md-12 offset-md-0" id="navigation">
-    {{ with site.Params.thankscommentary }}
-    <ul>
-      {{ range . }}
-      <li class="list-inline-item">
-      <p class="thankscomment">
-        {{.content}}
-      </p></li>
-      {{ end }}
-      </ul>
-    {{ end }}
-  </div>
-</nav>
-
 {{ "<!-- /navigation -->" | safeHTML }}
