@@ -2,7 +2,7 @@
 title: "Visualize OSCAR services with Gradio"
 date: 2022-09-08T09:00:00+01:00
 # post image
-image: "/images/blog/post-guide-to-use-OSCAR/main.jpeg"
+image: "https://gradio.app/assets/img/header-image.jpg"
 # post type (regular/featured)
 type: "featured"
 # meta description
@@ -25,29 +25,16 @@ label=gr.Label()
 button.click(fn=plant_classification,inputs=[image], outputs=[textbox,label])
 ```
 
-### Preprocess the data and postprocess the result
+### Preprocess the data and post-process the result
 
-The same input and output can be represented in different formats. The same image can be represented as image bytes or as a NumPy array. This will depend on the input necessities of the services. So change the type of data before triggering the services.
+The same input and output can be represented in different formats. The same image can be represented as image bytes or as a NumPy array. This will depend on the input necessities of the services. So change the type of data before triggering the services. The same problems happen with the output. For example, the Label component needs a dictionary as input. However, if the services return two arrays with the representation of key and value, we need to put them into a dictionary.
 
-The same problems happen with the output. For example, the Label component needs a dictionary as input, but if the services return two arrays with the representation of key and value, we need to put them into a dictionary.
+``` text
+"labels": [ "Taraxacum officinale", "Taraxacum erythrospermum", "Agoseris grandiflora", "Tragopogon pratensis", "Eriophorum virginicum" ], 
+"probabilities": [ 0.3481447398662567, 0.3105199933052063, 0.19190344214439392, 0.028038162738084793, 0.027458030730485916 ],
+```
 
 ``` python
-""" output format
-  "labels": [
-        "Taraxacum officinale",
-        "Taraxacum erythrospermum",
-        "Agoseris grandiflora",
-        "Tragopogon pratensis",
-        "Eriophorum virginicum"
-    ],
-    "probabilities": [
-        0.3481447398662567,
-        0.3105199933052063,
-        0.19190344214439392,
-        0.028038162738084793,
-        0.027458030730485916
-    ],
-"""
 dict={}
     index=0
     for plant in parsed["labels"]:
@@ -59,11 +46,7 @@ Another example is when an OSCAR service returns a plot, but as an image, you sh
 
 ### Synchronously invocation
 
-We are going to invocate an OSCAR service synchronously with a POST call.
-
-It requires the endpoint, the services name, the service token (it changes every time the service is updated or created), and the data.
-
-We are going to make a GET call to ${endpoint}/system/services to automate the process of obtain the token, It needs the login and password of OSCAR encoded in base64 but those two parameters are not going to change.
+We are going to invocate an OSCAR service synchronously with a POST call. It requires the endpoint, the services name, the service token (it changes every time the service is updated or created), and the data. We are going to make a GET call to ${endpoint}/system/services to automate the process of obtaining the token, It needs the login and password of OSCAR encoded in base64, but those two parameters are not going to change.
 
 ``` python
 def get_token(servicename):
@@ -156,6 +139,90 @@ def authorization(login, password):
     if x.status_code == 200:
         return True
     return False
+```
+
+### Deploy with Kubernetes
+
+Adapt your program to be used in a container by changing the main variables and using the environment variables.
+Import the os library in python and utilize the `os.environ` object. For example, to get the value of the environment variable "a" use this line of code `os.environ['a']`. In most cases, there will be two environment variables: the OSCAR endpoint, where our OSCAR cluster with the services already deployed, and the port where Gradio will be deployed. This last variable is made to make an easy deployment. The OSCAR endpoint's environment variable will be named "oscar_endpoint" and will be imported with `os.environ['oscar_endpoint']`. To deploy Gradio use the variable server_name and the server_port in launch functions `demo.launch(server_name="0.0.0.0",server_port=int(os.environ['port']),auth=authorization)`
+
+![gradio-oscar.png](../../images/blog/post-oscar-with-gradio/gradio-oscar.png)
+
+
+
+When Gradio is ready to be deployed, create the container. From a python container, install the libraries dependencies of Gradio and MinIO with the pip command. Then copy your Gradio program into the container. Finally, execute the program with entrypoint.
+
+``` Dockerfile
+FROM python:3.8
+RUN pip install gradio minio
+COPY {your gradio execute} /opt/{your gradio execute}
+ENTRYPOINT ["python3","/opt/{your gradio execute}"]
+```
+
+Once the container image is built. Try it with the next command:
+
+``` bash
+docker run -it -e oscar_endpoint='{oscar_endpoint}' -e port="7000" -p 7000:7000 ghcr.io/grycap/{image_name}
+```
+
+Then create the Pod with the image and assign the values to environment variables. Create a port to expose the Pod. It has to be the same as the port environment variable.
+
+``` yaml
+apiVersion: v1
+kind: Pod
+metadata:
+  name: stable-diffusion
+  labels:
+    app: stable-diffusion
+spec:
+  containers:
+    - name: stable-diffusion
+      image: ghcr.io/grycap/stable_diffusion
+      env:
+        - name: oscar_endpoint
+          value: ""
+        - name: port
+          value: "30001"
+      ports:
+        - name: web
+          containerPort: 30001
+          protocol: TCP
+```
+
+Create a Service to have permanent access to Pods. This Service will aim to the Pod port called `web`.
+
+``` yaml
+apiVersion: v1
+kind: Service
+metadata:
+  name: service-stable-diffusion
+spec:
+  type: LoadBalancer
+  selector:
+    app: stable-diffusion
+  ports:
+    - protocol: TCP
+      port: 9000
+      targetPort: web
+```
+
+Finally, create an Ingress resource to expose the Service from the outside.
+
+``` yaml
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: ingress-stable-diffusion
+  annotations:
+    nginx.ingress.kubernetes.io/rewrite-target: /
+
+spec:
+  defaultBackend:
+      service:
+        name: service-stable-diffusion
+        port:
+          number: 9000
+
 ```
 
 [OSCAR](https://grycap.github.io/oscar/), [IM](http://www.grycap.upv.es/im), [EC3](https://github.com/grycap/ec3), and [CLUES](https://www.grycap.upv.es/clues/) are developed by the [GRyCAP](https://www.grycap.upv.es/) research group at the [Universitat Politècnica de València](https://www.upv.es/).
