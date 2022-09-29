@@ -141,14 +141,12 @@ def authorization(login, password):
     return False
 ```
 
-### Deploy with Kubernetes
+### Introduce Gradio in a Docker
 
 Adapt your program to be used in a container by changing the main variables and using the environment variables.
 Import the os library in python and utilize the `os.environ` object. For example, to get the value of the environment variable "a" use this line of code `os.environ['a']`. In most cases, there will be two environment variables: the OSCAR endpoint, where our OSCAR cluster with the services already deployed, and the port where Gradio will be deployed. This last variable is made to make an easy deployment. The OSCAR endpoint's environment variable will be named "oscar_endpoint" and will be imported with `os.environ['oscar_endpoint']`. To deploy Gradio use the variable server_name and the server_port in launch functions `demo.launch(server_name="0.0.0.0",server_port=int(os.environ['port']),auth=authorization)`
 
 ![gradio-oscar.png](../../images/blog/post-oscar-with-gradio/gradio-oscar.png)
-
-
 
 When Gradio is ready to be deployed, create the container. From a python container, install the libraries dependencies of Gradio and MinIO with the pip command. Then copy your Gradio program into the container. Finally, execute the program with entrypoint.
 
@@ -165,22 +163,24 @@ Once the container image is built. Try it with the next command:
 docker run -it -e oscar_endpoint='{oscar_endpoint}' -e port="7000" -p 7000:7000 ghcr.io/grycap/{image_name}
 ```
 
+### Deploy Gradio with Kubernetes
+
 Then create the Pod with the image and assign the values to environment variables. Create a port to expose the Pod. It has to be the same as the port environment variable.
 
 ``` yaml
 apiVersion: v1
 kind: Pod
 metadata:
-  name: stable-diffusion
+  name: {pod_name}
   labels:
-    app: stable-diffusion
+    app: {pod_name}
 spec:
   containers:
-    - name: stable-diffusion
-      image: ghcr.io/grycap/stable_diffusion
+    - name: {pod_name}
+      image: ghcr.io/grycap/{image_name}
       env:
         - name: oscar_endpoint
-          value: ""
+          value: {oscar_endpoint}
         - name: port
           value: "30001"
       ports:
@@ -195,34 +195,44 @@ Create a Service to have permanent access to Pods. This Service will aim to the 
 apiVersion: v1
 kind: Service
 metadata:
-  name: service-stable-diffusion
+  name: service-{pod_name}  
 spec:
-  type: LoadBalancer
   selector:
-    app: stable-diffusion
+    app: {pod_name}
   ports:
     - protocol: TCP
       port: 9000
-      targetPort: web
+      name: service-port
+      targetPort: 30001
+  type: NodePort
 ```
 
-Finally, create an Ingress resource to expose the Service from the outside.
+Finally, create an Ingress resource to expose the Service from the outside. Deploying Gradio in a subdomain is better than doing it on another page. A MIME problem could appear when the truth is that the server does not find the correct file because it is searching in `/` path. If it uses HTTPS protocol, add `nginx.ingress.kubernetes.io/backend-protocol: "HTTPS"` into the annotations of the ingress component.
 
 ``` yaml
 apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
-  name: ingress-stable-diffusion
+  name: ingress-{pod_name}
   annotations:
-    nginx.ingress.kubernetes.io/rewrite-target: /
-
+    kubernetes.io/ingress.class: "nginx"
+    cert-manager.io/cluster-issuer: "letsencrypt-prod"
 spec:
-  defaultBackend:
-      service:
-        name: service-stable-diffusion
-        port:
-          number: 9000
-
+  tls:
+  - hosts:
+    - {public_hostname}
+    secretName: {public_hostname}
+  rules:
+  - host: {public_hostname}
+    http:
+      paths:
+      - path: /
+        pathType: Prefix
+        backend:
+          service:
+            name: service-{pod_name}
+            port:
+              number: 9000
 ```
 
 [OSCAR](https://grycap.github.io/oscar/), [IM](http://www.grycap.upv.es/im), [EC3](https://github.com/grycap/ec3), and [CLUES](https://www.grycap.upv.es/clues/) are developed by the [GRyCAP](https://www.grycap.upv.es/) research group at the [Universitat Politècnica de València](https://www.upv.es/).
