@@ -7,7 +7,7 @@ banner:
   button:
     enable : true
     label : "Deploy your Cluster"
-    link : "https://appsgrycap.i3m.upv.es:31443/im-dashboard/?filter=OSCAR"
+    link : "https://im.egi.eu/im-dashboard/configure?selected_tosca=oscar.yaml&childs="
 
 ##################### Feature ##########################
 feature:
@@ -124,9 +124,9 @@ call_to_action:
   enable : true
   title : "Ready to get started?"
   image : "images/undraw_version_control_re_mg66.svg"
-  content : "You can deploy an OSCAR cluster on your favourite Cloud via the [IM Dashboard](https://appsgrycap.i3m.upv.es:31443/im-dashboard/?filter=OSCAR). No need to register. You will authenticate via [EGI Check-In](https://www.egi.eu/services/check-in/). Not ready yet? Get acquainted first with OSCAR by browsing its [documentation](https://grycap.github.io/oscar). Whenever you are ready ..."
+  content : "You can deploy an OSCAR cluster on your favourite Cloud via the [IM Dashboard](https://im.egi.eu/im-dashboard/configure?selected_tosca=oscar.yaml&childs=). No need to register. You will authenticate via [EGI Check-In](https://www.egi.eu/services/check-in/). Not ready yet? Get acquainted first with OSCAR by browsing its [documentation](https://grycap.github.io/oscar). Whenever you are ready ..."
   button:
     enable : true
     label : "Deploy your Cluster"
-    link : "https://appsgrycap.i3m.upv.es:31443/im-dashboard/?filter=OSCAR"
+    link : "https://im.egi.eu/im-dashboard/configure?selected_tosca=oscar.yaml&childs="
 ---
