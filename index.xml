@@ -5,7 +5,16 @@
     <link>https://oscar.grycap.net/</link>
     <description>Recent content on OSCAR </description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Mon, 06 Jun 2022 18:00:00 +0100</lastBuildDate><atom:link href="https://oscar.grycap.net/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 08 Sep 2022 09:00:00 +0100</lastBuildDate><atom:link href="https://oscar.grycap.net/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>User interfaces with Gradio for AI model inference in OSCAR services</title>
+      <link>https://oscar.grycap.net/blog/post-visualize-oscar-service-with-gradio/</link>
+      <pubDate>Thu, 08 Sep 2022 09:00:00 +0100</pubDate>
+      
+      <guid>https://oscar.grycap.net/blog/post-visualize-oscar-service-with-gradio/</guid>
+      <description>What is Gradio? Gradio is a Python library for building user web interfaces for Machine Learning (ML) applications.</description>
+    </item>
+    
     <item>
       <title>FDL Composer to create a workflow with OSCAR</title>
       <link>https://oscar.grycap.net/blog/post-oscar-fdl-composer/</link>
