@@ -14,9 +14,9 @@ draft: false
 
 ### What is Gradio?
 
-[Gradio](https://gradio.app/docs/) is a Python library for building user web interfaces for Machine Learning (ML) applications. Those interfaces can be customized with the components that Gradio provides, like Textbox, File, Video, Audio, Image, and Dataframe in a short period, saving time. Also, an authentication process can be implemented to grant access. This allows to create nice web-based user interfaces for the inference process of a ML application.
+[Gradio](https://gradio.app/docs/) is a Python library for building user web interfaces for Machine Learning (ML) applications. Those interfaces can be customized with the components that Gradio provides, like Textbox, File, Video, Audio, Image, and Dataframe in a short period, saving time. Also, an authentication process can be implemented to grant access to the user for model inference. This allows to create nice web-based user interfaces for the inference process of a ML application.
 
-OSCAR can be employed as a serverless platform for AI model inference along the computing continuum, as is being done in the [AI-SPRINT](http://ai-sprint-project.eu/) project. Therefore, Gradio stands out as a perfect match to create customized user interfaces for AI model inference.
+[OSCAR](https://oscar.grycap.net) can be employed as a serverless platform for AI model inference. Therefore, Gradio stands out as a perfect match to create customized user interfaces for AI model inference.
 
 ### Gradio in OSCAR
 
