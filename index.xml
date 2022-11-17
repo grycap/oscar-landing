@@ -5,7 +5,16 @@
     <link>https://oscar.grycap.net/</link>
     <description>Recent content on OSCAR </description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Thu, 08 Sep 2022 09:00:00 +0100</lastBuildDate><atom:link href="https://oscar.grycap.net/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 09 Nov 2022 09:00:00 +0100</lastBuildDate><atom:link href="https://oscar.grycap.net/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Why use OSCAR as a serverless AI/ML model inference platform?</title>
+      <link>https://oscar.grycap.net/blog/post-reasons-oscar-for-ai-inference/</link>
+      <pubDate>Wed, 09 Nov 2022 09:00:00 +0100</pubDate>
+      
+      <guid>https://oscar.grycap.net/blog/post-reasons-oscar-for-ai-inference/</guid>
+      <description>What is OSCAR? OSCAR is an open-source serverless platform for event-driven data-processing containerized applications that execute on elastic Kubernetes clusters that are dynamically provisioned on multiple Clouds.</description>
+    </item>
+    
     <item>
       <title>User interfaces with Gradio for AI model inference in OSCAR services</title>
       <link>https://oscar.grycap.net/blog/post-visualize-oscar-service-with-gradio/</link>
