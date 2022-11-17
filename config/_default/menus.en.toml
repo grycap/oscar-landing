@@ -10,7 +10,7 @@ url = "https://grycap.github.io/oscar"
 weight = 1
 
 [[main]]
-name = "Use Cases"
+name = "Blog"
 url = "blog"
 weight = 2
 
