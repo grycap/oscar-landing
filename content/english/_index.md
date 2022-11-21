@@ -7,7 +7,7 @@ banner:
   button:
     enable : true
     label : "Deploy your Cluster"
-    link : "https://im.egi.eu/im-dashboard/configure?selected_tosca=oscar.yaml&childs="
+    link : "https://im.egi.eu/configure/oscar"
 
 ##################### Feature ##########################
 feature:
@@ -107,8 +107,8 @@ service:
       - "images/hybrid-workflow.svg"
       - "images/workflow.svg"
       - "images/arch-scar-batch.svg"
-      content : "OSCAR is integrated with [SCAR](https://github.com/grycap/scar), an open-source tool to execute generic applications on [AWS Lambda](https://aws.amazon.com/lambda), the Functions as a Service (FaaS) provided of Amazon Web Services (AWS). This allows to create serverless workflows across the Cloud computing continuum, where some lightweight processing occurs in an on-premises Cloud (or in the edge) and intensive computing takes place in AWS Lambda.
-      SCAR is also integrated in with [AWS Batch](https://aws.amazon.com/batch), a managed service to provision auto-scaled clusters in AWS Batch. This allows to execute event-driven serverless workflows for applications that require intensive computing or specialized accelerated hardware such as GPUs."
+      content : "OSCAR is integrated with [SCAR](https://github.com/grycap/scar), an open-source tool to execute generic applications on [AWS Lambda](https://aws.amazon.com/lambda), the Functions as a Service (FaaS) provided of Amazon Web Services (AWS). This allows creating serverless workflows across the Cloud computing continuum, where some lightweight processing occurs in an on-premises Cloud (or in the edge) and intensive computing takes place in AWS Lambda.
+      SCAR is also integrated with [AWS Batch](https://aws.amazon.com/batch), a managed service to provision auto-scaled clusters in AWS Batch. This allows executing event-driven serverless workflows for applications that require intensive computing or specialized accelerated hardware such as GPUs."
     
             
   
@@ -124,9 +124,9 @@ call_to_action:
   enable : true
   title : "Ready to get started?"
   image : "images/undraw_version_control_re_mg66.svg"
-  content : "You can deploy an OSCAR cluster on your favourite Cloud via the [IM Dashboard](https://im.egi.eu/im-dashboard/configure?selected_tosca=oscar.yaml&childs=). No need to register. You will authenticate via [EGI Check-In](https://www.egi.eu/services/check-in/). Not ready yet? Get acquainted first with OSCAR by browsing its [documentation](https://grycap.github.io/oscar). Whenever you are ready ..."
+  content : "You can deploy an OSCAR cluster on your favourite Cloud via the [IM Dashboard](https://im.egi.eu). No need to register. You will authenticate via [EGI Check-In](https://www.egi.eu/services/check-in/). Not ready yet? Get acquainted first with OSCAR by browsing its [documentation](https://grycap.github.io/oscar). Whenever you are ready ..."
   button:
     enable : true
-    label : "Deploy your Cluster"
-    link : "https://im.egi.eu/im-dashboard/configure?selected_tosca=oscar.yaml&childs="
+    label : "Deploy you OSCAR cluster"
+    link : "https://im.egi.eu/configure/oscar"
 ---
