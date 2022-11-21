@@ -70,10 +70,7 @@ title = "GitHub"
 icon = "fab fa-github" # themify icon : https://themify.me/themify-icons
 link = "https://github.com/grycap/oscar"
 
-[[social]]
-title = "twitter"
-icon = "fab fa-twitter" # themify icon : https://themify.me/themify-icons
-link = "https://twitter.com/gmolto"
+
 
 #[[social]]
 #title = "skype"
