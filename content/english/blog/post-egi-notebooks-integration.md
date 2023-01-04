@@ -1,4 +1,15 @@
-# Use of OSCAR API through EGI Notebooks
+---
+title: "Use of OSCAR API through EGI Notebooks"
+date: 2022-05-10T09:00:00+01:00
+# post image
+image: "/images/blog/post-egi-notebooks/main.png"
+# post type (regular/featured)
+type: "featured"
+# meta description
+description: "This is a guide for the use of the OSCAR API through EGI Notebooks."
+# post draft
+draft: false
+---
 
 In this post, we are going to showcase the usage of the OSCAR python API, implemented to interact with OSCAR clusters and its services through EGI Notebooks, a tool based on JupyterHub for data analysis.
 
@@ -27,20 +38,20 @@ You can copy the code of each file for the example on the [OSCAR API repository]
 In this section, we will overview the code of each cell on the notebook.
 
 The first step is to install the package from Pypi.
-```python=
+```python
 # Install a pip package in the current Jupyter kernel
 import sys
 !{sys.executable} -m pip install oscar-python==1.0.3
 ```
 With the package installed, you can now create the client, replacing the cluster credentials, endpoint, and ID or cluster name fields for your own.
 
-```python=
+```python
 from oscar_python.client import Client
 
 client = Client("your-cluster-id","https://your-cluster-url.net", "username", "password", True)
 ```
 Once the client is created, you can call the function `create_service` with the path to the FDL file wich contains the function definition. The cluster ID on the FDL file has to match the one provided on the client definition, otherwise the function will throw an exception.
-```python=
+```python
 try:
     client.create_service("services/cowsay_example/cowsay.yaml")
     print("Service created")
@@ -49,7 +60,7 @@ except Exception as ex:
 ```
 Then, you can run a synchronous invocation with the function `run_service` and the input parameters that the function requires, in this case a simple message.
 
-```python=
+```python
 try:
     res = client.run_service("cowsay", input = '{"message": "Hi there"}')
     if res.status_code == 200:
