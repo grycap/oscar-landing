@@ -17,12 +17,13 @@ Through this post, we will create an EGI Notebook and test the OSCAR API with a 
 
 > You can see more information about the use of EGI notebooks on https://docs.egi.eu/users/dev-env/notebooks/
 
-## Create EGI Notebook
-As the [main page](https://notebooks.egi.eu/hub/welcome) states, to create an EGI Notebook is required to:
-- Have an EGI account
+## Create an EGI Notebook
+As the [main page](https://notebooks.egi.eu/hub/welcome) states, to create an EGI Notebook you need:
+- An EGI account
 - Enroll in the **vo.notebooks.egi.eu** VO.
   
-If you have an EGI account but are not enrolled in the VO, you will not be able to use the Notebooks tool. 
+If you have an EGI account but are not enrolled in the VO, you will not be able to use the Notebooks tool. However, you can reproduce these steps from any other Jupyter Notebook.
+
 Once you meet the requirements and press the "Start your notebooks" buttons, a wizard is shown with the available environments. For this example, the default setting is enough. 
 
 ![Notebook creation page](../../images/blog/post-egi-notebooks/notebook_create.png)
@@ -33,7 +34,7 @@ Once we have our notebook, we will create the files for this example. These are 
 
 You can copy the code of each file for the example on the [OSCAR API repository](https://github.com/grycap/oscar_python/tree/main/jupyter_example).
 
-## Interact with the cluster
+## Create a Python object to interact with the OSCAR cluster
 
 In this section, we will overview the code of each cell on the notebook.
 
@@ -41,7 +42,7 @@ The first step is to install the package from Pypi.
 ```python
 # Install a pip package in the current Jupyter kernel
 import sys
-!{sys.executable} -m pip install oscar-python==1.0.3
+!{sys.executable} -m pip install oscar-python
 ```
 With the package installed, you can now create the client, replacing the cluster credentials, endpoint, and ID or cluster name fields for your own.
 
