@@ -34,11 +34,11 @@ Once we have our notebook, we will create the files for this example. These are 
 
 You can copy the code of each file for the example on the [OSCAR API repository](https://github.com/grycap/oscar_python/tree/main/jupyter_example).
 
-## Create a Python object to interact with the OSCAR cluster
+## Interacting with the OSCAR cluster
 
 In this section, we will overview the code of each cell on the notebook.
 
-The first step is to install the package from Pypi.
+The first step is to install the package from PyPI.
 ```python
 # Install a pip package in the current Jupyter kernel
 import sys
@@ -51,7 +51,7 @@ from oscar_python.client import Client
 
 client = Client("your-cluster-id","https://your-cluster-url.net", "username", "password", True)
 ```
-Once the client is created, you can call the function `create_service` with the path to the FDL file wich contains the function definition. The cluster ID on the FDL file has to match the one provided on the client definition, otherwise the function will throw an exception.
+Once the client is created, you can call the function `create_service` with the path to the FDL file which contains the function definition. The cluster ID on the FDL file has to match the one provided on the client definition, otherwise, the function will throw an exception.
 ```python
 try:
     client.create_service("services/cowsay_example/cowsay.yaml")
