@@ -1,5 +1,5 @@
 ---
-title: "Use of OSCAR API through EGI Notebooks"
+title: "Invoking an OSCAR Service from an EGI Jupyter Notebook"
 date: 2023-01-04T09:00:00+01:00
 # post image
 image: "/images/blog/post-egi-notebooks/main.png"
@@ -11,9 +11,9 @@ description: "This is a guide for the use of the OSCAR API through EGI Notebooks
 draft: false
 ---
 
-In this post, we are going to showcase the usage of the OSCAR python API, implemented to interact with OSCAR clusters and its services through EGI Notebooks, a tool based on JupyterHub for data analysis.
+In this post, we are going to showcase the usage of the [OSCAR Python API](https://github.com/grycap/oscar_python), implemented to interact with OSCAR clusters and its services through [EGI Notebooks](https://notebooks.egi.eu/hub/welcome), a tool based on [Jupyter](https://jupyter.org) for data analysis.
 
-Through this post, we will create an EGI notebook and test the OSCAR API with a simple service ([cowsay service](https://github.com/grycap/oscar/tree/master/examples/cowsay)) that receives a text input and shows it on the terminal.  
+Through this post, we will create an EGI Notebook and test the OSCAR API with a simple service ([cowsay service](https://github.com/grycap/oscar/tree/master/examples/cowsay)) that receives a text input and shows it on the terminal.  
 
 > You can see more information about the use of EGI notebooks on https://docs.egi.eu/users/dev-env/notebooks/
 
