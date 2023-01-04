@@ -1,6 +1,6 @@
 ---
 title: "Use of OSCAR API through EGI Notebooks"
-date: 2022-05-10T09:00:00+01:00
+date: 2023-01-04T09:00:00+01:00
 # post image
 image: "/images/blog/post-egi-notebooks/main.png"
 # post type (regular/featured)
