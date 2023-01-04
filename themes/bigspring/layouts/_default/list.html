@@ -8,7 +8,7 @@
 <section class="section">
   <div class="container">
     <div class="row">
-      {{ range first 1 (where .Data.Pages "Type" "featured") }}
+      {{ range last 1 (first 6 .Pages.ByPublishDate) }}
       <div class="col-12 mb-5 pb-5">
         <div class="row align-items-center">
           <div class="col-md-6 mb-4 mb-md-0">

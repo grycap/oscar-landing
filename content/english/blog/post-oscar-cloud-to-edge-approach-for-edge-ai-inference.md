@@ -11,12 +11,11 @@ description: "Using OSCAR running both on edge and in an IaaS Cloud for Edge AI 
 draft: false
 ---
 
-[OSCAR](https://oscar.grycap.net) is an open-source framework for data-processing serverless computing. Users upload files to an object storage which invokes a function responsible for processing each file. This runs on an elastic Kubernetes cluster, managed by the [CLUES](https://github.com/grycap/clues) elasticity manager, that can be deployed on multiple Cloud providers thanks to the [Infrastructure Manager (IM)](https://www.grycap.upv.es/im). 
+[OSCAR](https://oscar.grycap.net) is an open-source framework for data-processing serverless computing. Users upload files to an object storage which invokes a function responsible for processing each file. This runs on an elastic Kubernetes cluster, managed by the [CLUES](https://github.com/grycap/clues) elasticity manager, that can be deployed on multiple Cloud providers thanks to the [Infrastructure Manager (IM)](https://www.grycap.upv.es/im).
 
 Functions can be chained to create data-driven serverless workflows which can run on different OSCAR clusters along several Cloud infrastructures. This way, the file-based output of a function is fed as input to another function through the corresponding object storage systems, thus using resources from multiple infrastructures.
 
 OSCAR has been adapted to run on the edge by supporting the [K3S](https://k3s.io) minified distribution of Kubernetes. This way, it can run, for example, on ARM-based devices like clusters of [Raspberry PIs](https://www.raspberrypi.com) such as the one depicted below:
-
 
 ![Raspberry Pis cluster](../../images/blog/cluster-raspberry-pis-small.jpg)
 
@@ -28,10 +27,9 @@ The videos are uploaded into the MinIO object storage in the OSCAR cluster runni
 
 This approach allows to perform data acquisition and anonymisation at the edge, as close as possible to where the data is being generated. This allows to implement Edge AI for inference, where AI algorithms are processed either directly on the device or as close as possible to the device generating the data. More computationally intensive tasks are delegated to IaaS Clouds, by using the very same software stack along the computing continuum, provided by OSCAR.
 
-
 ### YouTube video
 
-Here you have a video showing the platform action, as presented in the the [EGI Conference 2021](https://www.egi.eu/egi-conference/2021-beyond-the-horizon/): 
+Here you have a video showing the platform action, as presented in the the [EGI Conference 2021](https://www.egi.eu/egi-conference/2021-beyond-the-horizon/):
 
 Here's what you'll see:
 
