@@ -203,7 +203,7 @@ With these elements, a request to the OSCAR API(https://docs.oscar.grycap.net/ap
 
 The information that is returned by the server is related to all the services that are implemented in OSCAR. This information can be seen as a debug node is used.
 
-> If you want to download the [OSCAR Info](https://github.com/grycap/oscar_nodered/tree/main/Nodes_OSCAR/OSCAR_Info) node files, you can get it from the  [oscar_nodered repository](https://github.com/grycap/oscar_nodered).
+> If you want to download the [OSCAR Info](https://github.com/grycap/oscar_nodered/tree/main/nodes_oscar/oscar_info) node files, you can get it from the  [oscar_nodered repository](https://github.com/grycap/oscar_nodered).
 
 #### 2.3.2 Nodo OSCAR Cowsay Services.
 
@@ -231,7 +231,7 @@ When the flow is deployed, the result shown in figure 21 is obtained. Remember t
 <p><img src="../../images/blog/post-node-oscar/image/node-oscar-cowsay-run.png " alt="Flow execution for interaction with the Cowsay service." title="Figure 21. Flow execution for interaction with the Cowsay service."></p>
 <figcaption >Figure 21. Flow execution for interaction with the Cowsay service.</figcaption> </div>
 
->If you want to download the [OSCAR Cowsay Services](https://github.com/grycap/oscar_nodered/tree/main/Nodes_OSCAR/OSCAR_Cowsay_Services) node files and [sample workflow](https://github.com/grycap/oscar_nodered/tree/main/Examples_NodeRED_OSCAR/Examples_NodeRED_flow/OSCAR_Cowsay_Services), you can get it from the [oscar_nodered repository](https://github.com/grycap/oscar_nodered).
+>If you want to download the [OSCAR Cowsay Services](https://github.com/grycap/oscar_nodered/tree/main/nodes_oscar/oscar_cowsay_services) node files and [sample workflow](https://github.com/grycap/oscar_nodered/tree/main/examples_nodered_oscar/examples_nodered_flow/oscar_cowsay_services), you can get it from the [oscar_nodered repository](https://github.com/grycap/oscar_nodered).
 
 
 #### 2.3.3 OSCAR Grayify Services and OSCAR Plants Services node.
@@ -262,7 +262,7 @@ Once everything is configured, the two services are executed and wait for the OS
 <div align="center">
 <figcaption >Figure 25. Workflow execution calling OSCAR's Grayify and Plants services.</figcaption></div>
 
->If you want to download the [OSCAR Grayify Services](https://github.com/grycap/oscar_nodered/tree/main/Nodes_OSCAR/OSCAR_Grayify_Services) and [OSCAR Plants Services](https://github.com/grycap/oscar_nodered/tree/main/Nodes_OSCAR/OSCAR_Plants_Services)  node files and [sample workflow](https://github.com/grycap/oscar_nodered/tree/main/Examples_NodeRED_OSCAR/Examples_NodeRED_flow/OSCAR_GrayifyPlants_Services), you can get it from the [oscar_nodered repository](https://github.com/grycap/oscar_nodered).
+>If you want to download the [OSCAR Grayify Services](https://github.com/grycap/oscar_nodered/tree/main/nodes_oscar/oscar_grayify_services) and [OSCAR Plants Services](https://github.com/grycap/oscar_nodered/tree/main/nodes_oscar/oscar_plants_services)  node files and [sample workflow](https://github.com/grycap/oscar_nodered/tree/main/examples_nodered_oscar/examples_nodered_flow/oscar_grayifyplants_services), you can get it from the [oscar_nodered repository](https://github.com/grycap/oscar_nodered).
 
 #### 2.3.4 OSCAR Text-Speech Services node.
 
@@ -279,7 +279,7 @@ The service is passed a text as an input parameter, in the same way as in the OS
 <div align="center">
 <figcaption >Figure 27. Execution of flow calling text-to-speech-google service.</figcaption></div>
 
-> If you want to download the [OSCAR Text-Speech Services](https://github.com/grycap/oscar_nodered/tree/main/Nodes_OSCAR/OSCAR_Text-Speech_Services) node files and [sample workflow](https://github.com/grycap/oscar_nodered/tree/main/Examples_NodeRED_OSCAR/Examples_NodeRED_flow/OSCAR_Text-Speech_Services), you can get it from the [oscar_nodered repository](https://github.com/grycap/oscar_nodered).
+> If you want to download the [OSCAR Text-Speech Services](https://github.com/grycap/oscar_nodered/tree/main/nodes_oscar/oscar_textspeech_services) node files and [sample workflow](https://github.com/grycap/oscar_nodered/tree/main/examples_nodered_oscar/examples_nodered_flow/oscar_textspeech_services), you can get it from the [oscar_nodered repository](https://github.com/grycap/oscar_nodered).
 
 #### 2.3.5 OSCAR Services node.
 
@@ -301,7 +301,7 @@ The flow shown in Figure 30 can execute any of the services implemented in the O
 <div align="center">
 <figcaption >Figure 30. Execution of workflows of all OSCAR services.</figcaption></div>
 
-> If you want to download the [OSCAR Services](https://github.com/grycap/oscar_nodered/tree/main/Nodes_OSCAR/OSCAR_Services) node files and [sample workflow](https://github.com/grycap/oscar_nodered/tree/main/Examples_NodeRED_OSCAR/Examples_NodeRED_flow/OSCAR_Services), you can get it from the [oscar_nodered repository](https://github.com/grycap/oscar_nodered).
+> If you want to download the [OSCAR Services](https://github.com/grycap/oscar_nodered/tree/main/nodes_oscar/oscar_services) node files and [sample workflow](https://github.com/grycap/oscar_nodered/tree/main/examples_nodered_oscar/examples_nodered_flow/oscar_services), you can get it from the [oscar_nodered repository](https://github.com/grycap/oscar_nodered).
 
 
 > ##### **In a future blog, there will be an explanation of the creation of workflows for the interaction of Node-RED and OSCAR using dashboards to create web interfaces for easy interaction with users**.
