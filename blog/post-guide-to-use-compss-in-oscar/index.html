@@ -17,18 +17,22 @@
 
     
 	<meta charset="utf-8">
-<title>Terms of Use</title>
+<title>Use COMPSs with OSCAR</title>
 
-<meta name="description" content="Terms of Use">
-
-
+<meta name="description" content="Introductory guide for developers on how to use COMPSs with OSCAR.">
 
 
 
-<meta property="og:title" content="Terms of Use" />
-<meta property="og:description" content="Terms of Use" />
-<meta property="og:type" content="website" />
-<meta property="og:url" content="https://oscar.grycap.net/terms-conditions/" /><meta property="og:site_name" content="OSCAR " />
+
+
+<meta property="og:image" content="https://oscar.grycap.net/../../images/blog/post-compss/oscarCompss.png" />
+
+<meta property="og:title" content="Use COMPSs with OSCAR" />
+<meta property="og:description" content="Introductory guide for developers on how to use COMPSs with OSCAR." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://oscar.grycap.net/blog/post-guide-to-use-compss-in-oscar/" /><meta property="article:section" content="blog" />
+<meta property="article:published_time" content="2023-02-02T09:00:00&#43;01:00" />
+<meta property="article:modified_time" content="2023-02-02T09:00:00&#43;01:00" /><meta property="og:site_name" content="OSCAR " />
 
 
 
@@ -157,27 +161,75 @@
 	<main>
 		
 
-<section class="section pb-0">
-  <div class="container text-center">
-    <h1 class="display-3">Terms of Use</h1>
-    
-  </div>
-</section>
 
 
 
 <section class="section">
   <div class="container">
     <div class="row">
-      <div class="col-lg-10 mx-auto">
-        <div class="content"><p>This landing page delegates on the Infrastructure Manager Dashboard the deployment of the OSCAR cluster on the Cloud platform you provide it access to.</p>
-<p>You are encouraged to read the <a href="https://appsgrycap.i3m.upv.es:31443/im-dashboard/static/terms.html">terms of use for the Infrastructure Manager Dashboard</a>.</p>
-<p>You are encouraged to read the <a href="http://ftpgrycap.i3m.upv.es/IMPrivacyPolicy.pdf">privacy policy of the Infrastructure Manager Dashboard</a></p>
+      <div class="col-lg-8 mx-auto">
+        <img src="/../../images/blog/post-compss/oscarCompss.png" alt="Use COMPSs with OSCAR" class="img-fluid w-100 rounded mb-4">
+        <h2 class="mb-4">Use COMPSs with OSCAR</h2>
+        <div class="content"><p>This is a tutorial to integrate COMPSs with OSCAR.
+In this post, we will explain what COMPSs is and the integration with OSCAR to support parallel processing within an on-premises serverless platform.</p>
+<h3 id="what-is-oscar">What is OSCAR?</h3>
+<p><a href="https://oscar.grycap.net/">OSCAR</a> is an open-source serverless platform for event-driven data-processing containerized applications that execute on elastic <a href="http://kubernetes.io">Kubernetes</a> clusters that are dynamically provisioned on multiple Clouds.</p>
+<h3 id="what-is-compss">What is COMPSs?</h3>
+<p><a href="https://compss-doc.readthedocs.io/en/stable/index.html">COMP Superscalar (COMPSs)</a> is a task-based programming model which aims to ease the development of applications for distributed infrastructures, such as large High-Performance clusters (HPC), clouds and container managed clusters. COMPSs provides a programming interface for the development of the applications and a runtime system that exploits the inherent parallelism of applications at execution time.</p>
+<p>COMPSs helps the programmer by offering a model that:</p>
+<ol>
+<li>Deal with parallelization and distribution even if the code is made as sequential programming.</li>
+<li>Manage the memory and file system as one.</li>
+<li>Abstracts the application from distributed infrastructure. It does not need a specification like deployment or a resource management.</li>
+<li>Is supported in Java, Python, and C/C++ languages.</li>
+<li>It does not require the use any special API call, pragma, or construct in the application; everything is a pure standard Java syntax and libraries.</li>
+</ol>
+<h3 id="benefit-of-the-integration-of-oscar-with-compss">Benefit of the integration of OSCAR with COMPSs</h3>
+<p>This combination of COMPSs and OSCAR allows the execution of parallelized code in a serverless distributed infrastructure
+triggered by events. When an OSCAR service is triggered, the COMPSs application is executed in parallel within the resources provided by the underlying container.</p>
+<h3 id="install-oscar-and-compss">Install OSCAR and COMPSs</h3>
+<p><a href="https://oscar.grycap.net/">OSCAR</a> can be deployed in localhost or using the <a href="https://www.grycap.upv.es/im/index.php">IM Dashboard</a>.
+It is necessary to install Docker, Kubectl, Helm, and Kind as prerequisites. After that, run the following command:</p>
+<pre><code>curl -sSL http://go.oscar.grycap.net | bash
+</code></pre><p>You can find additional details to locally deploy OSCAR for testing purposes in the <a href="https://docs.oscar.grycap.net/local-testing/">local testing</a> section in our documentation.</p>
+<p>Also, in case you want to deploy OSCAR through the IM Dashboard, follow the tutorial in the <a href="https://docs.oscar.grycap.net/deploy-im-dashboard/">Deployment with IM Dashboard</a> section.</p>
+<p>To setup <a href="https://compss-doc.readthedocs.io/en/stable/index.html">COMPSs</a> it is highly recommended to clone the <a href="https://github.com/bsc-wdc/tutorial_apps">tutorial_apps</a> repository. Then:</p>
+<ol>
+<li>Pull the docker image <code>docker pull compss/compss-tutorial:3.1</code></li>
+<li>Install PyCOMPSs Linux: <code>sudo python3 -m pip install pycompss-cli</code> or  Mac-os: <code>pip install pycompss-cli</code></li>
+<li>Install <a href="https://maven.apache.org/install.html">Maven</a></li>
+<li>(Optional) A Java IDE is recommended for editing Java code, such as <a href="https://www.eclipse.org/downloads/">Eclipse</a></li>
+</ol>
+<h3 id="deploy-an-oscar-service-with-compss">Deploy an OSCAR service with COMPSs</h3>
+<p>OSCAR services need a Docker with the COMPSs code inside the image.
+So, create a new Docker image from an image in <a href="https://hub.docker.com/u/compss">COMPSs Docker Hub</a>
+Copy your code inside the docker:</p>
+<ol>
+<li>In Python, it will be directly the code.</li>
+<li>In Java, it will be the .jar file generated with Maven.</li>
+<li>In C/C++, it will be the entire proyect.</li>
+</ol>
+<p>The way to execute COMPSs within a a Docker container is by executing a script that runs the required commands.
+Declare that file with some changes as the script of the service. This script will:</p>
+<ol>
+<li>Parse the input file.</li>
+<li>Enable ssh.</li>
+<li>(Only in C/C++) Build the binary file.</li>
+<li>Run COMPSs and redirect the output to the output file.</li>
+</ol>
+<p>There are three different examples of the integration of OSCAR with COMPSs in the <a href="https://github.com/grycap/oscar/tree/master/examples/compss">examples section</a>.</p>
+<p><a href="https://grycap.github.io/oscar/">OSCAR</a> and <a href="http://www.grycap.upv.es/im">IM</a> are developed by the <a href="https://www.grycap.upv.es/">GRyCAP</a> research group at the <a href="https://www.upv.es/">Universitat Politècnica de València</a>.</p>
 </div>
+        
+        
+        
       </div>
     </div>
   </div>
 </section>
+
+
+
 
 
 

@@ -5,7 +5,16 @@
     <link>https://oscar.grycap.net/</link>
     <description>Recent content on OSCAR </description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Wed, 04 Jan 2023 09:00:00 +0100</lastBuildDate><atom:link href="https://oscar.grycap.net/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 02 Feb 2023 09:00:00 +0100</lastBuildDate><atom:link href="https://oscar.grycap.net/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Use COMPSs with OSCAR</title>
+      <link>https://oscar.grycap.net/blog/post-guide-to-use-compss-in-oscar/</link>
+      <pubDate>Thu, 02 Feb 2023 09:00:00 +0100</pubDate>
+      
+      <guid>https://oscar.grycap.net/blog/post-guide-to-use-compss-in-oscar/</guid>
+      <description>This is a tutorial to integrate COMPSs with OSCAR. In this post, we will explain what COMPSs is and the integration with OSCAR to support parallel processing within an on-premises serverless platform.</description>
+    </item>
+    
     <item>
       <title>Invoking an OSCAR Service from an EGI Jupyter Notebook</title>
       <link>https://oscar.grycap.net/blog/post-egi-notebooks-integration/</link>
