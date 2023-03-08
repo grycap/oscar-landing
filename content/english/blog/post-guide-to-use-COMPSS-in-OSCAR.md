@@ -2,7 +2,7 @@
 title: "Use COMPSs with OSCAR"
 date: 2023-02-02T09:00:00+01:00
 # post image
-image: "https://compss-doc.readthedocs.io/en/stable/_images/COMPSs_logo.png"
+image: "../../images/blog/post-compss/oscarCompss.png"
 # post type (regular/featured)
 type: "featured"
 # meta description
