@@ -35,6 +35,7 @@ Once we have our notebook, we will create the files for this example. These are 
 You can copy the code of each file for the example on the [OSCAR API repository](https://github.com/grycap/oscar_python/tree/main/jupyter_example).
 
 ## Interacting with the OSCAR cluster
+### Cowsay example
 
 In this section, we will overview the code of each cell on the notebook.
 
@@ -71,3 +72,48 @@ except Exception as ex:
 ```
 
 ![Cowsay output](../../images/blog/post-egi-notebooks/cowsay.png)
+
+### Plants classification example
+
+In this second example, we will overview how to use the function `run service` with an image as a input.
+
+First of all, we create the plant classification service using the `create service` function.
+
+```python
+try:
+    client.create_service("services/plant-classification-sync/plant-classification-sync.yaml")
+    print("Service created")
+except Exception as ex:
+    print("Error creating service: ", ex)
+```
+
+Then, before we use the `run_fuction` we need to convert image current format to Base64, to do this we will import `base64` library. In this case, we will use png format image.
+
+```python
+import base64 
+with open('your/image/path.png', 'rb') as a binary_file:
+    binary_file_data = binary_file.read()
+    base64_encoded_data = base64.b64encode(binary_file_data)
+    base64_message = base64_encoded_data.decode('utf-8')
+    my_image_b64 = base64_message
+```
+
+Once the image is converted we will use the `run_service` function as the previous example.
+
+```python
+try:
+    res = client.run_service("plant-classification-sync", input = my_image_b64)
+    if res.status_code == 200:
+        print(res.text)
+except Exception as ex:
+    print("Error running service: ", ex)
+```
+
+It must be noted that service response is coded in base64, so you have to decode it.
+
+```python
+result = base64.b64decode(res.text)
+print(result)
+```
+
+![Plant_output](/static/images/result_plant_classification_sync.png)
