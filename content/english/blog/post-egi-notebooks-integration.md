@@ -75,7 +75,7 @@ except Exception as ex:
 
 ### Plants classification example
 
-In this second example, we will overview how to use the function `run service` with an image as a input.
+In this second example, we will overview how to use the function `run service` with an image as a input, for it we will use the [plant classification example](https://github.com/grycap/oscar/tree/master/examples/plant-classification-sync).
 
 First of all, we create the plant classification service using the `create service` function.
 
@@ -116,4 +116,4 @@ result = base64.b64decode(res.text)
 print(result)
 ```
 
-![Plant_output](/static/images/result_plant_classification_sync.png)
+![Plant_output](../../images/blog/post-egi-notebooks/result_plant_classification_sync.png)
