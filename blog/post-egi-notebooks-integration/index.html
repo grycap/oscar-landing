@@ -188,6 +188,7 @@
 <p><img src="../../images/blog/post-egi-notebooks/files.png" alt="Notebook tree"></p>
 <p>You can copy the code of each file for the example on the <a href="https://github.com/grycap/oscar_python/tree/main/jupyter_example">OSCAR API repository</a>.</p>
 <h2 id="interacting-with-the-oscar-cluster">Interacting with the OSCAR cluster</h2>
+<h3 id="cowsay-example">Cowsay example</h3>
 <p>In this section, we will overview the code of each cell on the notebook.</p>
 <p>The first step is to install the package from PyPI.</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#75715e"># Install a pip package in the current Jupyter kernel</span>
@@ -211,6 +212,32 @@ client <span style="color:#f92672">=</span> Client(<span style="color:#e6db74">&
 <span style="color:#66d9ef">except</span> <span style="color:#a6e22e">Exception</span> <span style="color:#66d9ef">as</span> ex:
     <span style="color:#66d9ef">print</span>(<span style="color:#e6db74">&#34;Error running service: &#34;</span>, ex)
 </code></pre></div><p><img src="../../images/blog/post-egi-notebooks/cowsay.png" alt="Cowsay output"></p>
+<h3 id="plants-classification-example">Plants classification example</h3>
+<p>In this second example, we will overview how to use the function <code>run service</code> with an image as a input, for this purpose we will use the <a href="https://github.com/grycap/oscar/tree/master/examples/plant-classification-sync">plant classification example</a>.</p>
+<p>First of all, we create the plant classification service using the <code>create service</code> function.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">try</span>:
+    client<span style="color:#f92672">.</span>create_service(<span style="color:#e6db74">&#34;services/plant-classification-sync/plant-classification-sync.yaml&#34;</span>)
+    <span style="color:#66d9ef">print</span>(<span style="color:#e6db74">&#34;Service created&#34;</span>)
+<span style="color:#66d9ef">except</span> <span style="color:#a6e22e">Exception</span> <span style="color:#66d9ef">as</span> ex:
+    <span style="color:#66d9ef">print</span>(<span style="color:#e6db74">&#34;Error creating service: &#34;</span>, ex)
+</code></pre></div><p>Then, before we use the <code>run_fuction</code> we need to convert image current format to Base64, to do this we will import <code>base64</code> library. In this case, we will use png format image.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">import</span> base64 
+<span style="color:#66d9ef">with</span> open(<span style="color:#e6db74">&#39;your/image/path.png&#39;</span>, <span style="color:#e6db74">&#39;rb&#39;</span>) <span style="color:#66d9ef">as</span> a binary_file:
+    binary_file_data <span style="color:#f92672">=</span> binary_file<span style="color:#f92672">.</span>read()
+    base64_encoded_data <span style="color:#f92672">=</span> base64<span style="color:#f92672">.</span>b64encode(binary_file_data)
+    base64_message <span style="color:#f92672">=</span> base64_encoded_data<span style="color:#f92672">.</span>decode(<span style="color:#e6db74">&#39;utf-8&#39;</span>)
+    my_image_b64 <span style="color:#f92672">=</span> base64_message
+</code></pre></div><p>Once the image is converted we will use the <code>run_service</code> function as the previous example.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">try</span>:
+    res <span style="color:#f92672">=</span> client<span style="color:#f92672">.</span>run_service(<span style="color:#e6db74">&#34;plant-classification-sync&#34;</span>, input <span style="color:#f92672">=</span> my_image_b64)
+    <span style="color:#66d9ef">if</span> res<span style="color:#f92672">.</span>status_code <span style="color:#f92672">==</span> <span style="color:#ae81ff">200</span>:
+        <span style="color:#66d9ef">print</span>(res<span style="color:#f92672">.</span>text)
+<span style="color:#66d9ef">except</span> <span style="color:#a6e22e">Exception</span> <span style="color:#66d9ef">as</span> ex:
+    <span style="color:#66d9ef">print</span>(<span style="color:#e6db74">&#34;Error running service: &#34;</span>, ex)
+</code></pre></div><p>It must be noted that service response is coded in base64, so you have to decode it.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">result <span style="color:#f92672">=</span> base64<span style="color:#f92672">.</span>b64decode(res<span style="color:#f92672">.</span>text)
+<span style="color:#66d9ef">print</span>(result)
+</code></pre></div><p><img src="../../images/blog/post-egi-notebooks/result_plant_classification_sync.png" alt="Plant_output"></p>
 </div>
         
         
