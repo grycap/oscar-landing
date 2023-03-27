@@ -10,13 +10,13 @@ description: "This is a guide for creating nodes and subflows in Node-RED to int
 # post draft
 draft: false
 ---
-In this post, we will be explaining the integration of the [Node-RED](https://nodered.org/) software with the [OSCARm](https://oscar.grycap.net/). The necessary tools will be given to achieve workflows between OSCAR and Node-RED simply and intuitively through flow-based programming techniques. For this, a series of nodes and subflows are developed that will interact with a set of services deployed in an OSCAR cluster.
+In this post, we will be explaining the integration of [Node-RED](https://nodered.org/) software with [OSCAR](https://oscar.grycap.net/). The necessary tools will be given to achieve workflows between OSCAR and Node-RED simply and intuitively through flow-based programming techniques. For this, a series of nodes and subflows have been developed, which will interact with a set of services, previously deployed in an OSCAR cluster.
 
 ## 1. Introduction to working with Node-RED software.
 
 Node-RED is a tool to communicate services in a very convenient way. It greatly simplifies the task of programming on the server side thanks to visual programming.
 
-The minimal structure is the nodes. These are dragged through the graphical interface and allow you to do a specific task such as receiving an HTTP call, an MQTT message or the activation of a button. All these nodes are organized in visual flows that group nodes that connect to each other. 
+The minimal structure is the node. Those are dragged through the graphical interface and allow you to do a specific task such as receiving an HTTP call, an MQTT message or the activation of a button. All these nodes are organized in visual flows that group nodes that connect to each other.
 
 Node-RED is built in [NodeJS](https://nodejs.org) and the [D3.js](https://d3js.org/) JavaScript library. On the one hand, NodeJS provides server-side JavaScript programming and the ability to efficiently treat multiple concurrent.
 On the other hand, D3.js powers the web interface. Node-RED is conveniently accessible through a browser to design the workflows.
@@ -25,7 +25,7 @@ On the other hand, D3.js powers the web interface. Node-RED is conveniently acce
 
 Node-RED can be installed in several operating systems and devices (see the [getting started documentation](https://nodered.org/docs/getting-started/)).
 
-Some prerequisites need to be installed first, such as the NodeJS and npm [Node Package Manager](https://www.npmjs.com/).You can then install Node-RED as follows:
+Some prerequisites need to be installed first, such as the NodeJS and npm [Node Package Manager](https://www.npmjs.com/). Then, you can install Node-RED as follows:
 
  ``` bash
  npm install -g –unsafe-perm node-red
@@ -70,7 +70,6 @@ Once this process is done, restart Node-RED again and the following window will 
 <figcaption >Figure 4. Node-RED view for credentials entry.</figcaption> </div>
 
 Once the credentials have been entered, you reach the work area and if you go to the upper right you can see the user employed to log into the platform (Figure 5).
-
 
 
 <div align="center">
@@ -147,7 +146,7 @@ Figure 10 shows an example of a subflow created to obtain information about an i
 <div align="center">
 <figcaption >Figure 10. OSCAR Info node subflow. </figcaption></div>
 
-For the different services that have been installed in OSCAR, subflows were created (Figure 11) to access each specific service and a generic subflow to access the service that the user deems appropriate.
+For the different services installed in OSCAR, subflows were created (Figure 11) to access each specific service and a generic subflow to access the service that the user deems appropriate.
 
 <div align="center">
 <p><img src="../../images/blog/post-node-oscar/image/node-oscar-subflow.png" alt="Figure 11. Subflows created to interact with OSCAR." title="Figure 11. Subflows created to interact with OSCAR."></p>
@@ -207,13 +206,13 @@ The information that is returned by the server is related to all the services th
 
 #### 2.3.2 Nodo OSCAR Cowsay Services.
 
-This node runs the OSCAR cowsay service. The process that is carried out is similar for all the subflows or nodes that interact with OSCAR services. First, the data is taken and a GET request is made to obtain the service token. Once the message to be sent is taken with the token to be processed by the service and a POST request is made to the service, the entire process of interaction with the services can be seen in [OSCAR API](https://docs.oscar.grycap.net/api/).
+This node runs the OSCAR cowsay service. The process that is carried out is similar for all the subflows or nodes that interact with OSCAR services. First, the token is taken from a GET request. Once we have the token, a POST request is made to the service. This interaction can be seen in [OSCAR API](https://docs.oscar.grycap.net/api/).
 
 ![OSCAR Cowsay Services node subflow.](../../images/blog/post-node-oscar/image/node-oscar-cowsay-subflow.png "Figure 17. OSCAR Cowsay Services node subflow.")
 <div align="center">
 <figcaption >Figure 17. OSCAR Cowsay Services node subflow.</figcaption></div>
 
-Once you have the node or subflow (Figure 17) in the work area, proceed to configure it. A section is added to the nodes that interact with services, which is the name of the service (Figure 18), since in the installation process of the service in OSCAR it can be given a different name from the one it should have by default, in this case you have the same (cowsay).
+Once you have the node or subflow (Figure 17) in the work area, proceed to configure it. A section is added to the nodes that interact with services, which is the name of the service (Figure 18), since in the installation process of the service in OSCAR it can be given a different name. By default and in this case you have the same name, cowsay.
 
 <div align="center">
 <p><img src="../../images/blog/post-node-oscar/image/node-oscar-cowsay-config.png" alt="Figure 18. OSCAR Cowsay Services node configuration." title="Figure 18. OSCAR Cowsay Services node configuration." width=800px></p>
@@ -236,7 +235,7 @@ When the flow is deployed, the result shown in figure 20 is obtained. Remember t
 
 #### 2.3.3 OSCAR Grayify Services and OSCAR Plants Services node.
 
-Here we will be using the [Plants Classification](https://marketplace.deep-hybrid-datacloud.eu/modules/deep-oc-plants-classification-tf.html) AI Model from the DEEP Open Catalog, and a simple operation to transform images to grayscale.
+Here we will be using the [Plants Classification](https://marketplace.deep-hybrid-datacloud.eu/modules/deep-oc-plants-classification-tf.html) AI Model from the [DEEP Open Catalog](https://marketplace.deep-hybrid-datacloud.eu/), and a simple operation to transform images to grayscale.
 
 These two nodes in terms of operation are quite similar, which is why they will be explained in the same section (Figure 21 and Figure 22). Here the process of invoking the service by the node or subflow is the same as that explained in the previous section, so the image to be processed must be sent in base64 format and the response returned by the services are the same images in base64 format. There is a little difference in the response of giving the base64 image of each service but that is resolved by processing the response differently.
 
@@ -250,13 +249,13 @@ These two nodes in terms of operation are quite similar, which is why they will 
 <figcaption >Figure 22. OSCAR Plants Services node subflow.</figcaption></div>
 
 
-The configuration process is the same as in all the nodes, only putting in the service name section the name that was given to each of the services in OSCAR. The workflow is done by calling the two services at the same time with the same image to which two different services will be applied. To load the image, the read file node is used, which is given the address of the image to be processed, as shown in Figure 23.
+The configuration process is the same as in all the nodes, only put in the service name section the name that was given to each of the services in OSCAR. The workflow is done by calling the two services at the same time with the same image to which two different services will be applied. To load the image, the read file node is used, which is given the address of the image to be processed, as shown in Figure 23.
 
 <div align="center">
 <p><img src="../../images/blog/post-node-oscar/image/node-load-image.png" alt="Figure 23. Process of loading image in read file node." title="Figure 23. Process of loading image in read file node."></p>
 <figcaption >Figure 23. Process of loading image in read file node.</figcaption> </div>
 
-Once everything is configured, the two services are executed and wait for the OSCAR cluster to return the processed images (Figure 24). To achieve a better visualization of the information, the image preview node is used, although the responses from the services always come in msg.payload.
+Once everything is configured, execute both services on the OSCAR cluster (Figure 24). To achieve a better visualization of the information, the image preview node is used, although the responses from the services always come in msg.payload.
 
 ![Workflow execution calling OSCAR's Grayify and Plants services.](../../images/blog/post-node-oscar/image/node-oscar-grayify-plants-run.png "Figure 24. Workflow execution calling OSCAR's Grayify and Plants services.")
 <div align="center">

@@ -1,6 +1,6 @@
 ---
-title: "Design of workflows across OSCAR services with Node-RED(Part 2)."
-date: 2023-02-23T09:00:00+01:00
+title: "Design of workflows across OSCAR services with Node-RED (Part 2)."
+date: 2023-02-23T09:10:00+01:00
 # post image
 image: "/images/blog/post-node-oscar/image_2/oscar-dashboard.png"
 # post type (regular/featured)
