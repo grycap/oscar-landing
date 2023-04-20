@@ -9,14 +9,15 @@
       <div class="col-lg-8 mx-auto">
         <img src="{{ .Params.image | relURL }}" alt="{{ .Title }}" class="img-fluid w-100 rounded mb-4">
         <h2 class="mb-4">{{ .Title }}</h2>
-        <div class="content">{{.Content}}</div>
-        
+        <p>{{.Date.Format "Monday, January 2, 2006"}}  </p>
+        <div class="content">{{.Content}}</div>        
         <!-- comments -->
         {{ if site.DisqusShortname }}
         <div class="mt-5">
           {{ template "_internal/disqus.html" . }}
         </div>
         {{ end }}
+        
       </div>
     </div>
   </div>
