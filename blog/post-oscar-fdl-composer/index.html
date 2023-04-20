@@ -170,6 +170,7 @@
       <div class="col-lg-8 mx-auto">
         <img src="/images/blog/post-oscar-fdl-composer/1-fdl-composer.png" alt="FDL Composer to create a workflow with OSCAR" class="img-fluid w-100 rounded mb-4">
         <h2 class="mb-4">FDL Composer to create a workflow with OSCAR</h2>
+        <p>Monday, June 6, 2022  </p>
         <div class="content"><p><a href="http://composer.oscar.grycap.net">FDL-Composer</a> is a tool to visually design workflows for <a href="https://oscar.grycap.net">OSCAR</a> and <a href="https://github.com/grycap/scar">SCAR</a>. We are going to simulate the example <a href="https://github.com/grycap/oscar/tree/master/examples/video-process">video-process</a></p>
 <p>This example supports highly-scalable event-driven video analysis using <a href="https://ffmpeg.org">ffmpeg</a> to extract keyframes of the video and <a href="https://pjreddie.com/darknet/">Darknet</a> to perform object recognition on the keyframes. It requires two OSCAR services: one where the video is going to get split into frames, and  another to process those frames. It also requires three MinIO buckets. One for the input. One for the output. And the last one for the connection between both services. So when a video is uploaded to the input bucket, the &ldquo;split video&rdquo; OSCAR service will be triggered and let the frames in an intermediate bucket. That will trigger the &ldquo;processing frame&rdquo; OSCAR service. Furthermore, the result will be stored in the last bucket.</p>
 <p>Drag the OSCAR functions we are going to use. In this case, two.</p>
@@ -252,7 +253,7 @@
       <span style="color:#f92672">verify</span>: <span style="color:#66d9ef">false</span>
 </code></pre></div><p>This FDL file can be used as input to OSCAR in order to deploy the services within a specific OSCAR cluster.</p>
 <p><a href="https://composer.oscar.grycap.net">FDL Composer</a>, <a href="https://grycap.github.io/oscar/">OSCAR</a> and <a href="https://github.com/grycap/scar">SCAR</a> are developed by the <a href="https://www.grycap.upv.es/">GRyCAP</a> research group at the <a href="https://www.upv.es/">Universitat Politècnica de València</a>.</p>
-</div>
+</div>        
         
         
         
