@@ -15,7 +15,7 @@ This post will attend to the connection between OSCAR and dCache. OSCAR services
 This is an excellent combination because the data will be stored in dCache and computation will be done in OSCAR.
 In OSCAR it will only remain the logs of the services and the sensitive data will keep centralized in dCache.
 
-### What is Dcache?
+### What is dCache?
 
 [Dcache](https://dcache.org/) is a system for storing data in distributed and heterogenous server nodes that works like a single virtual filesystem tree.
 The system can be expanded or contracted by adding/removing data servers at any time.
