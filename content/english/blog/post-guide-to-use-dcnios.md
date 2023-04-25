@@ -24,7 +24,7 @@ The system can be expanded or contracted by adding/removing data servers at any 
 
 [OSCAR](https://oscar.grycap.net/) is an open-source serverless platform for event-driven data-processing containerized applications that execute on elastic [Kubernetes](http://kubernetes.io) clusters that are dynamically provisioned on multiple Clouds.
 
-In the version 2.6.1 or newer versions is implemented the handle the dcache events.
+Version 2.6.1 or newer versions have implemented the handle of the dcache events.
 
 ### What is Nifi? and Why use Nifi?
 
@@ -44,6 +44,6 @@ Using Nifi brings us advantages instead using an active pod listening and trigge
 - The data ingestion in OSCAR can be changed at any time.
 - In this case, Nifi is deployed in the cluster node to keep the persistence.
 
-More technical information is visit our respository [dcnios](https://github.com/grycap/dcnios).
+For more technical information, visit our repository [dcnios](https://github.com/grycap/dcnios).
 
 [OSCAR](https://grycap.github.io/oscar/) and [IM](http://www.grycap.upv.es/im) are developed by the [GRyCAP](https://www.grycap.upv.es/) research group at the [Universitat Politècnica de València](https://www.upv.es/).
