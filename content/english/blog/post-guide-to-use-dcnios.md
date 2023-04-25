@@ -11,9 +11,9 @@ description: "Dcnios tools. It is the combination between Dcache, Nifi and OSCAR
 draft: false
 ---
 
-This post will attend to the connection between OSCAR and dcache. OSCAR services will be triggered with dcache events.
-This is an excellent combination because the data will be stored in dcache and computation will be done in OSCAR.
-In OSCAR it will only remain the logs of the services and the sensitive data will keep centralized in dcache.
+This post will attend to the connection between OSCAR and dCache. OSCAR services will be triggered with dCache events.
+This is an excellent combination because the data will be stored in dCache and computation will be done in OSCAR.
+In OSCAR it will only remain the logs of the services and the sensitive data will keep centralized in dCache.
 
 ### What is Dcache?
 
@@ -24,15 +24,15 @@ The system can be expanded or contracted by adding/removing data servers at any 
 
 [OSCAR](https://oscar.grycap.net/) is an open-source serverless platform for event-driven data-processing containerized applications that execute on elastic [Kubernetes](http://kubernetes.io) clusters that are dynamically provisioned on multiple Clouds.
 
-Version 2.6.1 or newer versions have implemented the handle of the dcache events.
+Version 2.6.1 or newer versions have implemented the handle of the dCache events.
 
 ### What is Nifi? and Why use Nifi?
 
 [Apache NiFi](https://nifi.apache.org/) was made for dataflow. It supports highly configurable directed data routing, transformation, and system mediation logic graphs.
 
-Nifi works as an Event Ingestion Platform between dcache and OSCAR in this architecture.
-The SSE protocol is one method to create active listening in dcache.
-Nifi will be in active listening with dcache and when an event happens there, an OSCAR service will be triggered.
+Nifi works as an Event Ingestion Platform between dCache and OSCAR in this architecture.
+The SSE protocol is one method to create active listening in dCache.
+Nifi will be in active listening with dCache and when an event happens there, an OSCAR service will be triggered.
 Nifi does not have a process with SSE protocol. So, a new Docker image (from the Nifi image with version 1.20.0) has been created. In this new image has been added an example of [SSE protocol](https://github.com/paulmillar/dcache-sse).
 
 Using Nifi brings us advantages instead using an active pod listening and triggering OSCAR services.
