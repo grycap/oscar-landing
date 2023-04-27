@@ -103,7 +103,7 @@ These interfaces have the objective that the user does not have to change anythi
 
 >If you want to download the `.json` file of the [workflow for all services](https://github.com/grycap/oscar_nodered/blob/main/examples_nodered_oscar/example_workflows_dashboard/workflow_all_services.json) for this example, you can get it from the  [oscar_nodered repository](https://github.com/grycap/oscar_nodered).
 
-### 1.3 OSCAR Continuum Services Workflow Dashboard (Grayify-Plants).
+### 1.3 OSCAR Services Workflow Dashboard (Grayify-Plants).
 
 In the following example we want to exemplify the workflow of invoking two OSCAR services consecutively (Figure 13). In other words, firstly, the grayify service is invoked and a grayscale image is obtained, and then this image is taken and the plants service is invoked to carry out the classification that this algorithm displays. For this, a flow is developed with its respective dashboard to be able to carry out said process.
 
@@ -139,8 +139,8 @@ If you want to run the process again with another image, load it (Figure 17) and
 
 >If you want to download the `.json` file of the [workflow for two continuos services](https://github.com/grycap/oscar_nodered/blob/main/examples_nodered_oscar/example_workflows_dashboard/workflow_two_services.json) for this example, you can get it from the [oscar_nodered repository](https://github.com/grycap/oscar_nodered).
 
-This process demonstrates how easy it could be to invoke OSCAR Shell Services through Node-RED without having to execute command lines just using the OSCAR API. 
-In a future blog entry these two dashboards will be shown using the nodes and subflows created in the previous entry.
+This process demonstrates how easy it could be to invoke OSCAR services through Node-RED without having to execute command lines, just using the OSCAR API, which is abstracted away.
+
 
 [OSCAR-Node-RED](https://github.com/grycap/oscar_nodered) is  developed by the [GRyCAP](https://www.grycap.upv.es/) research group at the [Universitat Politècnica de València](https://www.upv.es/).
   
