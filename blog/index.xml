@@ -5,7 +5,25 @@
     <link>https://oscar.grycap.net/blog/</link>
     <description>Recent content in Blog on OSCAR </description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Thu, 02 Feb 2023 09:00:00 +0100</lastBuildDate><atom:link href="https://oscar.grycap.net/blog/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 23 Feb 2023 09:10:00 +0100</lastBuildDate><atom:link href="https://oscar.grycap.net/blog/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Design of workflows across OSCAR services with Node-RED (Part 2).</title>
+      <link>https://oscar.grycap.net/blog/post-oscar-node-red-part-2/</link>
+      <pubDate>Thu, 23 Feb 2023 09:10:00 +0100</pubDate>
+      
+      <guid>https://oscar.grycap.net/blog/post-oscar-node-red-part-2/</guid>
+      <description>In this post, the work with Node-RED and its interaction with OSCAR services will be continued.</description>
+    </item>
+    
+    <item>
+      <title>Design of workflows across OSCAR services with Node-RED (Part 1).</title>
+      <link>https://oscar.grycap.net/blog/post-oscar-node-red/</link>
+      <pubDate>Thu, 23 Feb 2023 09:00:00 +0100</pubDate>
+      
+      <guid>https://oscar.grycap.net/blog/post-oscar-node-red/</guid>
+      <description>In this post, we will be explaining the integration of Node-RED software with OSCAR. The necessary tools will be given to achieve workflows between OSCAR and Node-RED simply and intuitively through flow-based programming techniques.</description>
+    </item>
+    
     <item>
       <title>Use COMPSs with OSCAR</title>
       <link>https://oscar.grycap.net/blog/post-guide-to-use-compss-in-oscar/</link>
