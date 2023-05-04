@@ -29,12 +29,12 @@ Version 2.6.1 or newer versions have implemented the handle of the dCache events
 
 [Apache NiFi](https://nifi.apache.org/) was made for dataflow. It supports highly configurable directed data routing, transformation, and system mediation logic graphs.
 
-<img src="../../images/blog/post-dCNiOS/dCNiOS-workflow.png"  height="550px" align="right">
-
 Nifi works as an Event Ingestion Platform between dCache and OSCAR in this architecture.
 The SSE protocol is one method to create active listening in dCache.
 Nifi will be in active listening with dCache and when an event happens there, an OSCAR service will be triggered.
 Nifi does not have a process with SSE protocol. So, a new Docker image (from the Nifi image with version 1.20.0) has been created. In this new image has been added an example of [SSE protocol](https://github.com/paulmillar/dcache-sse).
+
+![workflow](../../images/blog/post-dCNiOS/dCNiOS-workflow.png)
 
 Using Nifi brings us advantages instead using an active pod listening and triggering OSCAR services.
 
