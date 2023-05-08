@@ -17,7 +17,7 @@ This is an excellent combination because the data will be stored in dCache and c
 ### What is dCache?
 
 [dCache](https://dcache.org/) is a system for storing data in distributed and heterogenous server nodes that works like a single virtual filesystem tree.
-The system can be expanded or contracted by adding/removing data servers at any time. dCache is develop by [DESY](https://www.desy.de/index_eng.html)
+The system can be expanded or contracted by adding/removing data servers at any time. dCache is developed by [DESY](https://www.desy.de/index_eng.html)
 
 ### What is OSCAR?
 
@@ -59,9 +59,8 @@ Inside the first process group, "dcachelistening" we found two processes:
 In the second process group, "invokecowsay", it makes an HTTP call creating an asynchronous invocation of an OSCAR service using [OSCAR API.](https://docs.oscar.grycap.net/api/)
 ![dataflow](../../images/blog/post-dCNiOS/dCNiOS-invoke.png)
 
-Finally, we have a [video](https://upvedues-my.sharepoint.com/personal/calamar_upv_edu_es/_layouts/15/stream.aspx?id=%2Fpersonal%2Fcalamar%5Fupv%5Fedu%5Fes%2FDocuments%2FEGI2023%2FIMG%5F0069%2EMOV&ga=1)
-where you can check all the steps.
+Finally, we have a video where you can see all the steps to connect Nifi and OSCAR with more details.
 
-
+{{< youtube mpy8veWS-ss >}}
 
 [OSCAR](https://grycap.github.io/oscar/) and [IM](http://www.grycap.upv.es/im) are developed by the [GRyCAP](https://www.grycap.upv.es/) research group at the [Universitat Politècnica de València](https://www.upv.es/).
