@@ -159,7 +159,7 @@ functions:
       memory: 1Gi
       cpu: '1.0'
       image: name_of_the_repository/name_of_the_image:tag
-      script: script.sh
+      script: path/to/script.sh
       input:
       - storage_provider: minio
         path: name_of_bucket/in
@@ -167,6 +167,7 @@ functions:
       - storage_provider: minio
         path: name_of_bucket/out
 ```
+*Keep in mind that the name of the service cannot contain the "-" or "_" characters.*
 
 You can also check the [other examples](https://github.com/grycap/oscar/tree/master/examples) already listed before to see how the whole process for the creation of a service looks like. Once you have created the file, you have to deploy the service(s) with the next command:
 
