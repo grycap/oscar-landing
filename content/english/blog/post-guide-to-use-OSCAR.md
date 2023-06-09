@@ -55,9 +55,14 @@ Here we have an example of how to install it:
     chmod +x $HOME/.oscar-cli_path/oscar-cli
     ```
 
-  * Now OSCAR-CLI has been installed. Add the `oscar-test` cluster previously created to the OSCAR-CLI tool with the [add command](https://docs.oscar.grycap.net/oscar-cli/#add) to be able to manipulate the cluster with OSCAR-CLI. In this case, we will name the cluster `oscar-cluster`, so from now on whenever we want to work with our cluster when using OSCAR-CLI, we will refer to it as `oscar-cluster`. Use the user and password you obtained earlier when creating the OSCAR cluster.  
+  * Now OSCAR-CLI has been installed. Add the `oscar-test` cluster previously created to the OSCAR-CLI tool with the [add command](https://docs.oscar.grycap.net/oscar-cli/#add) to be able to manipulate the cluster with OSCAR-CLI. In this case, we will name the cluster `oscar-cluster`, so from now on whenever we want to work with our cluster when using OSCAR-CLI, we will refer to it as `oscar-cluster`. Use the user and password you obtained earlier when creating the OSCAR cluster. To use OSCAR-CLI in a local deployment, you should set the `--disable-ssl` flag at the end to disable verification of the self-signed certificates
     ``` bash
     oscar-cli cluster add oscar-cluster https://localhost $OSCARuser $OSCARpass
+    ```
+
+    You can check that the cluster has been properly added to the OSCAR-CLI tool by opening the configuration file with a text editor with the following command, or edit the credentials in case you misspelled any parameter:
+    ``` bash
+    vi $HOME/.oscar-cli_path/config.yaml
     ```
 
 #### Login to a public container image registry
