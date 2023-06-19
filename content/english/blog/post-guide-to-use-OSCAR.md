@@ -65,6 +65,11 @@ Here we have an example of how to install it:
     vi $HOME/.oscar-cli_path/config.yaml
     ```
 
+    Alternatively you can remove the cluster from the OSCAR-CLI tool with the following command:
+    ``` bash
+    oscar-cli cluster remove oscar-cluster
+    ```
+
 #### Login to a public container image registry
 
 The best way to test your use-case container images is by pushing them to a public registry. We recommend you to use [GitHub Container Registry](https://github.com/features/packages) or [Docker Hub](https://hub.docker.com/). To get more details, refer to the [Docker](https://docs.docker.com/) documentation.
@@ -93,7 +98,7 @@ Once we have our program, we need to make a Dockerfile in order to build a conta
 ``` Dockerfile
 FROM {image}
 RUN {add dependencies}
-COPY {executable file from my computer} {path where the files are going to state in the image}
+COPY {local file} {path where the files are going to state in the image}
 ```
 
 If the language you are using is an interpreter language, you will need to copy all the files, but in case you are using another language like Java or C, you must copy the java machine code or the binary code after compiling it.
@@ -175,6 +180,10 @@ You can also check the [other examples](https://github.com/grycap/oscar/tree/mas
 oscar-cli apply $yaml_file
 ```
 
+If you want to delete your local cluster once you have finished, you can do it with kind, the tool used for the script to deploy it in the first place. In order to delete it, you will have to use the flag `--name <name of the cluster>`. In our case, the script gave our cluster the name oscar-test, so you would have to run the following command:
+``` bash
+kind delete cluster --name oscar-test
+```
 
 
 
