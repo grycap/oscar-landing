@@ -174,67 +174,95 @@
         <div class="content"><p>This is a step by step guide to show developers how to create their first service in OSCAR.</p>
 <h3 id="previous-steps">Previous steps:</h3>
 <h4 id="deploy-the-oscar-cluster">Deploy the OSCAR cluster</h4>
-<p>Follow the <a href="https://docs.oscar.grycap.net/deploy-im-dashboard/">deployment instructions with the IM Dashboard</a>. Alternatively, you can execute this script to install it locally.</p>
+<p>Follow the <a href="https://docs.oscar.grycap.net/deploy-im-dashboard/">deployment instructions with the IM Dashboard</a>. Alternatively, you can execute this script to deploy the cluster locally using kind. Kind will name the cluster <code>oscar-test</code>.</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">curl -sSL http://go.oscar.grycap.net | bash
-</code></pre></div><p>Log in to the OSCAR UI using the previously provided credentials to verify that the cluster has been successfully deployed.</p>
+</code></pre></div><p>Log in to the OSCAR UI using the previously provided credentials to verify that the cluster has been successfully deployed, and save them to use later in the guide.</p>
 <p><img src="/images/blog/post-guide-to-use-OSCAR/01-oscar-login.png" alt="01-oscar-login.png"></p>
 <h4 id="install-oscar-cli">Install OSCAR-CLI</h4>
-<p>As a recommendation, you can use the command line interface <a href="https://docs.oscar.grycap.net/oscar-cli/">OSCAR-CLI</a>.</p>
+<p>To easily interact and manage an OSCAR cluster, it is recommended the use of the command line interface <a href="https://docs.oscar.grycap.net/oscar-cli/">OSCAR-CLI</a>.</p>
 <p>Here we have an example of how to install it:</p>
 <ul>
 <li>
-<p>Create the directory where you want to place oscar-cli. You can use others directories already created in the system.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">mkdir -p $HOME/.ownpath
+<p>Create the directory where you want to place oscar-cli. You can use other directories already created in the system.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">mkdir -p $HOME/.oscar-cli_path
 </code></pre></div></li>
 <li>
-<p>Export the path, so the next time we open the terminal, it will be searching in the <code>.ownpath</code> directory. If you are using a directory that is already in the path, skip this step</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">echo <span style="color:#e6db74">&#39;export PATH=&#34;$HOME/.ownpath:$PATH&#34;&#39;</span> &gt;&gt; $HOME/.bashrc
+<p>Export the path, so the next time we open the terminal, it will be searching in the <code>.oscar-cli_path</code> directory. If you are using a directory that is already in the path, skip this step</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">echo <span style="color:#e6db74">&#39;export PATH=&#34;$HOME/.oscar-cli_path:$PATH&#34;&#39;</span> &gt;&gt; $HOME/.bashrc
 </code></pre></div></li>
 <li>
 <p>Download the binary file. The URL can change depending on the version</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">GET https://github.com/grycap/oscar-cli/releases/download/v1.2.5/oscar-cli &gt; $HOME/.ownpath/oscar-cli
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">GET https://github.com/grycap/oscar-cli/releases/download/v1.2.5/oscar-cli &gt; $HOME/.oscar-cli_path/oscar-cli
 </code></pre></div></li>
 <li>
 <p>Assign execute permissions to the binary file</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">chmod +x $HOME/.ownpath/oscar-cli
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">chmod +x $HOME/.oscar-cli_path/oscar-cli
 </code></pre></div></li>
 <li>
-<p>OSCAR-CLI is already installed. Now you have to add the new cluster. In this case, the cluster name is going to be <code>oscar-cluster</code>. You have to use the user and password from OSCAR.</p>
+<p>Now OSCAR-CLI has been installed. Add the <code>oscar-test</code> cluster previously created to the OSCAR-CLI tool with the <a href="https://docs.oscar.grycap.net/oscar-cli/#add">add command</a> to be able to manipulate the cluster with OSCAR-CLI. In this case, we will name the cluster <code>oscar-cluster</code>, so from now on whenever we want to work with our cluster when using OSCAR-CLI, we will refer to it as <code>oscar-cluster</code>. Use the user and password you obtained earlier when creating the OSCAR cluster. To use OSCAR-CLI in a local deployment, you should set the <code>--disable-ssl</code> flag at the end to disable verification of the self-signed certificates</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">oscar-cli cluster add oscar-cluster https://localhost $OSCARuser $OSCARpass
+</code></pre></div><p>You can check that the cluster has been properly added to the OSCAR-CLI tool by opening the configuration file with a text editor with the following command or edit the credentials in case you misspelled any parameter:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">vi $HOME/.oscar-cli_path/config.yaml
+</code></pre></div><p>Alternatively, you can remove the cluster from the OSCAR-CLI tool with the following command:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">oscar-cli cluster remove oscar-cluster
 </code></pre></div></li>
 </ul>
 <h4 id="login-to-a-public-container-image-registry">Login to a public container image registry</h4>
-<p>The best way to test your use-case container images is by pushing them to a public registry. We recommend you to use <a href="https://github.com/features/packages">GitHub Container Registry</a> or <a href="https://hub.docker.com/">Docker Hub</a>.</p>
+<p>The best way to test your use-case container images is by pushing them to a public registry. We recommend you to use <a href="https://github.com/features/packages">GitHub Container Registry</a> or <a href="https://hub.docker.com/">Docker Hub</a>. For more details, refer to the <a href="https://docs.docker.com/">Docker</a> documentation.</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">docker login
 </code></pre></div><p>By default, the <code>docker login</code> command will log you in Docker Hub. If you want to log in to GitHub Container Registry, you should generate a <a href="https://github.com/settings/tokens">token</a> and use the next command:</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">docker login ghcr.io
 </code></pre></div><h3 id="step-1-create-or-adapt-the-use-case-program">STEP 1: Create or adapt the use-case program</h3>
-<p>Create or adapt a program in the programming language you want. Remember that your application will need, at least, two parameters: the input (which could be a text string or a file) and the output (which is the path of the file you are going to write). Test it.</p>
+<p>Create or adapt a program in the programming language you want. Remember that your application will need, at least, two parameters: the input (which could be a text string or a file) and the output (which is the path of the file you are going to write). Test it.
+Some examples of programs can be checked <a href="https://github.com/grycap/oscar/tree/master/examples">here</a>.</p>
 <h3 id="step-2-dockerfile">STEP 2: Dockerfile</h3>
-<p>Now we need to make the Dockerfile in order to build the container image. We need to have in mind that the structure will always be the same:</p>
+<p>Once we have our program, we need to make a Dockerfile in order to build a container image. The structure will be similar to this:</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-Dockerfile" data-lang="Dockerfile"><span style="color:#66d9ef">FROM</span><span style="color:#e6db74"> {image}</span><span style="color:#960050;background-color:#1e0010">
 </span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#66d9ef">RUN</span> <span style="color:#f92672">{</span>add dependencies<span style="color:#f92672">}</span><span style="color:#960050;background-color:#1e0010">
-</span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#66d9ef">COPY</span> <span style="color:#f92672">{</span>executable file from my computer<span style="color:#f92672">}</span> <span style="color:#f92672">{</span>path where the files are going to state<span style="color:#f92672">}</span><span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#66d9ef">COPY</span> <span style="color:#f92672">{</span>local file<span style="color:#f92672">}</span> <span style="color:#f92672">{</span>path where the files are going to state in the image<span style="color:#f92672">}</span><span style="color:#960050;background-color:#1e0010">
 </span></code></pre></div><p>If the language you are using is an interpreter language, you will need to copy all the files, but in case you are using another language like Java or C, you must copy the java machine code or the binary code after compiling it.</p>
 <h3 id="step-3-testing-the-container-image-locally">STEP 3: Testing the container image locally</h3>
-<p>Now is time to test the program in the docker environment. First, we need to build the image. If some mistake shows up here means that Dockerfile is not well made.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">docker build -t $docker_repo/$docker_name .
-</code></pre></div><p>Once we have built it, we need to run it and try to execute our code. When you run the next command, a new terminal will open. If you have to pass a file or you want to get the output file use the volume option (<code>-v</code>).</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">docker run -it $docker_repo/$docker_name
-docker run -it -v <span style="color:#f92672">{</span>$PWD or the path you desire<span style="color:#f92672">}</span>:<span style="color:#f92672">{</span>path input/output<span style="color:#f92672">}</span> $docker_repo/$docker_name
-</code></pre></div><p>Execute your code. If you get an error due to missing dependencies, update the Dockerfile, build, and run it again.</p>
+<p>Now, it is time to test the program in the docker environment. First, we need to build the image. If some mistake shows up here means that the Dockerfile is not well made.
+Remember that if you don&rsquo;t run the command in the same directory where the Dockerfile is, you will have to use the <code>-f</code> flag and write the path to it.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">docker build -t $docker-hub-user/$docker-hub-image .
+</code></pre></div><p>Once we have built it, we need to launch it and try to execute our code. When you run the next command, a new terminal will open. If you have to pass a file or you want to get the output file use the volume option (<code>-v</code>).</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">docker run -it $docker-hub-user/$docker-hub-image
+docker run -it -v <span style="color:#f92672">{</span>$PWD or the local path of the file<span style="color:#f92672">}</span>:<span style="color:#f92672">{</span>input/output path on the image<span style="color:#f92672">}</span> $docker-hub-user/$docker-hub-image
+</code></pre></div><p>Execute your code. If you get an error due to missing dependencies, update the Dockerfile, build, and run it again to test the program.</p>
 <h3 id="step-4-upload-the-image-to-a-repository">STEP 4: Upload the image to a repository</h3>
-<p>To push the image to a public repository, you first have to build it. If you look at some tutorials, you will see that they create the image, tag it and push it into the repository. You can skip the tagging process by just building it with the final name. If you are using Docker Hub, the name will be like <code>$username/$containername</code>, but if you are using GitHub Container Registry instead, you have to add <code>ghcr.io/</code> at the beginning.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">docker build -t $docker_repo/$docker_name .
-docker push $docker_repo/$docker_name
+<p>Once you have built and run the image to check that the program is working properly, you have to push the image to a public repository like <a href="https://hub.docker.com/repositories">DockerHub</a> or <a href="url??">GitHub Container Registry</a>. To directly push the image and skip the tagging process,you need to build the image with the final name. If you are using Docker Hub, the name will be like <code>$username/$containername</code>, but if you are using GitHub Container Registry instead, you have to add <code>ghcr.io/</code> at the beginning.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">docker build -t $docker-hub-user/$docker-hub-image .
+
+docker push $docker-hub-user/$docker-hub-image
 </code></pre></div><h3 id="step-5-create-the-script">STEP 5: Create the script</h3>
-<p>The following script is going to be executed inside the container when you trigger the service by uploading a file to the specified input bucket, by invoking the service via the OSCAR&rsquo;s API or using OSCAR-CLI. The path of the input file is the environment variable <code>$INPUT_FILE_PATH</code>, and the directory where you need to put the output is in the environment variable <code>$TMP_OUTPUT_DIR</code>. To get the output file name, parse the input like this:</p>
+<p>Now we will create the script that will allow our program to communicate with the OSCAR cluster and run it. The script is going to be automatically executed inside the container when you trigger the OSCAR service by uploading the input file (via OSCAR-CLI or the OSCAR&rsquo;s API). The path where the input file is located is represented by the environment variable <code>$INPUT_FILE_PATH</code>, whereas the path where the output file is going to be created will be represented by the environment variable <code>$TMP_OUTPUT_DIR</code>. To get the output file name, parse the input like this:</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">FILE_NAME<span style="color:#f92672">=</span><span style="color:#e6db74">`</span>basename $INPUT_FILE_PATH<span style="color:#e6db74">`</span>
 OUTPUT_FILE<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;</span>$TMP_OUTPUT_DIR<span style="color:#e6db74">/</span>$FILE_NAME<span style="color:#e6db74">&#34;</span>
+</code></pre></div><p>Remember that this communication is automatically done by OSCAR and the only thing you have to add in order to trigger the service is the command to run your program along with the input and output paths. For example, if your program was written on Python, you would have to add the following line:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">python3 /path/to/program.py $INPUT_FILE_PATH -o <span style="color:#e6db74">&#34;</span>$OUTPUT_FILE<span style="color:#e6db74">&#34;</span>
 </code></pre></div><p>If your use-case can run just with a script you can directly use a distribution base image, or if you only need to install some dependencies you can comment the COPY line in the Dockerfile to make the image lighter.</p>
 <h3 id="step-6-function-definition-file">STEP 6: Function Definition File</h3>
-<p>Right now, our container image with the code and dependencies is in a public repository, and we have created the script that will run inside the container. We can create the OSCAR service using the UI, but it&rsquo;s better to create a YAML file to deploy the services whenever you want and automate the process. You can check the <a href="https://docs.oscar.grycap.net/fdl/">FDL section in the OSCAR documentation</a>, but also you can see <a href="https://github.com/grycap/oscar/tree/master/examples">other examples</a>. Once you have created the file, you need to deploy the services with the next command:</p>
+<p>Finally, our container image with the code and dependencies are in a public repository and we have created the script that will run inside the container to communicate with the OSCAR cluster.
+Now we can create the OSCAR service using the UI, but it&rsquo;s recommended to create a YAML file to deploy the service(s) whenever you want and automate the process. You can check the <a href="https://docs.oscar.grycap.net/fdl/">FDL section in the OSCAR documentation</a> for more information, but the simplest YAML file should look like the following:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">functions:
+  oscar:
+  - oscar-cluster:
+      name: name-of-service
+      memory: 1Gi
+      cpu: <span style="color:#e6db74">&#39;1.0&#39;</span>
+      image: docker-hub-user/docker-hub-image:tag
+      script: path/to/script.sh
+      input:
+      - storage_provider: minio
+        path: name_of_bucket/in
+      output:
+      - storage_provider: minio
+        path: name_of_bucket/out
+</code></pre></div><p><em>Keep in mind that the name of the service cannot contain the &ldquo;_&rdquo; character.</em></p>
+<p>You can also check the <a href="https://github.com/grycap/oscar/tree/master/examples">other examples</a> already listed before to see how the whole process for the creation of a service looks like. Once you have created the file, you have to deploy the service(s) with the next command:</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">oscar-cli apply $yaml_file
+</code></pre></div><p>If you want to delete your local cluster once you have finished, you can do it with kind, the tool used for the script to deploy it in the first place. In order to delete it, you will have to use the flag <code>--name &lt;name of the cluster&gt;</code>. In our case, the script gave our cluster the name oscar-test, so you would have to run the following command:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">kind delete cluster --name oscar-test
 </code></pre></div><p><a href="https://grycap.github.io/oscar/">OSCAR</a>, <a href="http://www.grycap.upv.es/im">IM</a>, <a href="https://github.com/grycap/ec3">EC3</a>, and <a href="https://www.grycap.upv.es/clues/">CLUES</a> are developed by the <a href="https://www.grycap.upv.es/">GRyCAP</a> research group at the <a href="https://www.upv.es/">Universitat Politècnica de València</a>.</p>
 </div>        
         
