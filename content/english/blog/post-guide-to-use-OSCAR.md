@@ -60,19 +60,19 @@ Here we have an example of how to install it:
     oscar-cli cluster add oscar-cluster https://localhost $OSCARuser $OSCARpass
     ```
 
-    You can check that the cluster has been properly added to the OSCAR-CLI tool by opening the configuration file with a text editor with the following command, or edit the credentials in case you misspelled any parameter:
+    You can check that the cluster has been properly added to the OSCAR-CLI tool by opening the configuration file with a text editor with the following command or edit the credentials in case you misspelled any parameter:
     ``` bash
     vi $HOME/.oscar-cli_path/config.yaml
     ```
 
-    Alternatively you can remove the cluster from the OSCAR-CLI tool with the following command:
+    Alternatively, you can remove the cluster from the OSCAR-CLI tool with the following command:
     ``` bash
     oscar-cli cluster remove oscar-cluster
     ```
 
 #### Login to a public container image registry
 
-The best way to test your use-case container images is by pushing them to a public registry. We recommend you to use [GitHub Container Registry](https://github.com/features/packages) or [Docker Hub](https://hub.docker.com/). To get more details, refer to the [Docker](https://docs.docker.com/) documentation.
+The best way to test your use-case container images is by pushing them to a public registry. We recommend you to use [GitHub Container Registry](https://github.com/features/packages) or [Docker Hub](https://hub.docker.com/). For more details, refer to the [Docker](https://docs.docker.com/) documentation.
 
 ``` bash
 docker login
@@ -106,7 +106,7 @@ If the language you are using is an interpreter language, you will need to copy 
 
 ### STEP 3: Testing the container image locally
 
-Now is time to test the program in the docker environment. First, we need to build the image. If some mistake shows up here means that the Dockerfile is not well made.
+Now, it is time to test the program in the docker environment. First, we need to build the image. If some mistake shows up here means that the Dockerfile is not well made.
 Remember that if you don't run the command in the same directory where the Dockerfile is, you will have to use the `-f` flag and write the path to it.
 
 ``` bash
