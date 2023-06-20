@@ -110,14 +110,14 @@ Now is time to test the program in the docker environment. First, we need to bui
 Remember that if you don't run the command in the same directory where the Dockerfile is, you will have to use the `-f` flag and write the path to it.
 
 ``` bash
-docker build -t $name_of_the_repository/$name_of_the_image .
+docker build -t $docker-hub-user/$docker-hub-image .
 ```
 
 Once we have built it, we need to launch it and try to execute our code. When you run the next command, a new terminal will open. If you have to pass a file or you want to get the output file use the volume option (`-v`).
 
 ``` bash
-docker run -it $name_of_the_repository/$name_of_the_image
-docker run -it -v {$PWD or the local path of the file}:{input/output path on the image} $name_of_the_repository/$name_of_the_image
+docker run -it $docker-hub-user/$docker-hub-image
+docker run -it -v {$PWD or the local path of the file}:{input/output path on the image} $docker-hub-user/$docker-hub-image
 ```
 
 Execute your code. If you get an error due to missing dependencies, update the Dockerfile, build, and run it again to test the program.
@@ -128,9 +128,9 @@ Execute your code. If you get an error due to missing dependencies, update the D
 Once you have built and run the image to check that the program is working properly, you have to push the image to a public repository like [DockerHub](https://hub.docker.com/repositories) or [GitHub Container Registry](url??). To directly push the image and skip the tagging process,you need to build the image with the final name. If you are using Docker Hub, the name will be like `$username/$containername`, but if you are using GitHub Container Registry instead, you have to add `ghcr.io/` at the beginning.
 
 ```bash
-docker build -t $name_of_the_repository/$name_of_the_image .
+docker build -t $docker-hub-user/$docker-hub-image .
 
-docker push $name_of_the_repository/$name_of_the_image
+docker push $docker-hub-user/$docker-hub-image
 ```
 
 
@@ -163,7 +163,7 @@ functions:
       name: name-of-service
       memory: 1Gi
       cpu: '1.0'
-      image: name_of_the_repository/name_of_the_image:tag
+      image: docker-hub-user/docker-hub-image:tag
       script: path/to/script.sh
       input:
       - storage_provider: minio
