@@ -2,7 +2,7 @@
 title: "User interfaces with Gradio for AI model inference in OSCAR services"
 date: 2022-09-08T09:00:00+01:00
 # post image
-image: "https://gradio.app/assets/img/header-image.jpg"
+image: "../../images/blog/post-oscar-with-gradio/gradio_main.jpeg"
 # post type (regular/featured)
 type: "featured"
 # meta description
