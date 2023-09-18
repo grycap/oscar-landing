@@ -1,5 +1,5 @@
 ---
-title: "Utilising Elyra within EGI Notebooks to Invoke OSCAR Services"
+title: "Composing AI Inference workflows based on OSCAR services with Elyra in EGI Notebooks"
 date: 2023-09-06T09:00:00+01:00
 # post image
 image: "/images/blog/post-elyra-egi-notebooks/elyra_icon.png"
@@ -12,7 +12,9 @@ draft: false
 ---
 
 
-In this blog, we aim to provide a hands-on guide to utilising [Elyra](https://elyra.readthedocs.io/en/latest/), an AI-centric extension for [Jupyter Notebooks](https://jupyter.org/), within the framework of [EGI Notebooks](https://notebooks.egi.eu/hub/welcome). The primary focus will be on interacting with [OSCAR](https://github.com/grycap/oscar) clusters and services using Elyra's enhanced capabilities.
+In this blog we aim to provide a hands-on guide to utilising [Elyra](https://elyra.readthedocs.io/en/latest/), an AI-centric extension for [Jupyter Notebooks](https://jupyter.org/), within the framework of [EGI Notebooks](https://notebooks.egi.eu/hub/welcome). The primary focus will be on interacting with [OSCAR](https://github.com/grycap/oscar) clusters and services using Elyra's enhanced capabilities to create AI workflows. The workflow steps trigger the execution of OSCAR services that can run on remote clusters deployed across multiple distributed Cloud infrastructures.
+
+This work is part of the AI4Compose development carried out in the framework of the [AI4EOSC](https://ai4eosc.eu) European Project.
 
 
 We will walk through the entire process, from setting up the initial environment to running specific OSCAR services like the amusing `Cowsay` and others.
@@ -25,10 +27,11 @@ We will walk through the entire process, from setting up the initial environment
 ## Clone the Repository
 
 
-To get started, you will need the repository that contains the example files for Elyra and OSCAR services. You can use the elyra git tool, it is located on the left side panel, being the fourth option
+To get started, you will need to clone the repository that contains the example files for Elyra and OSCAR services: 
 
+> [https://github.com/AI4EOSC/ai4-compose](https://github.com/AI4EOSC/ai4-compose)
 
-This repository contains various examples, including those for Elyra such as `Cowsay`, `Grayify`, and `Plants-Theano`.
+You can use the Elyra git tool located on the left side panel to clone the repository in the EGI Notebooks environment. This repository contains various examples, including those for Elyra such as `Cowsay`, `Grayify`, and `Plants-Theano`.
 
 
 ![Clone the Repository](../../images/blog/post-elyra-egi-notebooks/cloning_repo_elyra.png)
@@ -48,14 +51,14 @@ Before running any example, we need to create a credentials node in Elyra. This 
 ![Credentials node](../../images/blog/post-elyra-egi-notebooks/creating_credentials_1.png)
 
 
-3. Save these as a JSON file, for instance, also, you can give it a name with the envoiroment variable, for example: `credentials.json`.
+3. Save these as a JSON file, for instance, also, you can give it a name with the environment variable, for example: `credentials.json`.
 
 ![Credentials node](../../images/blog/post-elyra-egi-notebooks/creating_credentials_2.png)
 
 
 This JSON file will be passed as an environment variable to the subsequent nodes in your workflow.
 
-* NOTE: in this example we will use the token that you have in the EGI so it is not necessary to enter a username and password. Below an example how to get the EGI token.
+* NOTE: in this example we will use the OIDC token made available in EGI Notebooks after login, so it is not necessary to enter a username and password to access an OSCAR cluster. Below an example how to get the EGI token in EGI Notebook:
 
 ![Credentials node](../../images/blog/post-elyra-egi-notebooks/get_egi_token.png)
 
@@ -66,8 +69,7 @@ This JSON file will be passed as an environment variable to the subsequent nodes
 Now let's get our cow to talk! Follow these steps to set up the workflow in Elyra:
 
 
-1. Use the cowsay service node and connect it to the previously node (
-if the node is not already connected).
+1. Use the cowsay service node and connect it to the previous node (if the node is not already connected).
 2. Pass the `credentials.json` and the text for the cow as environment variables, for example 'moo'.
 
 ![Cowsay node](../../images/blog/post-elyra-egi-notebooks/cowsay_variables.png)
