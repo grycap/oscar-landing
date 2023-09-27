@@ -127,6 +127,6 @@ call_to_action:
   content : "You can deploy an OSCAR cluster on your favourite Cloud via the [IM Dashboard](https://im.egi.eu). No need to register. You will authenticate via [EGI Check-In](https://www.egi.eu/services/check-in/). Not ready yet? Get acquainted first with OSCAR by browsing its [documentation](https://grycap.github.io/oscar). Whenever you are ready ..."
   button:
     enable : true
-    label : "Deploy you OSCAR cluster"
+    label : "Deploy your OSCAR cluster"
     link : "https://im.egi.eu/configure/oscar"
 ---
