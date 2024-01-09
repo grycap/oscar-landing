@@ -5,7 +5,16 @@
     <link>https://oscar.grycap.net/</link>
     <description>Recent content on OSCAR </description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Tue, 21 Mar 2023 09:00:00 +0100</lastBuildDate><atom:link href="https://oscar.grycap.net/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 08 Jan 2024 09:00:00 +0100</lastBuildDate><atom:link href="https://oscar.grycap.net/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Integration of OSCAR in AI-SPRINT Use Cases</title>
+      <link>https://oscar.grycap.net/blog/post-ai-sprint-1/</link>
+      <pubDate>Mon, 08 Jan 2024 09:00:00 +0100</pubDate>
+      
+      <guid>https://oscar.grycap.net/blog/post-ai-sprint-1/</guid>
+      <description>The AI-SPRINT European Project uses the OSCAR serverless platform to support the scalable execution of the inference phase of AI models along the computing continuum in all the uses cases: personalized healthcare, maintenance &amp;amp; inspection and, finally, farming 4.</description>
+    </item>
+    
     <item>
       <title>Data-driven Processing with dCache, Apache Nifi and OSCAR</title>
       <link>https://oscar.grycap.net/blog/data-driven-processing-with-dcache-nifi-oscar/</link>
