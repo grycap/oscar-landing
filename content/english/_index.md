@@ -7,7 +7,7 @@ banner:
   button:
     enable : true
     label : "Deploy your Cluster"
-    link : "https://im.egi.eu/configure/oscar"
+    link : "https://im.egi.eu/im-dashboard/configure?selected_tosca=oscar.yaml"
 
 ##################### Feature ##########################
 feature:
