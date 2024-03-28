@@ -1,5 +1,5 @@
 ---
-title: "Composing AI Inference workflows based on OSCAR services with Elyra in EGI Notebooks"
+title: "Composing AI Inference pipelines based on OSCAR services with Elyra in EGI Notebooks"
 date: 2023-09-06T09:00:00+01:00
 # post image
 image: "/images/blog/post-elyra-egi-notebooks/elyra_icon.png"
@@ -11,84 +11,108 @@ description: "A step-by-step guide to using Elyra within EGI Notebooks to intera
 draft: false
 ---
 
+{{< youtube 1pFjs0LND4E >}}
 
-In this blog we aim to provide a hands-on guide to utilising [Elyra](https://elyra.readthedocs.io/en/latest/), an AI-centric extension for [Jupyter Notebooks](https://jupyter.org/), within the framework of [EGI Notebooks](https://notebooks.egi.eu/hub/welcome). The primary focus will be on interacting with [OSCAR](https://github.com/grycap/oscar) clusters and services using Elyra's enhanced capabilities to create AI workflows. The workflow steps trigger the execution of OSCAR services that can run on remote clusters deployed across multiple distributed Cloud infrastructures.
+In this blog, we aim to provide a comprehensive guide on using [Elyra](https://elyra.readthedocs.io/en/latest/), an AI-focused extension for [Jupyter Notebooks](https://jupyter.org/), within the [EGI Notebooks](https://notebooks.egi.eu/hub/welcome) framework. Our primary focus will be on how to interact with [OSCAR](https://github.com/grycap/oscar) clusters and services through Elyra's enhanced capabilities for creating AI workflows. These workflows facilitate the execution of OSCAR services across remote clusters in multiple distributed cloud infrastructures.
 
-This work is part of the AI4Compose development carried out in the framework of the [AI4EOSC](https://ai4eosc.eu) European Project.
+This initiative is part of the AI4Compose efforts within the [AI4EOSC](https://ai4eosc.eu) European Project framework.
 
-
-We will walk through the entire process, from setting up the initial environment to running specific OSCAR services like the amusing `Cowsay` and others.
+We'll guide you through the entire process, from setting up your initial environment to executing specific OSCAR services, such as the `Cowsay` tool among others, to demonstrate the practical applications of these technologies.
 
 ![Cowsay example](../../images/blog/post-elyra-egi-notebooks/cowsay_example.png)
 
-> For additional information on using EGI Notebooks, refer to the [official documentation](https://docs.egi.eu/users/dev-env/notebooks/).
+For those seeking additional information on utilizing EGI Notebooks, we recommend consulting the [official documentation](https://docs.egi.eu/users/dev-env/notebooks/).
+
+This guide aims to be straightforward and insightful, designed for end-users looking to leverage these powerful tools in their projects.
+
+# 1. Setting up the environment
 
 
-## Clone the Repository
+## 1.1 Accessing EGI notebooks
+
+The first step is to access the [EGI Notebooks](https://notebooks.egi.eu/) service. Then choose the preferred server option. We will select Default EGI environment:
+
+![Selecting server options](../../images/blog/post-elyra-egi-notebooks/accessing_egi_notebooks.png)
 
 
-To get started, you will need to clone the repository that contains the example files for Elyra and OSCAR services: 
+## 1.2 Importing OSCAR Elyra from Github
 
-> [https://github.com/AI4EOSC/ai4-compose](https://github.com/AI4EOSC/ai4-compose)
+To get started, you will need to clone the repository that contains the example files for Elyra and OSCAR services: https://github.com/ai4os/ai4-compose
 
-You can use the Elyra git tool located on the left side panel to clone the repository in the EGI Notebooks environment. This repository contains various examples, including those for Elyra such as `Cowsay`, `Grayify`, and `Plants-Theano`.
+You can use the Elyra git tool on the left side panel to clone the repository in the EGI Notebooks environment. This repository contains various examples, including those for Elyra, such as Cowsay, Grayify, and Plants-Classifitacion.
 
+![Importing the Repository](../../images/blog/post-elyra-egi-notebooks/importing_from_github.png)
 
-![Clone the Repository](../../images/blog/post-elyra-egi-notebooks/cloning_repo_elyra.png)
-
-
-## Setting Up Credentials: A Prerequisite for All Examples
-### Credentials Node in Elyra
+![Cloning the Repository](../../images/blog/post-elyra-egi-notebooks/cloning_repo_elyra.png)
 
 
-Before running any example, we need to create a credentials node in Elyra. This node will handle the environment variables necessary to interact with your OSCAR cluster. Here's how to do it:
+# 2. Prerequisites for all the examples
 
 
-1. Use the node "Create Credentials."
+## 2.1 Types of recipes
 
-2. Open properties of this node, set up the environment variables: `ID`, `ENDPOINT`, `USERNAME`, and `PASSWORD`.
+To use the nodes that employ OSCAR, it is necessary to invoke a service. This service has two recipes:
 
-![Credentials node](../../images/blog/post-elyra-egi-notebooks/creating_credentials_1.png)
+1. The first recipe solely uses an EGI Check-in token. This is the best option if you use the AI4EOSC OSCAR cluster authenticating with your EGI account.
 
-
-3. Save these as a JSON file, for instance, also, you can give it a name with the environment variable, for example: `credentials.json`.
-
-![Credentials node](../../images/blog/post-elyra-egi-notebooks/creating_credentials_2.png)
+2. The second recipe uses our own credentials: node ID, endpoint, username, and password. This is an alternative for when you want to use your own OSCAR clusters.
 
 
-This JSON file will be passed as an environment variable to the subsequent nodes in your workflow.
+## 2.2 How to use the EGI Token
 
-* NOTE: in this example we will use the OIDC token made available in EGI Notebooks after login, so it is not necessary to enter a username and password to access an OSCAR cluster. Below an example how to get the EGI token in EGI Notebook:
 
-![Credentials node](../../images/blog/post-elyra-egi-notebooks/get_egi_token.png)
+If you wish to use the EGI token, there’s a node that is alredy prepare to get the token and save in your files to use it directly in your OSCAR pipelines.
 
-## Running the Cowsay Example
-### Setting Up the Workflow
+![Get EGI Token node](../../images/blog/post-elyra-egi-notebooks/getting_token.png)
 
+To configure this node, you only need to use its environment variables to set its path and file name.
+
+![Configuring EGI Token node](../../images/blog/post-elyra-egi-notebooks/getting_token_2.png)
+
+Additionally, if you wish to know where the EGI token is located, it can be found at this path within EGI Notebooks
+
+```python
+with open("/var/run/secrets/egi.eu/access_token") as f:
+    access_token = f.read(../../images/blog/post-elyra-egi-notebooks/getting_token_2.png)
+```
+
+## 2.3 How to generate our own credentials
+
+In case you do not wish to use the EGI Token, you can use the 'generate credentials' node found within the nodes folder. Its functionality is similar to that of the 'get EGI Token' node, but for this post, we will focus on the use of the EGI Token node.
+
+![Generate credentials node](../../images/blog/post-elyra-egi-notebooks/generate_credentials.png)
+
+![Configuring generate credentials node](../../images/blog/post-elyra-egi-notebooks/generate_credentials_2.png)
+
+
+# 3. Deploying a pipeline 
+
+# 3.1 Running the Cowsay Example
 
 Now let's get our cow to talk! Follow these steps to set up the workflow in Elyra:
 
 
 1. Use the cowsay service node and connect it to the previous node (if the node is not already connected).
-2. Pass the `credentials.json` and the text for the cow as environment variables, for example 'moo'.
+2. Pass the token file and the text for the cow as environment variables, for example 'Hello again!'.
 
 ![Cowsay node](../../images/blog/post-elyra-egi-notebooks/cowsay_variables.png)
 
-### Executing the Pipeline
+3. Use the start button to execute the pipeline
 
 ![Executing the node](../../images/blog/post-elyra-egi-notebooks/how_to_start_elyra_pipeline.png)
 
-After setting up the environment variables, proceed to the notebook within this node. Once executed, the notebook should display the cow uttering the text you provided.
-
+4. After setting up the environment variables, proceed to the notebook within this node. Once executed, the notebook should display the cow uttering the text you provided.
 
 ![Cowsay Output](../../images/blog/post-elyra-egi-notebooks/cowsay_output.png)
 
 
 ## Additional Examples: Grayify and Plants-Theano
 
-For these examples, you'll again need the credentials node to pass the necessary variables. Additionally, other nodes will be involved to perform tasks like converting images to and from Base64 format.
+For these examples, you'll again need the EGI Token node to pass the necessary variables. Additionally, other nodes will be involved to perform tasks like converting images to and from Base64 format.
 
-![Grayify and Plants Theano](../../images/blog/post-elyra-egi-notebooks/others_examples.png)
+![Plants classification pipeline example](../../images/blog/post-elyra-egi-notebooks/others_examples_1.png)
+
+![Grayify pipeline example](../../images/blog/post-elyra-egi-notebooks/others_examples_2.png)
 
 
 ## Summary
