@@ -15,7 +15,7 @@ draft: false
 
 In this blog, we aim to provide a comprehensive guide on using [Elyra](https://elyra.readthedocs.io/en/latest/), an AI-focused extension for [Jupyter Notebooks](https://jupyter.org/), within the [EGI Notebooks](https://notebooks.egi.eu/hub/welcome) framework. Our primary focus will be on how to interact with [OSCAR](https://github.com/grycap/oscar) clusters and services through Elyra's enhanced capabilities for creating AI workflows. These workflows facilitate the execution of OSCAR services across remote clusters in multiple distributed cloud infrastructures.
 
-This initiative is part of the AI4Compose efforts within the [AI4EOSC](https://ai4eosc.eu) European Project framework.
+This initiative is part of the AI4Compose efforts within the [AI4EOSC](https://ai4eosc.eu) European Project.
 
 We'll guide you through the entire process, from setting up your initial environment to executing specific OSCAR services, such as the `Cowsay` tool among others, to demonstrate the practical applications of these technologies.
 
@@ -30,7 +30,7 @@ This guide aims to be straightforward and insightful, designed for end-users loo
 
 ## 1.1 Accessing EGI notebooks
 
-The first step is to access the [EGI Notebooks](https://notebooks.egi.eu/) service. Then choose the preferred server option. We will select Default EGI environment:
+The first step is to access the [EGI Notebooks](https://notebooks.egi.eu/) service. Then choose the preferred server option. We will select the Default EGI environment:
 
 ![Selecting server options](../../images/blog/post-elyra-egi-notebooks/accessing_egi_notebooks.png)
 
@@ -61,7 +61,7 @@ To use the nodes that employ OSCAR, it is necessary to invoke a service. This se
 ## 2.2 How to use the EGI Token
 
 
-If you wish to use the EGI token, there’s a node that is alredy prepare to get the token and save in your files to use it directly in your OSCAR pipelines.
+If you wish to use the EGI token, there’s a node that is already prepared to get the token and save it in your files to use it directly in your OSCAR pipelines.
 
 ![Get EGI Token node](../../images/blog/post-elyra-egi-notebooks/getting_token.png)
 
