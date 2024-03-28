@@ -6,7 +6,7 @@ image: "/images/blog/post-egi-notebooks/main.png"
 # post type (regular/featured)
 type: "featured"
 # meta description
-description: "This is a guide for the use of the OSCAR API through EGI Notebooks."
+description: "This is a guide for the use of the OSCAR API through Node-RED and Flowfuse."
 # post draft
 draft: false
 ---
@@ -39,7 +39,7 @@ Let’s understand the most relevant concepts in FlowFuse:
 
 + __Applications:__ Teams create Applications, which are collections of one or more Node-RED instances. There is an application already created in the FlowFuse instance named AI4EOSC-Dev.
 
-+ __Instances:__ Creating an instance out of the OSCAR Node-Red template will ensure the dependencies required to interact with OSCAR clusters and the custom defined nodes for certain AI models from the AI4EOSC dashboard. Each instance is derived from a Template, providing default settings, and runs on a Stack that defines the Node-RED version, memory, and CPU usage.
++ __Instances:__ Creating an instance out of the OSCAR Node-Red template will ensure the dependencies required to interact with OSCAR clusters and the custom-defined nodes for certain AI models from the AI4EOSC dashboard. Each instance is derived from a Template, providing default settings, and runs on a Stack that defines the Node-RED version, memory, and CPU usage.
 
 + __Devices:__ The FlowFuse platform can be used to manage Node-RED instances running on remote Devices. A Device runs a software agent that connects back to FlowFuse in order to receive updates.
 
@@ -94,7 +94,7 @@ After completing the registration and joining the AI4EOSC Dev team, we should be
 
 # 3. Creating our first application
 
-## 3.1 Configuring the application¶
+## 3.1 Configuring the application
 
 Once our owner role is confirmed, we can create applications within the team. To do so, we will click on the ```Create application``` option.
 
@@ -108,9 +108,9 @@ Once we have finished with the configuration, we can click on the ```Create appl
 
 ![Creating application 2](../../images/blog/post-nodered-flowfuse/10.png)
 
-## 3.2 Creating new instances¶
+## 3.2 Creating new instances
 
-As we’ve seen, an Node-RED instance is created when we create an application, but it’s also possible to deploy additional instances within a created application. In this case, we will click on the ```Add Instance``` button.
+As we’ve seen, a Node-RED instance is created when we create an application, but it’s also possible to deploy additional instances within a created application. In this case, we will click on the ```Add Instance``` button.
 
 ![Creating instance 1](../../images/blog/post-nodered-flowfuse/11.png)
 
@@ -130,7 +130,7 @@ Once the instance is created, the next step is to join it. You can do this by se
 
 ![Connecting instance 2](../../images/blog/post-nodered-flowfuse/15.png)
 
-From this point on, the operation is the usual process as using Node-RED.
+From this point on, the operation is the usual process as when using Node-RED.
 
 ![Connecting instance 3](../../images/blog/post-nodered-flowfuse/16.png)
 
@@ -158,7 +158,7 @@ For this first toy example, we will use a module that takes text as input and re
 
 To set up this example, we will essentially need three nodes: the Inject node, the OSCAR Cowsay node, and the Debug node. The Debug node is used to visualize the result in the debug log.
 
-To place the modules in the workspace, simply drag them from the left-hand side menu. And finally, we connect the inputs and outputs of the modules as shown in the figure.
+To place the modules in the workspace, simply drag them from the left-hand side menu. Finally, we connect the inputs and outputs of the modules as shown in the figure.
 
 ![cowsay 2](../../images/blog/post-nodered-flowfuse/20.png)
 
@@ -193,7 +193,7 @@ In this section, we will compose an example workflow for AI inference where we w
 
 ![plants classification 1](../../images/blog/post-nodered-flowfuse/26.png)
 
-If we have started an instance with the OSCAR Node-RED template, we can use the preconfigured modules of some OSCAR services. To find them, we just need to go to the OSCAR section in the left side menu of Node-RED.
+If we have started an instance with the OSCAR Node-RED template, we can use the preconfigured modules of some OSCAR services. To find them, we just need to go to the OSCAR section in the left-side menu of Node-RED.
 
 + __Node HTTP Request__ is designed to execute an HTTP request to retrieve an image from a specified URL, which is provided as input. Once the image is downloaded, it becomes the output of this node.
 
@@ -225,9 +225,9 @@ If the result of Plant Classification appears as a buffer, you just need to sele
 
 ## 5.1 Importing flows from Github
 
-Now we will explain how to, step by step, recreate usage examples for OSCAR by importing them from the GitHub repository. In this case we will look up for the cowsay example.
+Now we will explain how to, step by step, recreate usage examples for OSCAR by importing them from the GitHub repository. In this case, we will search for the cowsay example.
 
-First install the dependencies [described here](https://github.com/ai4os/ai4-compose/tree/main/node-red). Then, access to the [subflows repo](https://github.com/ai4os/ai4-compose/tree/main/node-red/subflows) and, in this example, look for the ```grayify.json```.
+First, install the dependencies [described here](https://github.com/ai4os/ai4-compose/tree/main/node-red). Then, access to the [subflows repo](https://github.com/ai4os/ai4-compose/tree/main/node-red/subflows) and, in this example, look for the ```grayify.json```.
 
 ![importing nodes from GitHub 1](../../images/blog/post-nodered-flowfuse/30.png)
 
@@ -237,11 +237,11 @@ First install the dependencies [described here](https://github.com/ai4os/ai4-com
 
 ![importing nodes from GitHub 4](../../images/blog/post-nodered-flowfuse/33.png)
 
-Then, to import flows/subflows/nodes/examples in our node red instance, we can expand the hamburger menu located in the top right corner and look for the fourth option: ```Import```. Once this option is selected, a floating menu will appear where we can paste the JSON.
+Then, to import flows/subflows/nodes/examples in our Node-RED instance, we can expand the hamburger menu located in the top right corner and look for the fourth option: ```Import```. Once this option is selected, a floating menu will appear where we can paste the JSON.
 
 ![importing nodes from GitHub 4](../../images/blog/post-nodered-flowfuse/34.png)
 
-## 5.2 Importing modules via node red palette
+## 5.2 Importing modules via Node-RED palette
 
 In the case of importing other types of modules or nodes, we can expand the same menu, but now we will go to the ```Manage palette``` option, which allows us to import from the module installation menu.
 
