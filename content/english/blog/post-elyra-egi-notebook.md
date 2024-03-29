@@ -1,6 +1,6 @@
 ---
 title: "Composing AI Inference pipelines based on OSCAR services with Elyra in EGI Notebooks"
-date: 2023-09-06T09:00:00+01:00
+date: 2024-03-29T09:00:00+01:00
 # post image
 image: "/images/blog/post-elyra-egi-notebooks/elyra_icon.png"
 # post type (regular/featured)

@@ -1,6 +1,6 @@
 ---
-title: "Composing AI Inference workflows with Node-RED & Flowfuse"
-date: 2023-01-04T09:00:00+01:00
+title: "Composing AI Inference pipelines with Node-RED & Flowfuse"
+date: 2024-03-29T09:00:00+01:00
 # post image
 image: "/images/blog/post-nodered-flowfuse/post-image.png"
 # post type (regular/featured)
