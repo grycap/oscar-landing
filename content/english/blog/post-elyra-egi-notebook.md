@@ -25,7 +25,7 @@ Elyra is an open-source extension for Jupyter Notebooks, designed to enhance the
 
 OSCAR is an open-source platform that supports event-driven, serverless computing for data processing applications. It uses Docker containers on dynamically scaling Kubernetes clusters to handle tasks across multiple clouds or on-premises. The Python client for OSCAR enables programmatic interaction with its API, allowing for effective integration and automation in managing serverless functions. 
 
-# How works a workflow in Elyra?
+# How works a pipeline in Elyra?
 
 In Elyra, a pipeline is a set of nodes or steps, each representing a script or notebook, connected in a flow that defines the execution order. Users can drag and drop nodes to create a visual representation of their workflow. Each node can be configured with specific parameters, inputs, and outputs. When a pipeline is run, Elyra executes the nodes sequentially or in parallel, depending on their dependencies. This visual approach not only simplifies the understanding and editing of machine learning workflows but also integrates with platforms like Kubeflow Pipelines and Apache Airflow to manage the execution in scalable environments.
 
