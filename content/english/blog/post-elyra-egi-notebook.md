@@ -47,16 +47,12 @@ Deploying a pipeline in Elyra involves several key steps:
 This process enables users to efficiently manage complex workflows and automate repetitive tasks, enhancing productivity and focusing on strategic tasks.
 
 
-## Summary
+# Summary
 
+Elyra simplifies the integration of OSCAR services within the EGI Notebooks environment, offering a user-friendly approach to managing complex pipelines. This post outlines how Elyra enhances productivity by streamlining processes, from repository cloning to workflow execution.
 
-Elyra offers a robust and user-friendly way to interact with OSCAR services right within the EGI Notebooks environment. From cloning the repository to setting up the workflow in Elyra, the process is smooth and straightforward.
+We hope this overview inspires you to explore the capabilities of Elyra and OSCAR in EGI Notebooks, helping you to leverage these powerful tools for your projects. Enjoy the innovative computing possibilities!
 
-
-We hope this post serves as a practical guide to unlock the full potential of Elyra and OSCAR services within EGI Notebooks. Happy computing!
-
-
-![Elyra Workflow](../../images/blog/post-elyra-egi-notebooks/elyra_icon_1.png)
 
 
 
