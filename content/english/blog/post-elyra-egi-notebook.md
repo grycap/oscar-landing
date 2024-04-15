@@ -18,12 +18,12 @@ draft: false
 
 ![Elyra Icon](../../images/blog/post-elyra-egi-notebooksS/elyra_icon_1.png)
 
-Elyra is an open-source extension for Jupyter Notebooks, designed to enhance the workflow of AI projects by supporting machine learning pipelines visually. It integrates seamlessly with various systems for orchestrating workflows, allowing users to create, run, and monitor their workflows within Jupyter environments. EGI Notebooks, provided by the EGI cloud services, offer a cloud-based environment for running Jupyter Notebooks. This service simplifies the deployment and scaling of computational notebooks, providing researchers with powerful computational resources and a collaborative space for their scientific inquiries.
+[Elyra](https://elyra.readthedocs.io/en/latest/index.html) is an open-source extension for [Jupyter Notebooks](https://jupyter.org/), designed to enhance the workflow of AI projects by supporting machine learning pipelines visually. It integrates seamlessly with various systems for orchestrating workflows, allowing users to create, run, and monitor their workflows within Jupyter environments. [EGI Notebooks](https://notebooks.egi.eu/hub/welcome), provided by the EGI cloud services, offer a cloud-based environment for running Jupyter Notebooks. This service simplifies the deployment and scaling of computational notebooks, providing researchers with powerful computational resources and a collaborative space for their scientific inquiries.
 
 
 # What is OSCAR and Python OSCAR client?
 
-OSCAR is an open-source platform that supports event-driven, serverless computing for data processing applications. It uses Docker containers on dynamically scaling Kubernetes clusters to handle tasks across multiple clouds or on-premises. The Python client for OSCAR enables programmatic interaction with its API, allowing for effective integration and automation in managing serverless functions. 
+[OSCAR](https://oscar.grycap.net/) is an open-source platform that supports event-driven, serverless computing for data processing applications. It uses Docker containers on dynamically scaling Kubernetes clusters to handle tasks across multiple clouds or on-premises. The Python client for OSCAR enables programmatic interaction with its API, allowing for effective integration and automation in managing serverless functions. 
 
 # How works a pipeline in Elyra?
 
