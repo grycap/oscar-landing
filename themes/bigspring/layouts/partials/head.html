@@ -1,7 +1,7 @@
 <meta charset="utf-8">
-<title>{{with .Title}}{{.}}{{else}}{{site.Title}}{{end}}</title>
+<title>{{with .Title}}{{.}}{{else}}{{.Site.Title}}{{end}}</title>
 
-<meta name="description" content="{{ with .Params.Description }}{{ . }}{{ else }}{{ with site.Params.description }}{{ . }}{{ end }}{{ end }}">
+<meta name="description" content="{{ with .Params.Description }}{{ . }}{{ else }}{{ with .Site.Params.description }}{{ . }}{{ end }}{{ end }}">
 
 <!-- multilingual SEO optimizations -->
 {{ if .IsTranslated }}
@@ -14,5 +14,11 @@
 <meta property="og:image" content="{{ . | absURL }}" />
 {{ end }}
 {{ template "_internal/opengraph.html" . }}
-<!--{{ template "_internal/google_analytics_async.html" . }}-->
-{{ site.Params.custom_script | safeHTML }}
+
+{{ if .Site.Params.GoogleAnalyticsID }}
+{{ partial "analytics-gtag.html" . }}
+{{ end }}
+
+{{ if .Site.Params.custom_script }}
+{{ .Site.Params.custom_script | safeHTML }}
+{{ end }}

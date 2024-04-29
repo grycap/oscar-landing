@@ -1,6 +1,6 @@
 ---
 title: "Composing AI Inference pipelines with Node-RED & Flowfuse"
-date: 2024-04-15T09:00:00+01:00
+date: 2024-04-29T09:00:00+01:00
 # post image
 image: "/images/blog/post-nodered-flowfuse/post-image.png"
 # post type (regular/featured)
@@ -38,8 +38,6 @@ Deploying a workflow in Node-RED involves moving a developed flow from the const
 # How works the Node-RED Library?
 
 The Node-RED Library allows users to share and reuse flows and function nodes. It is a repository where developers can publish their flows, making them available to the wider community. Users can browse this library to find pre-built solutions or components that can be imported directly into their projects. This feature significantly speeds up development time and fosters a collaborative environment by leveraging community contributions.
-
-![Elyra Icon](../../images/blog/post-elyra-egi-notebooksS/library.png)
 
 # Summary
 

@@ -3,8 +3,13 @@
 {{ hugo.Generator }}
 
 <!--Favicon-->
-<link rel="shortcut icon" href="{{ site.Params.favicon | absURL }}" type="image/x-icon">
-<link rel="icon" href="{{ site.Params.favicon | absURL }}" type="image/x-icon">
+<!--Favicon-->
+{{ with site.Params.favicon }}
+{{ $faviconURL := .href | default "/favicon.ico" }}
+<link rel="shortcut icon" href="{{ $faviconURL | absURL }}" type="image/x-icon">
+<link rel="icon" href="{{ $faviconURL | absURL }}" type="image/x-icon">
+{{ end }}
+
 
 <!-- mobile responsive meta -->
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5">

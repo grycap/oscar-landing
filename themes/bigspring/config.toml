@@ -1,12 +1,10 @@
-# This file is for render site varibles and plugins
-# don't remove this file.
+# This file is for rendering site variables and plugins
+# Do not remove this file.
 # The presence of this file is for compatibility with Blogdown and Forestry.
-#
 # The actual configuration files are stored in the `config/_default/` folder.
 
-
-######################### site variables ##############################
-# customize your color and font from here.
+######################### Site Variables ##############################
+# Customize your color and font from here.
 [params.variables]
 primary_color = "#95B699"
 text_color = "#777"
@@ -17,13 +15,12 @@ black = "#000"
 white = "#fff"
 light = "#EDF6F5"
 
-# font variable
-# Give your font name from google font. add font weight using ":wght@" and separate by ";"
-# example: "Work Sans:wght@400;500;600"
+# Font variable
+# Give your font name from Google Fonts. Add font weight using ":wght@" and separate by ";"
+# Example: "Work Sans:wght@400;500;600"
 primary_font = "Lato:wght@400"
-primary_font_type = "sans-serif" # [serif/sans-serif]
+primary_font_type = "sans-serif"  # [serif/sans-serif]
 icon_font = "Font Awesome 5 Free"
-
 
 ############################# Plugins ##############################
 # CSS Plugins
