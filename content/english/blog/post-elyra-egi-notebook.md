@@ -21,11 +21,7 @@ draft: false
 [Elyra](https://elyra.readthedocs.io/en/latest/index.html) is an open-source extension for [Jupyter Notebooks](https://jupyter.org/), designed to enhance the workflow of AI projects by supporting machine learning pipelines visually. It integrates seamlessly with various systems for orchestrating workflows, allowing users to create, run, and monitor their workflows within Jupyter environments. [EGI Notebooks](https://notebooks.egi.eu/hub/welcome), provided by the EGI cloud services, offer a cloud-based environment for running Jupyter Notebooks. This service simplifies the deployment and scaling of computational notebooks, providing researchers with powerful computational resources and a collaborative space for their scientific inquiries.
 
 
-# What is OSCAR and Python OSCAR client?
-
-[OSCAR](https://oscar.grycap.net/) is an open-source platform that supports event-driven, serverless computing for data processing applications. It uses Docker containers on dynamically scaling Kubernetes clusters to handle tasks across multiple clouds or on-premises. The Python client for OSCAR enables programmatic interaction with its API, allowing for effective integration and automation in managing serverless functions. 
-
-# How works a workflow in Elyra?
+# How a workflow in Elyra works?
 
 In Elyra, a workflow is a set of nodes or steps, each representing a script or notebook, connected in a flow that defines the execution order. Users can drag and drop nodes to create a visual representation of their workflow. Each node can be configured with specific parameters, inputs, and outputs. When a pipeline is run, Elyra executes the nodes sequentially or in parallel, depending on their dependencies. This visual approach not only simplifies the understanding and editing of machine learning workflows but also integrates with platforms like Kubeflow Pipelines and Apache Airflow to manage the execution in scalable environments.
 
@@ -33,8 +29,8 @@ In Elyra, a workflow is a set of nodes or steps, each representing a script or n
 
 ![Elyra Pipeline 2](../../images/blog/post-elyra-egi-notebooksS/others_examples_2.png)
 
-# Deploying a pipeline 
 
+# Deploying a pipeline 
 
 Deploying a pipeline in Elyra involves several key steps:
 
