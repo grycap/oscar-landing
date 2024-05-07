@@ -16,7 +16,7 @@ draft: false
 
 # What is Elyra and EGI Notebooks?
 
-![Elyra Icon](../../images/blog/post-elyra-egi-notebooksS/elyra_icon_1.png)
+![Elyra Icon](../../images/blog/post-elyra-egi-notebooks/elyra_icon_1.png)
 
 [Elyra](https://elyra.readthedocs.io/en/latest/index.html) is an open-source extension for [Jupyter Notebooks](https://jupyter.org/), designed to enhance the workflow of AI projects by supporting machine learning pipelines visually. It integrates seamlessly with various systems for orchestrating workflows, allowing users to create, run, and monitor their workflows within Jupyter environments. [EGI Notebooks](https://notebooks.egi.eu/hub/welcome), provided by the EGI cloud services, offer a cloud-based environment for running Jupyter Notebooks. This service simplifies the deployment and scaling of computational notebooks, providing researchers with powerful computational resources and a collaborative space for their scientific inquiries.
 
@@ -25,9 +25,9 @@ draft: false
 
 In Elyra, a workflow is a set of nodes or steps, each representing a script or notebook, connected in a flow that defines the execution order. Users can drag and drop nodes to create a visual representation of their workflow. Each node can be configured with specific parameters, inputs, and outputs. When a pipeline is run, Elyra executes the nodes sequentially or in parallel, depending on their dependencies. This visual approach not only simplifies the understanding and editing of machine learning workflows but also integrates with platforms like Kubeflow Pipelines and Apache Airflow to manage the execution in scalable environments.
 
-![Elyra Pipeline 1](../../images/blog/post-elyra-egi-notebooksS/others_examples_1.png)
+![Elyra Pipeline 1](../../images/blog/post-elyra-egi-notebooks/others_examples_1.png)
 
-![Elyra Pipeline 2](../../images/blog/post-elyra-egi-notebooksS/others_examples_2.png)
+![Elyra Pipeline 2](../../images/blog/post-elyra-egi-notebooks/others_examples_2.png)
 
 
 # Deploying a pipeline 
