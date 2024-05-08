@@ -1,11 +1,29 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Blog on OSCAR </title>
+    <title>Blog on OSCAR</title>
     <link>https://oscar.grycap.net/blog/</link>
-    <description>Recent content in Blog on OSCAR </description>
+    <description>Recent content in Blog on OSCAR</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Mon, 08 Jan 2024 09:00:00 +0100</lastBuildDate><atom:link href="https://oscar.grycap.net/blog/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 16 Apr 2024 09:00:00 +0100</lastBuildDate><atom:link href="https://oscar.grycap.net/blog/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Composing AI Inference pipelines with Node-RED &amp; Flowfuse</title>
+      <link>https://oscar.grycap.net/blog/post-nodered-flowfuse/</link>
+      <pubDate>Tue, 16 Apr 2024 09:00:00 +0100</pubDate>
+      
+      <guid>https://oscar.grycap.net/blog/post-nodered-flowfuse/</guid>
+      <description>What is Node-RED and FlowFuse? Node-RED is a programming tool for wiring together hardware devices, APIs, and online services in new and interesting ways.</description>
+    </item>
+    
+    <item>
+      <title>Composing AI Inference workflows based on OSCAR services with Elyra in EGI Notebooks</title>
+      <link>https://oscar.grycap.net/blog/post-elyra-egi-notebook/</link>
+      <pubDate>Mon, 15 Apr 2024 09:00:00 +0100</pubDate>
+      
+      <guid>https://oscar.grycap.net/blog/post-elyra-egi-notebook/</guid>
+      <description>What is Elyra and EGI Notebooks? Elyra is an open-source extension for Jupyter Notebooks, designed to enhance the workflow of AI projects by supporting machine learning pipelines visually.</description>
+    </item>
+    
     <item>
       <title>Integration of OSCAR in AI-SPRINT Use Cases</title>
       <link>https://oscar.grycap.net/blog/post-ai-sprint-1/</link>

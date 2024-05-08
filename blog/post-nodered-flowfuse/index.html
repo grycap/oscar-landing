@@ -17,22 +17,22 @@
 
     
     <meta charset="utf-8">
-<title>FDL Composer to create a workflow with OSCAR</title>
+<title>Composing AI Inference pipelines with Node-RED &amp; Flowfuse</title>
 
-<meta name="description" content="Using FDL-Composer tool to create a workflow in OSCAR">
-
-
+<meta name="description" content="This is a guide for the use of the OSCAR API through Node-RED and FlowFuse.">
 
 
 
-<meta property="og:image" content="https://oscar.grycap.net/images/blog/post-oscar-fdl-composer/1-fdl-composer.png" />
 
-<meta property="og:title" content="FDL Composer to create a workflow with OSCAR" />
-<meta property="og:description" content="Using FDL-Composer tool to create a workflow in OSCAR" />
+
+<meta property="og:image" content="https://oscar.grycap.net/images/blog/post-nodered-flowfuse/post-image.png" />
+
+<meta property="og:title" content="Composing AI Inference pipelines with Node-RED &amp; Flowfuse" />
+<meta property="og:description" content="This is a guide for the use of the OSCAR API through Node-RED and FlowFuse." />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://oscar.grycap.net/blog/post-oscar-fdl-composer/" /><meta property="article:section" content="blog" />
-<meta property="article:published_time" content="2022-06-06T18:00:00&#43;01:00" />
-<meta property="article:modified_time" content="2022-06-06T18:00:00&#43;01:00" /><meta property="og:site_name" content="OSCAR" />
+<meta property="og:url" content="https://oscar.grycap.net/blog/post-nodered-flowfuse/" /><meta property="article:section" content="blog" />
+<meta property="article:published_time" content="2024-04-16T09:00:00&#43;01:00" />
+<meta property="article:modified_time" content="2024-04-16T09:00:00&#43;01:00" /><meta property="og:site_name" content="OSCAR" />
 
 
 
@@ -187,91 +187,28 @@
   <div class="container">
     <div class="row">
       <div class="col-lg-8 mx-auto">
-        <img src="/images/blog/post-oscar-fdl-composer/1-fdl-composer.png" alt="FDL Composer to create a workflow with OSCAR" class="img-fluid w-100 rounded mb-4">
-        <h2 class="mb-4">FDL Composer to create a workflow with OSCAR</h2>
-        <p>Monday, June 6, 2022  </p>
-        <div class="content"><p><a href="http://composer.oscar.grycap.net">FDL-Composer</a> is a tool to visually design workflows for <a href="https://oscar.grycap.net">OSCAR</a> and <a href="https://github.com/grycap/scar">SCAR</a>. We are going to simulate the example <a href="https://github.com/grycap/oscar/tree/master/examples/video-process">video-process</a></p>
-<p>This example supports highly-scalable event-driven video analysis using <a href="https://ffmpeg.org">ffmpeg</a> to extract keyframes of the video and <a href="https://pjreddie.com/darknet/">Darknet</a> to perform object recognition on the keyframes. It requires two OSCAR services: one where the video is going to get split into frames, and  another to process those frames. It also requires three MinIO buckets. One for the input. One for the output. And the last one for the connection between both services. So when a video is uploaded to the input bucket, the &ldquo;split video&rdquo; OSCAR service will be triggered and let the frames in an intermediate bucket. That will trigger the &ldquo;processing frame&rdquo; OSCAR service. Furthermore, the result will be stored in the last bucket.</p>
-<p>Drag the OSCAR functions we are going to use. In this case, two.</p>
-<p><img src="images/blog/post-oscar-fdl-composer/2-fdl-composer.png" alt="2-fdl-composer.png"></p>
-<p>Double click in the node. Fill in the different input fields.</p>
-<table>
-<thead>
-<tr>
-<th style="text-align:center">Split Video</th>
-<th style="text-align:center">Object Detection</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:center"><img src="images/blog/post-oscar-fdl-composer/3-fdl-composer.png" alt="3-fdl-composer.png"></td>
-<td style="text-align:center"><img src="images/blog/post-oscar-fdl-composer/4-fdl-composer.png" alt="4-fdl-composer.png"></td>
-</tr>
-</tbody>
-</table>
-<p>Create a new MinIO storage.</p>
-<p><img src="images/blog/post-oscar-fdl-composer/5-fdl-composer.png" alt="5-fdl-composer.png"></p>
-<p><img src="images/blog/post-oscar-fdl-composer/6-fdl-composer.png" alt="6-fdl-composer.png"></p>
-<p>Drag into the canvas three MinIo buckets.</p>
-<p><img src="images/blog/post-oscar-fdl-composer/7-fdl-composer.png" alt="7-fdl-composer.png"></p>
-<p>Connect all the components and make a workflow.</p>
-<p><img src="images/blog/post-oscar-fdl-composer/8-fdl-composer.png" alt="8-fdl-composer.png"></p>
-<p>Put the name in the different buckets.</p>
-<table>
-<thead>
-<tr>
-<th style="text-align:center">Input Bucket</th>
-<th style="text-align:center">Medium Bucket</th>
-<th style="text-align:center">Output Bucket</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:center"><img src="images/blog/post-oscar-fdl-composer/9-fdl-composer.png" alt="9-fdl-composer.png"></td>
-<td style="text-align:center"><img src="images/blog/post-oscar-fdl-composer/10-fdl-composer.png" alt="10-fdl-composer.png"></td>
-<td style="text-align:center"><img src="images/blog/post-oscar-fdl-composer/11-fdl-composer.png" alt="11-fdl-composer.png"></td>
-</tr>
-</tbody>
-</table>
-<p>Export YAML</p>
-<p><img src="images/blog/post-oscar-fdl-composer/12-fdl-composer.png" alt="12-fdl-composer.png"></p>
-<p>Here is the result:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#f92672">functions</span>:
-  <span style="color:#f92672">oscar</span>:
-    - <span style="color:#f92672">oscar-cluster</span>:
-        <span style="color:#f92672">name</span>: <span style="color:#ae81ff">split-video</span>
-        <span style="color:#f92672">memory</span>: <span style="color:#ae81ff">1Gi</span>
-        <span style="color:#f92672">cpu</span>: <span style="color:#e6db74">&#39;1&#39;</span>
-        <span style="color:#f92672">image</span>: <span style="color:#ae81ff">grycap/ffmpeg</span>
-        <span style="color:#f92672">script</span>: <span style="color:#ae81ff">split-video.sh</span>
-        <span style="color:#f92672">input</span>:
-          - <span style="color:#f92672">path</span>: <span style="color:#ae81ff">video-process/in</span>
-            <span style="color:#f92672">storage_provider</span>: <span style="color:#ae81ff">minio.minio</span>
-        <span style="color:#f92672">output</span>:
-          - <span style="color:#f92672">path</span>: <span style="color:#ae81ff">video-process/med</span>
-            <span style="color:#f92672">storage_provider</span>: <span style="color:#ae81ff">minio.minio</span>
-    - <span style="color:#f92672">oscar-cluster</span>:
-        <span style="color:#f92672">name</span>: <span style="color:#ae81ff">darknet</span>
-        <span style="color:#f92672">memory</span>: <span style="color:#ae81ff">1Gi</span>
-        <span style="color:#f92672">cpu</span>: <span style="color:#e6db74">&#39;1&#39;</span>
-        <span style="color:#f92672">image</span>: <span style="color:#ae81ff">grycap/darknet-v3</span>
-        <span style="color:#f92672">script</span>: <span style="color:#ae81ff">yolov3-object-detection.sh</span>
-        <span style="color:#f92672">input</span>:
-          - <span style="color:#f92672">path</span>: <span style="color:#ae81ff">video-process/med</span>
-            <span style="color:#f92672">storage_provider</span>: <span style="color:#ae81ff">minio.minio</span>
-        <span style="color:#f92672">output</span>:
-          - <span style="color:#f92672">path</span>: <span style="color:#ae81ff">video-process/out</span>
-            <span style="color:#f92672">storage_provider</span>: <span style="color:#ae81ff">minio.minio</span>
-<span style="color:#f92672">storage_providers</span>:
-  <span style="color:#f92672">minio</span>:
-    <span style="color:#f92672">minio</span>:
-      <span style="color:#f92672">endpoint</span>: <span style="color:#e6db74">&#39;http://localhost:443&#39;</span>
-      <span style="color:#f92672">region</span>: <span style="color:#ae81ff">us-east-1</span>
-      <span style="color:#f92672">access_key</span>: <span style="color:#ae81ff">minio</span>
-      <span style="color:#f92672">secret_key</span>: <span style="color:#ae81ff">miniopassword</span>
-      <span style="color:#f92672">verify</span>: <span style="color:#66d9ef">false</span>
-</code></pre></div><p>This FDL file can be used as input to OSCAR in order to deploy the services within a specific OSCAR cluster.</p>
-<p><a href="https://composer.oscar.grycap.net">FDL Composer</a>, <a href="https://grycap.github.io/oscar/">OSCAR</a> and <a href="https://github.com/grycap/scar">SCAR</a> are developed by the <a href="https://www.grycap.upv.es/">GRyCAP</a> research group at the <a href="https://www.upv.es/">Universitat Politècnica de València</a>.</p>
+        <img src="/images/blog/post-nodered-flowfuse/post-image.png" alt="Composing AI Inference pipelines with Node-RED &amp; Flowfuse" class="img-fluid w-100 rounded mb-4">
+        <h2 class="mb-4">Composing AI Inference pipelines with Node-RED &amp; Flowfuse</h2>
+        <p>Tuesday, April 16, 2024  </p>
+        <div class="content">
+<div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
+  <iframe src="https://www.youtube.com/embed/9a019SA5GW4" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" allowfullscreen title="YouTube Video"></iframe>
+</div>
+
+<h1 id="what-is-node-red-and-flowfuse">What is Node-RED and FlowFuse?</h1>
+<p><img src="../../images/blog/post-nodered-flowfuse/node-red.png" alt="Node-RED icon"></p>
+<p><a href="https://nodered.org/">Node-RED</a> is a programming tool for wiring together hardware devices, APIs, and online services in new and interesting ways. It provides a browser-based editor that makes it easy to wire together flows using the wide range of nodes in the palette that can be deployed to its runtime in a single-click. <a href="https://flowfuse.com/">FlowFuse</a>, on the other hand, appears to be an extension or a set of tools built around Node-RED, designed to enhance its capabilities, particularly in integrating more complex workflows or enhancing connectivity with various services and protocols.</p>
+<h1 id="how-a-workflow-in-node-red-works">How a workflow in Node-RED works?</h1>
+<p><img src="../../images/blog/post-nodered-flowfuse/example.png" alt="Node-RED workflow"></p>
+<p>A workflow in Node-RED is a set of nodes connected together to create a flow of operations. Each node performs an operation, and the data moves between nodes via wires in the visual interface. Users can drag and drop different types of nodes from the palette into a workspace and configure them to perform tasks like receiving data, processing it, and sending it elsewhere. Flows can be triggered by web requests, handle files, interact with APIs, and perform a multitude of other functions.</p>
+<h1 id="deploying-a-pipeline">Deploying a pipeline</h1>
+<p><img src="../../images/blog/post-nodered-flowfuse/deploy.png" alt="Node-RED workflow"></p>
+<p>Deploying a workflow in Node-RED involves moving a developed flow from the construction environment (usually a local machine or a development server) to a production environment where it will run. This is typically done with a few clicks in the Node-RED interface. The deployment makes the flow active, allowing it to interact with real-world data and users. Adjustments to deployed flows can often be made in real-time, and version control can be implemented to manage changes systematically.</p>
+<h1 id="how-the-node-red-library-works">How the Node-RED Library works?</h1>
+<p>The Node-RED Library allows users to share and reuse flows and function nodes. It is a repository where developers can publish their flows, making them available to the wider community. Users can browse this library to find pre-built solutions or components that can be imported directly into their projects. This feature significantly speeds up development time and fosters a collaborative environment by leveraging community contributions.</p>
+<h1 id="summary">Summary</h1>
+<p>Node-RED enhances the automation capabilities within the FlowFuse environment, providing an intuitive method for integrating various services and managing complex workflows.</p>
+<p>We hope this overview encourages you to discover the functionalities of Node-RED and FlowFuse, aiding you in harnessing these robust tools for your automation projects. Explore the potential for innovative automation solutions!</p>
 </div>        
         
         

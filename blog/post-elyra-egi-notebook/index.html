@@ -17,22 +17,22 @@
 
     
     <meta charset="utf-8">
-<title>FDL Composer to create a workflow with OSCAR</title>
+<title>Composing AI Inference workflows based on OSCAR services with Elyra in EGI Notebooks</title>
 
-<meta name="description" content="Using FDL-Composer tool to create a workflow in OSCAR">
-
-
+<meta name="description" content="A step-by-step guide to using Elyra within EGI Notebooks to interact with OSCAR services.">
 
 
 
-<meta property="og:image" content="https://oscar.grycap.net/images/blog/post-oscar-fdl-composer/1-fdl-composer.png" />
 
-<meta property="og:title" content="FDL Composer to create a workflow with OSCAR" />
-<meta property="og:description" content="Using FDL-Composer tool to create a workflow in OSCAR" />
+
+<meta property="og:image" content="https://oscar.grycap.net/images/blog/post-elyra-egi-notebooks/elyra_icon.png" />
+
+<meta property="og:title" content="Composing AI Inference workflows based on OSCAR services with Elyra in EGI Notebooks" />
+<meta property="og:description" content="A step-by-step guide to using Elyra within EGI Notebooks to interact with OSCAR services." />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://oscar.grycap.net/blog/post-oscar-fdl-composer/" /><meta property="article:section" content="blog" />
-<meta property="article:published_time" content="2022-06-06T18:00:00&#43;01:00" />
-<meta property="article:modified_time" content="2022-06-06T18:00:00&#43;01:00" /><meta property="og:site_name" content="OSCAR" />
+<meta property="og:url" content="https://oscar.grycap.net/blog/post-elyra-egi-notebook/" /><meta property="article:section" content="blog" />
+<meta property="article:published_time" content="2024-04-15T09:00:00&#43;01:00" />
+<meta property="article:modified_time" content="2024-04-15T09:00:00&#43;01:00" /><meta property="og:site_name" content="OSCAR" />
 
 
 
@@ -187,91 +187,34 @@
   <div class="container">
     <div class="row">
       <div class="col-lg-8 mx-auto">
-        <img src="/images/blog/post-oscar-fdl-composer/1-fdl-composer.png" alt="FDL Composer to create a workflow with OSCAR" class="img-fluid w-100 rounded mb-4">
-        <h2 class="mb-4">FDL Composer to create a workflow with OSCAR</h2>
-        <p>Monday, June 6, 2022  </p>
-        <div class="content"><p><a href="http://composer.oscar.grycap.net">FDL-Composer</a> is a tool to visually design workflows for <a href="https://oscar.grycap.net">OSCAR</a> and <a href="https://github.com/grycap/scar">SCAR</a>. We are going to simulate the example <a href="https://github.com/grycap/oscar/tree/master/examples/video-process">video-process</a></p>
-<p>This example supports highly-scalable event-driven video analysis using <a href="https://ffmpeg.org">ffmpeg</a> to extract keyframes of the video and <a href="https://pjreddie.com/darknet/">Darknet</a> to perform object recognition on the keyframes. It requires two OSCAR services: one where the video is going to get split into frames, and  another to process those frames. It also requires three MinIO buckets. One for the input. One for the output. And the last one for the connection between both services. So when a video is uploaded to the input bucket, the &ldquo;split video&rdquo; OSCAR service will be triggered and let the frames in an intermediate bucket. That will trigger the &ldquo;processing frame&rdquo; OSCAR service. Furthermore, the result will be stored in the last bucket.</p>
-<p>Drag the OSCAR functions we are going to use. In this case, two.</p>
-<p><img src="images/blog/post-oscar-fdl-composer/2-fdl-composer.png" alt="2-fdl-composer.png"></p>
-<p>Double click in the node. Fill in the different input fields.</p>
-<table>
-<thead>
-<tr>
-<th style="text-align:center">Split Video</th>
-<th style="text-align:center">Object Detection</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:center"><img src="images/blog/post-oscar-fdl-composer/3-fdl-composer.png" alt="3-fdl-composer.png"></td>
-<td style="text-align:center"><img src="images/blog/post-oscar-fdl-composer/4-fdl-composer.png" alt="4-fdl-composer.png"></td>
-</tr>
-</tbody>
-</table>
-<p>Create a new MinIO storage.</p>
-<p><img src="images/blog/post-oscar-fdl-composer/5-fdl-composer.png" alt="5-fdl-composer.png"></p>
-<p><img src="images/blog/post-oscar-fdl-composer/6-fdl-composer.png" alt="6-fdl-composer.png"></p>
-<p>Drag into the canvas three MinIo buckets.</p>
-<p><img src="images/blog/post-oscar-fdl-composer/7-fdl-composer.png" alt="7-fdl-composer.png"></p>
-<p>Connect all the components and make a workflow.</p>
-<p><img src="images/blog/post-oscar-fdl-composer/8-fdl-composer.png" alt="8-fdl-composer.png"></p>
-<p>Put the name in the different buckets.</p>
-<table>
-<thead>
-<tr>
-<th style="text-align:center">Input Bucket</th>
-<th style="text-align:center">Medium Bucket</th>
-<th style="text-align:center">Output Bucket</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:center"><img src="images/blog/post-oscar-fdl-composer/9-fdl-composer.png" alt="9-fdl-composer.png"></td>
-<td style="text-align:center"><img src="images/blog/post-oscar-fdl-composer/10-fdl-composer.png" alt="10-fdl-composer.png"></td>
-<td style="text-align:center"><img src="images/blog/post-oscar-fdl-composer/11-fdl-composer.png" alt="11-fdl-composer.png"></td>
-</tr>
-</tbody>
-</table>
-<p>Export YAML</p>
-<p><img src="images/blog/post-oscar-fdl-composer/12-fdl-composer.png" alt="12-fdl-composer.png"></p>
-<p>Here is the result:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#f92672">functions</span>:
-  <span style="color:#f92672">oscar</span>:
-    - <span style="color:#f92672">oscar-cluster</span>:
-        <span style="color:#f92672">name</span>: <span style="color:#ae81ff">split-video</span>
-        <span style="color:#f92672">memory</span>: <span style="color:#ae81ff">1Gi</span>
-        <span style="color:#f92672">cpu</span>: <span style="color:#e6db74">&#39;1&#39;</span>
-        <span style="color:#f92672">image</span>: <span style="color:#ae81ff">grycap/ffmpeg</span>
-        <span style="color:#f92672">script</span>: <span style="color:#ae81ff">split-video.sh</span>
-        <span style="color:#f92672">input</span>:
-          - <span style="color:#f92672">path</span>: <span style="color:#ae81ff">video-process/in</span>
-            <span style="color:#f92672">storage_provider</span>: <span style="color:#ae81ff">minio.minio</span>
-        <span style="color:#f92672">output</span>:
-          - <span style="color:#f92672">path</span>: <span style="color:#ae81ff">video-process/med</span>
-            <span style="color:#f92672">storage_provider</span>: <span style="color:#ae81ff">minio.minio</span>
-    - <span style="color:#f92672">oscar-cluster</span>:
-        <span style="color:#f92672">name</span>: <span style="color:#ae81ff">darknet</span>
-        <span style="color:#f92672">memory</span>: <span style="color:#ae81ff">1Gi</span>
-        <span style="color:#f92672">cpu</span>: <span style="color:#e6db74">&#39;1&#39;</span>
-        <span style="color:#f92672">image</span>: <span style="color:#ae81ff">grycap/darknet-v3</span>
-        <span style="color:#f92672">script</span>: <span style="color:#ae81ff">yolov3-object-detection.sh</span>
-        <span style="color:#f92672">input</span>:
-          - <span style="color:#f92672">path</span>: <span style="color:#ae81ff">video-process/med</span>
-            <span style="color:#f92672">storage_provider</span>: <span style="color:#ae81ff">minio.minio</span>
-        <span style="color:#f92672">output</span>:
-          - <span style="color:#f92672">path</span>: <span style="color:#ae81ff">video-process/out</span>
-            <span style="color:#f92672">storage_provider</span>: <span style="color:#ae81ff">minio.minio</span>
-<span style="color:#f92672">storage_providers</span>:
-  <span style="color:#f92672">minio</span>:
-    <span style="color:#f92672">minio</span>:
-      <span style="color:#f92672">endpoint</span>: <span style="color:#e6db74">&#39;http://localhost:443&#39;</span>
-      <span style="color:#f92672">region</span>: <span style="color:#ae81ff">us-east-1</span>
-      <span style="color:#f92672">access_key</span>: <span style="color:#ae81ff">minio</span>
-      <span style="color:#f92672">secret_key</span>: <span style="color:#ae81ff">miniopassword</span>
-      <span style="color:#f92672">verify</span>: <span style="color:#66d9ef">false</span>
-</code></pre></div><p>This FDL file can be used as input to OSCAR in order to deploy the services within a specific OSCAR cluster.</p>
-<p><a href="https://composer.oscar.grycap.net">FDL Composer</a>, <a href="https://grycap.github.io/oscar/">OSCAR</a> and <a href="https://github.com/grycap/scar">SCAR</a> are developed by the <a href="https://www.grycap.upv.es/">GRyCAP</a> research group at the <a href="https://www.upv.es/">Universitat Politècnica de València</a>.</p>
+        <img src="/images/blog/post-elyra-egi-notebooks/elyra_icon.png" alt="Composing AI Inference workflows based on OSCAR services with Elyra in EGI Notebooks" class="img-fluid w-100 rounded mb-4">
+        <h2 class="mb-4">Composing AI Inference workflows based on OSCAR services with Elyra in EGI Notebooks</h2>
+        <p>Monday, April 15, 2024  </p>
+        <div class="content">
+<div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
+  <iframe src="https://www.youtube.com/embed/1pFjs0LND4E" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" allowfullscreen title="YouTube Video"></iframe>
+</div>
+
+<h1 id="what-is-elyra-and-egi-notebooks">What is Elyra and EGI Notebooks?</h1>
+<p><img src="../../images/blog/post-elyra-egi-notebooks/elyra_icon_1.png" alt="Elyra Icon"></p>
+<p><a href="https://elyra.readthedocs.io/en/latest/index.html">Elyra</a> is an open-source extension for <a href="https://jupyter.org/">Jupyter Notebooks</a>, designed to enhance the workflow of AI projects by supporting machine learning pipelines visually. It integrates seamlessly with various systems for orchestrating workflows, allowing users to create, run, and monitor their workflows within Jupyter environments. <a href="https://notebooks.egi.eu/hub/welcome">EGI Notebooks</a>, provided by the EGI cloud services, offer a cloud-based environment for running Jupyter Notebooks. This service simplifies the deployment and scaling of computational notebooks, providing researchers with powerful computational resources and a collaborative space for their scientific inquiries.</p>
+<h1 id="how-a-workflow-in-elyra-works">How a workflow in Elyra works?</h1>
+<p>In Elyra, a workflow is a set of nodes or steps, each representing a script or notebook, connected in a flow that defines the execution order. Users can drag and drop nodes to create a visual representation of their workflow. Each node can be configured with specific parameters, inputs, and outputs. When a pipeline is run, Elyra executes the nodes sequentially or in parallel, depending on their dependencies. This visual approach not only simplifies the understanding and editing of machine learning workflows but also integrates with platforms like Kubeflow Pipelines and Apache Airflow to manage the execution in scalable environments.</p>
+<p><img src="../../images/blog/post-elyra-egi-notebooks/others_examples_1.png" alt="Elyra Pipeline 1"></p>
+<p><img src="../../images/blog/post-elyra-egi-notebooks/others_examples_2.png" alt="Elyra Pipeline 2"></p>
+<h1 id="deploying-a-pipeline">Deploying a pipeline</h1>
+<p>Deploying a pipeline in Elyra involves several key steps:</p>
+<ol>
+<li>Designing the Pipeline: Start by organizing your scripts or notebooks into nodes within the Elyra pipeline editor.</li>
+<li>Configuring Nodes: Set up each node with the necessary parameters, such as file paths, environment variables, and dependencies.</li>
+<li>Connecting Nodes: Connect the nodes to define the flow of data and execution sequence.</li>
+<li>Running the Pipeline: Execute the pipeline directly from Elyra, which will orchestrate the workflow based on the configured platform, such as local, Kubeflow, or Airflow.</li>
+<li>Monitoring Execution: Elyra provides tools to monitor the pipeline’s progress and debug if needed, ensuring that any issues can be addressed promptly.</li>
+</ol>
+<p>This process enables users to efficiently manage complex workflows and automate repetitive tasks, enhancing productivity and focusing on strategic tasks.</p>
+<h1 id="summary">Summary</h1>
+<p>Elyra simplifies the integration of OSCAR services within the EGI Notebooks environment, offering a user-friendly approach to managing complex pipelines. This post outlines how Elyra enhances productivity by streamlining processes, from repository cloning to workflow execution.</p>
+<p>We hope this overview inspires you to explore the capabilities of Elyra and OSCAR in EGI Notebooks, helping you to leverage these powerful tools for your projects. Enjoy the innovative computing possibilities!</p>
 </div>        
         
         
