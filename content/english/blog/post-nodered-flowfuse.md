@@ -35,6 +35,8 @@ In the context of AI4EOSC, we have developed new custom nodes created to simplif
 
 ## Designing and deploying a workflow 
 
+![Node-RED workflow](../../images/blog/post-nodered-flowfuse/deploy.png)
+
 As shown in the video demo, after creating an application in FlowFuse, and a Node-RED instance (that is automatically created when we create an application), we can start creating our workflow. To design the workflow, users select nodes available on the left-side panel, drag & drop the boxes to the central panel, and connect them, as you can see in the video. The Node-RED interface is very intuitive, and facilitates the composition of complex workflows. In the video, you can see that we have composed two different pipelines:
 
 + Cowsay: this is the first toy example, where we use a custom module that interacts with an [OSCAR service](https://github.com/grycap/oscar/tree/master/examples/cowsay) that takes text as input and returns an ASCII art of a cow repeating the same text as output.
