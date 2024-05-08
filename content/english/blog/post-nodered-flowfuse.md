@@ -15,7 +15,7 @@ In this post, we are going to learn about Composing AI Inference workflows by in
 
 {{< youtube 9a019SA5GW4 >}}
 
-## Knowing about Node-RED and FlowFuse
+## Knowing more about Node-RED and FlowFuse
 
 ![Node-RED icon](../../images/blog/post-nodered-flowfuse/node-red.png)
 
