@@ -11,22 +11,22 @@ AUTHOR WEBSITE: https://gethugothemes.com
 <html lang="{{ site.LanguageCode | default `en-US` }}">
 
 <head>
-	{{ if .Site.Params.GoogleAnalyticsID }}
+    {{ if .Site.Params.GoogleAnalyticsID }}
     {{ partial "analytics-gtag.html" . }}
     {{ end }}
-	{{ partial "head.html" . }}
-	{{ partialCached "style.html" . }}
-	<base href="{{ .Site.BaseURL }}">
+    {{ partial "head.html" . }}
+    {{ partialCached "style.html" . }}
+    <base href="{{ .Site.BaseURL }}">
 </head>
 
 <body>
-	{{ partialCached "preloader.html" . }}
-	{{ partial "header.html" . }}
-	<main>
-		{{ block "main" . }}{{ end }}
-	</main>
-	{{ partial "footer.html" . }}
-	{{ partialCached "script.html" . }}
+    {{ partialCached "preloader.html" . }}
+    {{ partial "header.html" . }}
+    <main>
+        {{ block "main" . }}{{ end }}
+    </main>
+    {{ partial "footer.html" . }}
+    {{ partialCached "script.html" . }}
 </body>
 
 </html>
