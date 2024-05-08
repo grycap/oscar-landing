@@ -35,7 +35,7 @@ A workflow in Node-RED is a set of nodes connected together to create a flow of 
 Deploying a workflow in Node-RED involves moving a developed flow from the construction environment (usually a local machine or a development server) to a production environment where it will run. This is typically done with a few clicks in the Node-RED interface. The deployment makes the flow active, allowing it to interact with real-world data and users. Adjustments to deployed flows can often be made in real-time, and version control can be implemented to manage changes systematically.
 
 
-# How works the Node-RED Library?
+# How the Node-RED Library works?
 
 The Node-RED Library allows users to share and reuse flows and function nodes. It is a repository where developers can publish their flows, making them available to the wider community. Users can browse this library to find pre-built solutions or components that can be imported directly into their projects. This feature significantly speeds up development time and fosters a collaborative environment by leveraging community contributions.
 
