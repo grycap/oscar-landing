@@ -300,7 +300,7 @@ The flow shown in Figure 29 can execute any of the services implemented in the O
 <div align="center">
 <figcaption >Figure 29. Execution of workflows of all OSCAR services.</figcaption></div>
 
-> If you want to download the [OSCAR Services](https://github.com/grycap/oscar_nodered/tree/main/nodes) node files and [sample workflow](https://github.com/grycap/oscar_nodered/tree/main/examples), you can get it from the [oscar_nodered repository](https://github.com/grycap/oscar-nodered).
+> If you want to download the [OSCAR Services](https://github.com/grycap/oscar-nodered/tree/main/nodes) node files and [sample workflow](https://github.com/grycap/oscar-nodered/tree/main/examples), you can get it from the [oscar_nodered repository](https://github.com/grycap/oscar-nodered).
 
 
 > ##### **In a future blog, there will be an explanation of the creation of workflows for the interaction of Node-RED and OSCAR using dashboards to create web interfaces for easy interaction with users**.
