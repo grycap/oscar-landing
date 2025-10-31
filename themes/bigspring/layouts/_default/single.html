@@ -12,7 +12,20 @@
         <p>{{.Date.Format "Monday, January 2, 2006"}}  </p>
         <div class="content">{{.Content}}</div>        
         <!-- comments -->
-        {{ if site.DisqusShortname }}
+        {{ $disqusShortname := "" }}
+        {{ with site.Config.Services }}
+          {{ with .Disqus }}
+            {{ with .Shortname }}
+              {{ $disqusShortname = . }}
+            {{ end }}
+          {{ end }}
+        {{ end }}
+        {{ if not $disqusShortname }}
+          {{ with site.Params.disqusShortname }}
+            {{ $disqusShortname = . }}
+          {{ end }}
+        {{ end }}
+        {{ if $disqusShortname }}
         <div class="mt-5">
           {{ template "_internal/disqus.html" . }}
         </div>
