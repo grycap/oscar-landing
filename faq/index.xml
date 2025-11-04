@@ -4,6 +4,8 @@
     <title>Frequently Asked Questions on OSCAR</title>
     <link>https://oscar.grycap.net/faq/</link>
     <description>Recent content in Frequently Asked Questions on OSCAR</description>
-    <generator>Hugo -- gohugo.io</generator><atom:link href="https://oscar.grycap.net/faq/index.xml" rel="self" type="application/rss+xml" />
+    <generator>Hugo</generator>
+    <language>en</language>
+    <atom:link href="https://oscar.grycap.net/faq/index.xml" rel="self" type="application/rss+xml" />
   </channel>
 </rss>

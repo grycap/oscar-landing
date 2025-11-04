@@ -4,169 +4,135 @@
     <title>OSCAR</title>
     <link>https://oscar.grycap.net/</link>
     <description>Recent content on OSCAR</description>
-    <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Wed, 08 May 2024 09:00:00 +0100</lastBuildDate><atom:link href="https://oscar.grycap.net/index.xml" rel="self" type="application/rss+xml" />
+    <generator>Hugo</generator>
+    <language>en</language>
+    <lastBuildDate>Wed, 08 May 2024 09:00:00 +0100</lastBuildDate>
+    <atom:link href="https://oscar.grycap.net/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Composing AI Inference pipelines with Node-RED &amp; Flowfuse</title>
       <link>https://oscar.grycap.net/blog/post-nodered-flowfuse/</link>
       <pubDate>Wed, 08 May 2024 09:00:00 +0100</pubDate>
-      
       <guid>https://oscar.grycap.net/blog/post-nodered-flowfuse/</guid>
-      <description>In this post, we are going to learn about composing AI inference workflows by invoking OSCAR services with Node-RED &amp;amp; FlowFuse.</description>
+      <description>&lt;p&gt;In this post, we are going to learn about composing AI inference workflows by invoking OSCAR services with Node-RED &amp;amp; FlowFuse. Both tools facilitate the graphical composition of pipelines, a user-friendly approach with drag &amp;amp; drop capabilities that allow us to easily compose a pipeline involving different OSCAR services. For that, we have prepared a video demo that we invite you to watch. These developments are part of &lt;a href=&#34;https://github.com/ai4os/ai4-compose&#34;&gt;AI4-Compose&lt;/a&gt;, a component of the &lt;a href=&#34;https://ai4os.eu&#34;&gt;AI4OS&lt;/a&gt; stack, created in the &lt;a href=&#34;https://ai4eosc.eu/&#34;&gt;AI4EOSC&lt;/a&gt; project.&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>Composing AI Inference workflows based on OSCAR services with Elyra in EGI Notebooks</title>
       <link>https://oscar.grycap.net/blog/post-elyra-egi-notebook/</link>
       <pubDate>Mon, 15 Apr 2024 09:00:00 +0100</pubDate>
-      
       <guid>https://oscar.grycap.net/blog/post-elyra-egi-notebook/</guid>
-      <description>In this post, we will learn about composing AI inference workflows by invoking OSCAR services with Elyra.</description>
+      <description>&lt;p&gt;In this post, we will learn about composing AI inference workflows by invoking OSCAR services with Elyra. This tool is an extension for Jupyter Notebooks and facilitates the graphical composition of pipelines, which allows us to easily compose a pipeline involving different OSCAR services. For that, we have recovered the next video demo that we invite you to watch. These developments are part of &lt;a href=&#34;https://github.com/ai4os/ai4-compose&#34;&gt;AI4-Compose&lt;/a&gt;, a component of the &lt;a href=&#34;https://ai4os.eu&#34;&gt;AI4OS&lt;/a&gt; stack, created in the &lt;a href=&#34;https://ai4eosc.eu/&#34;&gt;AI4EOSC&lt;/a&gt; project.&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>Integration of OSCAR in AI-SPRINT Use Cases</title>
       <link>https://oscar.grycap.net/blog/post-ai-sprint-1/</link>
       <pubDate>Mon, 08 Jan 2024 09:00:00 +0100</pubDate>
-      
       <guid>https://oscar.grycap.net/blog/post-ai-sprint-1/</guid>
-      <description>The AI-SPRINT European Project uses the OSCAR serverless platform to support the scalable execution of the inference phase of AI models along the computing continuum in all the uses cases: personalized healthcare, maintenance &amp;amp; inspection and, finally, farming 4.</description>
+      <description>&lt;p&gt;The &lt;a href=&#34;https://www.ai-sprint-project.eu/&#34;&gt;AI-SPRINT&lt;/a&gt; European Project uses the OSCAR serverless platform to support the scalable execution of the inference phase of AI models along the computing continuum in all the uses cases: personalized healthcare, maintenance &amp;amp; inspection and, finally, farming 4.0.&lt;/p&gt;&#xA;&lt;p&gt;This post briefly summarises the integration.&lt;/p&gt;&#xA;&lt;h3 id=&#34;what-is-ai-sprint&#34;&gt;What is AI-SPRINT?&lt;/h3&gt;&#xA;&lt;p&gt;The &lt;a href=&#34;https://www.ai-sprint-project.eu/&#34;&gt;AI-SPRINT&lt;/a&gt; project aims to:&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Create new tools for developing AI applications whose components will run seamlessly and securely across distributed heterogeneous infrastructures.&lt;/li&gt;&#xA;&lt;li&gt;Provide advanced strategies to design and optimally partition AI models considering model accuracy, application performance, security and privacy constraints.&lt;/li&gt;&#xA;&lt;li&gt;Deliver solutions for the agile delivery and secure automatic deployment and execution of AI applications and models across the cloud-edge continuum while preserving the privacy of users’ data.&lt;/li&gt;&#xA;&lt;li&gt;Implement a runtime environment to monitor application executions with data load variations of sensor streams or component failures.&lt;/li&gt;&#xA;&lt;li&gt;Support continuous training and application architecture enhancement to add new data to AI applications, exploiting novel edge AI-based sensor capabilities.&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;p&gt;There are three use cases tackled by AI-SPRINT as shown in the figure below.&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>Data-driven Processing with dCache, Apache Nifi and OSCAR</title>
       <link>https://oscar.grycap.net/blog/data-driven-processing-with-dcache-nifi-oscar/</link>
       <pubDate>Tue, 21 Mar 2023 09:00:00 +0100</pubDate>
-      
       <guid>https://oscar.grycap.net/blog/data-driven-processing-with-dcache-nifi-oscar/</guid>
-      <description>This post describes the integration between OSCAR and dCache. Data stored in dCache triggers the invocation of an OSCAR service to perform the processing of that data file within the scalable OSCAR cluster.</description>
+      <description>&lt;p&gt;This post describes the integration between OSCAR and dCache. Data stored in dCache triggers the invocation of an OSCAR service to perform the processing of that data file within the scalable OSCAR cluster. This work is being done in the context of the &lt;a href=&#34;http://intertwin.eu&#34;&gt;InterTwin&lt;/a&gt; EU project.&lt;/p&gt;&#xA;&lt;div style = &#34;text-align:center&#34;&gt;&#xA;    &lt;img src=&#34;../../images/blog/post-dCNiOS/intertwin-logo.png&#34; width=&#34;200px&#34; &gt;&#xA;&lt;/div&gt;&#xA;&lt;h3 id=&#34;what-is-dcache&#34;&gt;What is dCache?&lt;/h3&gt;&#xA;&lt;p&gt;&lt;a href=&#34;https://dcache.org/&#34;&gt;dCache&lt;/a&gt; is a system for storing data in distributed and heterogenous server nodes that works like a single virtual filesystem tree. The system can be expanded or contracted by adding/removing data servers at any time. dCache is developed by &lt;a href=&#34;https://www.desy.de/index_eng.html&#34;&gt;DESY&lt;/a&gt;.&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>Design of workflows across OSCAR services with Node-RED (Part 2).</title>
       <link>https://oscar.grycap.net/blog/post-oscar-node-red-part-2/</link>
       <pubDate>Thu, 23 Feb 2023 09:10:00 +0100</pubDate>
-      
       <guid>https://oscar.grycap.net/blog/post-oscar-node-red-part-2/</guid>
-      <description>In this post, the work with Node-RED and its interaction with OSCAR services will be continued.</description>
+      <description>&lt;p&gt;In this post, the work with Node-RED and its interaction with OSCAR services will be continued. Two workflows will be presented where you interact with OSCAR services using the Dashboard tool, which will ultimately provide a web interface for the user. In general, there will be a choreography of various OSCAR services, where the backend part will be in the workflow programming part and the frontend will be in the web interface provided by the dashboard.&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>Design of workflows across OSCAR services with Node-RED (Part 1).</title>
       <link>https://oscar.grycap.net/blog/post-oscar-node-red/</link>
       <pubDate>Thu, 23 Feb 2023 09:00:00 +0100</pubDate>
-      
       <guid>https://oscar.grycap.net/blog/post-oscar-node-red/</guid>
-      <description>In this post, we will be explaining the integration of Node-RED software with OSCAR. The necessary tools will be given to achieve workflows between OSCAR and Node-RED simply and intuitively through flow-based programming techniques.</description>
+      <description>&lt;p&gt;In this post, we will be explaining the integration of &lt;a href=&#34;https://nodered.org/&#34;&gt;Node-RED&lt;/a&gt; software with &lt;a href=&#34;https://oscar.grycap.net/&#34;&gt;OSCAR&lt;/a&gt;. The necessary tools will be given to achieve workflows between OSCAR and Node-RED simply and intuitively through flow-based programming techniques. For this, a series of nodes and subflows have been developed, which will interact with a set of services, previously deployed in an OSCAR cluster.&lt;/p&gt;&#xA;&lt;h2 id=&#34;1-introduction-to-working-with-node-red-software&#34;&gt;1. Introduction to working with Node-RED software.&lt;/h2&gt;&#xA;&lt;p&gt;Node-RED is a tool to communicate services in a very convenient way. It greatly simplifies the task of programming on the server side thanks to visual programming.&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>Use COMPSs with OSCAR</title>
       <link>https://oscar.grycap.net/blog/post-guide-to-use-compss-in-oscar/</link>
       <pubDate>Thu, 02 Feb 2023 09:00:00 +0100</pubDate>
-      
       <guid>https://oscar.grycap.net/blog/post-guide-to-use-compss-in-oscar/</guid>
-      <description>This is a tutorial to integrate COMPSs with OSCAR. In this post, we will explain what COMPSs is and the integration with OSCAR to support parallel processing within an on-premises serverless platform.</description>
+      <description>&lt;p&gt;This is a tutorial to integrate COMPSs with OSCAR.&#xA;In this post, we will explain what COMPSs is and the integration with OSCAR to support parallel processing within an on-premises serverless platform.&lt;/p&gt;&#xA;&lt;h3 id=&#34;what-is-oscar&#34;&gt;What is OSCAR?&lt;/h3&gt;&#xA;&lt;p&gt;&lt;a href=&#34;https://oscar.grycap.net/&#34;&gt;OSCAR&lt;/a&gt; is an open-source serverless platform for event-driven data-processing containerized applications that execute on elastic &lt;a href=&#34;http://kubernetes.io&#34;&gt;Kubernetes&lt;/a&gt; clusters that are dynamically provisioned on multiple Clouds.&lt;/p&gt;&#xA;&lt;h3 id=&#34;what-is-compss&#34;&gt;What is COMPSs?&lt;/h3&gt;&#xA;&lt;p&gt;&lt;a href=&#34;https://compss-doc.readthedocs.io/en/stable/index.html&#34;&gt;COMP Superscalar (COMPSs)&lt;/a&gt; is a task-based programming model which aims to ease the development of applications for distributed infrastructures, such as large High-Performance clusters (HPC), clouds and container managed clusters. COMPSs provides a programming interface for the development of the applications and a runtime system that exploits the inherent parallelism of applications at execution time.&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>Invoking an OSCAR Service from an EGI Jupyter Notebook</title>
       <link>https://oscar.grycap.net/blog/post-egi-notebooks-integration/</link>
       <pubDate>Wed, 04 Jan 2023 09:00:00 +0100</pubDate>
-      
       <guid>https://oscar.grycap.net/blog/post-egi-notebooks-integration/</guid>
-      <description>In this post, we are going to showcase the usage of the OSCAR Python API, implemented to interact with OSCAR clusters and its services through EGI Notebooks, a tool based on Jupyter for data analysis.</description>
+      <description>&lt;p&gt;In this post, we are going to showcase the usage of the &lt;a href=&#34;https://github.com/grycap/oscar_python&#34;&gt;OSCAR Python API&lt;/a&gt;, implemented to interact with OSCAR clusters and its services through &lt;a href=&#34;https://notebooks.egi.eu/hub/welcome&#34;&gt;EGI Notebooks&lt;/a&gt;, a tool based on &lt;a href=&#34;https://jupyter.org&#34;&gt;Jupyter&lt;/a&gt; for data analysis.&lt;/p&gt;&#xA;&lt;p&gt;Through this post, we will create an EGI Notebook and test the OSCAR API with a simple service (&lt;a href=&#34;https://github.com/grycap/oscar/tree/master/examples/cowsay&#34;&gt;cowsay service&lt;/a&gt;) that receives a text input and shows it on the terminal.&lt;/p&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;You can see more information about the use of EGI notebooks on &lt;a href=&#34;https://docs.egi.eu/users/dev-env/notebooks/&#34;&gt;https://docs.egi.eu/users/dev-env/notebooks/&lt;/a&gt;&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>Why use OSCAR as a serverless AI/ML model inference platform?</title>
       <link>https://oscar.grycap.net/blog/post-reasons-oscar-for-ai-inference/</link>
       <pubDate>Wed, 09 Nov 2022 09:00:00 +0100</pubDate>
-      
       <guid>https://oscar.grycap.net/blog/post-reasons-oscar-for-ai-inference/</guid>
-      <description>What is OSCAR? OSCAR is an open-source serverless platform for event-driven data-processing containerized applications that execute on elastic Kubernetes clusters that are dynamically provisioned on multiple Clouds.</description>
+      <description>&lt;h3 id=&#34;what-is-oscar&#34;&gt;What is OSCAR?&lt;/h3&gt;&#xA;&lt;p&gt;&lt;a href=&#34;https://oscar.grycap.net/&#34;&gt;OSCAR&lt;/a&gt; is an open-source serverless platform for event-driven data-processing containerized applications that execute on elastic &lt;a href=&#34;http://kubernetes.io&#34;&gt;Kubernetes&lt;/a&gt; clusters that are dynamically provisioned on multiple Clouds.&lt;/p&gt;&#xA;&lt;p&gt;OSCAR can be used as an effective serverless platform for scalable AI/ML model inference to achieve the following benefits:&lt;/p&gt;&#xA;&lt;ol&gt;&#xA;&lt;li&gt;Ability to run AI model inference on disparate computing platform architectures, multiple Cloud providers and across the edge-to-cloud continuum, including your computer for easier testing.&lt;/li&gt;&#xA;&lt;li&gt;Seamless scalability for AI model inference regardless of the number of requests from your users, provided that the underlying computing platform provides enough hardware resources.&lt;/li&gt;&#xA;&lt;/ol&gt;&#xA;&lt;p&gt;Here are the main reasons why.&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>User interfaces with Gradio for AI model inference in OSCAR services</title>
       <link>https://oscar.grycap.net/blog/post-visualize-oscar-service-with-gradio/</link>
       <pubDate>Thu, 08 Sep 2022 09:00:00 +0100</pubDate>
-      
       <guid>https://oscar.grycap.net/blog/post-visualize-oscar-service-with-gradio/</guid>
-      <description>What is Gradio? Gradio is a Python library for building user web interfaces for Machine Learning (ML) applications.</description>
+      <description>&lt;h3 id=&#34;what-is-gradio&#34;&gt;What is Gradio?&lt;/h3&gt;&#xA;&lt;p&gt;&lt;a href=&#34;https://gradio.app/docs/&#34;&gt;Gradio&lt;/a&gt; is a Python library for building user web interfaces for Machine Learning (ML) applications. Those interfaces can be customized with the components that Gradio provides, like Textbox, File, Video, Audio, Image, and Dataframe in a short period, saving time. Also, an authentication process can be implemented to grant access to the user for model inference. This allows to create nice web-based user interfaces for the inference process of a ML application.&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>FDL Composer to create a workflow with OSCAR</title>
       <link>https://oscar.grycap.net/blog/post-oscar-fdl-composer/</link>
       <pubDate>Mon, 06 Jun 2022 18:00:00 +0100</pubDate>
-      
       <guid>https://oscar.grycap.net/blog/post-oscar-fdl-composer/</guid>
-      <description>FDL-Composer is a tool to visually design workflows for OSCAR and SCAR. We are going to simulate the example video-process</description>
+      <description>&lt;p&gt;&lt;a href=&#34;http://composer.oscar.grycap.net&#34;&gt;FDL-Composer&lt;/a&gt; is a tool to visually design workflows for &lt;a href=&#34;https://oscar.grycap.net&#34;&gt;OSCAR&lt;/a&gt; and &lt;a href=&#34;https://github.com/grycap/scar&#34;&gt;SCAR&lt;/a&gt;. We are going to simulate the example &lt;a href=&#34;https://github.com/grycap/oscar/tree/master/examples/video-process&#34;&gt;video-process&lt;/a&gt;&lt;/p&gt;&#xA;&lt;p&gt;This example supports highly-scalable event-driven video analysis using &lt;a href=&#34;https://ffmpeg.org&#34;&gt;ffmpeg&lt;/a&gt; to extract keyframes of the video and &lt;a href=&#34;https://pjreddie.com/darknet/&#34;&gt;Darknet&lt;/a&gt; to perform object recognition on the keyframes. It requires two OSCAR services: one where the video is going to get split into frames, and  another to process those frames. It also requires three MinIO buckets. One for the input. One for the output. And the last one for the connection between both services. So when a video is uploaded to the input bucket, the &amp;ldquo;split video&amp;rdquo; OSCAR service will be triggered and let the frames in an intermediate bucket. That will trigger the &amp;ldquo;processing frame&amp;rdquo; OSCAR service. Furthermore, the result will be stored in the last bucket.&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>Using OSCAR as a FaaS platform for synchronous inference of a machine learning model</title>
       <link>https://oscar.grycap.net/blog/post-oscar-faas-sync-ml-inference/</link>
       <pubDate>Mon, 16 May 2022 09:00:00 +0100</pubDate>
-      
       <guid>https://oscar.grycap.net/blog/post-oscar-faas-sync-ml-inference/</guid>
-      <description>This guide aims to show the usage of the OSCAR platform for Machine Learning inference using a pre-trained Convolutional Neural network classification model by DEEP-Hybrid-DataCloud: the Plants species classifier, to classify plant pictures by specie.</description>
+      <description>&lt;p&gt;This guide aims to show the usage of the OSCAR platform for Machine Learning inference using a pre-trained Convolutional Neural network classification model by &lt;a href=&#34;https://deep-hybrid-datacloud.eu/&#34;&gt;DEEP-Hybrid-DataCloud&lt;/a&gt;: the &lt;a href=&#34;https://marketplace.deep-hybrid-datacloud.eu/modules/deep-oc-plants-classification-tf.html&#34;&gt;Plants species classifier&lt;/a&gt;, to classify plant pictures by specie. The PREDICT method works with an RGB image as input and returns a JSON with the top 5 predictions of the plant&amp;rsquo;s specie.&lt;/p&gt;&#xA;&lt;p&gt;The example is going to be focused on synchronous invocations. OSCAR supports two types of invocations:&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>Guide to create a service in OSCAR</title>
       <link>https://oscar.grycap.net/blog/post-guide-to-use-oscar/</link>
       <pubDate>Tue, 10 May 2022 09:00:00 +0100</pubDate>
-      
       <guid>https://oscar.grycap.net/blog/post-guide-to-use-oscar/</guid>
-      <description>This is a step by step guide to show developers how to create their first service in OSCAR.</description>
+      <description>&lt;p&gt;This is a step by step guide to show developers how to create their first service in OSCAR.&lt;/p&gt;&#xA;&lt;h3 id=&#34;previous-steps&#34;&gt;Previous steps:&lt;/h3&gt;&#xA;&lt;h4 id=&#34;deploy-the-oscar-cluster&#34;&gt;Deploy the OSCAR cluster&lt;/h4&gt;&#xA;&lt;p&gt;Follow the &lt;a href=&#34;https://docs.oscar.grycap.net/deploy-im-dashboard/&#34;&gt;deployment instructions with the IM Dashboard&lt;/a&gt;. Alternatively, you can execute this script to deploy the cluster locally using kind. Kind will name the cluster &lt;code&gt;oscar-test&lt;/code&gt;.&lt;/p&gt;&#xA;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;curl -sSL http://go.oscar.grycap.net | bash&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Log in to the OSCAR UI using the previously provided credentials to verify that the cluster has been successfully deployed, and save them to use later in the guide.&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>Convert Text to Speech with OSCAR</title>
       <link>https://oscar.grycap.net/blog/post-oscar-text-to-speech/</link>
       <pubDate>Mon, 09 May 2022 18:00:00 +0100</pubDate>
-      
       <guid>https://oscar.grycap.net/blog/post-oscar-text-to-speech/</guid>
-      <description>This use case implements text-to-speech transformation using the OSCAR serverless platform, where an input of plain text returns an audio file.</description>
+      <description>&lt;p&gt;This use case implements text-to-speech transformation using the OSCAR serverless platform, where an input of plain text returns an audio file. There are two examples of implementing this use case:&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&lt;a href=&#34;https://pypi.org/project/google-speech/&#34;&gt;Google Speech&lt;/a&gt; library&lt;/li&gt;&#xA;&lt;li&gt;Pretrained model of &lt;a href=&#34;https://github.com/coqui-ai/TTS&#34;&gt;Coqui&lt;/a&gt;&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h3 id=&#34;previous-step-deploy-the-oscar-cluster-on-an-iaas-cloud-and-install-oscar-cli&#34;&gt;Previous step: Deploy the OSCAR cluster on an IaaS Cloud and install OSCAR-CLI&lt;/h3&gt;&#xA;&lt;p&gt;Follow the &lt;a href=&#34;https://docs.oscar.grycap.net/deploy-im-dashboard/&#34;&gt;deployment instructions with the IM Dashboard&lt;/a&gt;. Alternatively, the folowing script can be executed locally.&lt;/p&gt;&#xA;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;curl -sSL http://go.oscar.grycap.net | bash&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;To create the service, we will use the command-line interface &lt;a href=&#34;https://docs.oscar.grycap.net/oscar-cli/&#34;&gt;OSCAR-CLI&lt;/a&gt;.&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>A Serverless Cloud-to-Edge Computing Continuum Approach for Edge AI inference</title>
       <link>https://oscar.grycap.net/blog/post-oscar-cloud-to-edge-approach-for-edge-ai-inference/</link>
       <pubDate>Wed, 12 Jan 2022 18:00:00 +0100</pubDate>
-      
       <guid>https://oscar.grycap.net/blog/post-oscar-cloud-to-edge-approach-for-edge-ai-inference/</guid>
-      <description>OSCAR is an open-source framework for data-processing serverless computing. Users upload files to an object storage which invokes a function responsible for processing each file.</description>
+      <description>&lt;p&gt;&lt;a href=&#34;https://oscar.grycap.net&#34;&gt;OSCAR&lt;/a&gt; is an open-source framework for data-processing serverless computing. Users upload files to an object storage which invokes a function responsible for processing each file. This runs on an elastic Kubernetes cluster, managed by the &lt;a href=&#34;https://github.com/grycap/clues&#34;&gt;CLUES&lt;/a&gt; elasticity manager, that can be deployed on multiple Cloud providers thanks to the &lt;a href=&#34;https://www.grycap.upv.es/im&#34;&gt;Infrastructure Manager (IM)&lt;/a&gt;.&lt;/p&gt;&#xA;&lt;p&gt;Functions can be chained to create data-driven serverless workflows which can run on different OSCAR clusters along several Cloud infrastructures. This way, the file-based output of a function is fed as input to another function through the corresponding object storage systems, thus using resources from multiple infrastructures.&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>Using OSCAR as a FaaS platform for scalable asynchronous inference of a machine learning model</title>
       <link>https://oscar.grycap.net/blog/post-oscar-faas-scalable-ml-inference/</link>
       <pubDate>Mon, 09 Aug 2021 09:00:00 +0100</pubDate>
-      
       <guid>https://oscar.grycap.net/blog/post-oscar-faas-scalable-ml-inference/</guid>
-      <description>OSCAR is a framework to efficiently support on-premises FaaS (Functions as a Service) for general-purpose file-processing computing applications.</description>
+      <description>&lt;p&gt;OSCAR is a framework to efficiently support on-premises FaaS (Functions as a Service) for general-purpose file-processing computing applications. Users upload files to a bucket and this automatically triggers the execution of parallel invocations to a function responsible for processing each file. For example, you can deploy a machine learning inference environment by defining a function in your OSCAR cluster, and every time you upload an image to your bucket the inference process is triggered, and the result is stored.&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>Deployment of an OSCAR cluster in the EGI Federated Cloud</title>
       <link>https://oscar.grycap.net/blog/post-oscar-serverless-egi-federated-cloud/</link>
       <pubDate>Sun, 25 Jul 2021 13:00:00 +0100</pubDate>
-      
       <guid>https://oscar.grycap.net/blog/post-oscar-serverless-egi-federated-cloud/</guid>
-      <description>Here we present a step by step guide to help you deploy an OSCAR cluster in the EGI Federated Cloud, specifically in the EOSC-Synergy VO.</description>
+      <description>&lt;p&gt;Here we present a step by step guide to help you deploy an OSCAR cluster in the &lt;a href=&#34;https://www.egi.eu&#34;&gt;EGI Federated Cloud&lt;/a&gt;, specifically in the &lt;a href=&#34;https://infra.eosc-synergy.eu/vos/#synergy&#34;&gt;EOSC-Synergy VO&lt;/a&gt;. We are using the &lt;a href=&#34;https://appsgrycap.i3m.upv.es:31443/im-dashboard/login&#34;&gt;IM Dashboard&lt;/a&gt;, a tool developed by the &lt;a href=&#34;https://www.grycap.upv.es/&#34;&gt;GRyCAP&lt;/a&gt; research group at the &lt;a href=&#34;https://www.upv.es/&#34;&gt;Universitat Politècnica de València&lt;/a&gt; to facilitate the deployment of infrastructures in a lot of cloud providers. Alternatively, you can follow our YouTube video, at the end of the post.&lt;/p&gt;&#xA;&lt;p&gt;&lt;strong&gt;Step 1:&lt;/strong&gt; Go the the &lt;a href=&#34;https://appsgrycap.i3m.upv.es:31443/im-dashboard/login&#34;&gt;IM Dashboard&lt;/a&gt; and click the button &amp;ldquo;Login with EGI-Check-in&amp;rdquo;.&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>Event-driven inference of AI models for mask detection with the OSCAR serverless platform</title>
       <link>https://oscar.grycap.net/blog/post-oscar-serverless-ai-models/</link>
       <pubDate>Thu, 22 Jul 2021 10:07:21 +0100</pubDate>
-      
       <guid>https://oscar.grycap.net/blog/post-oscar-serverless-ai-models/</guid>
-      <description>What is OSCAR? OSCAR is an open-source platform to support the Functions as a Service (FaaS) computing model for file-processing applications.</description>
+      <description>&lt;h4 id=&#34;what-is-oscar&#34;&gt;What is OSCAR?&lt;/h4&gt;&#xA;&lt;p&gt;OSCAR is an open-source platform to support the Functions as a Service (FaaS) computing model for file-processing applications. It can be automatically deployed on multi-Clouds in order to create highly-parallel event-driven file-processing serverless applications that execute on customized runtime environments provided by Docker containers than run on an elastic Kubernetes cluster.&lt;/p&gt;&#xA;&lt;h4 id=&#34;why-use-oscar-for-inference-of-ai-models&#34;&gt;Why use OSCAR for inference of AI models?&lt;/h4&gt;&#xA;&lt;p&gt;Artificial Intelligence (AI) models are used once they have been trained in order to perform the inference phase on a set of files. This requires event-driven capabilities and automated provisioning of resources in order to cope with the dynamic changes in the workload. By using auto-scaled Kubernetes clusters, OSCAR can execute the inference phase of the models for each file that is uploaded to the object storage used (e.g MinIO).&lt;/p&gt;</description>
     </item>
-    
   </channel>
 </rss>
