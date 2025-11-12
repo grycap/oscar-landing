@@ -33,6 +33,7 @@ OSCAR has been evolved during the AI4EOSC project, and these are the key feature
 - Streamlined authentication via integration with Keycloak for unified access control.
 - A redesigned dashboard, built with React, provides a user-friendly interface, while Prometheus and Grafana enable real-time monitoring and accounting.
 - Automated testing ensures reliability through Robot Framework acceptance tests, executed regularly via Jenkins pipelines.
+- Integration with [AI4Compose](https://github.com/ai4os/ai4-compose) for the execution of composite pipelines involving several AI models, created with a drag and drop approach (with Node-RED or Elyra).
 
 
 ### Use Cases Integration
