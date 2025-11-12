@@ -11,12 +11,12 @@ description: "OSCAR in the iMagine project."
 draft: true
 ---
 
-The [iMagine](https://www.imagine-ai.eu/) European Project uses the OSCAR serverless platform to support the scalable execution of the inference phase of marine AI models in mature thematic services.
+The [iMagine](https://www.imagine-ai.eu/) European Project uses the OSCAR serverless platform to support the scalable execution of the inference phase of marine AI models in mature thematic services. As the project has finished recently (in August 2025), in this post we want to highlight the achievements and 
 
-This post briefly summarises the integration.
+### What is iMagine?
 
-### What is iMaigne?
+The [iMagine](https://www.imagine-ai.eu/) project is an EU-funded project with the mission to deploy, operate, validate, and promote a dedicated iMagine AI framework and platform connected to EOSC, giving researchers in aquatic sciences open access to a diverse portfolio of AI based image analysis services and image repositories from multiple RIs, working on and of relevance to the overarching theme of Healthy oceans, seas, coastal and inland waters. This AI framework is based on the [AI4OS](https://github.com/ai4os) software stack provided by the [AI4EOSC project](https://ai4eosc.eu/) (read our post for more details about AI4EOSC and the role of OSCAR in the project).
 
-The [iMagine](https://www.imagine-ai.eu/) project aims to:
+### OSCAR in action 
 
-- TODO
+
