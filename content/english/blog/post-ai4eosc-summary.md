@@ -2,7 +2,7 @@
 title: "Serverless Computing for Artificial Intelligence: The OSCAR–AI4EOSC Integration Story."
 date: 2025-11-10T09:00:00+01:00
 # post image
-image: "../../images/blog/post-ai4eosc-summary/ai4eosc.svg"
+image: "../../images/blog/post-ai4eosc/ai4eosc.svg"
 # post type (regular/featured)
 type: "featured"
 # meta description
@@ -18,6 +18,8 @@ The [AI4EOSC](https://ai4eosc.eu/) European Project uses the OSCAR serverless pl
 [AI4EOSC](https://ai4eosc.eu/) stands for "Artificial Intelligence for the European Open Science Cloud." It is an initiative aimed at integrating artificial intelligence (AI) technologies into the [European Open Science Cloud (EOSC)](https://eosc.eu/), a federated ecosystem that enables researchers to access, process, and share data and services across Europe. 
 
 The AI4EOSC project focuses on simplifying how scientists develop, train, and deploy AI models. Thus, the main goal of AI4EOSC is to enhance the capabilities of EOSC by leveraging AI to improve data management, analysis, and sharing, thereby fostering innovation and collaboration in scientific research. Aligned with this aim, the project has successfully delivered the [AI4OS](https://github.com/ai4os) software stack and the [AI4EOSC Dashboard](https://dashboard.cloud.ai4eosc.eu/catalog/modules), where, among others, users can find the catalogue of available AI models and can easily deploy or re-train them.
+
+![AI4EOSC Dashboard screenshot](../../images/blog/post-ai4eosc/ai4eosc-dashboard.png)
 
 ### OSCAR: The Serverless Solution for Inference of AI Models
 
@@ -37,6 +39,8 @@ OSCAR has been evolved during the AI4EOSC project, and these are the key feature
 ### Use Cases Integration
 
 The use cases of the project have been using OSCAR for the deployment of their AI models for inference. Let's have a closer look to them to know how they have been using OSCAR.
+
+![AI4EOSC Use Cases](../../images/blog/post-ai4eosc/ai4eosc-usecases.png)
 
 ##### UC1 - Agrometeorological forecasts
 
