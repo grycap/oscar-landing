@@ -11,7 +11,7 @@ description: "OSCAR in the AI4EOSC project."
 draft: false
 ---
 
-The [AI4EOSC](https://ai4eosc.eu/) European Project uses the OSCAR serverless platform to support the scalable execution of the inference phase of AI models. As the project has come to its end in August 2025, in this post we want to briefly summarize the achievements and integrations performed during it.
+The [AI4EOSC](https://ai4eosc.eu/) European Project uses the OSCAR serverless platform to support the scalable execution of the inference phase of AI models. As the project has come to its end in August 2025, in this post, we want to briefly summarize the achievements and integrations performed during it.
 
 ### What is AI4EOSC?
 
@@ -25,7 +25,7 @@ The AI4EOSC project focuses on simplifying how scientists develop, train, and de
 
 The scalable inference of AI models is performed by the AI4OS inference platform, which is based on the open-source serverless platform OSCAR. The AI4OS inference platform consists of a pre-deployed production instance of  the OSCAR cluster that is exclusively accessible to users belonging to the virtual organisation of AI4EOSC (vo.ai4eosc.eu). 
 
-OSCAR has been evolved during the AI4EOSC project, and these are the key features we have developed during this collaboration:
+OSCAR has evolved during the AI4EOSC project, and these are the key features we have developed during this collaboration:
 - Pre-trained AI models are delivered directly via OSCAR, ready for inference without additional setup. [More info](https://docs.ai4os.eu/en/latest/howtos/deploy/oscar.html).
 - Provided multiple execution modes: asynchronous (event-triggered), synchronous (HTTP requests), and exposed services (REST APIs).
 - Supported deployment on multi-cloud and edge devices (e.g., Raspberry Pi), with elastic scaling and integration with object storage (MinIO, dCache).
@@ -38,13 +38,13 @@ OSCAR has been evolved during the AI4EOSC project, and these are the key feature
 
 ### Use Cases Integration
 
-The use cases of the project have been using OSCAR for the deployment of their AI models for inference. Let's have a closer look to them to know how they have been using OSCAR.
+The use cases of AI4EOSC have been using OSCAR for the deployment of their AI models for inference. Let's have a closer look at them to know how they have been using OSCAR.
 
 ![AI4EOSC Use Cases](../../images/blog/post-ai4eosc/ai4eosc-usecases.png)
 
 ##### UC1 - Agrometeorological forecasts
 
-In agriculture, timely weather insights are critical. The OSCAR instance has been used to deploy multiple forecasting models (eight in total, one for each prediction lead time) as part of an [agrometeorological nowcasting pipeline](https://dashboard.cloud.ai4eosc.eu/catalog/modules/thunderstorm-nowcast-microstep). Here’s how it works:
+In agriculture, timely weather insights are critical. This use case has developed an AI model that combines radar imagery, in-situ measurements and numerical weather predictions to provide timely and precise warnings for farmers and local communities. The OSCAR instance has been used to deploy multiple forecasting models (eight in total, one for each prediction lead time) as part of an [agrometeorological nowcasting pipeline](https://dashboard.cloud.ai4eosc.eu/catalog/modules/thunderstorm-nowcast-microstep). Here’s how it works:
 
 1. Input data are transferred from a forecasting virtual machine to the MinIO object storage system.
 2. This automatically triggers asynchronous inference on OSCAR.
@@ -54,13 +54,18 @@ This workflow ensures automated, scalable, and real-time decision support for ag
 
 ##### UC2 - Integrated plant protection scenario
 
+This use case has developed an AI model focused on the early detection of plant disease. The model combines a network of meteorological data, existing mathematical models and ground observations, enhanced with satellite data, to provide greater terrain coverage and spatial precision. Focused on a dataset directly taken from plants and crops of Poland, the model aims to improve the quality and safety of food production by reducing the usage of pesticides.
+
 A proof-of-concept integration with OSCAR has enabled a [plant protection application](https://dashboard.cloud.ai4eosc.eu/catalog/modules/integrated-plant-protection) to be deployed directly through the AI4EOSC marketplace. Researchers can test and experiment with this service using try-out deployments or containerized (Docker) access, paving the way for broader adoption in agricultural monitoring and pest management. This work has been done in collaboration with the colleagues of [PSNC](https://www.psnc.pl/).
 
 ##### UC3 - Automated Thermography
 
-In the field of energy efficiency, OSCAR supports continuous inference for [Thermal Bridges on Building Rooftops Detection (TBBRDet)](https://dashboard.cloud.ai4eosc.eu/catalog/modules/thermal-bridges-rooftops-detector) model.
+In the field of energy efficiency, two different AI models have been developed by this use case. The models apply Deep Learning techniques to detect hotspots through instance segmentation in combined thermal and RGB image data. OSCAR supports continuous inference for [Thermal Bridges on Building Rooftops Detection (TBBRDet)](https://dashboard.cloud.ai4eosc.eu/catalog/modules/thermal-bridges-rooftops-detector) model.
 Through a secure and user-friendly interface, building owners or urban planners can analyze thermographic data to detect energy losses — all without sharing raw data or inference results. 
 
 This demonstrates OSCAR’s privacy-preserving design: enabling powerful AI analysis while keeping sensitive information under control. This work has been done in collaboration with the colleagues of [KIT](https://www.kit.edu/).
+
+### Conclusion
+The integration of OSCAR into the AI4EOSC ecosystem marks a major step toward democratizing access to AI infrastructure for European researchers. By combining serverless computing with open science principles, it empowers scientific communities to deploy, test, and scale AI models efficiently and transparently.
 
 [OSCAR](https://grycap.github.io/oscar/) is developed by the [GRyCAP](https://www.grycap.upv.es/) research group at the [Universitat Politècnica de València](https://www.upv.es/). [AI4EOSC](https://ai4eosc.eu/) has received funding from the European Union's Horizon Europe 2022 research and innovation programme under agreement #101058593.
