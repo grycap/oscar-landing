@@ -6,8 +6,22 @@
     <description>Recent content on OSCAR</description>
     <generator>Hugo</generator>
     <language>en</language>
-    <lastBuildDate>Wed, 08 May 2024 09:00:00 +0100</lastBuildDate>
+    <lastBuildDate>Tue, 11 Nov 2025 09:00:00 +0100</lastBuildDate>
     <atom:link href="https://oscar.grycap.net/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Bringing Serverless to Marine Science: Our Journey with OSCAR and iMagine.</title>
+      <link>https://oscar.grycap.net/blog/post-imagine-summary/</link>
+      <pubDate>Tue, 11 Nov 2025 09:00:00 +0100</pubDate>
+      <guid>https://oscar.grycap.net/blog/post-imagine-summary/</guid>
+      <description>&lt;p&gt;The &lt;a href=&#34;https://www.imagine-ai.eu/&#34;&gt;iMagine&lt;/a&gt; European Project uses the OSCAR serverless platform to support the scalable execution of the inference phase of marine AI models in mature thematic services. As the project has finished recently (in August 2025), in this post, we want to highlight the achievements and&lt;/p&gt;&#xA;&lt;h3 id=&#34;what-is-imagine&#34;&gt;What is iMagine?&lt;/h3&gt;&#xA;&lt;p&gt;The &lt;a href=&#34;https://www.imagine-ai.eu/&#34;&gt;iMagine&lt;/a&gt; project is an EU-funded project with the mission to deploy, operate, validate, and promote a dedicated iMagine AI framework and platform connected to EOSC, giving researchers in aquatic sciences open access to a diverse portfolio of AI based image analysis services and image repositories from multiple RIs, working on and of relevance to the overarching theme of Healthy oceans, seas, coastal and inland waters. This AI framework is based on the &lt;a href=&#34;https://github.com/ai4os&#34;&gt;AI4OS&lt;/a&gt; software stack provided by the &lt;a href=&#34;https://ai4eosc.eu/&#34;&gt;AI4EOSC project&lt;/a&gt; (read our post for more details about AI4EOSC and the role of OSCAR in the project).&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Serverless Computing for Artificial Intelligence: The OSCAR–AI4EOSC Integration Story.</title>
+      <link>https://oscar.grycap.net/blog/post-ai4eosc-summary/</link>
+      <pubDate>Mon, 10 Nov 2025 09:00:00 +0100</pubDate>
+      <guid>https://oscar.grycap.net/blog/post-ai4eosc-summary/</guid>
+      <description>&lt;p&gt;The &lt;a href=&#34;https://ai4eosc.eu/&#34;&gt;AI4EOSC&lt;/a&gt; European Project uses the OSCAR serverless platform to support the scalable execution of the inference phase of AI models. As the project has come to its end in August 2025, in this post, we want to briefly summarize the achievements and integrations performed during it.&lt;/p&gt;&#xA;&lt;h3 id=&#34;what-is-ai4eosc&#34;&gt;What is AI4EOSC?&lt;/h3&gt;&#xA;&lt;p&gt;&lt;a href=&#34;https://ai4eosc.eu/&#34;&gt;AI4EOSC&lt;/a&gt; stands for &amp;ldquo;Artificial Intelligence for the European Open Science Cloud.&amp;rdquo; It is an initiative aimed at integrating artificial intelligence (AI) technologies into the &lt;a href=&#34;https://eosc.eu/&#34;&gt;European Open Science Cloud (EOSC)&lt;/a&gt;, a federated ecosystem that enables researchers to access, process, and share data and services across Europe.&lt;/p&gt;</description>
+    </item>
     <item>
       <title>Composing AI Inference pipelines with Node-RED &amp; Flowfuse</title>
       <link>https://oscar.grycap.net/blog/post-nodered-flowfuse/</link>

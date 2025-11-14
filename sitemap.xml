@@ -3,10 +3,16 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://oscar.grycap.net/</loc>
-    <lastmod>2024-05-08T09:00:00+01:00</lastmod>
+    <lastmod>2025-11-11T09:00:00+01:00</lastmod>
   </url><url>
     <loc>https://oscar.grycap.net/blog/</loc>
-    <lastmod>2024-05-08T09:00:00+01:00</lastmod>
+    <lastmod>2025-11-11T09:00:00+01:00</lastmod>
+  </url><url>
+    <loc>https://oscar.grycap.net/blog/post-imagine-summary/</loc>
+    <lastmod>2025-11-11T09:00:00+01:00</lastmod>
+  </url><url>
+    <loc>https://oscar.grycap.net/blog/post-ai4eosc-summary/</loc>
+    <lastmod>2025-11-10T09:00:00+01:00</lastmod>
   </url><url>
     <loc>https://oscar.grycap.net/blog/post-nodered-flowfuse/</loc>
     <lastmod>2024-05-08T09:00:00+01:00</lastmod>
