@@ -128,5 +128,5 @@ call_to_action:
   button:
     enable : true
     label : "Deploy your OSCAR cluster"
-    link : "https://im.egi.eu/configure/oscar"
+    link : "https://im.egi.eu/im-dashboard/configure?selected_tosca=oscar.yaml"
 ---
