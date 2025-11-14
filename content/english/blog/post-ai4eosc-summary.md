@@ -19,7 +19,7 @@ The [AI4EOSC](https://ai4eosc.eu/) European Project uses the OSCAR serverless pl
 
 The AI4EOSC project focuses on simplifying how scientists develop, train, and deploy AI models. Thus, the main goal of AI4EOSC is to enhance the capabilities of EOSC by leveraging AI to improve data management, analysis, and sharing, thereby fostering innovation and collaboration in scientific research. Aligned with this aim, the project has successfully delivered the [AI4OS](https://github.com/ai4os) software stack and the [AI4EOSC Dashboard](https://dashboard.cloud.ai4eosc.eu/catalog/modules), where, among others, users can find the catalogue of available AI models and can easily deploy or re-train them.
 
-![AI4EOSC Dashboard screenshot](../../images/blog/post-ai4eosc/ai4eosc-dashboard.png)
+![AI4EOSC Dashboard screenshot](../../images/blog/post-ai4eosc/ai4eosc_dashboard.png)
 
 ### OSCAR: The Serverless Solution for Inference of AI Models
 
@@ -40,7 +40,7 @@ OSCAR has evolved during the AI4EOSC project, and these are the key features we 
 
 The use cases of AI4EOSC have been using OSCAR for the deployment of their AI models for inference. Let's have a closer look at them to know how they have been using OSCAR.
 
-![AI4EOSC Use Cases](../../images/blog/post-ai4eosc/ai4eosc-usecases.png)
+![AI4EOSC Use Cases](../../images/blog/post-ai4eosc/ai4eosc_usecases.png)
 
 ##### UC1 - Agrometeorological forecasts
 
