@@ -11,43 +11,28 @@ description: "How OSCAR integrated with dCache, NiFi (dCNiOS), interLink, and ne
 draft: false
 ---
 
-This post summarizes the work carried out in the InterTwin project to extend the OSCAR serverless platform across the cloud–HPC continuum. We introduced a data-driven ingestion path with dCache and Apache NiFi (via dCNiOS), enabled seamless offloading of OSCAR workloads to HPC via interLink, added interactive Jupyter notebooks as exposed services, integrated Common Workflow Language (CWL) with `oscar-python`, and broadened event sources to S3 (through SQS), Kafka, and Rucio.
+This post summarizes the work carried out in the InterTwin project to extend the OSCAR serverless platform across the cloud–HPC continuum. We developed DCNiOS, a Data Connector through Apache NiFi for OSCAR, that facilitates the creation of event-driven dataflows connecting storages system like dCache, S3 (via SQS), Kafka, and Rucio, enabled seamless offloading of OSCAR workloads to HPC via interLink, added interactive Jupyter notebooks as exposed services, and integrated Common Workflow Language (CWL) using `oscar-python` from them.
 
-### Why cloud–HPC serverless?
+### Data-driven ingestion with DCNiOS 
 
-Cloud platforms provide elastic, on-demand resources and are a natural fit for event-driven AI/ML pipelines—from ingestion and curation to inference. HPC systems offer extreme-scale, accelerator-rich computing for the heaviest training and inference tasks, but they come with specialized access patterns and schedulers. We bridged these worlds by:
-
-- Using containers to deliver portable execution across environments.
-- Extending serverless/event-driven workflows from Kubernetes to HPC via secure offloading.
-- Preserving user identity and access policies end-to-end with OIDC-based authentication.
-- Respecting HPC network and storage policies through secure tunneling and credential propagation.
-
-The result is a unified path where an event in object storage (or a message bus) can trigger scalable serverless functions that run on cloud or—when needed—transparently burst to HPC.
-
-### Data-driven ingestion with dCNiOS (dCache + NiFi)
-
-We built dCNiOS to connect dCache storage events with OSCAR through Apache NiFi. dCNiOS provides a YAML-based approach and a CLI tool to define and deploy the dataflow that listens to dCache Server-Sent Events (SSE) and triggers OSCAR services.
+We built DCNiOS to connect dCache storage events with OSCAR through Apache NiFi. DCNiOS provides a YAML-based approach and a CLI tool to define and deploy the dataflow that listens to dCache Server-Sent Events (SSE) and triggers OSCAR services.
 
 - What it solves: decouples ingestion rate (dCache) from processing rate (OSCAR) while keeping flows reconfigurable.
 - How it’s delivered: a NiFi-based image with SSE client support and reusable process groups.
-- Details and screenshots: see our post “Data-driven Processing with dCache, Apache NiFi and OSCAR.”
-
-For a deep dive, check the original article:
-
-- Dataflow overview and examples: `content/english/blog/data-driven-processing-with-dcache-nifi-oscar.md`.
+- Details and screenshots: see our post [Data-driven Processing with dCache, Apache NiFi and OSCAR](/blog/data-driven-processing-with-dcache-nifi-oscar/).
 
 ### Offloading OSCAR workloads to HPC with interLink (itwinai use case)
 
-We integrated OSCAR with interLink to transparently offload computation from Kubernetes to HPC systems, keeping the serverless UX intact. In this setup:
+We integrated OSCAR with [interLink](https://interlink-project.dev/) to transparently offload computation from OSCAR clusters to HPC systems. In this setup:
 
 - OSCAR handles the event-driven lifecycle and user-friendly APIs.
 - interLink securely offloads pods to HPC under the user’s identity, preserving site policies.
 - OIDC-based auth and secure tunneling align with HPC security and networking constraints.
-- Storage credentials are propagated from Kubernetes to HPC so data access remains consistent.
+- Storage credentials are propagated from the OSCAR cluster to HPC so data access remains consistent.
 
-We showcased this with an inference service deployed using itwinai (developed by CERN in InterTwin), invoking HPC compute from OSCAR in a serverless manner.
+We showcased this with an inference service deployed using [itwinai](https://itwinai.readthedocs.io/latest/) (developed by CERN in InterTwin), invoking HPC compute from OSCAR in a serverless manner to perform an inference of a generative machine learning model.
 
-{{< youtube NoVCfSxwtX0 >}}
+{{< youtube cSN-b4r21u0eSWT5 >}}
 
 ### Interactive work: Jupyter Notebooks as Exposed Services
 
