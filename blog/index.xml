@@ -6,8 +6,15 @@
     <description>Recent content in Blog on OSCAR</description>
     <generator>Hugo</generator>
     <language>en</language>
-    <lastBuildDate>Tue, 11 Nov 2025 09:00:00 +0100</lastBuildDate>
+    <lastBuildDate>Wed, 10 Dec 2025 09:00:00 +0100</lastBuildDate>
     <atom:link href="https://oscar.grycap.net/blog/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Digital Twin science made serverless: evolving OSCAR within interTwin</title>
+      <link>https://oscar.grycap.net/blog/post-intertwin-summary/</link>
+      <pubDate>Wed, 10 Dec 2025 09:00:00 +0100</pubDate>
+      <guid>https://oscar.grycap.net/blog/post-intertwin-summary/</guid>
+      <description>&lt;p&gt;This post summarizes the work carried out in the &lt;a href=&#34;https://intertwin.eu&#34;&gt;InterTwin&lt;/a&gt; project to extend the OSCAR serverless platform across the cloud–HPC continuum. We developed &lt;a href=&#34;https://github.com/interTwin-eu/dcnios&#34;&gt;DCNiOS&lt;/a&gt;, a Data Connector through &lt;a href=&#34;https://nifi.apache.org&#34;&gt;Apache NiFi&lt;/a&gt; for OSCAR, that facilitates the creation of event-driven dataflows connecting storages system like dCache, S3 (via SQS), Kafka, and Rucio, enabled seamless offloading of OSCAR workloads to HPC via interLink, added interactive Jupyter notebooks as exposed services, and integrated &lt;a href=&#34;https://www.commonwl.org&#34;&gt;Common Workflow Language (CWL)&lt;/a&gt; using &lt;a href=&#34;https://github.com/grycap/oscar_python&#34;&gt;&lt;code&gt;oscar-python&lt;/code&gt;&lt;/a&gt; from them.&lt;/p&gt;</description>
+    </item>
     <item>
       <title>Bringing Serverless to Marine Science: Our Journey with OSCAR and iMagine.</title>
       <link>https://oscar.grycap.net/blog/post-imagine-summary/</link>
