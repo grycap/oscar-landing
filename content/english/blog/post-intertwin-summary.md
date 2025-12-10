@@ -11,11 +11,11 @@ description: "Digital Twin science made serverless with OSCAR within InterTwin. 
 draft: false
 ---
 
-This post summarizes the work carried out in the InterTwin project to extend the OSCAR serverless platform across the cloud–HPC continuum. We developed DCNiOS, a Data Connector through Apache NiFi for OSCAR, that facilitates the creation of event-driven dataflows connecting storages system like dCache, S3 (via SQS), Kafka, and Rucio, enabled seamless offloading of OSCAR workloads to HPC via interLink, added interactive Jupyter notebooks as exposed services, and integrated Common Workflow Language (CWL) using `oscar-python` from them.
+This post summarizes the work carried out in the [InterTwin](https://intertwin.eu) project to extend the OSCAR serverless platform across the cloud–HPC continuum. We developed [DCNiOS](https://github.com/interTwin-eu/dcnios), a Data Connector through [Apache NiFi](https://nifi.apache.org) for OSCAR, that facilitates the creation of event-driven dataflows connecting storages system like dCache, S3 (via SQS), Kafka, and Rucio, enabled seamless offloading of OSCAR workloads to HPC via interLink, added interactive Jupyter notebooks as exposed services, and integrated [Common Workflow Language (CWL)](https://www.commonwl.org) using [`oscar-python`](https://github.com/grycap/oscar_python) from them.
 
 ### Data-driven ingestion with DCNiOS 
 
-We built DCNiOS to connect dCache storage events with OSCAR through Apache NiFi. DCNiOS provides a YAML-based approach and a CLI tool to define and deploy the dataflow that listens to dCache Server-Sent Events (SSE) and triggers OSCAR services.
+We built DCNiOS to connect [dCache](http://dcache.org) storage events with OSCAR through Apache NiFi. DCNiOS provides a YAML-based approach and a CLI tool to define and deploy the dataflow that listens to dCache Server-Sent Events (SSE) and triggers OSCAR services.
 
 - What it solves: decouples ingestion rate (dCache) from processing rate (OSCAR) while keeping flows reconfigurable.
 - How it’s delivered: a NiFi-based image with SSE client support and reusable process groups.
@@ -25,9 +25,9 @@ We built DCNiOS to connect dCache storage events with OSCAR through Apache NiFi.
 
 We broadened the DCNiOS capabilities to support new event sources for triggering OSCAR services:
 
-- S3 via SQS: process object-storage events at scale.
-- Kafka: stream-processing triggers for high-throughput event flows.
-- Rucio: scientific data management events feeding directly into OSCAR services.
+- [Amazon S3](https://aws.amazon.com/s3) via [SQS](https://aws.amazon.com/sqs): process object-storage events at scale.
+- [Kafka](https://kafka.apache.org/): stream-processing triggers for high-throughput event flows.
+- [Rucio](https://rucio.cern.ch): scientific data management events feeding directly into OSCAR services.
 
 These sources are orchestrated through Apache NiFi dataflows and set up with DCNiOS, complementing existing triggers and enabling flexible scientific pipelines.
 
