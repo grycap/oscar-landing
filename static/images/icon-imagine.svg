@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="96" height="96" viewBox="0 0 96 96">
+  <defs>
+    <linearGradient id="g2" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#8e44ad"/>
+      <stop offset="100%" stop-color="#c39bd3"/>
+    </linearGradient>
+  </defs>
+  <rect x="8" y="8" width="80" height="80" rx="16" fill="url(#g2)" />
+  <text x="50%" y="55%" text-anchor="middle" font-family="Arial, sans-serif" font-size="26" font-weight="700" fill="#fff">iMag</text>
+</svg>

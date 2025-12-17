@@ -28,6 +28,9 @@ icon_font = "Font Awesome 5 Free"
 link = "plugins/bootstrap/bootstrap.min.css"
 [[params.plugins.css]]
 link = "plugins/slick/slick.css"
+[[params.plugins.css]]
+link = "https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+attributes = "integrity='sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=' crossorigin=''"
 
 # JS Plugins
 [[params.plugins.js]]
@@ -39,3 +42,6 @@ link = "plugins/slick/slick.min.js"
 [[params.plugins.js]]
 link = "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/js/all.min.js"
 attributes = "crossorigin='anonymous' defer='defer' data-search-pseudo-elements"
+[[params.plugins.js]]
+link = "https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+attributes = "integrity='sha256-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44c=' crossorigin=''"
