@@ -1,0 +1,56 @@
+[
+  {
+    "name": "OSCAR - UPV",
+    "city": "Valencia, Spain",
+    "provider": "Universitat Politècnica de València (UPV)",
+    "capacity": "GPU/CPU",
+    "status": "active",
+    "project": "https://www.eosc-data-commons.eu",
+    "project_icon": "images/eosc-data-commons.png"
+  },
+  {
+    "name": "OSCAR - iMagine",
+    "city": "Waterford, Ireland",
+    "provider": "Walton Institute for Information and Communication Systems Science",
+    "capacity": "CPU",
+    "status": "active",
+    "project": "https://www.imagine-ai.eu",
+    "project_icon": "images/imagine-logo.jpeg"
+  },
+  {
+    "name": "OSCAR - interTwin (GRNET)",
+    "city": "Athens, Greece",
+    "provider": "National Infrastructures for Research and Technology (GRNET)",
+    "capacity": "CPU",
+    "status": "decomissioned",
+    "project": "https://www.intertwin.eu",
+    "project_icon": "images/intertwin-logo.png"
+  },
+  {
+    "name": "OSCAR - AI4EOSC (LIP)",
+    "city": "Lisbon, Portugal",
+    "provider": "Laboratório de Instrumentação e Física Experimental (LIP)",
+    "capacity": "CPU",
+    "status": "active",
+    "project": "https://www.ai4eosc.eu",
+    "project_icon": "images/ai4eosc-logo.png"
+  },
+  {
+    "name": "OSCAR - AI4EOSC (IISAS)",
+    "city": "Lisbon, Portugal",
+    "provider": "Slovak Academy of Sciences, Institute of Informatics (IISAS)",
+    "capacity": "CPU",
+    "status": "active",
+    "project": "https://www.ai4eosc.eu",
+    "project_icon": "images/ai4eosc-logo.png"
+  },
+  {
+    "name": "OSCAR - DiscoverUS (Chamelon/TACC)",
+    "city": "Texas, USA",
+    "provider": "Texas Advanced Computing Center (TACC), as part of Chameleon Cloud",
+    "capacity": "CPU",
+    "status": "decomissioned",
+    "project": "https://discover-us.eu",
+    "project_icon": "images/discover-us-logo.svg"
+  }
+]

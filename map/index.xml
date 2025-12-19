@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Map of OSCAR deployments on OSCAR</title>
+    <link>https://oscar.grycap.net/map/</link>
+    <description>Recent content in Map of OSCAR deployments on OSCAR</description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <atom:link href="https://oscar.grycap.net/map/index.xml" rel="self" type="application/rss+xml" />
+  </channel>
+</rss>
