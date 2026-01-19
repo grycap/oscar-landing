@@ -165,6 +165,7 @@ functions:
       cpu: '1.0'
       image: docker-hub-user/docker-hub-image:tag
       script: path/to/script.sh
+      vo: "vo.ai4eosc.eu"
       input:
       - storage_provider: minio
         path: name_of_bucket/in
@@ -184,6 +185,8 @@ There are several ways to deploy a service on an OSCAR cluster. Below, we discus
 
 - `OSCAR API`: The [OSCAR API section](https://docs.oscar.grycap.net/latest/deployment-api) demonstrates service deployment primarily through two alternatives: [cURL](https://curl.se/), a command-line tool ideal for automation that allows integrating the definition file and script into a single POST request, and [Postman](https://www.postman.com/), a graphical platform popular among developers for testing and documenting APIs through a visual interface. In both methods, configuring security is essential, either through an OIDC token (Bearer) or basic authentication (username and password), to correctly send the request body with the service configuration to the remote cluster.
 
+Example using cURL
+
 ```
 curl -X POST "https://oscar-cluster-remote/system/services" \
      -H "Authorization: Bearer YOUR_TOKEN" \
@@ -199,9 +202,13 @@ curl -X POST "https://oscar-cluster-remote/system/services" \
   "environment": { "Variables": { "INPUT_TYPE": "json" } }
 }'
 ```
+Example using Postman
+
 ![API-Postman](/images/blog/post-guide-to-deployment-services/api-postman-init.png)
 
 - `OSCAR CLI`: The [OSCAR CLI section](https://docs.oscar.grycap.net/latest/deployment-oscar-cli) uses the [OSCAR-CLI](https://github.com/grycap/oscar-cli) tool, which provides a command-line interface for easily interacting with OSCAR clusters. It supports service management, workflow definition from FDL (Function Definition Language) files, and the ability to manage files from OSCAR-compatible storage providers. Deploying a service involves three main steps: first, the cluster must be linked using the `cluster add` command, where an alias (e.g., oscar-cluster) is defined, and credentials are provided, either via username/password, OIDC agents, or shortcut tokens. Once configured, deployment is performed declaratively by running `oscar-cli apply` along with the FDL (.yaml) file containing all the service configuration. Finally, the tool allows you to verify the deployment status with the `service list` command, which shows a summary of the allocated resources (CPU, Memory and Image).
+
+Example of deployment for OSCAR CLI
 
 ```
 oscar-cli apply $yaml_file
@@ -209,9 +216,13 @@ oscar-cli apply $yaml_file
 
 - `OSCAR Dashboard`: The [OSCAR Dashboard section](https://docs.oscar.grycap.net/latest/deployment-oscar-dashboard) demonstrates the deployment of services through an OSCAR cluster dashboard. The dashboard offers an intuitive graphical interface that significantly streamlines interaction with cluster elements. To deploy a service, the panel offers two paths: the `FDL option`, where the `.yaml` configuration file and corresponding script are uploaded directly, or the `Form option`, which allows manual entry of service characteristics (names, resources, and variables) in a web form. In both cases, after completing the upload or the form and clicking `Create Service`, the service is deployed and ready for execution.
 
+Example using the OSCAR Dashboard
+
 ![OSCAR-Dashboard](/images/blog/post-guide-to-deployment-services/dashboard-form.png)
 
 - `OSCAR Python`: The [OSCAR Python section](https://docs.oscar.grycap.net/latest/deployment-oscar-python) shows how to deploy services to an OSCAR cluster from Python. You can use the OSCAR API directly or, more easily, the [oscar-python client](https://github.com/grycap/oscar_python) developed for this language. The process begins with installing the [oscar-python library](https://pypi.org/project/oscar-python/) (`pip install oscar-python`) and initializing the client, which requires configuring an options object with the cluster endpoint and the authentication method, either using basic credentials (username and password) or a valid OIDC token. Once the Client object is configured, deployment is simplified using the `client.create_service` function, passing the path to the FDL file containing the service definition as the only parameter.
+
+Example using Python client 
 
 ```
 try:

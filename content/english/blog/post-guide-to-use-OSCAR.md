@@ -29,7 +29,7 @@ Log in to the OSCAR UI using the previously provided credentials to verify that 
 
 ![01-oscar-login.png](/images/blog/post-guide-to-use-OSCAR/01-oscar-login.png)
 
-#### Install OSCAR-CLI
+#### Install OSCAR-CLI-- ojo
 
 To easily interact and manage an OSCAR cluster, it is recommended the use of the command line interface [OSCAR-CLI](https://docs.oscar.grycap.net/oscar-cli/).
 
