@@ -27,6 +27,15 @@
     "project_icon": "images/intertwin-logo.png"
   },
   {
+    "name": "OSCAR - interTwin (UKRI)",
+    "city": "Swindon, England",
+    "provider": "United Kingdom Research and Innovation (UKRI)",
+    "capacity": "CPU",
+    "status": "decomissioned",
+    "project": "https://www.intertwin.eu",
+    "project_icon": "images/intertwin-logo.png"
+  },
+  {
     "name": "OSCAR - AI4EOSC (LIP)",
     "city": "Lisbon, Portugal",
     "provider": "Laboratório de Instrumentação e Física Experimental (LIP)",
