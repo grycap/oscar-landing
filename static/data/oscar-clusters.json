@@ -5,6 +5,15 @@
     "provider": "Universitat Politècnica de València (UPV)",
     "capacity": "GPU/CPU",
     "status": "active",
+    "project": "https://www.grycap.upv.eu",
+    "project_icon": "images/logo-grycap.png"
+  },
+  {
+    "name": "OSCAR - EOSC Data Commons",
+    "city": "Gebze, Turkey",
+    "provider": "TÜBİTAK - Turkish National Research Institute of Electronics and Cryptology",
+    "capacity": "CPU",
+    "status": "active",
     "project": "https://www.eosc-data-commons.eu",
     "project_icon": "images/eosc-data-commons.png"
   },
