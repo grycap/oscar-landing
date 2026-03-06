@@ -29,7 +29,7 @@
           </li>
           {{ else }}
           <li class="nav-item">
-            <a class="nav-link" href="{{ .URL | relLangURL }}" title="{{ .Name }}">{{ .Name }}</a>
+            <a class="nav-link" href="{{ if hasPrefix .URL "http" }}{{ .URL | safeURL }}{{ else }}{{ .URL | relURL }}{{ end }}" title="{{ .Name }}">{{ .Name }}</a>
           </li>
           {{ end }}
           {{ end }}
@@ -59,9 +59,22 @@
         </ul>
 
 
+        <button id="theme-toggle" class="btn btn-sm btn-outline-primary ml-lg-3 mt-3 mt-lg-0 theme-toggle" type="button" aria-label="Switch to light mode" aria-pressed="false"
+          onclick="(function(btn){var root=document.documentElement;var key='oscar-theme';var current=root.getAttribute('data-theme')==='light'?'light':'dark';var next=current==='light'?'dark':'light';root.setAttribute('data-theme',next);try{localStorage.setItem(key,next);}catch(e){}var isLight=next==='light';btn.setAttribute('aria-pressed',isLight?'true':'false');btn.setAttribute('aria-label',isLight?'Switch to dark mode':'Switch to light mode');if(btn.classList){btn.classList.toggle('is-light',isLight);}})(this);return false;">
+          <i class="fas fa-moon theme-toggle__moon" aria-hidden="true"></i>
+          <i class="fas fa-sun theme-toggle__sun" aria-hidden="true"></i>
+        </button>
+
         {{ if site.Params.navigation_button.enable }}
         {{ with site.Params.navigation_button }}
-        <a href="{{ .link | relLangURL }}" title="{{ .label }}" class="btn btn-sm btn-primary ml-3">{{ .label }}</a>
+        <a href="{{ .link | relLangURL }}" title="{{ .label }}" class="btn btn-sm btn-primary ml-3 mt-3 mt-lg-0" aria-label="{{ .label }}">
+          {{ if eq (lower .label) "github" }}
+          <i class="fab fa-github" aria-hidden="true"></i>
+          <span class="sr-only">{{ .label }}</span>
+          {{ else }}
+          {{ .label }}
+          {{ end }}
+        </a>
         {{ end }}
         {{ end }}
 

@@ -2,12 +2,15 @@
 ####################### Banner #########################
 banner:
   title : "Open Source Serverless Computing for Data-Processing Applications (OSCAR)"
-  image : "images/undraw_to_the_moon_v1mv.svg"
+  image : "images/banner-art.svg"
   content : "Serverless computing for Docker-based computationally-intensive applications on elastic Kubernetes clusters deployed on multi-Clouds."
   button:
     enable : true
     label : "Deploy your Cluster"
     link : "https://im.egi.eu/im-dashboard/configure?selected_tosca=oscar.yaml"
+  secondary_buttons:
+    - label: "Quick Start"
+      link: "https://grycap.github.io/oscar/deploy-im-dashboard/"
 
 ##################### Feature ##########################
 feature:
@@ -30,7 +33,7 @@ feature:
       content : "Compose data-driven serverless workflows with a [Functions Definition Language](https://grycap.github.io/oscar/fdl/)"
         
     # feature item loop
-    - name : "Flexible Interfaces"
+    - name : "Multiple Interfaces"
       icon : "fas fa-file-invoice"
       content : "[REST API](https://grycap.github.io/oscar/api/), [Web-based GUI](https://grycap.github.io/oscar/usage/) and [CLI](https://github.com/grycap/oscar-cli) (Command-line Interface)"
       
@@ -55,7 +58,7 @@ service:
       - "images/undraw_server_status_5pbv.svg" 
     #  - "images/Kubernetes_logo.svg"
     
-      content : "OSCAR supports data-driven serverless computing for file-processing applications. Services will be triggered in response to a file upload to an object storage back-end in order to execute a user-defined shell script inside a container provisioned out of an user-defined Docker image. These will be orchestrated as a Kubernetes batch jobs. The output data will be uploaded to any object storage back-ends support. Synchronous invocations available."
+      content : "OSCAR supports data-driven serverless computing for data-processing applications. Services will be triggered in response to a file upload to an object storage back-end in order to execute a user-defined shell script inside a container provisioned out of an user-defined Docker image. These will be orchestrated as a Kubernetes batch jobs. The output data will be uploaded to any object storage back-ends support. Synchronous invocations available."
      # button:
      #   enable : true
      #   label : "Check it out"
@@ -68,7 +71,7 @@ service:
       - "images/amazon-s3.png"
       - "images/onedata-logo.png"
 
-      content : "Each OSCAR cluster features a [MinIO](https://min.io/) installation so that file uploads trigger the execution of the file-processing applications. Other storage back-ends are supported for file storage output including [Amazon S3](https://aws.amazon.com/s3) and the [EGI DataHub](https://www.egi.eu/services/datahub/) (based on [Onedata](https://onedata.org)). These can be chained to create data-driven workflows of functions"
+      content : "Each OSCAR cluster features a [MinIO](https://min.io/) installation so that file uploads trigger the execution of the data-processing applications. These can be chained to create data-driven workflows of functions. Other storage back-ends are supported for file storage output including [Amazon S3](https://aws.amazon.com/s3) and the [EGI DataHub](https://www.egi.eu/services/datahub/) (based on [Onedata](https://onedata.org))."
    #   button:
    #     enable : true
    #     label : "Check it out"
@@ -95,7 +98,7 @@ service:
       - "images/im-dashboard-04b.png"
       - "images/im-dashboard-05a.png"
       - "images/im-dashboard-06a.png"
-      content : "An OSCAR cluster can be provisioned from the CLI using [EC3](https://www.grycap.upv.es/ec3) but the simplest approach is to use the Infrastructure Manager (IM) Dashboard, which provides a streamlined process of deploying the cluster on any Cloud that you have access to."
+      content : "An OSCAR cluster can be provisioned from the CLI using the [Infrastructure Manager (IM)](https://www.grycap.upv.es/im), which provides a streamlined process of deploying the cluster on any Cloud that you have access to."
       #button:
       #  enable : true
       #  label : "Check it out"
@@ -107,8 +110,7 @@ service:
       - "images/hybrid-workflow.svg"
       - "images/workflow.svg"
       - "images/arch-scar-batch.svg"
-      content : "OSCAR is integrated with [SCAR](https://github.com/grycap/scar), an open-source tool to execute generic applications on [AWS Lambda](https://aws.amazon.com/lambda), the Functions as a Service (FaaS) provided of Amazon Web Services (AWS). This allows creating serverless workflows across the Cloud computing continuum, where some lightweight processing occurs in an on-premises Cloud (or in the edge) and intensive computing takes place in AWS Lambda.
-      SCAR is also integrated with [AWS Batch](https://aws.amazon.com/batch), a managed service to provision auto-scaled clusters in AWS Batch. This allows executing event-driven serverless workflows for applications that require intensive computing or specialized accelerated hardware such as GPUs."
+      content : "OSCAR is integrated with [SCAR](https://github.com/grycap/scar), an open-source tool to execute generic applications on [AWS Lambda](https://aws.amazon.com/lambda), the Functions as a Service (FaaS) provided of Amazon Web Services (AWS). OSCAR can also run on ARM-based edge devices such as Raspberry Pis and NVIDIA Jetson Nano boards. This allows creating serverless workflows across the Cloud computing continuum, where some lightweight processing occurs in an on-premises Cloud (or at the edge) and intensive computing takes place in AWS Lambda. SCAR is also integrated with [AWS Batch](https://aws.amazon.com/batch), a managed service to provision auto-scaled clusters in AWS Batch. This allows executing event-driven serverless workflows for applications that require intensive computing or specialized accelerated hardware such as GPUs."
     
             
   

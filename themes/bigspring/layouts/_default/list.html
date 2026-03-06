@@ -5,19 +5,19 @@
 <!-- checking blog -->
 {{ if or (or (eq .Section "post") (eq .Section "blog")) (or (eq .Section "categories") (eq .Section "tags") )}}
 
-<section class="section">
+<section class="section blog-listing">
   <div class="container">
     <div class="row">
       {{ range last 1 (first 6 .Pages.ByPublishDate) }}
       <div class="col-12 mb-5 pb-5">
-        <div class="row align-items-center">
+        <div class="row align-items-center blog-featured">
           <div class="col-md-6 mb-4 mb-md-0">
             <img src="{{ .Params.image | relURL }}" alt="{{.Title}}" class="img-fluid rounded-lg w-100">
           </div>
           <div class="col-md-6">
-            <h2><a href="{{ .Permalink }}" title="{{ .Title }}" class="post-title">{{ .Title }}</a></h2>
+            <h2><a href="{{ .RelPermalink }}" title="{{ .Title }}" class="post-title">{{ .Title }}</a></h2>
             <p class="card-text">{{ .Summary }}</p>
-            <a href="{{.Permalink}}" title="{{ i18n "readmore" }} - {{ .Title }}" class="btn btn-primary">{{ i18n "readmore" }}</a>
+            <a href="{{ .RelPermalink }}" title="{{ i18n "readmore" }} - {{ .Title }}" class="btn btn-primary">{{ i18n "readmore" }}</a>
           </div>
         </div>
       </div>
@@ -25,12 +25,12 @@
       {{ $paginator := .Paginate .Data.Pages }}
       {{ range $paginator.Pages }}
       <div class="col-lg-4 col-sm-6 mb-5">
-        <div class="card border-0">
+        <div class="card border-0 blog-summary-card h-100">
           <img src="{{ .Params.image |relURL }}" alt="{{ .Title }}" class="card-img rounded-lg mb-4">
           <div class="card-body p-0">
-            <h3><a href="{{ .Permalink }}" title="{{ .Title }}" class="post-title">{{ .Title }}</a></h3>
+            <h3><a href="{{ .RelPermalink }}" title="{{ .Title }}" class="post-title">{{ .Title }}</a></h3>
             <p class="card-text">{{ .Summary }}</p>
-            <a href="{{.Permalink}}" title="{{ i18n "readmore" }} - {{ .Title }}" class="btn btn-primary btn-sm">{{ i18n "readmore" }}</a>
+            <a href="{{ .RelPermalink }}" title="{{ i18n "readmore" }} - {{ .Title }}" class="btn btn-primary btn-sm">{{ i18n "readmore" }}</a>
           </div>
         </div>
       </div>

@@ -15,6 +15,28 @@
   });
 </script>
 
+<script>
+  (function () {
+    var key = 'oscar-theme';
+    var root = document.documentElement;
+    var stored = null;
+    try {
+      stored = localStorage.getItem(key);
+    } catch (e) {}
+    var preferred = (window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matches) ? 'light' : 'dark';
+    var theme = (stored === 'light' || stored === 'dark') ? stored : preferred;
+    root.setAttribute('data-theme', theme);
+    document.addEventListener('DOMContentLoaded', function () {
+      var btn = document.getElementById('theme-toggle');
+      if (!btn) return;
+      var isLight = theme === 'light';
+      btn.setAttribute('aria-pressed', isLight ? 'true' : 'false');
+      btn.setAttribute('aria-label', isLight ? 'Switch to dark mode' : 'Switch to light mode');
+      if (btn.classList) btn.classList.toggle('is-light', isLight);
+    });
+  })();
+</script>
+
 <!-- JS Plugins + Main script -->
 {{ $scripts := slice }}
 {{ range site.Params.plugins.js}}

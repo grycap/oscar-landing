@@ -1,0 +1,36 @@
+{{ with .Params.banner }}
+<section class="landing-hero" aria-labelledby="landing-hero-title">
+  <div class="landing-hero__bg" aria-hidden="true"></div>
+  <div class="container position-relative">
+    <div class="row align-items-center">
+      <div class="col-lg-7">
+        <span class="landing-eyebrow">Open Source • Kubernetes • Multi-Cloud</span>
+        <h1 id="landing-hero-title" class="landing-hero__title">{{ .title | markdownify }}</h1>
+        <p class="landing-hero__lead">{{ .content | markdownify }}</p>
+
+        <div class="landing-hero__actions">
+          {{ if .secondary_buttons }}
+            {{ range .secondary_buttons }}
+            <a href="{{ .link | safeURL }}" class="btn btn-outline-primary btn-lg" {{ if hasPrefix .link "http" }}target="_blank" rel="noopener"{{ end }}>{{ .label }}</a>
+            {{ end }}
+          {{ end }}
+
+          {{ if .button.enable }}
+          {{ with .button }}
+          <a href="{{ .link | safeURL }}" title="{{ .label }}" class="btn btn-primary btn-lg">{{ .label }}</a>
+          {{ end }}
+          {{ end }}
+        </div>
+      </div>
+
+      <div class="col-lg-5 mt-5 mt-lg-0">
+        {{ with .image }}
+        <div class="landing-hero__visual shadow">
+          <img src="{{ . | relURL }}" alt="OSCAR platform illustration" class="img-fluid">
+        </div>
+        {{ end }}
+      </div>
+    </div>
+  </div>
+</section>
+{{ end }}

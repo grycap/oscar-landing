@@ -94,6 +94,14 @@
 
     // Prepare map
     try {
+      if (typeof L === 'undefined' || typeof L.map !== 'function') {
+        setFeedback('Map library could not be loaded.');
+        return;
+      }
+      if (mapContainer._leaflet_id) {
+        // Already initialized, avoid throwing "Map container is already initialized."
+        return;
+      }
       const map = L.map(mapContainer).setView([20, 0], 2);
       L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
         maxZoom: 18,

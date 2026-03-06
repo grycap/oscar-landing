@@ -58,6 +58,46 @@ a.post-title {
   }
 }
 
+.blog-listing {
+  .blog-featured {
+    border: 1px solid rgba($primary-color, .22);
+    border-radius: 18px;
+    padding: clamp(16px, 2.2vw, 28px);
+    background: linear-gradient(160deg, rgba(#121821, .95), rgba(#0D131B, .98));
+    box-shadow: 0 12px 28px rgba(0, 0, 0, .26);
+  }
+
+  .blog-summary-card {
+    border-radius: 16px;
+    padding: 16px;
+    background: linear-gradient(160deg, rgba(#121821, .95), rgba(#0D131B, .98));
+    border: 1px solid rgba($primary-color, .18);
+    box-shadow: 0 10px 24px rgba(0, 0, 0, .2);
+    transition: transform .2s ease, box-shadow .2s ease, border-color .2s ease;
+
+    .card-img {
+      margin-bottom: 14px !important;
+      border: 1px solid rgba($primary-color, .16);
+    }
+
+    .card-text {
+      margin-bottom: 1.2rem;
+      color: $text-color;
+    }
+
+    &:hover {
+      transform: translateY(-5px);
+      border-color: rgba($primary-color, .34);
+      box-shadow: 0 16px 32px rgba(0, 0, 0, .34);
+    }
+  }
+
+  .post-title:focus-visible {
+    outline: 2px solid lighten($primary-color, 12%);
+    outline-offset: 3px;
+  }
+}
+
 .content {
 
   * {
@@ -352,4 +392,228 @@ a.post-title {
 .price{
   font-size: 50px;
   color: $text-color-dark;
+}
+
+// landing page redesign
+.landing-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 14px;
+  border-radius: 999px;
+  margin-bottom: 18px;
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: .03em;
+  color: lighten($primary-color, 22%);
+  background: rgba($primary-color, .14);
+  border: 1px solid rgba($primary-color, .35);
+}
+
+.landing-hero {
+  position: relative;
+  overflow: hidden;
+  padding: clamp(90px, 12vw, 150px) 0 clamp(70px, 8vw, 110px);
+  background:
+    radial-gradient(circle at 8% 15%, rgba($primary-color, .18), transparent 40%),
+    radial-gradient(circle at 90% 10%, rgba($primary-color, .12), transparent 35%),
+    linear-gradient(145deg, #0A0D12 0%, #10151C 100%);
+}
+
+.landing-hero__bg {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+
+  &::before,
+  &::after {
+    content: '';
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(32px);
+  }
+
+  &::before {
+    width: 45vw;
+    max-width: 420px;
+    aspect-ratio: 1;
+    right: -10%;
+    top: -20%;
+    background: rgba($primary-color, .20);
+  }
+
+  &::after {
+    width: 38vw;
+    max-width: 360px;
+    aspect-ratio: 1;
+    left: -12%;
+    bottom: -24%;
+    background: rgba($primary-color, .16);
+  }
+}
+
+.landing-hero__title {
+  color: $text-color-dark;
+  font-size: clamp(2rem, calc(1.35rem + 2.25vw), 3.45rem);
+  line-height: 1.15;
+  letter-spacing: -.015em;
+  margin-bottom: 18px;
+}
+
+.landing-hero__lead {
+  max-width: 62ch;
+  font-size: clamp(1rem, calc(.92rem + .45vw), 1.2rem);
+  line-height: 1.7;
+  margin-bottom: 28px;
+}
+
+.landing-hero__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+
+  .btn-outline-primary {
+    color: darken($primary-color, 20%);
+    border-color: rgba($primary-color, .45);
+    background-color: rgba($white, .65);
+
+    &:hover {
+      color: $white;
+      background-color: darken($primary-color, 10%);
+      border-color: darken($primary-color, 10%);
+    }
+  }
+}
+
+.landing-hero__visual {
+  border-radius: 24px;
+  padding: clamp(16px, 2vw, 24px);
+  background: linear-gradient(155deg, rgba($light, .95), rgba(#0D1117, .95));
+  border: 1px solid rgba($primary-color, .28);
+}
+
+.landing-features {
+  background: linear-gradient(180deg, rgba(#0C1016, .92) 0%, rgba(#080A0D, .98) 100%);
+}
+
+.feature-card--premium {
+  border: 1px solid rgba($primary-color, .24);
+  border-radius: 16px;
+  padding: 24px 20px;
+  background: linear-gradient(180deg, rgba(#121821, .92), rgba(#0F141C, .96));
+  box-shadow: 0 10px 30px rgba(0, 0, 0, .28);
+
+  .feature-card__icon {
+    font-size: 26px;
+    color: darken($primary-color, 8%);
+  }
+
+  &:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 16px 32px rgba(0, 0, 0, .38);
+  }
+}
+
+.landing-services__content {
+  p:last-child {
+    margin-bottom: 0;
+  }
+}
+
+.landing-services__media {
+  border-radius: 20px;
+  padding: clamp(14px, 2vw, 22px);
+  background: linear-gradient(160deg, rgba(#121821, .96), rgba(#0E131A, .98));
+  border: 1px solid rgba($primary-color, .2);
+  box-shadow: 0 14px 30px rgba(0, 0, 0, .35);
+
+  img {
+    width: 100%;
+    max-height: 320px;
+    object-fit: contain;
+    border-radius: 12px;
+  }
+
+  &.slick-slider {
+    margin-bottom: 0;
+  }
+
+  .slick-slide {
+    padding: 0 6px;
+  }
+
+  .slick-dots {
+    margin-top: 14px;
+
+    li {
+      margin: 0 4px;
+
+      button {
+        width: 26px;
+        height: 6px;
+        border-radius: 999px;
+        border: 0;
+        background-color: rgba($primary-color, .35);
+      }
+
+      &.slick-active button {
+        background-color: darken($primary-color, 10%);
+      }
+    }
+  }
+}
+
+.landing-cta__panel {
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(140deg, rgba(#111720, .96), rgba(#0D1219, .98));
+  border: 1px solid rgba($primary-color, .26);
+
+  &::after {
+    content: '';
+    position: absolute;
+    right: -8%;
+    top: -40px;
+    width: 40vw;
+    max-width: 340px;
+    aspect-ratio: 1;
+    border-radius: 50%;
+    background: rgba($primary-color, .12);
+    filter: blur(24px);
+    pointer-events: none;
+  }
+}
+
+.landing-hero,
+.landing-features,
+.landing-services,
+.landing-cta {
+  .btn:focus-visible,
+  a:focus-visible {
+    outline: 2px solid lighten($primary-color, 12%);
+    outline-offset: 3px;
+  }
+}
+
+@media (max-width: 991px) {
+  .landing-hero {
+    text-align: center;
+  }
+
+  .landing-hero__lead {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .landing-hero__actions {
+    justify-content: center;
+  }
+}
+
+@media (max-width: 767px) {
+  .landing-services__media {
+    img {
+      max-height: 260px;
+    }
+  }
 }
