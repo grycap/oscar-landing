@@ -111,6 +111,10 @@
       const markers = L.layerGroup().addTo(map);
       const geocodePromises = [];
       for (const cluster of clusters) {
+        if (typeof cluster.lat === 'number' && typeof cluster.lng === 'number') {
+          cluster.coords = { lat: cluster.lat, lng: cluster.lng };
+          continue;
+        }
         if (!cluster.city) continue;
         geocodePromises.push(
           geocodeCity(cluster.city)
