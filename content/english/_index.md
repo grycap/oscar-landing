@@ -160,6 +160,6 @@ call_to_action:
   content : "Deploy an OSCAR cluster on your preferred cloud through the [IM Dashboard](https://im.egi.eu). No registration is required. Not ready yet? Start with the [documentation](https://docs.oscar.grycap.net) and come back when you are ready."
   button:
     enable : true
-    label : "Deploy your OSCAR cluster"
+    label : "Deploy on a Cloud"
     link : "https://im.egi.eu/im-dashboard/configure?selected_tosca=oscar.yaml"
 ---
