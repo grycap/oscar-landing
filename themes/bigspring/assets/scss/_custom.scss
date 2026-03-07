@@ -110,22 +110,77 @@ a:not(.btn):not(.nav-link):not(.navbar-brand):not(.dropdown-item):focus {
 }
 
 .theme-toggle {
+  min-width: 42px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-width: 1px;
+  border-style: solid;
+  border-radius: 30px;
+  text-decoration: none;
+  transition: color .2s ease, background-color .2s ease, border-color .2s ease, box-shadow .2s ease;
+  box-shadow: none !important;
+
+  &::before {
+    display: none !important;
+  }
+
+  &:hover,
+  &:focus,
+  &:active {
+    box-shadow: none !important;
+  }
+
+  i {
+    font-size: 16px;
+    line-height: 1;
+  }
+
   .theme-toggle__sun {
     display: none;
   }
 }
 
+.theme-toggle:focus,
+.theme-toggle.focus,
+.theme-toggle:active:focus {
+  box-shadow: none !important;
+}
+
+.theme-toggle:focus-visible {
+  outline: 2px solid rgba($primary-color, .55);
+  outline-offset: 2px;
+}
+
 [data-theme="dark"] .theme-toggle,
 .theme-toggle:not(.is-light) {
+  color: #E5E7EB;
+  border-color: rgba(255, 255, 255, .3);
+  background-color: transparent;
+
   .theme-toggle__moon {
     display: inline-block;
+    color: #E5E7EB;
   }
 }
 
 [data-theme="light"] .theme-toggle,
 .theme-toggle.is-light {
+  color: #1F2937;
+  background-color: #FFFFFF;
+  border: 1px solid rgba(31, 41, 55, .18);
+
+  &:hover,
+  &:focus {
+    color: darken($primary-color, 16%);
+    border-color: rgba($primary-color, .45);
+    background-color: #FFFFFF;
+    box-shadow: none !important;
+  }
+
   .theme-toggle__sun {
     display: inline-block;
+    color: #B45309;
   }
 
   .theme-toggle__moon {
