@@ -235,6 +235,17 @@ a:not(.btn):not(.nav-link):not(.navbar-brand):not(.dropdown-item):focus {
   color: #4F5B6B;
 }
 
+[data-theme="light"] footer .h3,
+[data-theme="light"] footer h3 {
+  color: #1F2937;
+  font-weight: 700;
+}
+
+[data-theme="light"] footer .footer-list a:hover,
+[data-theme="light"] footer .footer-list a:focus {
+  color: darken($primary-color, 18%);
+}
+
 [data-theme="light"] .landing-hero {
   background:
     radial-gradient(circle at 8% 15%, rgba($primary-color, .16), transparent 40%),
