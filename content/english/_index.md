@@ -1,16 +1,16 @@
 ---
 ####################### Banner #########################
 banner:
-  title : "Open Source Serverless Computing for Data-Processing Applications (OSCAR)"
+  title : "Open Source Serverless Computing for Data-Processing Applications"
   image : "images/banner-art.svg"
   content : "A flexible Virtual Research Environment (VRE) to run Docker-based, compute-intensive workloads with serverless workflows on elastic Kubernetes clusters deployed across multiple clouds."
   button:
     enable : true
-    label : "Deploy your Cluster"
+    label : "Deploy on a Cloud"
     link : "https://im.egi.eu/im-dashboard/configure?selected_tosca=oscar.yaml"
   secondary_buttons:
     - label: "Quick Start"
-      link: "https://grycap.github.io/oscar/deploy-im-dashboard/"
+      link: "https://docs.oscar.grycap.net/latest/local-testing/"
 
 ##################### Feature ##########################
 feature:
@@ -20,7 +20,7 @@ feature:
     # feature item loop
     - name : "Multi-cloud Support"
       icon : "fas fa-cloud"
-      content : "Deploy OSCAR clusters on on-premises, public, and federated clouds via the [Infrastructure Manager (IM)](https://im.egi.eu)."
+      content : "Deploy across many clouds via the [Infrastructure Manager (IM)](https://im.egi.eu)."
       
     # feature item loop
     - name : "Elasticity"
@@ -35,32 +35,32 @@ feature:
     # feature item loop
     - name : "Multiple Interfaces"
       icon : "fas fa-file-invoice"
-      content : "Use OSCAR through its [REST API](https://grycap.github.io/oscar/api/), [web-based GUI](https://grycap.github.io/oscar/usage/), and [CLI](https://github.com/grycap/oscar-cli)."
+      content : "Secure OIDC [REST API](https://grycap.github.io/oscar/api/), [Dashboard](https://grycap.github.io/oscar/usage/), and [CLI](https://github.com/grycap/oscar-cli) available for multi-tenant usage."
       
     # feature item loop
     - name : "Built on Kubernetes"
       icon : "fas fa-cloud"
-      content : "OSCAR services are built on Kubernetes components for easier extension and integration."
+      content : Built on Kubernetes components for easier extension and integration."
       
     # feature item loop  
     - name : "Open Source"
       icon : "fas fa-heart"
-      content : "Open source under the Apache 2.0 License on [GitHub](https://github.com/grycap/oscar), and also available as a managed SaaS offering."
+      content : "Apache 2.0 License, also available as a managed SaaS."
 
     # feature item loop
     - name : "Edge-Ready Runtime"
       icon : "fas fa-microchip"
-      content : "Run OSCAR on ARM-based edge devices, including Raspberry Pi and NVIDIA Jetson Nano."
+      content : "Runs on ARM-based edge devices (e.g., Raspberry Pi and NVIDIA Jetson Nano)."
 
     # feature item loop
     - name : "Scale to Zero"
       icon : "fas fa-power-off"
-      content : "Reduce idle resource usage by scaling services down when there is no incoming workload."
+      content : "Reduces idle resource usage by scaling services down depending onn the workload."
 
     # feature item loop
     - name : "Observability & Operations"
       icon : "fas fa-chart-line"
-      content : "Track service status and execution behavior through the OSCAR dashboard and operational tooling."
+      content : "Tracks service status and metrics. Enforces quota allocations."
 
 ######################### Service #####################
 service:
