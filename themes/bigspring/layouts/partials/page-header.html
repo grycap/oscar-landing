@@ -1,6 +1,7 @@
-<section class="section pb-0">
+{{ $isBlogSection := or (or (eq .Section "post") (eq .Section "blog")) (or (eq .Section "categories") (eq .Section "tags")) }}
+<section class="section pb-0 page-header{{ if $isBlogSection }} page-header--blog{{ end }}">
   <div class="container text-center">
-    <h1 class="display-3">{{ .Title | markdownify }}</h1>
+    <h1 class="display-3 page-header__title{{ if $isBlogSection }} page-header__title--blog{{ end }}">{{ .Title | markdownify }}</h1>
     {{ with .Params.subtitle }}
     <p>{{ . | markdownify }}</p>
     {{ end }}

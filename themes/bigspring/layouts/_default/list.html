@@ -15,9 +15,9 @@
             <img src="{{ .Params.image | relURL }}" alt="{{.Title}}" class="img-fluid rounded-lg w-100">
           </div>
           <div class="col-md-6">
-            <h2><a href="{{ .RelPermalink }}" title="{{ .Title }}" class="post-title">{{ .Title }}</a></h2>
-            <p class="card-text">{{ .Summary }}</p>
-            <a href="{{ .RelPermalink }}" title="{{ i18n "readmore" }} - {{ .Title }}" class="btn btn-primary">{{ i18n "readmore" }}</a>
+            <h2 class="blog-listing__featured-title"><a href="{{ .RelPermalink }}" title="{{ .Title }}" class="post-title post-title--featured">{{ .Title }}</a></h2>
+            <p class="card-text">{{ .Summary | plainify | truncate 220 }}</p>
+            <a href="{{ .RelPermalink }}" title="{{ i18n "readmore" }} - {{ .Title }}" class="blog-read-more">{{ i18n "readmore" }} <i class="fas fa-arrow-right" aria-hidden="true"></i></a>
           </div>
         </div>
       </div>
@@ -28,9 +28,9 @@
         <div class="card border-0 blog-summary-card h-100">
           <img src="{{ .Params.image |relURL }}" alt="{{ .Title }}" class="card-img rounded-lg mb-4">
           <div class="card-body p-0">
-            <h3><a href="{{ .RelPermalink }}" title="{{ .Title }}" class="post-title">{{ .Title }}</a></h3>
-            <p class="card-text">{{ .Summary }}</p>
-            <a href="{{ .RelPermalink }}" title="{{ i18n "readmore" }} - {{ .Title }}" class="btn btn-primary btn-sm">{{ i18n "readmore" }}</a>
+            <h3 class="blog-listing__card-title"><a href="{{ .RelPermalink }}" title="{{ .Title }}" class="post-title post-title--summary">{{ .Title }}</a></h3>
+            <p class="card-text">{{ .Summary | plainify | truncate 180 }}</p>
+            <a href="{{ .RelPermalink }}" title="{{ i18n "readmore" }} - {{ .Title }}" class="blog-read-more">{{ i18n "readmore" }} <i class="fas fa-arrow-right" aria-hidden="true"></i></a>
           </div>
         </div>
       </div>
