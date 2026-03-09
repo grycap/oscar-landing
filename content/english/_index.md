@@ -10,7 +10,7 @@ banner:
     link : "https://im.egi.eu/im-dashboard/configure?selected_tosca=oscar.yaml"
   secondary_buttons:
     - label: "Quick Start"
-      link: "https://docs.oscar.grycap.net/latest/local-testing/"
+      link: "https://docs.oscar.grycap.net/"
 
 ##################### Feature ##########################
 feature:
@@ -82,10 +82,8 @@ service:
         
     # service item loop
     - title : "Support for Multiple Storage Back-ends"
-      images:      
-      - "images/minio-seeklogo.com.svg"
-      - "images/amazon-s3.png"
-      - "images/onedata-logo.png"
+      images:
+      - "images/oscar-components.png"
 
       content : "Each OSCAR cluster includes [MinIO](https://min.io/) so file uploads can trigger data-processing applications. Services can be chained to build data-driven workflows. Output storage also supports other backends, including [Amazon S3](https://aws.amazon.com/s3) and [EGI DataHub](https://www.egi.eu/services/datahub/) (based on [Onedata](https://onedata.org))."
    #   button:
@@ -98,7 +96,7 @@ service:
       images:
       #- "images/logo-im1.png"
       # - "images/oscar-components.png"
-      - "images/oscar-arch.svg"      
+      - "images/oscar-arch.png"
       content : "An OSCAR cluster is built on dynamically deployed, elastic Kubernetes infrastructure. With the [CLUES](https://github.com/grycap/clues) elasticity system, clusters self-adapt to incoming workload by scaling node capacity up to the deployment limits you define."
      # button:
      #   enable : true
@@ -128,7 +126,7 @@ service:
       - "images/arch-scar-batch.svg"
       content : "OSCAR integrates with [SCAR](https://github.com/grycap/scar), an open-source tool for running generic applications on [AWS Lambda](https://aws.amazon.com/lambda) (AWS Functions as a Service). OSCAR can also run on ARM-based edge devices such as Raspberry Pi and NVIDIA Jetson Nano boards. This enables serverless workflows across the cloud computing continuum: lightweight processing can run on-premises or at the edge, while heavier workloads run in AWS Lambda. SCAR also integrates with [AWS Batch](https://aws.amazon.com/batch), enabling event-driven workflows for compute-intensive applications or workloads that require specialized hardware such as GPUs."
     
-    - title : "An Integrated OSCAR Dashboard"
+    - title : "An Integrated Dashboard"
       images:
       - "images/oscar-dashboard-00-login.jpg"
       - "images/oscar-dashboard-01-buckets.jpg"
