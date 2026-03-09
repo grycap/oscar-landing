@@ -2,6 +2,8 @@
   {
     "name": "OSCAR - UPV",
     "city": "Valencia, Spain",
+    "lat": 39.4699,
+    "lng": -0.3763,
     "provider": "Universitat Politècnica de València (UPV)",
     "capacity": "GPU/CPU",
     "status": "active",
@@ -11,6 +13,8 @@
   {
     "name": "OSCAR - EOSC Data Commons",
     "city": "Gebze, Turkey",
+    "lat": 40.8028,
+    "lng": 29.4307,
     "provider": "TÜBİTAK - Turkish National Research Institute of Electronics and Cryptology",
     "capacity": "CPU",
     "status": "active",
@@ -20,6 +24,8 @@
   {
     "name": "OSCAR - iMagine",
     "city": "Waterford, Ireland",
+    "lat": 52.2593,
+    "lng": -7.1101,
     "provider": "Walton Institute for Information and Communication Systems Science",
     "capacity": "CPU",
     "status": "active",
@@ -29,6 +35,8 @@
   {
     "name": "OSCAR - interTwin (GRNET)",
     "city": "Athens, Greece",
+    "lat": 37.9838,
+    "lng": 23.7275,
     "provider": "National Infrastructures for Research and Technology (GRNET)",
     "capacity": "CPU",
     "status": "decomissioned",
@@ -38,6 +46,8 @@
   {
     "name": "OSCAR - interTwin (UKRI)",
     "city": "Swindon, England",
+    "lat": 51.5558,
+    "lng": -1.7797,
     "provider": "United Kingdom Research and Innovation (UKRI)",
     "capacity": "CPU",
     "status": "decomissioned",
@@ -47,6 +57,8 @@
   {
     "name": "OSCAR - AI4EOSC (LIP)",
     "city": "Lisbon, Portugal",
+    "lat": 38.7223,
+    "lng": -9.1393,
     "provider": "Laboratório de Instrumentação e Física Experimental (LIP)",
     "capacity": "CPU",
     "status": "active",
@@ -56,6 +68,8 @@
   {
     "name": "OSCAR - AI4EOSC (IISAS)",
     "city": "Bratislava, Slovakia",
+    "lat": 48.1486,
+    "lng": 17.1077,
     "provider": "Slovak Academy of Sciences, Institute of Informatics (IISAS)",
     "capacity": "CPU",
     "status": "active",
@@ -65,6 +79,8 @@
   {
     "name": "OSCAR - DiscoverUS (Chamelon/TACC)",
     "city": "Texas, USA",
+    "lat": 30.2672,
+    "lng": -97.7431,
     "provider": "Texas Advanced Computing Center (TACC), as part of Chameleon Cloud",
     "capacity": "CPU",
     "status": "decomissioned",

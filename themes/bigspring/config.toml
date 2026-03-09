@@ -6,14 +6,14 @@
 ######################### Site Variables ##############################
 # Customize your color and font from here.
 [params.variables]
-primary_color = "#95B699"
-text_color = "#777"
-text_color_dark = "#222"
-body_color = "#fff"
-border_color = "#777"
+primary_color = "#7BC47F"
+text_color = "#B8BFCA"
+text_color_dark = "#F2F4F8"
+body_color = "#080A0D"
+border_color = "#2A3039"
 black = "#000"
 white = "#fff"
-light = "#EDF6F5"
+light = "#11151B"
 
 # Font variable
 # Give your font name from Google Fonts. Add font weight using ":wght@" and separate by ";"
@@ -44,4 +44,4 @@ link = "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/js/all.min.js
 attributes = "crossorigin='anonymous' defer='defer' data-search-pseudo-elements"
 [[params.plugins.js]]
 link = "https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
-attributes = "integrity='sha256-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44c=' crossorigin=''"
+attributes = "integrity='sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=' crossorigin=''"

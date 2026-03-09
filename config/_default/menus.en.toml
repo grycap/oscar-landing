@@ -11,12 +11,12 @@ weight = 1
 
 [[main]]
 name = "Blog"
-url = "blog"
+url = "/blog/"
 weight = 2
 
 [[main]]
 name = "Map of Clusters"
-url = "map"
+url = "/map/"
 weight = 3
 
 

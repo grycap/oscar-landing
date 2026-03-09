@@ -1,0 +1,24 @@
+{{ with .Params.call_to_action }}
+{{ if .enable }}
+<section class="section landing-cta" aria-labelledby="landing-cta-title">
+  <div class="container">
+    <div class="landing-cta__panel shadow rounded-lg px-4 px-lg-5 py-5">
+      <div class="row align-items-center justify-content-center text-center text-md-left">
+        <div class="col-lg-4 col-md-5 mb-4 mb-md-0">
+          {{ with .image }}<img src="{{ . | relURL }}" alt="Ready to deploy OSCAR" class="img-fluid">{{ end }}
+        </div>
+        <div class="col-lg-6 col-md-7">
+          <h2 id="landing-cta-title" class="section-title mb-3">{{ .title | markdownify }}</h2>
+          {{ with .content }}<p class="mb-4">{{ . | markdownify }}</p>{{ end }}
+          {{ if .button.enable }}
+          {{ with .button }}
+          <a href="{{ .link | safeURL }}" title="{{ .label }}" class="btn btn-primary btn-lg">{{ .label }}</a>
+          {{ end }}
+          {{ end }}
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+{{ end }}
+{{ end }}

@@ -1,0 +1,33 @@
+{{ with .Params.service }}
+{{ if .enable }}
+<section class="landing-services" aria-label="OSCAR capabilities">
+  {{ range $i, $item := .service_item }}
+  <section class="section {{ if modBool $i 2 }}{{ else }}bg-light{{ end }}">
+    <div class="container">
+      <div class="row align-items-center">
+        <div class="col-md-6 {{ if modBool $i 2 }}order-2 order-md-1{{ else }}{{ end }}">
+          <div class="landing-services__media {{ if gt (len $item.images) 1 }}slider{{ end }}" aria-label="{{ $item.title | plainify }} images">
+            {{ range $item.images }}
+            <img src="{{ . | relURL }}" alt="{{ $item.title | plainify }}" class="img-fluid">
+            {{ end }}
+          </div>
+        </div>
+
+        <div class="col-md-6 {{ if modBool $i 2 }}order-1 order-md-2{{ else }}{{ end }}">
+          <article class="landing-services__content">
+            <h2 class="section-title h3">{{ $item.title | markdownify }}</h2>
+            <p>{{ $item.content | markdownify }}</p>
+            {{ if $item.button.enable }}
+            {{ with $item.button }}
+            <a href="{{ .link | safeURL }}" title="{{ .label }}" class="btn-link">{{ .label }} <i class="fas fa-arrow-right" aria-hidden="true"></i></a>
+            {{ end }}
+            {{ end }}
+          </article>
+        </div>
+      </div>
+    </div>
+  </section>
+  {{ end }}
+</section>
+{{ end }}
+{{ end }}

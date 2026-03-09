@@ -94,6 +94,14 @@
 
     // Prepare map
     try {
+      if (typeof L === 'undefined' || typeof L.map !== 'function') {
+        setFeedback('Map library could not be loaded.');
+        return;
+      }
+      if (mapContainer._leaflet_id) {
+        // Already initialized, avoid throwing "Map container is already initialized."
+        return;
+      }
       const map = L.map(mapContainer).setView([20, 0], 2);
       L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
         maxZoom: 18,
@@ -103,6 +111,10 @@
       const markers = L.layerGroup().addTo(map);
       const geocodePromises = [];
       for (const cluster of clusters) {
+        if (typeof cluster.lat === 'number' && typeof cluster.lng === 'number') {
+          cluster.coords = { lat: cluster.lat, lng: cluster.lng };
+          continue;
+        }
         if (!cluster.city) continue;
         geocodePromises.push(
           geocodeCity(cluster.city)

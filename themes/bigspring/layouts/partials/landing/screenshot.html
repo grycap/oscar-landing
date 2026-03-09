@@ -1,0 +1,17 @@
+{{ with .Params.screenshot }}
+{{ if .enable }}
+{{ $screenshotTitle := .title }}
+<section class="section pb-0 landing-screenshot" aria-labelledby="landing-screenshot-title">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 mx-auto text-center">
+        <h2 id="landing-screenshot-title" class="section-title">{{ .title | markdownify }}</h2>
+      </div>
+    </div>
+  </div>
+  {{ with .image }}
+  <img src="{{ . | relURL }}" alt="{{ $screenshotTitle | default "OSCAR screenshot" }}" class="img-fluid w-100">
+  {{ end }}
+</section>
+{{ end }}
+{{ end }}
