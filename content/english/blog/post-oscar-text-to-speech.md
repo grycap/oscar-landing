@@ -19,13 +19,13 @@ This use case implements text-to-speech transformation using the OSCAR serverles
 
 ### Previous step: Deploy the OSCAR cluster on an IaaS Cloud and install OSCAR-CLI
 
-Follow the [deployment instructions with the IM Dashboard](https://docs.oscar.grycap.net/deploy-im-dashboard/). Alternatively, the folowing script can be executed locally.
+Follow the [deployment instructions with the IM Dashboard](https://docs.oscar.grycap.net/latest/deploy-im-dashboard/). Alternatively, the folowing script can be executed locally.
 
 ```bash
 curl -sSL http://go.oscar.grycap.net | bash
 ```
 
-To create the service, we will use the command-line interface [OSCAR-CLI](https://docs.oscar.grycap.net/oscar-cli/).
+To create the service, we will use the command-line interface [OSCAR-CLI](https://docs.oscar.grycap.net/latest/oscar-cli/).
 
 ### STEP 1: Deploy the Service
 
@@ -144,4 +144,4 @@ Once you have finished, the service can be deleted using the command:
 oscar-cli service remove $service_name
 ```
 
-[OSCAR](https://grycap.github.io/oscar/), [IM](http://www.grycap.upv.es/im), [EC3](https://github.com/grycap/ec3), and [CLUES](https://www.grycap.upv.es/clues/) are developed by the [GRyCAP](https://www.grycap.upv.es/) research group at the [Universitat Politècnica de València](https://www.upv.es/).
+[OSCAR](https://oscar.grycap.net/), [IM](http://www.grycap.upv.es/im), [EC3](https://github.com/grycap/ec3), and [CLUES](https://www.grycap.upv.es/clues/) are developed by the [GRyCAP](https://www.grycap.upv.es/) research group at the [Universitat Politècnica de València](https://www.upv.es/).

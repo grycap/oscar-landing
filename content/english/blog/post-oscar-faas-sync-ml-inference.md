@@ -21,9 +21,9 @@ The example is going to be focused on synchronous invocations. OSCAR supports tw
 
 ![Synchronous invocations diagram](../../images/blog/post-20220516-1/oscar-sync.png)
 
-In order to deploy the OSCAR cluster to go ahead with this example, you can either use a local deployment for testing ([How to test OSCAR localy here](https://docs.oscar.grycap.net/local-testing/)) or the GRyCAP Infrastructure Manager's Dashboard (IM Dashboard) ([How to deploy OSCAR with the IM Dashboard here](https://docs.oscar.grycap.net/deploy-im-dashboard/)).
+In order to deploy the OSCAR cluster to go ahead with this example, you can either use a local deployment for testing ([How to test OSCAR localy here](https://docs.oscar.grycap.net/latest/local-testing/)) or the GRyCAP Infrastructure Manager's Dashboard (IM Dashboard) ([How to deploy OSCAR with the IM Dashboard here](https://docs.oscar.grycap.net/latest/deploy-im-dashboard/)).
 
-OSCAR services can be invoked synchronously in two ways: using the `oscar-cli` or making a HTTP request to the [OSCAR API](https://docs.oscar.grycap.net/api/). 
+OSCAR services can be invoked synchronously in two ways: using the `oscar-cli` or making a HTTP request to the [OSCAR API](https://docs.oscar.grycap.net/latest/api/). 
 This example shows how to use `oscar-cli` to deploy and invoke your function. You can see how to install `oscar-cli` [here](https://github.com/grycap/oscar-cli).
 
 ### Steps using oscar-cli
@@ -47,7 +47,7 @@ For example, if we have a local cluster with the name `oscar-cluster` and `oscar
 $ oscar-cli cluster add oscar-cluster "https://localhost" oscar oscar
 ```
 
-**Step 2:** Create the service(s) defined in the [OSCAR's FDL (Functions Definition Language)](https://docs.oscar.grycap.net/fdl/) YAML with the following command, where `FDL_FILE` is the name of the FDL file. 
+**Step 2:** Create the service(s) defined in the [OSCAR's FDL (Functions Definition Language)](https://docs.oscar.grycap.net/latest/fdl/) YAML with the following command, where `FDL_FILE` is the name of the FDL file. 
 
 ```bash
 $ oscar-cli apply FDL_FILE
@@ -129,5 +129,5 @@ $ base64 images/image3.jpg | curl --insecure --request POST 'https://<YOUR CLUST
 ```
 
 **_Note:_** 
--  *For more information about the usage of `oscar-cli` visit [OSCAR Documentation - oscar-cli](https://docs.oscar.grycap.net/oscar-cli/)*
-- *For more information about the OSCAR API visit [OSCAR Documentation - OSCAR API](https://docs.oscar.grycap.net/api/)*
+-  *For more information about the usage of `oscar-cli` visit [OSCAR Documentation - oscar-cli](https://docs.oscar.grycap.net/latest/oscar-cli/)*
+- *For more information about the OSCAR API visit [OSCAR Documentation - OSCAR API](https://docs.oscar.grycap.net/latest/api/)*

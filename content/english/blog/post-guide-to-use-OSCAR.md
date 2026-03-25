@@ -19,7 +19,7 @@ This is a step by step guide to show developers how to create their first servic
 
 #### Deploy the OSCAR cluster
 
-Follow the [deployment instructions with the IM Dashboard](https://docs.oscar.grycap.net/deploy-im-dashboard/). Alternatively, you can execute this script to deploy the cluster locally using kind. Kind will name the cluster `oscar-test`.
+Follow the [deployment instructions with the IM Dashboard](https://docs.oscar.grycap.net/latest/deploy-im-dashboard/). Alternatively, you can execute this script to deploy the cluster locally using kind. Kind will name the cluster `oscar-test`.
 
 ```bash
 curl -sSL http://go.oscar.grycap.net | bash
@@ -31,7 +31,7 @@ Log in to the OSCAR UI using the previously provided credentials to verify that 
 
 #### Install OSCAR-CLI
 
-To easily interact and manage an OSCAR cluster, it is recommended the use of the command line interface [OSCAR-CLI](https://docs.oscar.grycap.net/oscar-cli/).
+To easily interact and manage an OSCAR cluster, it is recommended the use of the command line interface [OSCAR-CLI](https://docs.oscar.grycap.net/latest/oscar-cli/).
 
 Here we have an example of how to install it:
 
@@ -55,7 +55,7 @@ Here we have an example of how to install it:
     chmod +x $HOME/.oscar-cli_path/oscar-cli
     ```
 
-  * Now OSCAR-CLI has been installed. Add the `oscar-test` cluster previously created to the OSCAR-CLI tool with the [add command](https://docs.oscar.grycap.net/oscar-cli/#add) to be able to manipulate the cluster with OSCAR-CLI. In this case, we will name the cluster `oscar-cluster`, so from now on whenever we want to work with our cluster when using OSCAR-CLI, we will refer to it as `oscar-cluster`. Use the user and password you obtained earlier when creating the OSCAR cluster. To use OSCAR-CLI in a local deployment, you should set the `--disable-ssl` flag at the end to disable verification of the self-signed certificates
+  * Now OSCAR-CLI has been installed. Add the `oscar-test` cluster previously created to the OSCAR-CLI tool with the [add command](https://docs.oscar.grycap.net/latest/oscar-cli/#add) to be able to manipulate the cluster with OSCAR-CLI. In this case, we will name the cluster `oscar-cluster`, so from now on whenever we want to work with our cluster when using OSCAR-CLI, we will refer to it as `oscar-cluster`. Use the user and password you obtained earlier when creating the OSCAR cluster. To use OSCAR-CLI in a local deployment, you should set the `--disable-ssl` flag at the end to disable verification of the self-signed certificates
     ``` bash
     oscar-cli cluster add oscar-cluster https://localhost $OSCARuser $OSCARpass
     ```
@@ -154,7 +154,7 @@ If your use-case can run just with a script you can directly use a distribution 
 ### STEP 6: Function Definition File
 
 Finally, our container image with the code and dependencies are in a public repository and we have created the script that will run inside the container to communicate with the OSCAR cluster.
-Now we can create the OSCAR service using the UI, but it's recommended to create a YAML file to deploy the service(s) whenever you want and automate the process. You can check the [FDL section in the OSCAR documentation](https://docs.oscar.grycap.net/fdl/) for more information, but the simplest YAML file should look like the following:
+Now we can create the OSCAR service using the UI, but it's recommended to create a YAML file to deploy the service(s) whenever you want and automate the process. You can check the [FDL section in the OSCAR documentation](https://docs.oscar.grycap.net/latest/fdl/) for more information, but the simplest YAML file should look like the following:
 
 ``` bash
 functions:
@@ -187,4 +187,4 @@ kind delete cluster --name oscar-test
 
 
 
-[OSCAR](https://grycap.github.io/oscar/), [IM](http://www.grycap.upv.es/im), [EC3](https://github.com/grycap/ec3), and [CLUES](https://www.grycap.upv.es/clues/) are developed by the [GRyCAP](https://www.grycap.upv.es/) research group at the [Universitat Politècnica de València](https://www.upv.es/).
+[OSCAR](https://oscar.grycap.net/), [IM](http://www.grycap.upv.es/im), [EC3](https://github.com/grycap/ec3), and [CLUES](https://www.grycap.upv.es/clues/) are developed by the [GRyCAP](https://www.grycap.upv.es/) research group at the [Universitat Politècnica de València](https://www.upv.es/).

@@ -38,7 +38,7 @@ In this use case, both functions run within the same OSCAR cluster, but they cou
 
 ##### Deploying your OSCAR cluster
 
-You can deploy your own OSCAR cluster using the [IM Dashboard](https://appsgrycap.i3m.upv.es:31443/im-dashboard/?filter=OSCAR) on your favourite cloud ([Guide](https://grycap.github.io/oscar/deploy-im-dashboard/)).
+You can deploy your own OSCAR cluster using the [IM Dashboard](https://appsgrycap.i3m.upv.es:31443/im-dashboard/?filter=OSCAR) on your favourite cloud ([Guide](https://docs.oscar.grycap.net/latest/deploy-im-dashboard/)).
 
 ![image](../../images/blog/mask-detection-im-dashboard.png)
 
@@ -49,4 +49,3 @@ You can deploy your own OSCAR cluster using the [IM Dashboard](https://appsgryca
 You can follow along the demo, from infrastructure deployment to event-driven AI inference for mask detection within an OSCAR cluster, as shown in the video:
 
 {{< youtube T0CGrE0EgLI >}}
-

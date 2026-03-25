@@ -54,4 +54,4 @@ The iMagine project has demonstrated how serverless AI infrastructures like OSCA
 Although the project has officially concluded, its technological foundations, built on open, interoperable, and reusable components, will continue to support new research efforts within the European Open Science Cloud and beyond, fostering a sustainable future for AI-driven aquatic research.
 
 
-[OSCAR](https://grycap.github.io/oscar/) is developed by the [GRyCAP](https://www.grycap.upv.es/) research group at the [Universitat Politècnica de València](https://www.upv.es/). [iMagine](https://www.imagine-ai.eu/) has received funding from the European Union, Grant Agreement Number 101058625.
+[OSCAR](https://oscar.grycap.net/) is developed by the [GRyCAP](https://www.grycap.upv.es/) research group at the [Universitat Politècnica de València](https://www.upv.es/). [iMagine](https://www.imagine-ai.eu/) has received funding from the European Union, Grant Agreement Number 101058625.

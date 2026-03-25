@@ -44,9 +44,9 @@ It is necessary to install Docker, Kubectl, Helm, and Kind as prerequisites. Aft
 curl -sSL http://go.oscar.grycap.net | bash
 ```
 
-You can find additional details to locally deploy OSCAR for testing purposes in the [local testing](https://docs.oscar.grycap.net/local-testing/) section in our documentation.
+You can find additional details to locally deploy OSCAR for testing purposes in the [local testing](https://docs.oscar.grycap.net/latest/local-testing/) section in our documentation.
 
-Also, in case you want to deploy OSCAR through the IM Dashboard, follow the tutorial in the [Deployment with IM Dashboard](https://docs.oscar.grycap.net/deploy-im-dashboard/) section.
+Also, in case you want to deploy OSCAR through the IM Dashboard, follow the tutorial in the [Deployment with IM Dashboard](https://docs.oscar.grycap.net/latest/deploy-im-dashboard/) section.
 
 To setup [COMPSs](https://compss-doc.readthedocs.io/en/stable/index.html) it is highly recommended to clone the [tutorial_apps](https://github.com/bsc-wdc/tutorial_apps) repository. Then:
 
@@ -75,4 +75,4 @@ Declare that file with some changes as the script of the service. This script wi
 
 There are three different examples of the integration of OSCAR with COMPSs in the [examples section](https://github.com/grycap/oscar/tree/master/examples/compss).
 
-[OSCAR](https://grycap.github.io/oscar/) and [IM](http://www.grycap.upv.es/im) are developed by the [GRyCAP](https://www.grycap.upv.es/) research group at the [Universitat Politècnica de València](https://www.upv.es/).
+[OSCAR](https://oscar.grycap.net/) and [IM](http://www.grycap.upv.es/im) are developed by the [GRyCAP](https://www.grycap.upv.es/) research group at the [Universitat Politècnica de València](https://www.upv.es/).

@@ -35,7 +35,7 @@ Here's what you'll see:
 
 1. Deploy an OSCAR cluster in the EGI Federated Cloud through the IM Dashboard
 2. Configure both clusters (Cloud and Edge) in [OSCAR-CLI](https://github.com/grycap/oscar-cli)
-3. Show the [Functions Definition Language (FDL)](https://docs.oscar.grycap.net/fdl/) file to compose the workflow and the scripts of both services
+3. Show the [Functions Definition Language (FDL)](https://docs.oscar.grycap.net/latest/fdl/) file to compose the workflow and the scripts of both services
 4. Deploy the workflow
 5. Perform a workflow execution:
    1. Upload a video to the MinIO input bucket in the OSCAR cluster at the edge.
@@ -46,4 +46,4 @@ Here's what you'll see:
 
 {{< youtube _Ao5f3OfoLQ >}}
 
-[OSCAR](https://grycap.github.io/oscar/), [IM](http://www.grycap.upv.es/im), [EC3](https://github.com/grycap/ec3), and [CLUES](https://www.grycap.upv.es/clues/) are developed by the [GRyCAP](https://www.grycap.upv.es/) research group at the [Universitat Politècnica de València](https://www.upv.es/).
+[OSCAR](https://oscar.grycap.net/), [IM](http://www.grycap.upv.es/im), [EC3](https://github.com/grycap/ec3), and [CLUES](https://www.grycap.upv.es/clues/) are developed by the [GRyCAP](https://www.grycap.upv.es/) research group at the [Universitat Politècnica de València](https://www.upv.es/).

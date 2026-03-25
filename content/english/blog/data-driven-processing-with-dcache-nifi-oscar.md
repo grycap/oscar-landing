@@ -58,11 +58,11 @@ Inside the first process group, *dcachelistening* we found two processes:
 - GetFile: Is listening in a folder and introducing the events in the dataflow.
 ![dataflow](../../images/blog/post-dCNiOS/dCNiOS-dcache.png)
 
-In the second process group, *invokecowsay* makes an HTTP call creating an asynchronous invocation of an OSCAR service using the [OSCAR API](https://docs.oscar.grycap.net/api/)
+In the second process group, *invokecowsay* makes an HTTP call creating an asynchronous invocation of an OSCAR service using the [OSCAR API](https://docs.oscar.grycap.net/latest/api/)
 ![dataflow](../../images/blog/post-dCNiOS/dCNiOS-invoke.png)
 
 Finally, we have a video where you can see all the steps to connect Nifi and OSCAR with more details.
 
 {{< youtube mpy8veWS-ss >}}
 
-[OSCAR](https://grycap.github.io/oscar/) and [IM](http://www.grycap.upv.es/im) are developed by the [GRyCAP](https://www.grycap.upv.es/) research group at the [Universitat Politècnica de València](https://www.upv.es/).
+[OSCAR](https://oscar.grycap.net/) and [IM](http://www.grycap.upv.es/im) are developed by the [GRyCAP](https://www.grycap.upv.es/) research group at the [Universitat Politècnica de València](https://www.upv.es/).

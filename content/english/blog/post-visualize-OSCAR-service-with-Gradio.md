@@ -24,7 +24,7 @@ Gradio provides a user-friendly web-based interface to use an OSCAR service for 
 
 Gradio is deployed inside a Pod in the same Kubernetes cluster that runs the rest of the OSCAR services.
 
-The interaction between Gradio and OSCAR can be done through synchronous invocations via the [OSCAR REST API](https://docs.oscar.grycap.net/api), which executes KNative under-the-hood to perform the AI model inference. Asynchronous invocations via uploading a file to MinIO can also be achieved.  
+The interaction between Gradio and OSCAR can be done through synchronous invocations via the [OSCAR REST API](https://docs.oscar.grycap.net/latest/api/), which executes KNative under-the-hood to perform the AI model inference. Asynchronous invocations via uploading a file to MinIO can also be achieved.  
 
 
 ![gradio-oscar.png](../../images/blog/post-oscar-with-gradio/gradio-oscar.png)
@@ -43,4 +43,4 @@ As shown in the picture below, the usage of web-based user interfaces produced b
 
 More visualization examples with Gradio will be published in the [oscar-gradio](https://github.com/grycap/oscar-gradio) repository.
 
-[OSCAR](https://grycap.github.io/oscar/) is  developed by the [GRyCAP](https://www.grycap.upv.es/) research group at the [Universitat Politècnica de València](https://www.upv.es/).
+[OSCAR](https://oscar.grycap.net/) is  developed by the [GRyCAP](https://www.grycap.upv.es/) research group at the [Universitat Politècnica de València](https://www.upv.es/).
