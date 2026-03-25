@@ -155,7 +155,7 @@
           
           
           <li class="nav-item">
-            <a class="nav-link" href="https://grycap.github.io/oscar" title="Documentation">Documentation</a>
+            <a class="nav-link" href="https://docs.oscar.grycap.net/latest/" title="Documentation">Documentation</a>
           </li>
           
           
@@ -213,11 +213,11 @@
         <h1 class="mb-4 blog-post-title">Using OSCAR as a FaaS platform for scalable asynchronous inference of a machine learning model</h1>
         <p>Monday, August 9, 2021  </p>
         <div class="content"><p>OSCAR is a framework to efficiently support on-premises FaaS (Functions as a Service) for general-purpose file-processing computing applications. Users upload files to a bucket and this automatically triggers the execution of parallel invocations to a function responsible for processing each file. For example, you can deploy a machine learning inference environment by defining a function in your OSCAR cluster, and every time you upload an image to your bucket the inference process is triggered, and the result is stored.</p>
-<p>To manage your elastic OSCAR cluster and define functions you have two options: either the <a href="https://grycap.github.io/oscar/usage/">Oscar graphical user interface, i.e. OSCAR-GUI</a>, or <a href="https://github.com/grycap/oscar-cli">a command line tool called OSCAR-CLI</a>.</p>
+<p>To manage your elastic OSCAR cluster and define functions you have two options: either the <a href="https://docs.oscar.grycap.net/latest/usage-dashboard/">Oscar graphical user interface, i.e. OSCAR-GUI</a>, or <a href="https://github.com/grycap/oscar-cli">a command line tool called OSCAR-CLI</a>.</p>
 <p>In the following guide you are going to learn how to deploy a machine learning inference environment and to use it employing both tools. You  can also find a <a href="/blog/post-oscar-faas-scalable-ml-inference/#youtube-video">YouTube</a> video of the whole process below.</p>
 <p>Some useful information before beginning:</p>
 <ul>
-<li>The elastic OSCAR cluster can be deployed using the IM Dashboard as explained <a href="https://grycap.github.io/oscar/deploy-im-dashboard/">here in the documentation</a>.</li>
+<li>The elastic OSCAR cluster can be deployed using the IM Dashboard as explained <a href="https://docs.oscar.grycap.net/latest/deploy-im-dashboard/">here in the documentation</a>.</li>
 <li>The OSCAR GUI is exposed via a Kubernetes ingress and it is accessible via the Kubernetes master node IP.</li>
 <li>The OSCAR-CLI can be easily <a href="https://github.com/grycap/oscar-cli#install-from-source">installed in your local</a>.</li>
 <li>The chosen model is the Posenet model, developed by Google and available in the <a href="https://marketplace.deep-hybrid-datacloud.eu/modules/deep-oc-posenet-tf.html">DEEP Open Catalog</a>, that detects the pose of a person in an image. The <em>predict</em> method expects an RGB image as input and returns as output the different body keypoints with the corresponding coordinates and the associated key score.</li>
@@ -266,7 +266,7 @@ As you can see, the cluster <em>oscar-cluster</em> is added and marked as <em>De
 <p><img src="../../images/blog/post-20210803-1/service-list.png" alt="oscar-cli service list"></p>
 <p><strong>Step 4:</strong> To modify some parameters in the deployed service you can just edit the FDL file and apply it again.</p>
 <h4 id="using-oscar-graphical-interface-to-deploy-a-new-service">Using OSCAR graphical interface to deploy a new service</h4>
-<p>Alternatively, you can use the GUI as shown <a href="https://grycap.github.io/oscar/usage/#deploying-services">here in the documentation</a>:</p>
+<p>Alternatively, you can use the GUI as shown <a href="https://docs.oscar.grycap.net/latest/usage-dashboard/#deploying-services">here in the documentation</a>:</p>
 <p><img src="../../images/blog/post-20210803-1/create_service_gui.png" alt="OSCAR-GUI Deploy New Service"></p>
 <p>To inspect the just created service and edit the values (such as the assigned memory):</p>
 <p><strong>Step 1:</strong> Click the button to display the Service Info:</p>
@@ -322,7 +322,7 @@ As you can see, the cluster <em>oscar-cluster</em> is added and marked as <em>De
       <iframe allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share; fullscreen" loading="eager" referrerpolicy="strict-origin-when-cross-origin" src="https://www.youtube.com/embed/bAkEA-kX9ps?autoplay=0&amp;controls=1&amp;end=0&amp;loop=0&amp;mute=0&amp;start=0" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" title="YouTube video"></iframe>
     </div>
 
-<p><a href="https://grycap.github.io/oscar/">OSCAR</a>, <a href="http://www.grycap.upv.es/im">IM</a>, <a href="https://github.com/grycap/ec3">EC3</a>, and <a href="https://www.grycap.upv.es/clues/">CLUES</a> tools shown on this post are developed by the <a href="https://www.grycap.upv.es/">GRyCAP</a> research group at the <a href="https://www.upv.es/">Universitat Politècnica de València</a>.</p>
+<p><a href="https://oscar.grycap.net/">OSCAR</a>, <a href="http://www.grycap.upv.es/im">IM</a>, <a href="https://github.com/grycap/ec3">EC3</a>, and <a href="https://www.grycap.upv.es/clues/">CLUES</a> tools shown on this post are developed by the <a href="https://www.grycap.upv.es/">GRyCAP</a> research group at the <a href="https://www.upv.es/">Universitat Politècnica de València</a>.</p>
 </div>        
         
         
@@ -420,13 +420,13 @@ As you can see, the cluster <em>oscar-cluster</em> is added and marked as <em>De
         <div class="h3 mb-4">Product</div>
         <ul class="list-unstyled footer-list">
           
-          <li><a href="https://grycap.github.io/oscar/deploy-im-dashboard/" title="Quick Start">Quick Start</a></li>
+          <li><a href="https://docs.oscar.grycap.net/latest/deploy-im-dashboard/" title="Quick Start">Quick Start</a></li>
           
           <li><a href="https://github.com/grycap/oscar-cli" title="CLI">CLI</a></li>
           
-          <li><a href="https://grycap.github.io/oscar/fdl/" title="Functions Definition Language">Functions Definition Language</a></li>
+          <li><a href="https://docs.oscar.grycap.net/latest/fdl/" title="Functions Definition Language">Functions Definition Language</a></li>
           
-          <li><a href="https://grycap.github.io/oscar/api/" title="OpenAPI Specification">OpenAPI Specification</a></li>
+          <li><a href="https://docs.oscar.grycap.net/latest/api/" title="OpenAPI Specification">OpenAPI Specification</a></li>
           
         </ul>
         

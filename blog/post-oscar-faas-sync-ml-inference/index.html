@@ -155,7 +155,7 @@
           
           
           <li class="nav-item">
-            <a class="nav-link" href="https://grycap.github.io/oscar" title="Documentation">Documentation</a>
+            <a class="nav-link" href="https://docs.oscar.grycap.net/latest/" title="Documentation">Documentation</a>
           </li>
           
           
@@ -223,8 +223,8 @@
 </li>
 </ul>
 <p><img src="../../images/blog/post-20220516-1/oscar-sync.png" alt="Synchronous invocations diagram"></p>
-<p>In order to deploy the OSCAR cluster to go ahead with this example, you can either use a local deployment for testing (<a href="https://docs.oscar.grycap.net/local-testing/">How to test OSCAR localy here</a>) or the GRyCAP Infrastructure Manager&rsquo;s Dashboard (IM Dashboard) (<a href="https://docs.oscar.grycap.net/deploy-im-dashboard/">How to deploy OSCAR with the IM Dashboard here</a>).</p>
-<p>OSCAR services can be invoked synchronously in two ways: using the <code>oscar-cli</code> or making a HTTP request to the <a href="https://docs.oscar.grycap.net/api/">OSCAR API</a>.
+<p>In order to deploy the OSCAR cluster to go ahead with this example, you can either use a local deployment for testing (<a href="https://docs.oscar.grycap.net/latest/local-testing/">How to test OSCAR localy here</a>) or the GRyCAP Infrastructure Manager&rsquo;s Dashboard (IM Dashboard) (<a href="https://docs.oscar.grycap.net/latest/deploy-im-dashboard/">How to deploy OSCAR with the IM Dashboard here</a>).</p>
+<p>OSCAR services can be invoked synchronously in two ways: using the <code>oscar-cli</code> or making a HTTP request to the <a href="https://docs.oscar.grycap.net/latest/api/">OSCAR API</a>.
 This example shows how to use <code>oscar-cli</code> to deploy and invoke your function. You can see how to install <code>oscar-cli</code> <a href="https://github.com/grycap/oscar-cli">here</a>.</p>
 <h3 id="steps-using-oscar-cli">Steps using oscar-cli</h3>
 <p><em>All the required files to deploy this example can be found on the <a href="https://github.com/grycap/oscar/tree/master/examples/plant-classification-sync">OSCAR github repository</a>.</em></p>
@@ -239,7 +239,7 @@ This example shows how to use <code>oscar-cli</code> to deploy and invoke your f
 </ul>
 <p>For example, if we have a local cluster with the name <code>oscar-cluster</code> and <code>oscar</code> as username and password (which is not a recommendable password), the command to add the cluster would look something like this:</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ oscar-cli cluster add oscar-cluster <span style="color:#e6db74">&#34;https://localhost&#34;</span> oscar oscar
-</span></span></code></pre></div><p><strong>Step 2:</strong> Create the service(s) defined in the <a href="https://docs.oscar.grycap.net/fdl/">OSCAR&rsquo;s FDL (Functions Definition Language)</a> YAML with the following command, where <code>FDL_FILE</code> is the name of the FDL file.</p>
+</span></span></code></pre></div><p><strong>Step 2:</strong> Create the service(s) defined in the <a href="https://docs.oscar.grycap.net/latest/fdl/">OSCAR&rsquo;s FDL (Functions Definition Language)</a> YAML with the following command, where <code>FDL_FILE</code> is the name of the FDL file.</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ oscar-cli apply FDL_FILE
 </span></span></code></pre></div><p>In order to use the function of this example, the command would be as it follows.</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ oscar-cli apply plant-classification-sync.yaml
@@ -290,8 +290,8 @@ This example shows how to use <code>oscar-cli</code> to deploy and invoke your f
 </span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>--data @- | base64 -d
 </span></span></code></pre></div><p><strong><em>Note:</em></strong></p>
 <ul>
-<li><em>For more information about the usage of <code>oscar-cli</code> visit <a href="https://docs.oscar.grycap.net/oscar-cli/">OSCAR Documentation - oscar-cli</a></em></li>
-<li><em>For more information about the OSCAR API visit <a href="https://docs.oscar.grycap.net/api/">OSCAR Documentation - OSCAR API</a></em></li>
+<li><em>For more information about the usage of <code>oscar-cli</code> visit <a href="https://docs.oscar.grycap.net/latest/oscar-cli/">OSCAR Documentation - oscar-cli</a></em></li>
+<li><em>For more information about the OSCAR API visit <a href="https://docs.oscar.grycap.net/latest/api/">OSCAR Documentation - OSCAR API</a></em></li>
 </ul>
 </div>        
         
@@ -390,13 +390,13 @@ This example shows how to use <code>oscar-cli</code> to deploy and invoke your f
         <div class="h3 mb-4">Product</div>
         <ul class="list-unstyled footer-list">
           
-          <li><a href="https://grycap.github.io/oscar/deploy-im-dashboard/" title="Quick Start">Quick Start</a></li>
+          <li><a href="https://docs.oscar.grycap.net/latest/deploy-im-dashboard/" title="Quick Start">Quick Start</a></li>
           
           <li><a href="https://github.com/grycap/oscar-cli" title="CLI">CLI</a></li>
           
-          <li><a href="https://grycap.github.io/oscar/fdl/" title="Functions Definition Language">Functions Definition Language</a></li>
+          <li><a href="https://docs.oscar.grycap.net/latest/fdl/" title="Functions Definition Language">Functions Definition Language</a></li>
           
-          <li><a href="https://grycap.github.io/oscar/api/" title="OpenAPI Specification">OpenAPI Specification</a></li>
+          <li><a href="https://docs.oscar.grycap.net/latest/api/" title="OpenAPI Specification">OpenAPI Specification</a></li>
           
         </ul>
         

@@ -155,7 +155,7 @@
           
           
           <li class="nav-item">
-            <a class="nav-link" href="https://grycap.github.io/oscar" title="Documentation">Documentation</a>
+            <a class="nav-link" href="https://docs.oscar.grycap.net/latest/" title="Documentation">Documentation</a>
           </li>
           
           
@@ -224,11 +224,11 @@
 <p><img src="../../images/blog/post-reasons-OSCAR-for-AI-inference/vertical-logo-monochromatic.png" alt="Docker logo"></p>
 <p><a href="https://www.docker.com">Docker</a> is the most common approach to encapsulate applications, together with their dependencies, to guarantee successful execution across multiple computing platforms.</p>
 <p>OSCAR runs containers for Docker-based AI applications in elastic Kubernetes clusters that grow and shrink, in terms of the number of nodes to adapt to the workload, within the elasticity boundaries defined by the user at deployment time</p>
-<p>There is no need to adapt your AI application to run it as an <a href="https://docs.oscar.grycap.net/invoking/">OSCAR service</a>. If your application runs as a command-line application, it will run within an OSCAR cluster. See some AI applications that are being used with OSCAR in the <a href="https://github.com/grycap/oscar/tree/master/examples">examples</a> folder.</p>
+<p>There is no need to adapt your AI application to run it as an <a href="https://docs.oscar.grycap.net/latest/invoking/">OSCAR service</a>. If your application runs as a command-line application, it will run within an OSCAR cluster. See some AI applications that are being used with OSCAR in the <a href="https://github.com/grycap/oscar/tree/master/examples">examples</a> folder.</p>
 <h3 id="2-several-ai-inference-execution-approaches">#2: Several AI inference execution approaches</h3>
 <p><img src="../../images/blog/post-reasons-OSCAR-for-AI-inference/oscar-sync-async.jpg" alt="OSCAR sync async"></p>
 <p>Depending on the AI/ML model, inference might involve a computationally-intensive approach that requires GPU-based acceleration or it may require a quick response from the computational platform to provide fast feedback for the user.</p>
-<p>Therefore, an <a href="https://docs.oscar.grycap.net/invoking/">OSCAR service</a> can be invoked for AI/ML model inference using two approaches:</p>
+<p>Therefore, an <a href="https://docs.oscar.grycap.net/latest/invoking/">OSCAR service</a> can be invoked for AI/ML model inference using two approaches:</p>
 <ul>
 <li>
 <p>Synchronously: By leveraging the highly-elastic capabilities of <a href="https://knative.dev">KNative</a>, the responses of the AI/model inference can be obtained with latency on the order of a second. Users can decide to keep alive a certain number of <a href="https://kubernetes.io/es/docs/concepts/workloads/pods/pod/">Pods</a> to minimize the <a href="https://developer.ibm.com/articles/reducing-cold-start-times-in-knative/">cold start</a>.</p>
@@ -246,10 +246,10 @@
 <p><a href="https://ui.oscar.grycap.net">OSCAR UI</a>, is an easy-to-use web-based graphical user interface to log in with the dynamically generated credentials, or the ones you chose, at deployment time. It also supports <a href="https://openid.net/connect/">OIDC</a> and it is seamlessly integrated with <a href="https://www.egi.eu/service/check-in/">EGI Check-In</a> so that you can seamlessly log in with the credentials that you like.</p>
 </li>
 <li>
-<p><a href="https://docs.oscar.grycap.net/oscar-cli/">OSCAR CLI</a>, is a command-line interface that interacts with OSCAR clusters to manage the entire lifecycle of OSCAR services. These are defined in YAML-based documents using the <a href="https://docs.oscar.grycap.net/fdl/">Functions Definition Language (FDL)</a>.</p>
+<p><a href="https://docs.oscar.grycap.net/latest/oscar-cli/">OSCAR CLI</a>, is a command-line interface that interacts with OSCAR clusters to manage the entire lifecycle of OSCAR services. These are defined in YAML-based documents using the <a href="https://docs.oscar.grycap.net/latest/fdl/">Functions Definition Language (FDL)</a>.</p>
 </li>
 <li>
-<p><a href="https://docs.oscar.grycap.net/api/">REST API</a>, is an Application Programming Interface (API) based on the <a href="https://www.openapis.org">OpenAPI specification</a> that allows full programmatic access to the entire lifecycle management of OSCAR services.</p>
+<p><a href="https://docs.oscar.grycap.net/latest/api/">REST API</a>, is an Application Programming Interface (API) based on the <a href="https://www.openapis.org">OpenAPI specification</a> that allows full programmatic access to the entire lifecycle management of OSCAR services.</p>
 </li>
 <li>
 <p><a href="https://github.com/grycap/oscar_python">Python API</a>, a Python-based library to facilitate the interaction with OSCAR services through this programming language.</p>
@@ -263,19 +263,19 @@
 <h3 id="5-runs-on-multiple-platforms">#5: Runs on multiple platforms</h3>
 <p><img src="../../images/blog/post-reasons-OSCAR-for-AI-inference/multiple-arch.png" alt="Multiple Arch - Credit to Matt Wang - https://matt-wxw.medium.com/build-docker-images-for-platform-arm64-apple-m1-and-amd64-on-apple-m1-with-docker-desktop-7c6dd5f7f325 "></p>
 <p>OSCAR runs on Kubernetes clusters that can be dynamically deployed using the <a href="https://im.egi.eu">Infrastructure Manager (IM)</a>, an Infrastructure-as-Code (IaC) tool that allows deploying complex virtual infrastructures across any Infrastructure as a Service (IaaS) Cloud that you have access to (e.g. Amazon Web Services, Microsoft Azure, OpenStack, Open Telekom Cloud, etc.).</p>
-<p>OSCAR can also be deployed on <a href="https://docs.oscar.grycap.net/deploy-helm/">existing Kubernetes clusters using Helm</a> and even in your <a href="https://docs.oscar.grycap.net/local-testing/">local machine for testing</a> on a sandboxed Kubernetes cluster using <a href="http://kind.sigs.k8s.io">Kind</a> that is dynamically deployed via a simple command (Docker is the only requirement):</p>
+<p>OSCAR can also be deployed on <a href="https://docs.oscar.grycap.net/latest/deploy-helm/">existing Kubernetes clusters using Helm</a> and even in your <a href="https://docs.oscar.grycap.net/latest/local-testing/">local machine for testing</a> on a sandboxed Kubernetes cluster using <a href="http://kind.sigs.k8s.io">Kind</a> that is dynamically deployed via a simple command (Docker is the only requirement):</p>
 <p><code>curl -sSL http://go.oscar.grycap.net | bash</code></p>
 <p>It supports <code>amd64</code> and <code>arm64</code> architectures, so it will run smoothly on a Mac with <a href="https://support.apple.com/en-us/HT211814">Apple Silicon</a>.</p>
 <p>OSCAR can also run on clusters of Raspberry Pis via the <a href="https://k3s.io">k3s</a> lightweight Kubernetes distribution. This allows performing AI model inference at the edge of the network, as exemplified in the work on <a href="https://oscar.grycap.net/blog/post-oscar-cloud-to-edge-approach-for-edge-ai-inference/">&ldquo;serverless cloud-to-edge computing continuum approach for edge AI inference&rdquo;</a>.</p>
 <h3 id="6-runs-along-the-computing-continuum">#6. Runs along the computing continuum</h3>
 <p><img src="../../images/blog/post-reasons-OSCAR-for-AI-inference/computing-continuum.png" alt="Computing continuum"></p>
-<p>OSCAR supports a common <a href="https://docs.oscar.grycap.net/fdl/">Functions Definition Language (FDL)</a> with <a href="http://github.com/grycap/scar">SCAR</a>, an open-source tool to create highly-parallel event-driven file-processing serverless applications that execute on customized runtime environments provided by Docker containers run on AWS Lambda and AWS Batch.
+<p>OSCAR supports a common <a href="https://docs.oscar.grycap.net/latest/fdl/">Functions Definition Language (FDL)</a> with <a href="http://github.com/grycap/scar">SCAR</a>, an open-source tool to create highly-parallel event-driven file-processing serverless applications that execute on customized runtime environments provided by Docker containers run on AWS Lambda and AWS Batch.
 This allows performing certain processing at the edge of the network close to where data is produced (e.g. on an OSCAR cluster deployed on top of a cluster of Raspberry Pis), e.g. for privacy-preserving reasons. Then carry out additional processing on an on-premises Cloud (e.g. on an OSCAR cluster deployed on an OpenStack-based cloud) and, finally, perform some compute-intensive bursty execution of jobs on AWS Lambda using SCAR.</p>
 <p>This is exemplified in the work <a href="https://oscar.grycap.net/blog/post-oscar-serverless-ai-models/">&ldquo;event-driven inference of AI models for mask detection with the OSCAR serverless platform&rdquo;</a>.</p>
 <h3 id="7-supports-data-driven-workflow-processing">#7: Supports data-driven workflow processing</h3>
 <p><img src="../../images/blog/post-reasons-OSCAR-for-AI-inference/fdl-composer.jpg" alt="FDL Composer"></p>
 <p>OSCAR services are typically linked to a MinIO object-storage bucket that triggers invocations whenever files are uploaded to perform the data processing. By chaining multiple OSCAR services, data-driven workflows along the computing continuum can be achieved.</p>
-<p>The <a href="http://composer.oscar.grycap.net">FDL Composer</a> is an open-source tool, also accessible as a web-based application, to facilitate the definition of these workflows and automatically produce the corresponding <a href="https://docs.oscar.grycap.net/fdl/">FDL</a> files. It supports different templates (e.g. two OSCAR services and three MinIO buckets) to avoid starting the definition of the workflow from scratch.</p>
+<p>The <a href="http://composer.oscar.grycap.net">FDL Composer</a> is an open-source tool, also accessible as a web-based application, to facilitate the definition of these workflows and automatically produce the corresponding <a href="https://docs.oscar.grycap.net/latest/fdl/">FDL</a> files. It supports different templates (e.g. two OSCAR services and three MinIO buckets) to avoid starting the definition of the workflow from scratch.</p>
 <h3 id="8-integrates-with-popular-tools-in-the-ai-computing-space">#8: Integrates with popular tools in the AI computing space</h3>
 <p><img src="../../images/blog/post-reasons-OSCAR-for-AI-inference/jupyter_logo.png" alt="Jupyter Notebook"></p>
 <p>OSCAR integrates with the following tools:</p>
@@ -293,7 +293,7 @@ This allows performing certain processing at the edge of the network close to wh
 <h3 id="10-completely-open-source">#10: Completely open-source</h3>
 <p><img src="../../images/blog/post-reasons-OSCAR-for-AI-inference/OSI_Approved_License.png" alt="OSI license"></p>
 <p>OSCAR is developed entirely as an open-source component under the Apache 2.0 license through a group of active <a href="https://github.com/grycap/oscar/graphs/contributors">contributors</a>.</p>
-<p><a href="https://grycap.github.io/oscar/">OSCAR</a> is being by the <a href="https://www.grycap.upv.es/">GRyCAP</a> research group at the <a href="https://www.upv.es/">Universitat Politècnica de València</a>.</p>
+<p><a href="https://oscar.grycap.net/">OSCAR</a> is being by the <a href="https://www.grycap.upv.es/">GRyCAP</a> research group at the <a href="https://www.upv.es/">Universitat Politècnica de València</a>.</p>
 </div>        
         
         
@@ -391,13 +391,13 @@ This allows performing certain processing at the edge of the network close to wh
         <div class="h3 mb-4">Product</div>
         <ul class="list-unstyled footer-list">
           
-          <li><a href="https://grycap.github.io/oscar/deploy-im-dashboard/" title="Quick Start">Quick Start</a></li>
+          <li><a href="https://docs.oscar.grycap.net/latest/deploy-im-dashboard/" title="Quick Start">Quick Start</a></li>
           
           <li><a href="https://github.com/grycap/oscar-cli" title="CLI">CLI</a></li>
           
-          <li><a href="https://grycap.github.io/oscar/fdl/" title="Functions Definition Language">Functions Definition Language</a></li>
+          <li><a href="https://docs.oscar.grycap.net/latest/fdl/" title="Functions Definition Language">Functions Definition Language</a></li>
           
-          <li><a href="https://grycap.github.io/oscar/api/" title="OpenAPI Specification">OpenAPI Specification</a></li>
+          <li><a href="https://docs.oscar.grycap.net/latest/api/" title="OpenAPI Specification">OpenAPI Specification</a></li>
           
         </ul>
         
