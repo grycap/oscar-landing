@@ -194,7 +194,7 @@ Once a workflow has been created, said node must be configured. Its configuratio
 <p><img src="../../images/blog/post-node-oscar/image/node-oscar-info-config-credential.png" alt="Figure 15. OSCAR Info node configuration." title="Figure 15. OSCAR Info node configuration." width=600px></p>
 <figcaption >Figure 15. OSCAR Info node configuration. </figcaption></div>
 
-With these elements, a request to the OSCAR API(https://docs.oscar.grycap.net/api/) for a particular OSCAR cluster is issued to obtain its information (Figure 16).
+With these elements, a request to the OSCAR API(https://docs.oscar.grycap.net/latest/api/) for a particular OSCAR cluster is issued to obtain its information (Figure 16).
 
 <div align="center">
 <p><img src="../../images/blog/post-node-oscar/image/node-oscar-info-run.png" alt="Figure 16. Running the OSCAR Info node." title="Figure 16. Running the OSCAR Info node." ></p>
@@ -206,7 +206,7 @@ The information that is returned by the server is related to all the services th
 
 #### 2.3.2 Nodo OSCAR Cowsay Services.
 
-This node runs the OSCAR cowsay service. The process that is carried out is similar for all the subflows or nodes that interact with OSCAR services. First, the token is taken from a GET request. Once we have the token, a POST request is made to the service. This interaction can be seen in [OSCAR API](https://docs.oscar.grycap.net/api/).
+This node runs the OSCAR cowsay service. The process that is carried out is similar for all the subflows or nodes that interact with OSCAR services. First, the token is taken from a GET request. Once we have the token, a POST request is made to the service. This interaction can be seen in [OSCAR API](https://docs.oscar.grycap.net/latest/api/).
 
 ![OSCAR Cowsay Services node subflow.](../../images/blog/post-node-oscar/image/node-oscar-cowsay-subflow.png "Figure 17. OSCAR Cowsay Services node subflow.")
 <div align="center">

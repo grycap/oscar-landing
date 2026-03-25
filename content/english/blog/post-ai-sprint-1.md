@@ -83,4 +83,4 @@ OSCAR was integrated with edge devices, such as Smart Farming Devices (SFD) whic
 Further information about this use case is available in the [Farming section in the AI-SPRINT web site](https://www.ai-sprint-project.eu/use-cases/farming-40).
 
 
-[OSCAR](https://grycap.github.io/oscar/) and [IM](http://www.grycap.upv.es/im) are developed by the [GRyCAP](https://www.grycap.upv.es/) research group at the [Universitat Politècnica de València](https://www.upv.es/).
+[OSCAR](https://oscar.grycap.net/) and [IM](http://www.grycap.upv.es/im) are developed by the [GRyCAP](https://www.grycap.upv.es/) research group at the [Universitat Politècnica de València](https://www.upv.es/).

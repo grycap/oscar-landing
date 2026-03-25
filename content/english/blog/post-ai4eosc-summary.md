@@ -68,4 +68,4 @@ This demonstrates OSCAR’s privacy-preserving design: enabling powerful AI anal
 ### Conclusion
 The integration of OSCAR into the AI4EOSC ecosystem marks a major step toward democratizing access to AI infrastructure for European researchers. By combining serverless computing with open science principles, it empowers scientific communities to deploy, test, and scale AI models efficiently and transparently.
 
-[OSCAR](https://grycap.github.io/oscar/) is developed by the [GRyCAP](https://www.grycap.upv.es/) research group at the [Universitat Politècnica de València](https://www.upv.es/). [AI4EOSC](https://ai4eosc.eu/) has received funding from the European Union's Horizon Europe 2022 research and innovation programme under agreement #101058593.
+[OSCAR](https://oscar.grycap.net/) is developed by the [GRyCAP](https://www.grycap.upv.es/) research group at the [Universitat Politècnica de València](https://www.upv.es/). [AI4EOSC](https://ai4eosc.eu/) has received funding from the European Union's Horizon Europe 2022 research and innovation programme under agreement #101058593.

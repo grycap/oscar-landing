@@ -13,13 +13,13 @@ draft: false
 
 OSCAR is a framework to efficiently support on-premises FaaS (Functions as a Service) for general-purpose file-processing computing applications. Users upload files to a bucket and this automatically triggers the execution of parallel invocations to a function responsible for processing each file. For example, you can deploy a machine learning inference environment by defining a function in your OSCAR cluster, and every time you upload an image to your bucket the inference process is triggered, and the result is stored. 
 
-To manage your elastic OSCAR cluster and define functions you have two options: either the [Oscar graphical user interface, i.e. OSCAR-GUI](https://grycap.github.io/oscar/usage/), or [a command line tool called OSCAR-CLI](https://github.com/grycap/oscar-cli). 
+To manage your elastic OSCAR cluster and define functions you have two options: either the [Oscar graphical user interface, i.e. OSCAR-GUI](https://docs.oscar.grycap.net/latest/usage-dashboard/), or [a command line tool called OSCAR-CLI](https://github.com/grycap/oscar-cli). 
 
 In the following guide you are going to learn how to deploy a machine learning inference environment and to use it employing both tools. You  can also find a [YouTube]({{< relref "post-oscar-faas-scalable-ml-inference.md#youtube-video" >}}) video of the whole process below.
 
 Some useful information before beginning:
 
-* The elastic OSCAR cluster can be deployed using the IM Dashboard as explained [here in the documentation](https://grycap.github.io/oscar/deploy-im-dashboard/).
+* The elastic OSCAR cluster can be deployed using the IM Dashboard as explained [here in the documentation](https://docs.oscar.grycap.net/latest/deploy-im-dashboard/).
 * The OSCAR GUI is exposed via a Kubernetes ingress and it is accessible via the Kubernetes master node IP.
 * The OSCAR-CLI can be easily [installed in your local](https://github.com/grycap/oscar-cli#install-from-source).
 * The chosen model is the Posenet model, developed by Google and available in the [DEEP Open Catalog](https://marketplace.deep-hybrid-datacloud.eu/modules/deep-oc-posenet-tf.html), that detects the pose of a person in an image. The *predict* method expects an RGB image as input and returns as output the different body keypoints with the corresponding coordinates and the associated key score. 
@@ -90,7 +90,7 @@ deepaas-predict -i "$INPUT_FILE_PATH" -ct application/zip -o $OUTPUT_IMAGE
 
 #### Using OSCAR graphical interface to deploy a new service
 
-Alternatively, you can use the GUI as shown [here in the documentation](https://grycap.github.io/oscar/usage/#deploying-services):
+Alternatively, you can use the GUI as shown [here in the documentation](https://docs.oscar.grycap.net/latest/usage-dashboard/#deploying-services):
 
 ![OSCAR-GUI Deploy New Service](../../images/blog/post-20210803-1/create_service_gui.png)
 
@@ -187,4 +187,4 @@ Finally, here you have a follow along video including all the steps, enjoy!
 
 {{< youtube bAkEA-kX9ps >}}
 
-[OSCAR](https://grycap.github.io/oscar/), [IM](http://www.grycap.upv.es/im), [EC3](https://github.com/grycap/ec3), and [CLUES](https://www.grycap.upv.es/clues/) tools shown on this post are developed by the [GRyCAP](https://www.grycap.upv.es/) research group at the [Universitat Politècnica de València](https://www.upv.es/).
+[OSCAR](https://oscar.grycap.net/), [IM](http://www.grycap.upv.es/im), [EC3](https://github.com/grycap/ec3), and [CLUES](https://www.grycap.upv.es/clues/) tools shown on this post are developed by the [GRyCAP](https://www.grycap.upv.es/) research group at the [Universitat Politècnica de València](https://www.upv.es/).

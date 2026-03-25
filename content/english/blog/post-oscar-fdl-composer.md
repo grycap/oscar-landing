@@ -91,4 +91,4 @@ storage_providers:
 
 This FDL file can be used as input to OSCAR in order to deploy the services within a specific OSCAR cluster.
 
-[FDL Composer](https://composer.oscar.grycap.net), [OSCAR](https://grycap.github.io/oscar/) and [SCAR](https://github.com/grycap/scar) are developed by the [GRyCAP](https://www.grycap.upv.es/) research group at the [Universitat Politècnica de València](https://www.upv.es/).
+[FDL Composer](https://composer.oscar.grycap.net), [OSCAR](https://oscar.grycap.net/) and [SCAR](https://github.com/grycap/scar) are developed by the [GRyCAP](https://www.grycap.upv.es/) research group at the [Universitat Politècnica de València](https://www.upv.es/).

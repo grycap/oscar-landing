@@ -10,7 +10,7 @@ banner:
     link : "https://im.egi.eu/im-dashboard/configure?selected_tosca=oscar.yaml"
   secondary_buttons:
     - label: "Quick Start"
-      link: "https://docs.oscar.grycap.net/"
+      link: "https://docs.oscar.grycap.net/latest/"
 
 ##################### Feature ##########################
 feature:
@@ -30,12 +30,12 @@ feature:
     # feature item loop
     - name : "Workflows"
       icon : "fas fa-bars"
-      content : "Compose data-driven serverless workflows with the [Functions Definition Language](https://grycap.github.io/oscar/fdl/)."
+      content : "Compose data-driven serverless workflows with the [Functions Definition Language](https://docs.oscar.grycap.net/latest/fdl/)."
         
     # feature item loop
     - name : "Multiple Interfaces"
       icon : "fas fa-file-invoice"
-      content : "Secure OIDC [REST API](https://grycap.github.io/oscar/api/), [Dashboard](https://grycap.github.io/oscar/usage/), and [CLI](https://github.com/grycap/oscar-cli) available for multi-tenant usage."
+      content : "Secure OIDC [REST API](https://docs.oscar.grycap.net/latest/api/), [Dashboard](https://docs.oscar.grycap.net/latest/usage-dashboard/), and [CLI](https://github.com/grycap/oscar-cli) available for multi-tenant usage."
       
     # feature item loop
     - name : "Built on Kubernetes"
@@ -155,7 +155,7 @@ call_to_action:
   enable : true
   title : "Ready to get started?"
   image : "images/undraw_version_control_re_mg66.svg"
-  content : "Deploy an OSCAR cluster on your preferred cloud through the [IM Dashboard](https://im.egi.eu). No registration is required. Not ready yet? Start with the [documentation](https://docs.oscar.grycap.net) and come back when you are ready."
+  content : "Deploy an OSCAR cluster on your preferred cloud through the [IM Dashboard](https://im.egi.eu). No registration is required. Not ready yet? Start with the [documentation](https://docs.oscar.grycap.net/latest/) and come back when you are ready."
   button:
     enable : true
     label : "Deploy on a Cloud"
