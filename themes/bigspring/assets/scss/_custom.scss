@@ -164,6 +164,11 @@ a:not(.btn):not(.nav-link):not(.navbar-brand):not(.dropdown-item):focus {
   }
 }
 
+[data-theme="dark"] .navbar-toggler,
+[data-theme="dark"] .navbar-toggler .fas {
+  color: #ffffff;
+}
+
 [data-theme="light"] .theme-toggle,
 .theme-toggle.is-light {
   color: #1F2937;
