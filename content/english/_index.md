@@ -40,7 +40,7 @@ feature:
     # feature item loop
     - name : "Built on Kubernetes"
       icon : "fas fa-cloud"
-      content : Built on Kubernetes components for easier extension and integration."
+      content : "Built on Kubernetes components for easier extension and integration."
       
     # feature item loop  
     - name : "Open Source"
@@ -55,7 +55,7 @@ feature:
     # feature item loop
     - name : "Scale to Zero"
       icon : "fas fa-power-off"
-      content : "Reduces idle resource usage by scaling services down depending onn the workload."
+      content : "Reduces idle resource usage by scaling services down depending on the workload."
 
     # feature item loop
     - name : "Observability & Operations"
@@ -74,7 +74,7 @@ service:
       - "images/undraw_server_status_5pbv.svg" 
     #  - "images/Kubernetes_logo.svg"
     
-      content : "OSCAR provides data-driven serverless computing for data-processing applications. Services can be triggered by file uploads to an object storage backend, executing a user-defined shell script inside a container based on a user-defined Docker image. Executions are orchestrated as Kubernetes batch jobs, and output data can be uploaded to supported object storage backends. Synchronous invocations with scale-to-zero support and exposed services for those who provide APIs are also available. "
+      content : "OSCAR provides data-driven serverless computing for data-processing applications. Services can be triggered by file uploads to an object storage backend, executing a user-defined shell script inside a container based on a user-defined Docker image. Executions are orchestrated as Kubernetes batch jobs, and output data can be uploaded to supported object storage backends. Synchronous invocations with scale-to-zero support and exposed services for those who provide APIs are also available."
      # button:
      #   enable : true
      #   label : "Check it out"
@@ -136,7 +136,7 @@ service:
       - "images/oscar-dashboard-04-flows.jpg"
       - "images/oscar-dashboard-05-hub.jpg"
       - "images/oscar-dashboard-06-status.jpg"
-      content : "Manage the full OSCAR lifecycle from a web-based dashboard: access clusters securely, configure buckets and services, compose workflows, connect Jupyter notebook-based environments, and monitor platform status in real time. "
+      content : "Manage the full OSCAR lifecycle from a web-based dashboard: access clusters securely, configure buckets and services, compose workflows, connect Jupyter notebook-based environments, and monitor platform status in real time."
       #button:
       #  enable : true
       #  label : "Check it out"

@@ -46,7 +46,7 @@ Once the workflows have been designed, we can deploy them. For that, before runn
 
 ## Summary
 
-Node-RED enhances the automation capabilities within the FlowFuse environment, providing an intuitive method for integrating various OSCAR services and managing complex AI inference workflows. For more information, there is a [documentation entry](https://docs.ai4os.eu/en/latest/user/howto/ai4-compose/flows.html) in the official AI4OS docs repo, where you can find more details to start testing it.
+Node-RED enhances the automation capabilities within the FlowFuse environment, providing an intuitive method for integrating various OSCAR services and managing complex AI inference workflows. For more information, there is a [documentation entry](https://docs.ai4os.eu/en/latest/howtos/pipelines/) in the official AI4OS docs repo, where you can find more details to start testing it.
 
 We hope this overview encourages you to discover how to use OSCAR through Node-RED and FlowFuse, aiding you in harnessing these robust tools for your automation projects. Explore the potential for innovative automation solutions!
 

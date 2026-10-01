@@ -58,7 +58,7 @@ This process enables users to efficiently manage complex workflows and automate 
 
 ## Summary
 
-Elyra simplifies the execution of OSCAR services within the EGI Notebooks environment (and in general, in a Jupyter Notebooks environment), offering a user-friendly approach to managing complex pipelines. This post outlines how Elyra enhances productivity by streamlining processes, from repository cloning to workflow execution. For more information, there is a [documentation entry](https://docs.ai4os.eu/en/latest/user/howto/ai4-compose/elyra.html) in the official AI4OS docs repo, where you can find more details to start testing it.
+Elyra simplifies the execution of OSCAR services within the EGI Notebooks environment (and in general, in a Jupyter Notebooks environment), offering a user-friendly approach to managing complex pipelines. This post outlines how Elyra enhances productivity by streamlining processes, from repository cloning to workflow execution. For more information, there is a [documentation entry](https://docs.ai4os.eu/en/latest/howtos/pipelines/elyra.html) in the official AI4OS docs repo, where you can find more details to start testing it.
 
 
 We hope this overview inspires you to explore how to use OSCAR through Elyra in a Jupyter Notebooks environment (like the one provided by EGI Notebooks), helping you to leverage these powerful tools for your projects. Enjoy the innovative computing possibilities!

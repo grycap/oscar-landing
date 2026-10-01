@@ -101,7 +101,7 @@ In the case of the text-to-speech-google service, it is very similar to that of 
 
 These interfaces have the objective that the user does not have to change anything in the work flows and in turn reproduce in an easier way the work with the services that are implemented in the OSCAR cluster.
 
->If you want to download the `.json` file of the [workflow for all services](https://github.com/grycap/oscar_nodered/blob/main/examples_nodered_oscar/example_workflows_dashboard/workflow_all_services.json) for this example, you can get it from the  [oscar_nodered repository](https://github.com/grycap/oscar_nodered).
+>If you want to download the `.json` file of the [workflow for all services](https://github.com/grycap/oscar-nodered/blob/main/examples/example_workflows_dashboard/workflow_all_services.json) for this example, you can get it from the  [oscar-nodered repository](https://github.com/grycap/oscar-nodered).
 
 ### 1.3 OSCAR Services Workflow Dashboard (Grayify-Plants).
 
@@ -137,10 +137,10 @@ If you want to run the process again with another image, load it (Figure 17) and
 <figcaption>Figure 18. Execution of a new workflows on a new image.</figcaption>
 </div>
 
->If you want to download the `.json` file of the [workflow for two continuos services](https://github.com/grycap/oscar_nodered/blob/main/examples_nodered_oscar/example_workflows_dashboard/workflow_two_services.json) for this example, you can get it from the [oscar_nodered repository](https://github.com/grycap/oscar_nodered).
+>If you want to download the `.json` file of the [workflow for two continuous services](https://github.com/grycap/oscar-nodered/blob/main/examples/example_workflows_dashboard/workflow_two_services.json) for this example, you can get it from the [oscar-nodered repository](https://github.com/grycap/oscar-nodered).
 
 This process demonstrates how easy it could be to invoke OSCAR services through Node-RED without having to execute command lines, just using the OSCAR API, which is abstracted away.
 
 
-[OSCAR-Node-RED](https://github.com/grycap/oscar_nodered) is  developed by the [GRyCAP](https://www.grycap.upv.es/) research group at the [Universitat Politècnica de València](https://www.upv.es/).
+[OSCAR-Node-RED](https://github.com/grycap/oscar-nodered) is  developed by the [GRyCAP](https://www.grycap.upv.es/) research group at the [Universitat Politècnica de València](https://www.upv.es/).
   
