@@ -330,7 +330,7 @@ In the case of the permissions that users can have, the “*” means that the u
 <figcaption >Figure 16. Running the OSCAR Info node. </figcaption></div>
 <p>The information that is returned by the server is related to all the services that are implemented in OSCAR. This information can be seen as a debug node is used.</p>
 <blockquote>
-<p>If you want to download the <a href="https://github.com/grycap/oscar_nodered/tree/main/nodes_oscar/oscar_info">OSCAR Info</a> node files, you can get it from the  <a href="https://github.com/grycap/oscar_nodered">oscar_nodered repository</a>.</p>
+<p>If you want to download the <a href="https://github.com/grycap/oscar-nodered/tree/main/nodes">OSCAR Info</a> node files, you can get it from the  <a href="https://github.com/grycap/oscar-nodered">oscar-nodered repository</a>.</p>
 </blockquote>
 <h4 id="232-nodo-oscar-cowsay-services">2.3.2 Nodo OSCAR Cowsay Services.</h4>
 <p>This node runs the OSCAR cowsay service. The process that is carried out is similar for all the subflows or nodes that interact with OSCAR services. First, the token is taken from a GET request. Once we have the token, a POST request is made to the service. This interaction can be seen in <a href="https://docs.oscar.grycap.net/latest/api/">OSCAR API</a>.</p>
@@ -350,7 +350,7 @@ In the case of the permissions that users can have, the “*” means that the u
 <p><img src="../../images/blog/post-node-oscar/image/node-oscar-cowsay-run.png " alt="Figure 20. Flow execution for interaction with the Cowsay service." title="Figure 20. Flow execution for interaction with the Cowsay service."></p>
 <figcaption >Figure 20. Flow execution for interaction with the Cowsay service.</figcaption> </div>
 <blockquote>
-<p>If you want to download the <a href="https://github.com/grycap/oscar_nodered/tree/main/nodes_oscar/oscar_cowsay_services">OSCAR Cowsay Services</a> node files and <a href="https://github.com/grycap/oscar_nodered/tree/main/examples_nodered_oscar/examples_nodered_flow/oscar_cowsay_services">sample workflow</a>, you can get it from the <a href="https://github.com/grycap/oscar_nodered">oscar_nodered repository</a>.</p>
+<p>If you want to download the <a href="https://github.com/grycap/oscar-nodered/tree/main/nodes/oscar_cowsay_services">OSCAR Cowsay Services</a> node files and <a href="https://github.com/grycap/oscar-nodered/tree/main/examples/example_nodered_flow/oscar_cowsay_services">sample workflow</a>, you can get it from the <a href="https://github.com/grycap/oscar-nodered">oscar-nodered repository</a>.</p>
 </blockquote>
 <h4 id="233-oscar-grayify-services-and-oscar-plants-services-node">2.3.3 OSCAR Grayify Services and OSCAR Plants Services node.</h4>
 <p>Here we will be using the <a href="https://marketplace.deep-hybrid-datacloud.eu/modules/deep-oc-plants-classification-tf.html">Plants Classification</a> AI Model from the <a href="https://marketplace.deep-hybrid-datacloud.eu/">DEEP Open Catalog</a>, and a simple operation to transform images to grayscale.</p>
@@ -370,7 +370,7 @@ In the case of the permissions that users can have, the “*” means that the u
 <div align="center">
 <figcaption >Figure 24. Workflow execution calling OSCAR's Grayify and Plants services.</figcaption></div>
 <blockquote>
-<p>If you want to download the <a href="https://github.com/grycap/oscar_nodered/tree/main/nodes_oscar/oscar_grayify_services">OSCAR Grayify Services</a> and <a href="https://github.com/grycap/oscar_nodered/tree/main/nodes_oscar/oscar_plants_services">OSCAR Plants Services</a>  node files and <a href="https://github.com/grycap/oscar_nodered/tree/main/examples_nodered_oscar/examples_nodered_flow/oscar_grayifyplants_services">sample workflow</a>, you can get it from the <a href="https://github.com/grycap/oscar_nodered">oscar_nodered repository</a>.</p>
+<p>If you want to download the <a href="https://github.com/grycap/oscar-nodered/tree/main/nodes/oscar_grayify_services">OSCAR Grayify Services</a> and <a href="https://github.com/grycap/oscar-nodered/tree/main/nodes/oscar_plants_services">OSCAR Plants Services</a>  node files and <a href="https://github.com/grycap/oscar-nodered/tree/main/examples/example_nodered_flow/oscar_grayifyplants_services">sample workflow</a>, you can get it from the <a href="https://github.com/grycap/oscar-nodered">oscar-nodered repository</a>.</p>
 </blockquote>
 <h4 id="234-oscar-text-speech-services-node">2.3.4 OSCAR Text-Speech Services node.</h4>
 <p>This node runs the text-to-speech-google service, which is passed a text as a parameter and it returns the corresponding audio with the text passed as a parameter. The process is the same as the service invocation is the same as all the previous ones, except that the audio output format is in base64 format (Figure 25).</p>
@@ -382,7 +382,7 @@ In the case of the permissions that users can have, the “*” means that the u
 <div align="center">
 <figcaption >Figure 26. Execution of flow calling text-to-speech-google service.</figcaption></div>
 <blockquote>
-<p>If you want to download the <a href="https://github.com/grycap/oscar_nodered/tree/main/nodes_oscar/oscar_textspeech_services">OSCAR Text-Speech Services</a> node files and <a href="https://github.com/grycap/oscar_nodered/tree/main/examples_nodered_oscar/examples_nodered_flow/oscar_textspeech_services">sample workflow</a>, you can get it from the <a href="https://github.com/grycap/oscar_nodered">oscar_nodered repository</a>.</p>
+<p>If you want to download the <a href="https://github.com/grycap/oscar-nodered/tree/main/nodes/oscar_textspeech_services">OSCAR Text-Speech Services</a> node files and <a href="https://github.com/grycap/oscar-nodered/tree/main/examples/example_nodered_flow/oscar_textspeech_services">sample workflow</a>, you can get it from the <a href="https://github.com/grycap/oscar-nodered">oscar-nodered repository</a>.</p>
 </blockquote>
 <h4 id="235-oscar-services-node">2.3.5 OSCAR Services node.</h4>
 <p>This node has the function of integrating all the services that were previously described. The node is configured in such a way that it will invoke the service that is passed to it as a parameter in the service name section (Figure 27).</p>
@@ -398,7 +398,7 @@ In the case of the permissions that users can have, the “*” means that the u
 <div align="center">
 <figcaption >Figure 29. Execution of workflows of all OSCAR services.</figcaption></div>
 <blockquote>
-<p>If you want to download the <a href="https://github.com/grycap/oscar-nodered/tree/main/nodes">OSCAR Services</a> node files and <a href="https://github.com/grycap/oscar-nodered/tree/main/examples">sample workflow</a>, you can get it from the <a href="https://github.com/grycap/oscar-nodered">oscar_nodered repository</a>.</p>
+<p>If you want to download the <a href="https://github.com/grycap/oscar-nodered/tree/main/nodes">OSCAR Services</a> node files and <a href="https://github.com/grycap/oscar-nodered/tree/main/examples">sample workflow</a>, you can get it from the <a href="https://github.com/grycap/oscar-nodered">oscar-nodered repository</a>.</p>
 </blockquote>
 <blockquote>
 <h5 id="in-a-future-blog-there-will-be-an-explanation-of-the-creation-of-workflows-for-the-interaction-of-node-red-and-oscar-using-dashboards-to-create-web-interfaces-for-easy-interaction-with-users"><strong>In a future blog, there will be an explanation of the creation of workflows for the interaction of Node-RED and OSCAR using dashboards to create web interfaces for easy interaction with users</strong>.</h5>

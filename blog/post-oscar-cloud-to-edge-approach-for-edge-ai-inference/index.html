@@ -221,7 +221,7 @@
 <p>The videos are uploaded into the MinIO object storage in the OSCAR cluster running at the edge (in the Raspberry Pis), where they are split into sampled images that are later anonymised, applying a pre-trained Deep Learning model to blur the faces. These images are uploaded into the MinIO object storage in the OSCAR cluster running in the EGI Federated Cloud, where the mask detection procedure is applied. The resulting images are then further uploaded into the <a href="https://www.egi.eu/services/datahub/">EGI DataHub</a> (based on <a href="https://onedata.org">Onedata</a>) for mid-term data storage.</p>
 <p>This approach allows to perform data acquisition and anonymisation at the edge, as close as possible to where the data is being generated. This allows to implement Edge AI for inference, where AI algorithms are processed either directly on the device or as close as possible to the device generating the data. More computationally intensive tasks are delegated to IaaS Clouds, by using the very same software stack along the computing continuum, provided by OSCAR.</p>
 <h3 id="youtube-video">YouTube video</h3>
-<p>Here you have a video showing the platform action, as presented in the the <a href="https://www.egi.eu/egi-conference/2021-beyond-the-horizon/">EGI Conference 2021</a>:</p>
+<p>Here you have a video showing the platform action, as presented in the <a href="https://www.egi.eu/egi-conference/2021/">EGI Conference 2021</a>:</p>
 <p>Here&rsquo;s what you&rsquo;ll see:</p>
 <ol>
 <li>Deploy an OSCAR cluster in the EGI Federated Cloud through the IM Dashboard</li>
@@ -232,7 +232,7 @@
 <ol>
 <li>Upload a video to the MinIO input bucket in the OSCAR cluster at the edge.</li>
 <li>Show the logs in the OSCAR web interface</li>
-<li>Check that the result images are uploaded and compare them using <a href="https://grycap.github.com/bliss">BLISS</a></li>
+<li>Check that the result images are uploaded and compare them using <a href="https://grycap.github.io/bliss">BLISS</a></li>
 <li>Show the result files stored in the defined Onedata space</li>
 </ol>
 </li>
