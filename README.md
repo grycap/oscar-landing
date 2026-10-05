@@ -10,7 +10,7 @@ git clone https://github.com/grycap/oscar-landing
 ```
 hugo server
 ```
-4. Browse the web at `https://localhost:1313`
+4. Browse the web at `http://localhost:1313`
 
 5. (Optionally) Create the entire web (in the `public` folder):
 ```

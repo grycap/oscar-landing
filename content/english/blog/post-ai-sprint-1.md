@@ -49,7 +49,7 @@ Further information about this use case is available in the [Personalized Health
 
 ### Maintenance & Inspection
 
-[Maintenance & Inspection](https://ai-sprint-project.eu/use-cases/maintenance-inspection) use case, led by [TTA](https://ttanalysis.pl), exploits AI models for identifying windmill blade damage based on vision and thermal images collected by drones. The relevant images are selected at the edge (ground station) and only relevant data are transmitted over the edge-cloud channel. Edge processing will also be in charge of calling for a new acquisition (detailed images of specific regions) when required. AI-SPRINT assets will enable optimal interaction of cloud-based (computationally intensive, longer) analysis and local processing using lighter data pattern recognition routines.
+[Maintenance & Inspection](https://ai-sprint-project.eu/use-cases/maintenance-inspection) use case, led by [TTA](http://ttanalysis.pl), exploits AI models for identifying windmill blade damage based on vision and thermal images collected by drones. The relevant images are selected at the edge (ground station) and only relevant data are transmitted over the edge-cloud channel. Edge processing will also be in charge of calling for a new acquisition (detailed images of specific regions) when required. AI-SPRINT assets will enable optimal interaction of cloud-based (computationally intensive, longer) analysis and local processing using lighter data pattern recognition routines.
 
 Previously, all the computation was made as a batch job. Every step processes all the data then we proceed to the next one only when a previous step is finished:
 

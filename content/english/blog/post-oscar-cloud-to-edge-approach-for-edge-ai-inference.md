@@ -29,7 +29,7 @@ This approach allows to perform data acquisition and anonymisation at the edge, 
 
 ### YouTube video
 
-Here you have a video showing the platform action, as presented in the the [EGI Conference 2021](https://www.egi.eu/egi-conference/2021-beyond-the-horizon/):
+Here you have a video showing the platform action, as presented in the [EGI Conference 2021](https://www.egi.eu/egi-conference/2021/):
 
 Here's what you'll see:
 
@@ -40,7 +40,7 @@ Here's what you'll see:
 5. Perform a workflow execution:
    1. Upload a video to the MinIO input bucket in the OSCAR cluster at the edge.
    2. Show the logs in the OSCAR web interface
-   3. Check that the result images are uploaded and compare them using [BLISS](https://grycap.github.com/bliss)
+   3. Check that the result images are uploaded and compare them using [BLISS](https://grycap.github.io/bliss)
    4. Show the result files stored in the defined Onedata space
 6. Delete the deployed cluster.
 

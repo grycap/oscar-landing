@@ -11,9 +11,9 @@ description: "How to deploy an OSCAR cluster for serverless scientific computing
 draft: false
 ---
 
-Here we present a step by step guide to help you deploy an OSCAR cluster in the [EGI Federated Cloud]( https://www.egi.eu), specifically in the [EOSC-Synergy VO](https://infra.eosc-synergy.eu/vos/#synergy). We are using the [IM Dashboard](https://appsgrycap.i3m.upv.es:31443/im-dashboard/login), a tool developed by the [GRyCAP](https://www.grycap.upv.es/) research group at the [Universitat Politècnica de València](https://www.upv.es/) to facilitate the deployment of infrastructures in a lot of cloud providers. Alternatively, you can follow our YouTube video, at the end of the post.
+Here we present a step by step guide to help you deploy an OSCAR cluster in the [EGI Federated Cloud]( https://www.egi.eu), specifically in the [EOSC-Synergy VO](https://infra.eosc-synergy.eu/vos/#synergy). We are using the [IM Dashboard](https://im.egi.eu/im-dashboard/login), a tool developed by the [GRyCAP](https://www.grycap.upv.es/) research group at the [Universitat Politècnica de València](https://www.upv.es/) to facilitate the deployment of infrastructures in a lot of cloud providers. Alternatively, you can follow our YouTube video, at the end of the post.
 
-**Step 1:** Go the the [IM Dashboard](https://appsgrycap.i3m.upv.es:31443/im-dashboard/login) and click the button "Login with EGI-Check-in".
+**Step 1:** Go to the [IM Dashboard](https://im.egi.eu/im-dashboard/login) and click the button "Login with EGI-Check-in".
 
 ![Welcome to the IM Dashboard](../../images/blog/post-20210726-1/001.png)
 
