@@ -114,13 +114,6 @@
       <description>&lt;p&gt;This guide aims to show the usage of the OSCAR platform for Machine Learning inference using a pre-trained Convolutional Neural network classification model by &lt;a href=&#34;https://deep-hybrid-datacloud.eu/&#34;&gt;DEEP-Hybrid-DataCloud&lt;/a&gt;: the &lt;a href=&#34;https://marketplace.deep-hybrid-datacloud.eu/modules/deep-oc-plants-classification-tf.html&#34;&gt;Plants species classifier&lt;/a&gt;, to classify plant pictures by specie. The PREDICT method works with an RGB image as input and returns a JSON with the top 5 predictions of the plant&amp;rsquo;s specie.&lt;/p&gt;&#xA;&lt;p&gt;The example is going to be focused on synchronous invocations. OSCAR supports two types of invocations:&lt;/p&gt;</description>
     </item>
     <item>
-      <title>Guide to create a service in OSCAR</title>
-      <link>https://oscar.grycap.net/blog/post-guide-to-use-oscar/</link>
-      <pubDate>Tue, 10 May 2022 09:00:00 +0100</pubDate>
-      <guid>https://oscar.grycap.net/blog/post-guide-to-use-oscar/</guid>
-      <description>&lt;p&gt;This is a step by step guide to show developers how to create their first service in OSCAR.&lt;/p&gt;&#xA;&lt;h3 id=&#34;previous-steps&#34;&gt;Previous steps:&lt;/h3&gt;&#xA;&lt;h4 id=&#34;deploy-the-oscar-cluster&#34;&gt;Deploy the OSCAR cluster&lt;/h4&gt;&#xA;&lt;p&gt;Follow the &lt;a href=&#34;https://docs.oscar.grycap.net/latest/deploy-im-dashboard/&#34;&gt;deployment instructions with the IM Dashboard&lt;/a&gt;. Alternatively, you can execute this script to deploy the cluster locally using kind. Kind will name the cluster &lt;code&gt;oscar-test&lt;/code&gt;.&lt;/p&gt;&#xA;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;curl -sSL http://go.oscar.grycap.net | bash&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Log in to the OSCAR UI using the previously provided credentials to verify that the cluster has been successfully deployed, and save them to use later in the guide.&lt;/p&gt;</description>
-    </item>
-    <item>
       <title>Convert Text to Speech with OSCAR</title>
       <link>https://oscar.grycap.net/blog/post-oscar-text-to-speech/</link>
       <pubDate>Mon, 09 May 2022 18:00:00 +0100</pubDate>
