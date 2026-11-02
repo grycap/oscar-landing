@@ -8,6 +8,7 @@
 <section class="section blog-listing">
   <div class="container">
     <div class="row">
+      {{/* Featured blog post disabled.
       {{ range last 1 (first 6 .Pages.ByPublishDate) }}
       <div class="col-12 mb-5 pb-5">
         <div class="row align-items-center blog-featured">
@@ -22,6 +23,7 @@
         </div>
       </div>
       {{ end }}
+      */}}
       {{ $paginator := .Paginate .Data.Pages }}
       {{ range $paginator.Pages }}
       <div class="col-lg-4 col-sm-6 mb-5">

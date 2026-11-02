@@ -172,7 +172,7 @@ This upload triggers the execution of the jobs.
 
 ### Scaling up
 
-Deploying an elastic Kubernetes cluster with the OSCAR platform means using [EC3](https://github.com/grycap/ec3), a tool that deploys elastic virtual clusters, and [CLUES](https://www.grycap.upv.es/clues/), a tool to power off internal cluster nodes when they are not being used, and conversely to power them on when they are needed.
+In this example, [CLUES](https://www.grycap.upv.es/clues/) powers off idle cluster nodes and powers them on when needed.
 
 Watch the status of the provisioned node(s) by issuing:
 {{< highlight bash>}}$ watch clues status {{< / highlight >}}
@@ -187,4 +187,4 @@ Finally, here you have a follow along video including all the steps, enjoy!
 
 {{< youtube bAkEA-kX9ps >}}
 
-[OSCAR](https://oscar.grycap.net/), [IM](http://www.grycap.upv.es/im), [EC3](https://github.com/grycap/ec3), and [CLUES](https://www.grycap.upv.es/clues/) tools shown on this post are developed by the [GRyCAP](https://www.grycap.upv.es/) research group at the [Universitat Politècnica de València](https://www.upv.es/).
+[OSCAR](https://oscar.grycap.net/), [IM](http://www.grycap.upv.es/im), and [CLUES](https://www.grycap.upv.es/clues/) tools shown on this post are developed by the [GRyCAP](https://www.grycap.upv.es/) research group at the [Universitat Politècnica de València](https://www.upv.es/).
